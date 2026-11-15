@@ -1,0 +1,27 @@
+{
+  "license": "GPL-3.0-or-later",
+  "blender": {
+    "url": "https://projects.blender.org/blender/blender.git",
+    "release_branch": "blender-v5.3-release",
+    "tag": "v5.3.0",
+    "commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+    "checkout": "work/blender",
+    "history": "Original upstream history retained; detached release tag"
+  },
+  "linux_x64_libraries": {
+    "gitlink": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+    "checkout": "work/blender/lib/linux_x64",
+    "lfs": "716 library LFS objects acquired; git lfs fsck passed during initialization"
+  },
+  "developer_handbook": {
+    "url": "https://projects.blender.org/blender/blender-developer-docs.git",
+    "commit": "0074023d5f64eac025d88e79640c006516eca57c",
+    "checkout": "work/developer-docs"
+  },
+  "project": {
+    "url": "https://github.com/ricperry/Blender-TiltShift-Camera",
+    "initial_commit": "eb2303109632d6f11bc4ad6a0110c86883728fa4"
+  },
+  "source_lfs": "Required Linux runtime assets acquired; optional regression media deferred",
+  "native_feature_patch": null
+}
