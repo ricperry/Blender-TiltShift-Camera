@@ -9,9 +9,15 @@
     "history": "Original upstream history retained; detached release tag"
   },
   "linux_x64_libraries": {
+    "url": "https://projects.blender.org/blender/lib-linux_x64.git",
     "gitlink": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
     "checkout": "work/blender/lib/linux_x64",
     "lfs": "716 library LFS objects acquired; git lfs fsck passed during initialization"
+  },
+  "dependency_versions": {
+    "path": "build_files/build_environment/cmake/versions.cmake",
+    "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+    "sha256": "dc57206aea3914e6c743d7467284b2deaa21792d501f697d809405347da84c86"
   },
   "developer_handbook": {
     "url": "https://projects.blender.org/blender/blender-developer-docs.git",

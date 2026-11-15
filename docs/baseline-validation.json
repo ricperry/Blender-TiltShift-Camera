@@ -1,0 +1,94 @@
+{
+  "license": "GPL-3.0-or-later",
+  "date": "2026-11-14",
+  "scope": "M1 unmodified Blender baseline only; native tilt-shift absent",
+  "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+  "blender_version": "5.3.0",
+  "blender_build_hash": "02f0899d78e3",
+  "installed_host_binary_sha256": "a7e29865c5203192da0f371939c1a3be37457238ad840958b36f165924f8557b",
+  "library_commit": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+  "dependency_versions_sha256": "dc57206aea3914e6c743d7467284b2deaa21792d501f697d809405347da84c86",
+  "generator_sha256": "228f5fc7fd573cb926b56b3a8f8522cc2fa6041de43efca10eac0307a8cb1fe5",
+  "native_feature_present": false,
+  "validate_exit_code": 0,
+  "scenes_save_reopen_exit_code": 0,
+  "require_feature_expected_exit_code": 1,
+  "width": 320,
+  "height": 240,
+  "samples": 32,
+  "seed": 71,
+  "denoising": false,
+  "adaptive_sampling": false,
+  "cpu_hip_comparison": {
+    "scene": "measurable-targets",
+    "rmse_rgb": 3.2579754079794e-05,
+    "max_abs_rgb": 0.008577823638916016,
+    "rmse_limit": 0.003,
+    "max_abs_limit": 0.02,
+    "passed": true
+  },
+  "optical_reference": {
+    "checks": 14120,
+    "deterministic_rays": 1620,
+    "ctest_passed": 1
+  },
+  "artifacts": [
+    {
+      "scene": "grid",
+      "backend": "cpu",
+      "devices": [
+        "CPU"
+      ],
+      "exit_code": 0,
+      "metadata": "work/renders/baseline/cpu/grid.json",
+      "exr_sha256": "da2933e184fb57ae4963351bc33dde548736a558a342f618bfca95155dec1bf5",
+      "pixels_sha256": "3d5447315b70666ed8d9249c8c8e25ba16e197da0f5f1e4f7562c710d45bce32"
+    },
+    {
+      "scene": "tabletop",
+      "backend": "cpu",
+      "devices": [
+        "CPU"
+      ],
+      "exit_code": 0,
+      "metadata": "work/renders/baseline/cpu/tabletop.json",
+      "exr_sha256": "2c38cbb27b923af5b1503653b3893bc9615840ab6c53d3446d02dcefc00a9cf2",
+      "pixels_sha256": "839b569e4f160b21a2e6e70e5e43e0b6b4f46a90d7783195e5ad994109f2e91e"
+    },
+    {
+      "scene": "facade",
+      "backend": "cpu",
+      "devices": [
+        "CPU"
+      ],
+      "exit_code": 0,
+      "metadata": "work/renders/baseline/cpu/facade.json",
+      "exr_sha256": "04b6dd650d73da5d7d5095fbdf48c3d5af33e9f12b75c460507766df5fe67793",
+      "pixels_sha256": "ba19b4b4b1669a4007cdf2cbcc5da64722329a84d7e5c64aa454eadab5512066"
+    },
+    {
+      "scene": "measurable-targets",
+      "backend": "cpu",
+      "devices": [
+        "CPU"
+      ],
+      "exit_code": 0,
+      "metadata": "work/renders/baseline/cpu/measurable-targets.json",
+      "exr_sha256": "29767043a0e664babc2672e9c8902dcef27fb7be49965a1bc2b3ce6e371fe2ac",
+      "pixels_sha256": "ee6beb86d3e4524e0458d11a6585daf777674af415b9030e47e64311396a9d62"
+    },
+    {
+      "scene": "measurable-targets",
+      "backend": "hip",
+      "devices": [
+        "AMD Radeon RX 6900 XT"
+      ],
+      "exit_code": 0,
+      "metadata": "work/renders/baseline/hip/measurable-targets.json",
+      "exr_sha256": "d97ac17660980247ca2d9ceca71af6f0a92556de67566e9d74d1c07173836b12",
+      "pixels_sha256": "f3a4d101e136ceee45dd12fbcd49aab4d609fd593fa0f9e9caf512cce0585e8a"
+    }
+  ],
+  "visual_inspection": "Parent inspected all four CPU previews and HIP targets; facade reframed with margin",
+  "limits": "No native feature physics, disabled-feature regression, new-camera HIP, GUI or production acceptance"
+}

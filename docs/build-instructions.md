@@ -43,6 +43,10 @@ without changing Blender's source HEAD. The script checks the library LFS store
 with `git lfs fsck`; verify-source also checks its checkout commit. All optional
 Blender regression media remain deferred. Some upstream build/test suites require
 additional explicitly acquired media. Keep upstream/dependency license notices.
+The authoritative complete dependency version list is Blender's
+[`build_files/build_environment/cmake/versions.cmake` at the pinned commit](https://projects.blender.org/blender/blender/src/commit/02f0899d78e374b63e7181d9061e1f7ab03419cc/build_files/build_environment/cmake/versions.cmake).
+The matching precompiled library origin and exact Git pin are recorded in
+[source-revision.json](source-revision.json); individual versions are not duplicated here.
 
 ## Native headless CPU baseline
 
@@ -63,8 +67,25 @@ runtime availability does not establish a HIP render. Installation stays in
 `work/install-blender-cpu`; the Blender build normally places its runnable binary
 at `work/install-blender-cpu/blender`, the script's default. The raw build artifact
 is `work/build-blender-cpu/bin/blender` and may lack installed Python/libraries.
-Pass `--blender /absolute/path` when needed. Background invocations isolate user
-configuration in `work/blender-user-config` and caches in `work/cache`.
+Pass `--blender /absolute/path` when needed. Background invocations disable audio
+with `-noaudio` and isolate all user resources in `work/blender-user`, with explicit
+extensions/scripts/datafiles overrides beneath it, configuration in
+`work/blender-user-config` and caches in `work/cache`. These directories are created
+before launch because Blender's environment-path overrides can require them to
+exist. No personal configuration or extension directory is used.
+
+Four jobs are deliberate: a sixteen-job initialization attempt hit its 22 GiB
+systemd memory cap and was terminated; the incremental build was resumed at four
+jobs. For an optional bounded build on this 32 GB host, run the existing command
+inside a user scope (no system configuration change):
+
+```sh
+systemd-run --user --scope --unit=blender-tiltshift-build-lowmem -p MemoryHigh=16G -p MemoryMax=18G -p MemorySwapMax=0 -p CPUQuota=400% python3 scripts/dev.py build cpu --jobs 4
+```
+
+Use a different unit name if that scope is already active. A memory limit can
+terminate the build; preserve sources and completed outputs, diagnose the log
+and resume with suitable concurrency. This does not change the CLI's defaults.
 
 Headless configure succeeded on this host without installing system packages.
 `configure cpu --gui` requests a window-system build and additional development
@@ -77,6 +98,24 @@ At M1 native tilt-shift fields are absent; baseline smoke is explicitly reported
 `tilt_shift_enabled`; adapt the probe once native integration finalizes its schema. Presence alone
 will still not establish physical correctness. Render commands currently render
 upstream optics; they are infrastructure for later acceptance scenes.
+
+Initialization runtime probes succeeded outside the tool sandbox in sequential
+user scopes capped at 4 GB, zero swap and two CPU cores' quota, for example:
+
+```sh
+systemd-run --user --scope --unit=blender-tiltshift-validate -p MemoryMax=4G -p MemorySwapMax=0 -p CPUQuota=200% python3 scripts/dev.py validate
+```
+
+Use a distinct unit name for each active scope. A user scope bounds resources;
+it does not itself remove an enclosing tool sandbox. On this host sandbox IPC
+denial caused PulseAudio shutdown stalls even with `-noaudio`; authorized
+execution outside that sandbox resolved process shutdown. Resource/configuration
+isolation remains active in either case. No GUI or personal desktop was opened.
+Final validation and all four scene save/reopen checks exited 0; native-feature
+required validation exited 1 as expected. Four CPU scene renders and the actual
+RX 6900 XT HIP targets render also exited 0. See the
+[baseline evidence](baseline-validation.json) for exact settings, pins, hashes
+and measured comparison errors. These are unmodified camera baseline checks.
 
 ## HIP and comparisons
 
@@ -96,8 +135,26 @@ disable ahead-of-time kernel compilation. To exercise just that compiler step:
 CCACHE_DIR="$PWD/work/ccache" /usr/bin/cmake --build work/build-blender-hip --target cycles_kernel_hip --parallel 1
 ```
 
+For the initialization baseline probe, the complete headless host executable was
+built once with HIP runtime enabled. Only the gfx1030 kernel target was built in
+the HIP tree, then installed into that same isolated host runtime:
+
+```sh
+install -D -m 644 work/build-blender-hip/intern/cycles/kernel/device/hip/kernel_gfx1030.fatbin.zst work/install-blender-cpu/5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst
+sha256sum work/install-blender-cpu/5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst
+python3 scripts/dev.py render --backend hip --scene measurable-targets --label baseline
+```
+
+The installed hash must equal the kernel artifact hash in the initialization
+ledger. This uses the same executable/source/generator for CPU and HIP comparisons
+without compiling a second complete host. It does not mean a full HIP-tree
+Blender build was completed. The runtime path above is verified for pinned 5.3's
+portable installation; never copy the kernel into a system Blender installation.
+
 The render runner requires a real HIP device and disables CPU fallback. EXR,
-RGBA float data and metadata are stored together under `work/renders`. Compare
+RGBA float data and metadata are stored together under `work/renders`. It also
+writes an 8-bit PNG through Blender's scene view transform for visual inspection;
+that preview is display-only and never used for numerical comparison. Compare
 checks scene/dimensions/seed/samples, generator hash, camera settings, enabled
 state and Blender version/build hash, then RGB RMSE and maximum absolute difference;
 alpha is excluded. Pixel SHA-256 must match metadata, so interrupted or altered

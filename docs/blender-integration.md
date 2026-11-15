@@ -20,13 +20,54 @@ not a statement that native integration is complete.
 These symbols were checked against the pin; they remain internal upstream APIs.
 `source/blender/blenkernel/intern/camera.cc::camera_init_data` uses
 `INIT_DEFAULT_STRUCT_AFTER`, so new-camera defaults belong in DNA member
-initializers. Default enabled state must be false, movements zero and coverage
-unbounded; focal/sensor/focus/aperture values reuse existing camera controls.
+initializers. Proposed enabled state is false and new angular movements zero;
+existing shift values are preserved. Coverage is unbounded in the optical
+reference; the proposed native defaults and unresolved
+coverage UI encoding are described below. Focal/sensor/focus/aperture values reuse
+existing camera controls.
 Older files require explicit defaults in
 `source/blender/blenloader/intern/versioning_500.cc::blo_do_versions_500`, with
 schema/member guards appropriate to the fork; version numbers alone must not
 accidentally enable old cameras or reinterpret unset fields. Test old-file loads
 and round trips rather than assuming new-ID initialization covers deserialization.
+
+## Proposed native controls (M2/M3)
+
+This table makes the requested interface reviewable; **none of these new native
+fields or overlays is implemented**. Names are UI labels, not finalized RNA
+identifiers. Angular controls display degrees and store radians. Production
+angle/shift limits remain subject to float-domain and rendered validation rather
+than an arbitrary range chosen here.
+
+| Requested control | Proposed meaning / storage | Proposed disabled-safe default |
+|---|---|---|
+| Enable Tilt-Shift | Opt into physical Cycles ray generation; proposed probe `tilt_shift_enabled` | False; use original upstream branch |
+| Lens Tilt (degrees) | Fixed-X optical rotation Rx | 0° |
+| Lens Swing (degrees) | Fixed-Y optical rotation Ry | 0° |
+| Tilt/Swing Axis Rotation (degrees) | Fixed-Z rotation Rz of the movement/aperture frame; Rx first, then Ry, then Rz | 0° |
+| Horizontal Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shiftx`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
+| Vertical Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shifty`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
+| Image Circle Diameter (millimeters) | Twice the prescribed rear-focal-plane angular coverage radius from the [optical model](optical-model.md#aperture-blur-and-coverage) | Reference radius is +infinity (unbounded); native UI encoding remains to be settled |
+| Display Focus Plane | Viewport overlay derived from the actual sharp-focus plane, including the plane-at-infinity case | False |
+| Display Lens Plane | Viewport overlay derived from tilted lens centre, normal and aperture frame | False |
+| Display Image Circle | Viewport coverage overlay derived from the angular stop and sensor intersection | False |
+
+Reuse existing `Camera.lens`, `sensor_x`, `sensor_y`, `sensor_fit`, `dof.focus_object`,
+`dof.focus_subtarget`, `dof.focus_distance`, `dof.use_dof`, `dof.aperture_fstop`,
+`dof.aperture_blades`, `dof.aperture_rotation` and `dof.aperture_ratio` rather than
+introducing independent focal length, sensor, focus or aperture values. Focus
+remains meaningful for enabled physical breathing even when aperture/DOF is off.
+Physical shift controls must update the existing dimensionless shift fields;
+serialization must never hold two competing shift states. Their exact signed
+conversion must be tested across sensor fit, pixel aspect and raster orientation.
+
+A finite user-specified image-circle diameter is converted from mm to metres and
+halved before optical sampling. It is defined at the rear focal plane, not as a
+fixed circle on the moving sensor; at finite focus or tilt its sensor footprint
+changes. An unbounded reference default must not be mistaken for an implemented
+RNA infinity value or a finite native default. Choose an explicit usable UI
+representation during M3 and validate migration/serialization. The three display
+toggles affect visualization only; they must not alter rendered rays or exposure.
 
 Existing perspective rays derive `Pcamera` from `rastertocamera`, including sensor
 fit, pixel aspect, viewplane shift, viewport border and crop. `blender_camera_viewplane`
@@ -68,3 +109,10 @@ viewport mismatch and test serialization, animation and dependency invalidation.
 The scripts reserve `tilt_shift_enabled` as a **proposed** future RNA capability
 probe. Current upstream lacks it. `--require-feature` therefore fails clearly;
 the probe must be updated with the final native identifier and actual optical tests.
+
+The pinned upstream `tests/files/render/camera/camera_depth_of_field.blend` and
+`camera_polygonal_bokeh.blend` were opened read-only with the built Blender.
+They contain enabled perspective DOF fixtures with a 35 mm circular aperture and
+a 50 mm three-blade aperture respectively. Successful loading is inventory
+evidence, not an upstream render-regression pass. The local inspection log is
+`work/upstream-scene-inventory.log`.

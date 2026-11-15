@@ -4,9 +4,11 @@ Native, physically based architectural tilt-shift camera development for Blender
 5.3 and Cycles. The target is an ideal tilted thin lens with Scheimpflug focusing,
 physical aperture sampling, camera shift, and image-circle clipping.
 
-This project is under development. It does not yet provide a modified Blender
-binary. CPU is the numerical reference; AMD HIP support requires a real build and
-render comparison before it can be claimed.
+The M1 baseline environment is ready: the unmodified pinned Blender and gfx1030
+kernel built, four CPU scenes rendered, and the actual CPU/HIP targets comparison
+passed on RX 6900 XT. Native tilt-shift integration remains unimplemented; no
+modified camera binary or new-camera HIP support is claimed. CPU is the numerical
+reference. See [baseline validation](docs/baseline-validation.json) for evidence.
 
 Upstream: https://projects.blender.org/blender/blender.git
 

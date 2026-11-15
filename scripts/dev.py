@@ -22,7 +22,11 @@ LIB_PIN = "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a"
 UPSTREAM = "https://projects.blender.org/blender/blender.git"
 SCENES = ("grid", "tabletop", "facade", "measurable-targets")
 ENV = dict(os.environ, CCACHE_DIR=str(WORK / "ccache"),
+           BLENDER_USER_RESOURCES=str(WORK / "blender-user"),
            BLENDER_USER_CONFIG=str(WORK / "blender-user-config"),
+           BLENDER_USER_EXTENSIONS=str(WORK / "blender-user/extensions"),
+           BLENDER_USER_SCRIPTS=str(WORK / "blender-user/scripts"),
+           BLENDER_USER_DATAFILES=str(WORK / "blender-user/datafiles"),
            XDG_CACHE_HOME=str(WORK / "cache"))
 ASSET_PATTERNS = ("assets/*", "release/datafiles/*",
                   "scripts/startup/bl_app_templates_system/*", "tests/files/render/camera/*")
@@ -216,7 +220,10 @@ def main():
         run(["/usr/bin/cmake", "--build", WORK / "build-optics-ninja", "--parallel", "4"])
         run(["/usr/bin/ctest", "--test-dir", WORK / "build-optics-ninja", "--output-on-failure"])
     elif args.command in ("validate", "scenes", "render"):
-        cmd = [args.blender.resolve(), "--background", "--factory-startup", "--python-exit-code", "1",
+        for name in ('BLENDER_USER_RESOURCES', 'BLENDER_USER_CONFIG', 'BLENDER_USER_EXTENSIONS',
+                     'BLENDER_USER_SCRIPTS', 'BLENDER_USER_DATAFILES', 'XDG_CACHE_HOME'):
+            Path(ENV[name]).mkdir(parents=True, exist_ok=True)
+        cmd = [args.blender.resolve(), "--background", "-noaudio", "--factory-startup", "--python-exit-code", "1",
                "--python", ROOT / "scripts/blender_reference.py", "--", args.command]
         if args.require_feature:
             cmd += ["--require-feature"]

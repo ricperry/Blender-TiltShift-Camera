@@ -6,6 +6,14 @@ The readable generator is [blender_reference.py](../scripts/blender_reference.py
 One Blender unit is one metre; camera focal length is 50 mm, horizontal sensor
 width 36 mm and aperture f/4. Renders use 320×240, 32 samples, seed 71, no adaptive
 sampling or denoising, fixed four CPU threads, and linear 32-bit RGBA EXR.
+Each render also produces a display-only 8-bit PNG using Blender's scene view
+transform. Inspect all four previews after actual rendering; use EXR/float data
+for numerical evidence. Baseline images do not establish native tilt-shift physics.
+Initialization generated/saved/reopened all four scenes and rendered all four on
+CPU, with an additional HIP targets render. Parent visual inspection covered all
+four CPU fixtures and the HIP targets; the facade includes the complete building
+with margin. Exact output hashes and comparison results are in
+[baseline-validation.json](../docs/baseline-validation.json).
 
 | Fixture | Geometry | Future physical acceptance purpose |
 |---|---|---|

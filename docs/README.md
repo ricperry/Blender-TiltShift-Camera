@@ -8,3 +8,4 @@
 * [Source revision manifest](source-revision.json)
 * [Milestone roadmap](roadmap.md)
 * [Initialization evidence and remaining limits](initialization-status.md)
+* [Machine-readable baseline validation](baseline-validation.json)

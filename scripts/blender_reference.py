@@ -21,7 +21,6 @@ PIN = "02f0899d78e374b63e7181d9061e1f7ab03419cc"
 def material(name, color):
     result = bpy.data.materials.new(name)
     result.diffuse_color = (*color, 1)
-    result.use_nodes = True
     result.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = (*color, 1)
     result.node_tree.nodes["Principled BSDF"].inputs["Roughness"].default_value = 0.8
     return result
@@ -61,7 +60,6 @@ def make_scene(name):
     scene.unit_settings.system = 'METRIC'
     scene.unit_settings.scale_length = 1.0
     scene.world = bpy.data.worlds.new("constant-world")
-    scene.world.use_nodes = True
     scene.world.node_tree.nodes['Background'].inputs['Color'].default_value = (0.15, 0.15, 0.15, 1)
     scene.world.node_tree.nodes['Background'].inputs['Strength'].default_value = 0.5
     gray = material("neutral", (0.5, 0.5, 0.5))
@@ -86,7 +84,7 @@ def make_scene(name):
             for col in range(5):
                 box(f"window-{row}-{col}", ((col-2)*0.9, 0.88, 0.5+row*0.9),
                     (0.5, 0.02, 0.5), dark)
-        location, target = (4, -10, 1.7), (0, 1, 3)
+        location, target = (4, -13, 1.7), (0, 1, 3)
     else:
         for index, depth in enumerate((0, 1, 2, 3, 4)):
             box(f"target-at-y-{depth}m", ((index-2)*0.6, depth, 0.7), (0.4, 0.04, 1.4), white)
@@ -174,12 +172,24 @@ def render(args):
     temporary_pixels = temporary.with_suffix('.rgba32f')
     with temporary_pixels.open('wb') as stream:
         values.tofile(stream)
+    preview = output.with_suffix('.png')
+    temporary_preview = temporary.with_suffix('.png')
+    settings = scene.render.image_settings
+    original_format, original_depth = settings.file_format, settings.color_depth
+    try:
+        settings.file_format, settings.color_depth = 'PNG', '8'
+        image.save_render(filepath=str(temporary_preview), scene=scene)
+    finally:
+        settings.file_format, settings.color_depth = original_format, original_depth
     metadata = dict(scene=args.scene, width=width, height=height, seed=71, samples=32,
                     backend=args.backend, devices=devices, blender_version=bpy.app.version_string,
                     blender_build_hash=bpy.app.build_hash.decode(), feature_present=present,
                     feature_enabled=bool(getattr(scene.camera.data, FEATURE)) if present else False,
                     pixels=pixel_file.name,
                     pixels_sha256=hashlib.sha256(temporary_pixels.read_bytes()).hexdigest(),
+                    preview=preview.name, preview_purpose='display only; excluded from pixel comparison',
+                    preview_view_transform=scene.view_settings.view_transform,
+                    preview_look=scene.view_settings.look,
                     byteorder=sys.byteorder, mean_rgb=sum(rgb)/len(rgb), max_rgb=max(rgb),
                     generator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                     camera_settings=dict(lens=scene.camera.data.lens,
@@ -192,6 +202,7 @@ def render(args):
     temporary_metadata.write_text(json.dumps(metadata, indent=2) + '\n')
     temporary.replace(output)
     temporary_pixels.replace(pixel_file)
+    temporary_preview.replace(preview)
     temporary_metadata.replace(output.with_suffix('.json'))
     print(json.dumps(metadata, indent=2))
 
