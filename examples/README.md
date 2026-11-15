@@ -1,5 +1,9 @@
 # Reference scenes
 
+For a real city-scale native-tilt versus ordinary-DOF comparison, see
+[Full-scale Meridian](FULL_SCALE_CITY.md). Three matched 50 mm f/2.8 cameras
+keep DOF enabled across ordinary, native-zero and native-tilted views.
+
 For a detailed, animated miniature city with six native-camera experiments, see
 [Little Meridian](CITY.md). Its generator creates a portable `.blend` under
 `work/examples/harbor-city/`; the fixtures below serve separate validation work.
