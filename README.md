@@ -42,7 +42,7 @@ buildings, cars and people, with three matched 50 mm f/2.8 cameras. All three
 keep depth of field enabled. The saved file defaults to CPU rendering and the
 native tilted camera; press **F12** to render.
 
-| Ordinary perspective + DOF | Native camera, zero angles | Native camera, +5° tilt |
+| Ordinary perspective + DOF | Native (tilt-shift) camera, zero angles | Native (tilt-shift) camera, +5° tilt |
 | --- | --- | --- |
 | [![Ordinary depth of field](examples/full-scale-city/ordinary-dof.png)](examples/full-scale-city/ordinary-dof.png) | [![Native zero angles](examples/full-scale-city/native-zero.png)](examples/full-scale-city/native-zero.png) | [![Native lens tilt](examples/full-scale-city/native-tilt.png)](examples/full-scale-city/native-tilt.png) |
 
