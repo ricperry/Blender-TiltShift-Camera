@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+cmake_minimum_required(VERSION 3.16)
+project(tilt_shift_optics LANGUAGES CXX)
+
+add_library(tilt_shift_optics src/optics/thin_lens.cpp)
+target_include_directories(tilt_shift_optics PUBLIC src)
+target_compile_features(tilt_shift_optics PUBLIC cxx_std_20)
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(tilt_shift_optics PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+include(CTest)
+if(BUILD_TESTING)
+  add_executable(optics_tests tests/optics_tests.cpp)
+  target_link_libraries(optics_tests PRIVATE tilt_shift_optics)
+  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(optics_tests PRIVATE -Wall -Wextra -Wpedantic)
+  endif()
+  add_test(NAME optics_invariants COMMAND optics_tests)
+endif()
