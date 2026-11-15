@@ -1,5 +1,9 @@
 # Reference scenes
 
+For a detailed, animated miniature city with six native-camera experiments, see
+[Little Meridian](CITY.md). Its generator creates a portable `.blend` under
+`work/examples/harbor-city/`; the fixtures below serve separate validation work.
+
 Generate the four named fixtures with `python3 scripts/dev.py scenes` after
 building the pinned Blender. Files are written as `work/scenes/<name>.blend`.
 The readable generator is [blender_reference.py](../scripts/blender_reference.py).
