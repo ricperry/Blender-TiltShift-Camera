@@ -2,8 +2,11 @@
 # Pinned Blender integration map
 
 All paths below are relative to `work/blender` at the
-[source pin](source-revision.json). This is a source map and implementation plan,
-not a statement that native integration is complete.
+[source pin](source-revision.json). M2 now implements the native CPU patch;
+[its implemented conventions and acceptance limits](m2-native-camera.md) take
+precedence over the original proposed UI map below. The bounded static CPU gate
+passed; see [measured evidence](m2-validation.json). M3 panels and overlays are not
+implemented.
 
 | Layer | Path and existing entry point | Required work |
 |---|---|---|
@@ -33,9 +36,10 @@ and round trips rather than assuming new-ID initialization covers deserializatio
 
 ## Proposed native controls (M2/M3)
 
-This table makes the requested interface reviewable; **none of these new native
-fields or overlays is implemented**. Names are UI labels, not finalized RNA
-identifiers. Angular controls display degrees and store radians. Production
+This table records the requested M2/M3 interface. M2 implements the enable,
+three angle fields and image-circle diameter programmatically; M3 still owns
+physical shift views, panels and visualization toggles. Implemented RNA identifiers
+are listed in [the M2 guide](m2-native-camera.md). Names below are UI labels. Angular controls display degrees and store radians. Production
 angle/shift limits remain subject to float-domain and rendered validation rather
 than an arbitrary range chosen here.
 
@@ -47,7 +51,7 @@ than an arbitrary range chosen here.
 | Tilt/Swing Axis Rotation (degrees) | Fixed-Z rotation Rz of the movement/aperture frame; Rx first, then Ry, then Rz | 0° |
 | Horizontal Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shiftx`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
 | Vertical Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shifty`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
-| Image Circle Diameter (millimeters) | Twice the prescribed rear-focal-plane angular coverage radius from the [optical model](optical-model.md#aperture-blur-and-coverage) | Reference radius is +infinity (unbounded); native UI encoding remains to be settled |
+| Image Circle Diameter (millimeters) | Twice the prescribed rear-focal-plane angular coverage radius from the [optical model](optical-model.md#aperture-blur-and-coverage) | Native 0 means unbounded; positive finite values specify diameter |
 | Display Focus Plane | Viewport overlay derived from the actual sharp-focus plane, including the plane-at-infinity case | False |
 | Display Lens Plane | Viewport overlay derived from tilted lens centre, normal and aperture frame | False |
 | Display Image Circle | Viewport coverage overlay derived from the angular stop and sensor intersection | False |
@@ -64,9 +68,9 @@ conversion must be tested across sensor fit, pixel aspect and raster orientation
 A finite user-specified image-circle diameter is converted from mm to metres and
 halved before optical sampling. It is defined at the rear focal plane, not as a
 fixed circle on the moving sensor; at finite focus or tilt its sensor footprint
-changes. An unbounded reference default must not be mistaken for an implemented
-RNA infinity value or a finite native default. Choose an explicit usable UI
-representation during M3 and validate migration/serialization. The three display
+changes. Native RNA encodes the unbounded reference default as zero, not IEEE infinity.
+M3 must present that special value clearly; persistence/migration is part of M2
+validation. The three display
 toggles affect visualization only; they must not alter rendered rays or exposure.
 
 Existing perspective rays derive `Pcamera` from `rastertocamera`, including sensor
@@ -78,11 +82,11 @@ alone would lose these behaviors. Existing FOV is
 The enabled physical branch must deliberately change finite-focus framing.
 
 `blender_camera_matrix` flips Blender's camera −Z to Cycles +Z and removes object
-scale. DOF radius is `lens_mm*1e-3/(2*fstop)`. Focus objects use absolute axial
+scale. DOF radius is `lens_mm*1e-3/(2*fstop)`. Legacy focus objects use absolute axial
 camera-Z distance, including bone targets; without an object, focus_distance is
-used directly. Existing synchronization zeros focus distance when DOF is disabled,
-so physical breathing requires a separate enabled-mode focus value even for a
-pinhole. Aperture sampling already provides circle/polygon and anamorphic ratio;
+used directly. M2 preserves the full object/bone target and solves its physical
+sensor distance. It also synchronizes manual focus while DOF is off, so physical
+breathing remains meaningful for a pinhole. Aperture sampling already provides circle/polygon and anamorphic ratio;
 the reference currently models a circular aperture only.
 
 The legacy differentials deliberately ignore DOF. New chief-ray derivatives must
@@ -106,9 +110,9 @@ not automatically made physically correct by a Cycles kernel patch. A headless
 build provides no UI/Wayland or human-workflow evidence. M3 must communicate any
 viewport mismatch and test serialization, animation and dependency invalidation.
 
-The scripts reserve `tilt_shift_enabled` as a **proposed** future RNA capability
-probe. Current upstream lacks it. `--require-feature` therefore fails clearly;
-the probe must be updated with the final native identifier and actual optical tests.
+The scripts use `tilt_shift_enabled` as the native RNA capability probe. The
+unmodified upstream baseline lacks it; the M2 patch implements it. Presence alone
+does not pass the quantitative [native fixtures](m2-native-camera.md).
 
 The pinned upstream `tests/files/render/camera/camera_depth_of_field.blend` and
 `camera_polygonal_bokeh.blend` were opened read-only with the built Blender.

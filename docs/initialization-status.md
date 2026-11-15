@@ -1,6 +1,10 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Initialization evidence
 
+Update 2026-11-14: the bounded static native CPU M2 foundation is now complete;
+see [M2 evidence](m2-validation.json) and [native conventions](m2-native-camera.md).
+The snapshot below remains the historical unmodified M1 initialization record.
+
 Snapshot: 2026-11-14. This ledger distinguishes implemented geometry from future
 native camera and hardware acceptance. See [source-revision.json](source-revision.json)
 for exact provenance and [baseline-validation.json](baseline-validation.json) for

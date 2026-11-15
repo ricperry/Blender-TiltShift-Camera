@@ -117,6 +117,31 @@ RX 6900 XT HIP targets render also exited 0. See the
 [baseline evidence](baseline-validation.json) for exact settings, pins, hashes
 and measured comparison errors. These are unmodified camera baseline checks.
 
+## M2 native CPU patch
+
+Keep the baseline executable/resources in `work/install-blender-baseline`.
+Reconfigure the CPU tree for a distinct native prefix before building/installing:
+
+```sh
+/usr/bin/cmake -S work/blender -B work/build-blender-cpu \
+  -DCMAKE_INSTALL_PREFIX="$PWD/work/install-blender-m2"
+```
+
+The current source checkout may contain the reviewed native patch while HEAD
+stays pinned. Preserve unrelated dirty source; never reset or checkout over it.
+Use the four-job/18 GiB build scope above and install only to the native prefix.
+The normal `dev.py configure cpu` command resets the prefix to
+`work/install-blender-cpu`; explicitly reapply the M2 prefix when reconfiguring.
+Do not copy the baseline HIP fatbin into the native install: device data layout
+changed, and enabled native GPU use is deliberately rejected until M4.
+
+`python3 scripts/dev.py patch` exports the tracked source diff plus the explicitly
+reviewed new `intern/cycles/kernel/camera/tilt_shift_math.h`, checks that its test
+mirror matches, and rejects other untracked source. It does not stage or commit
+upstream. See [native camera validation](m2-native-camera.md) for quantitative
+fixtures, old-file migration/roundtrip commands and current limitations. Continue
+using the immutable M1 generator on both binaries for disabled bitwise parity.
+
 ## HIP and comparisons
 
 ```sh

@@ -11,5 +11,20 @@ renders are explicitly upstream baseline smoke evidence. `--require-feature`
 fails when the proposed native RNA property is absent. HIP render selection
 fails without an actual HIP device and never enables CPU fallback.
 
+`blender_m2_validation.py` is a separate quantitative native CPU runner. It
+measures breathing/shift/fit centroids, off-axis focus-object sharpness, physical
+CoC, tilted-plane sharpness, image-circle masks, volume initialization and clip
+planes, plus explicit rejection and persistence/migration. EXR/raw linear pixels
+and hashed JSON evidence go beneath ignored `work/`; use `--case` for bounded
+checks. `run_m2_guards.py` validates the expected Blender exit one only against
+a fresh complete, hash-matched rejection record and itself exits zero on success.
+Positive fixture cases exit zero directly; `--case all` includes expected failing
+renders and therefore has Blender's sticky error exit. See
+[native reproduction](../docs/m2-native-camera.md).
+
+`dev.py patch` exports the native changes without staging upstream, including
+only the specifically reviewed new mathematical header; unknown untracked source
+files and mismatched test/kernel header copies are rejected.
+
 No system installation, history rewrite, push or desktop interaction is included.
 Generated source/build/library/render/scene artifacts stay under ignored `work/`.

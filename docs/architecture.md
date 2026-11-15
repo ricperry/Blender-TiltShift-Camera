@@ -30,10 +30,10 @@ does not change optical physics. Angles use radians, with
 `Rz(axis_rotation) Ry(swing) Rx(tilt)`: the rightmost Rx acts first about fixed X,
 then Ry about fixed Y, then Rz about fixed Z.
 
-Shift in M1 moves the sensor rectangle relative to a fixed lens centre; it is
-not a world-space lens translation. UI names/defaults and mapping of Blender's
-dimensionless shift to sensor displacement remain M2 decisions, to be verified
-with framing/sign fixtures. Coverage is an ideal binary angular stop at the rear
+Shift in M1 moves the sensor rectangle relative to a fixed lens centre. M2 fixes
+the body/sensor anchor and additionally translates the actual lens centre using
+the existing sensor-fit-aware shift; see [native conventions](m2-native-camera.md).
+The physical shift RNA views and viewport UI remain M3 work. Coverage is an ideal binary angular stop at the rear
 focal plane, not a realistic barrel/vignetting model. Ray weights in M1 establish
 coverage only; radiometric throughput/PDF and exposure await native integration.
 

@@ -243,8 +243,21 @@ def main():
         if not patch.strip():
             raise ValueError("No tracked native changes; refusing empty patch")
         untracked = run(["git", "ls-files", "--others", "--exclude-standard"], SOURCE, True)
-        if untracked.strip():
-            raise ValueError("Untracked source files exist; review and stage intended new files first")
+        # One explicitly reviewed new header is part of M2; export it without
+        # staging or committing anything in the pinned upstream checkout.
+        native_header = "intern/cycles/kernel/camera/tilt_shift_math.h"
+        unknown = set(untracked.splitlines()) - {native_header}
+        if unknown:
+            raise ValueError(f"Unreviewed untracked source files: {sorted(unknown)}")
+        if (SOURCE / native_header).read_bytes() != (ROOT / "src/native/tilt_shift_math.h").read_bytes():
+            raise ValueError("Native test and kernel mathematical headers differ")
+        if native_header in untracked.splitlines():
+            new_file = subprocess.run(["git", "diff", "--no-index", "--binary", "--",
+                                       "/dev/null", native_header], cwd=SOURCE, env=ENV,
+                                      text=True, stdout=subprocess.PIPE, check=False)
+            if new_file.returncode != 1:
+                raise ValueError("Could not export reviewed native header")
+            patch += new_file.stdout
         target = ROOT / "patches/blender-v5.3.0-tilt-shift.patch"
         target.write_text(patch)
         print(target)

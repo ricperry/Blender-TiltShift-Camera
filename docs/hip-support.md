@@ -1,8 +1,13 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # AMD HIP support and evidence
 
+The [M2 static CPU camera foundation](m2-validation.json) is implemented and
+validated. Enabled GPU rendering is explicitly rejected until M4: new native
+device data and ray code require a fresh RDNA2 build and render. The preserved
+M1 HIP fatbin must not be copied into the M2 installation.
+
 HIP support for the new tilt-shift camera remains a target. The unmodified
-Blender baseline has now rendered successfully on actual RDNA2 hardware.
+Blender baseline rendered successfully on actual RDNA2 hardware.
 Initialization host inventory:
 Fedora 45, Radeon RX 6900 XT (RDNA2 / gfx1030), ROCm/HIP 7.2.53211,
 GCC 16.2.1, CMake 4.3 and Ninja 1.13.2, approximately 32 GB system RAM.
