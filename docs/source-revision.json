@@ -29,5 +29,15 @@
     "initial_commit": "eb2303109632d6f11bc4ad6a0110c86883728fa4"
   },
   "source_lfs": "Required Linux runtime assets acquired; optional regression media deferred",
-  "native_feature_patch": null
+  "native_feature_patch": null,
+  "native_feature_patch_note": "The null field above is the historical initialization state; current source modifications are recorded below.",
+  "current_native_feature_patch": {
+    "path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+    "sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+    "base_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+    "cumulative": true,
+    "modified_upstream_files": 16,
+    "new_upstream_files": 1,
+    "application": "Apply M4 once to the exact clean pin; do not stack M2/M3/M4 patches."
+  }
 }

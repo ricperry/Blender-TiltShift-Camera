@@ -1,5 +1,14 @@
 # Development scripts
 
+`prepare_blender.py` prepares the current cumulative M4 source patch for a full
+build: it delegates official pinned source acquisition/verification to `dev.py`,
+applies only to a clean exact pin, accepts the exact existing unstaged patch,
+and refuses other source changes. Its default downloads source only;
+`--with-dependencies` also downloads large pinned libraries and required LFS
+assets. It does not build or install packages. Run
+`python3 scripts/prepare_blender.py --help` and follow the
+[fresh M4 GUI build](../docs/build-instructions.md#current-m4-fresh-gui-build).
+
 `dev.py` is a Python standard-library CLI. Run `python3 scripts/dev.py --help`.
 It checks tools, acquires/verifies official sources and libraries, configures
 isolated headless CPU/HIP trees, builds with bounded parallelism, runs optics,

@@ -1,0 +1,311 @@
+{
+  "license": "GPL-3.0-or-later",
+  "blender_tag": "v5.3.0",
+  "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+  "patch": "../../patches/blender-v5.3.0-tilt-shift-m4.patch",
+  "patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+  "generator": "../create_full_scale_city.py",
+  "generator_sha256": "5e74a0769a175e44ad02bccb9ce99d52daa9bcbd93340e128e5bf3f0916786ea",
+  "shared_generator": "../create_city.py",
+  "shared_generator_sha256": "9b3a715c32387f877e2c6819d52be558701aaa90c6af5c34a09c1f1ed85592f2",
+  "scene": "full-scale-city.blend",
+  "scene_sha256": "947c0d3baf979798ab1216b845ff9bdf0a2b01aa2dcaf4383e18b8035d22a19e",
+  "packaging": "Scene render output changed to //native-tilt.png; unused factory brushes and orphan datablocks removed. Used camera, geometry and animation retained; no external asset paths remain. PNG File metadata normalized to the scene basename; compressed image pixel payloads are byte-identical to original renders.",
+  "dimensions": {
+    "car_body": {
+      "min_m": [
+        -29.07857322692871,
+        -11.47499942779541,
+        1.0499999523162842
+      ],
+      "max_m": [
+        -25.778573989868164,
+        -9.925000190734863,
+        2.1500000953674316
+      ],
+      "dimensions_m": [
+        3.299999237060547,
+        1.5499992370605469,
+        1.1000001430511475
+      ]
+    },
+    "standing_person": {
+      "min_m": [
+        -7.209409713745117,
+        -0.63591068983078,
+        1.2352039813995361
+      ],
+      "max_m": [
+        -6.501983642578125,
+        0.02374497801065445,
+        3.1449999809265137
+      ],
+      "dimensions_m": [
+        0.7074260711669922,
+        0.6596556678414345,
+        1.9097959995269775
+      ]
+    },
+    "hotel_body": {
+      "min_m": [
+        -12.0,
+        17.25,
+        0.8999996185302734
+      ],
+      "max_m": [
+        -2.0,
+        28.75,
+        20.399999618530273
+      ],
+      "dimensions_m": [
+        10.0,
+        11.5,
+        19.5
+      ]
+    },
+    "hotel_cap": {
+      "min_m": [
+        -10.5,
+        19.0,
+        21.94999885559082
+      ],
+      "max_m": [
+        -3.5,
+        27.0,
+        22.350000381469727
+      ],
+      "dimensions_m": [
+        7.0,
+        8.0,
+        0.40000152587890625
+      ]
+    }
+  },
+  "terrain_dimensions_m": [
+    300,
+    250
+  ],
+  "cameras": [
+    {
+      "name": "01 \u00b7 ORDINARY / DOF ON / native disabled",
+      "position_m": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_euler_xyz_radians": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "native": false,
+      "dof_enabled": true,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "fstop": 2.799999952316284,
+      "focus_object": "FOCUS \u00b7 full-scale central crossing",
+      "focus_distance_m": 219.5612030029297,
+      "tilt_degrees": 0.0,
+      "swing_degrees": 0.0,
+      "axis_degrees": 0.0,
+      "shift": [
+        0.0,
+        0.0
+      ],
+      "image_circle_diameter_mm": 0.0
+    },
+    {
+      "name": "02 \u00b7 NATIVE ZERO / DOF ON / zero movements",
+      "position_m": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_euler_xyz_radians": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "native": true,
+      "dof_enabled": true,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "fstop": 2.799999952316284,
+      "focus_object": "FOCUS \u00b7 full-scale central crossing",
+      "focus_distance_m": 219.5612030029297,
+      "tilt_degrees": 0.0,
+      "swing_degrees": 0.0,
+      "axis_degrees": 0.0,
+      "shift": [
+        0.0,
+        0.0
+      ],
+      "image_circle_diameter_mm": 0.0
+    },
+    {
+      "name": "03 \u00b7 NATIVE TILT / DOF ON",
+      "position_m": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_euler_xyz_radians": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "native": true,
+      "dof_enabled": true,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "fstop": 2.799999952316284,
+      "focus_object": "FOCUS \u00b7 full-scale central crossing",
+      "focus_distance_m": 219.5612030029297,
+      "tilt_degrees": 4.99999985454646,
+      "swing_degrees": 0.0,
+      "axis_degrees": 0.0,
+      "shift": [
+        0.0,
+        0.0
+      ],
+      "image_circle_diameter_mm": 0.0
+    }
+  ],
+  "renders": [
+    {
+      "camera": "01 \u00b7 ORDINARY / DOF ON / native disabled",
+      "frame": 40,
+      "resolution": [
+        2400,
+        1500
+      ],
+      "samples": 256,
+      "backend": "HIP",
+      "device": "AMD Radeon RX 6900 XT",
+      "render_wall_s": 17.724506156002462,
+      "native_enabled": false,
+      "tilt": 0.0,
+      "swing": 0.0,
+      "fstop": 2.799999952316284,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "dof_enabled": true,
+      "camera_position": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "camera_rotation": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "focus_target": [
+        0.75,
+        -6.0,
+        1.75
+      ],
+      "seed": 71,
+      "denoising": false,
+      "compositor": false,
+      "original_render_sha256": "32f3d133df287fe789a8926ea2b5f89a232ebaa9ea559621dc724f9844d80909",
+      "sha256": "8b787e6534a1bc2b838fd402529196e068deff3b8350b70f3687ff553a98c834",
+      "file": "ordinary-dof.png"
+    },
+    {
+      "camera": "02 \u00b7 NATIVE ZERO / DOF ON / zero movements",
+      "frame": 40,
+      "resolution": [
+        2400,
+        1500
+      ],
+      "samples": 256,
+      "backend": "HIP",
+      "device": "AMD Radeon RX 6900 XT",
+      "render_wall_s": 17.845705368999916,
+      "native_enabled": true,
+      "tilt": 0.0,
+      "swing": 0.0,
+      "fstop": 2.799999952316284,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "dof_enabled": true,
+      "camera_position": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "camera_rotation": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "focus_target": [
+        0.75,
+        -6.0,
+        1.75
+      ],
+      "seed": 71,
+      "denoising": false,
+      "compositor": false,
+      "original_render_sha256": "36380d2a4f24c1a35988740137ad94b460b6def039f9227838d73f02af1c81cb",
+      "sha256": "fe0d97203b3f7552b6c689540ebb92defeab7fb230445ee8f33c72c5e2627dc9",
+      "file": "native-zero.png"
+    },
+    {
+      "camera": "03 \u00b7 NATIVE TILT / DOF ON",
+      "frame": 40,
+      "resolution": [
+        2400,
+        1500
+      ],
+      "samples": 256,
+      "backend": "HIP",
+      "device": "AMD Radeon RX 6900 XT",
+      "render_wall_s": 17.791924531004042,
+      "native_enabled": true,
+      "tilt": 0.0872664600610733,
+      "swing": 0.0,
+      "fstop": 2.799999952316284,
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "dof_enabled": true,
+      "camera_position": [
+        102.5,
+        -132.0,
+        150.0
+      ],
+      "camera_rotation": [
+        0.8227521777153015,
+        -6.749631609181961e-08,
+        0.6556957364082336
+      ],
+      "focus_target": [
+        0.75,
+        -6.0,
+        1.75
+      ],
+      "seed": 71,
+      "denoising": false,
+      "compositor": false,
+      "original_render_sha256": "00e0760bfab5c43a6e495320c7c4384538d528aca445c68e325e6035b119c471",
+      "sha256": "4dd9a2043853f10979eacd635334b519d286ef51c3eb784f76c60737b17f7072",
+      "file": "native-tilt.png"
+    }
+  ]
+}

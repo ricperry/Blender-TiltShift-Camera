@@ -9,6 +9,17 @@ tall, and buildings about 5–22 m. Units remain 1 Blender unit = 1 metre.
 Continuous terrain, extended roads and canal, and surrounding simple blocks
 replace the miniature's display plinth, nameplate and studio tabletop.
 
+## Download and open
+
+The published scene is [full-scale-city/full-scale-city.blend](full-scale-city/full-scale-city.blend).
+Open it with the [patched Blender build](../docs/build-instructions.md#current-m4-fresh-gui-build)
+and press **F12**. It is self-contained, defaults to CPU rendering and saves its
+render beside the scene as `native-tilt.png` through a relative path. The
+[artifact manifest](full-scale-city/manifest.json) records the packaged scene and
+preview hashes and their generation/render provenance.
+
+## Regenerate locally
+
 Generate with the project's patched Blender; generation saves without rendering:
 
 ```sh
@@ -17,9 +28,10 @@ work/install-blender-m4/blender --background -noaudio --factory-startup --thread
   --output work/examples/full-scale-city/full-scale-city.blend
 ```
 
-Open `work/examples/full-scale-city/full-scale-city.blend` with the same binary
-and press **F12**. The active camera is **03 NATIVE TILT**. Instructions are also
-in the file's **START HERE · Full-scale Meridian** Text datablock. The `.json`
+The command writes a separate, regenerated scene under ignored `work/`; it does
+not replace the packaged download. Open that generated file with the same binary
+and press **F12**. Both scenes use **03 NATIVE TILT** as their active camera. Instructions are also
+in the file's **START HERE · Full-scale Meridian** Text datablock. The generated `.json`
 inventory records world-space representative dimensions and matched camera
 positions/settings. The reused generator saves an intermediate
 `source-miniature.blend` and inventory in this same ignored output directory;
@@ -67,10 +79,11 @@ holds, pedestrian movement and signal phases pass the inherited animation checks
 All three cameras were rendered on the Radeon RX 6900 XT using single-device
 HIP, frame 40, **2400 × 1500**, 256 samples and seed 71, with denoising,
 adaptive sampling and compositing disabled. The previews are
-[ordinary DOF](../work/examples/full-scale-city/ordinary-dof.png),
-[native zero tilt](../work/examples/full-scale-city/native-zero.png), and
-[native 5° tilt](../work/examples/full-scale-city/native-tilt.png).
-Each has a matching JSON record in the output directory; `inspection.json`
-records the saved-scene and animation checks. Visual inspection shows broad
+[ordinary DOF](full-scale-city/ordinary-dof.png),
+[native zero tilt](full-scale-city/native-zero.png), and
+[native 5° tilt](full-scale-city/native-tilt.png).
+The packaged copies and scene are identified in [manifest.json](full-scale-city/manifest.json).
+The original ignored `work/examples/full-scale-city/` output directory retains
+matching render JSON records and `inspection.json` with saved-scene and animation checks. Visual inspection shows broad
 sharpness in the ordinary and zero-tilt views, and a narrower central band of
 focus in the tilted view. The saved scene retains its portable CPU default.

@@ -2,10 +2,158 @@
 # Isolated build and validation
 
 Run commands from the project root. Python scripts use only the standard library;
-the scene runner uses Blender's bundled `bpy` and `mathutils`. No command installs
-packages, replaces system Blender, opens a desktop window, pushes or rewrites
-upstream history. Network acquisition and builds can consume substantial disk and
+the scene runner uses Blender's bundled `bpy` and `mathutils`. Project scripts do
+not automatically install packages, replace system Blender, open windows, push or
+rewrite upstream history. Explicit package and GUI commands are shown separately.
+Network acquisition and builds can consume substantial disk and
 time; `work/` contains all downloaded/generated artifacts.
+
+## Current M4 fresh GUI build
+
+Use this workflow for the current camera. The sections below retain earlier
+milestone and baseline reproduction commands; they are historical workflows.
+Start in a clone of this project on Linux x86-64. Use fresh
+`work/build-blender-m4` and `work/install-blender-m4` directories so existing
+baseline/M2/M3 installations remain intact. This is a full Blender source build;
+allow substantial network traffic, disk space and build time.
+
+Install build tools and GUI development headers if missing. On Fedora, the
+[official Blender Linux build guide](https://developer.blender.org/docs/handbook/building_blender/linux/)
+lists the distribution prerequisites. A starting package set for this workflow is:
+
+```sh
+sudo dnf install python3 git git-lfs gcc gcc-c++ cmake ninja-build ccache pkgconf-pkg-config \
+  make mesa-libGL-devel mesa-libEGL-devel libstdc++-static \
+  libX11-devel libXxf86vm-devel libXi-devel libXcursor-devel libXrandr-devel \
+  libXinerama-devel libXfixes-devel libXrender-devel \
+  wayland-devel wayland-protocols-devel libxkbcommon-devel dbus-devel kernel-headers
+```
+
+These are commands for the builder to run; project scripts do not install system
+packages. Fedora package availability varies by release. The precompiled library
+checkout supplies many other dependencies, including Wayland components when
+supported by the upstream configuration. Check CMake's summary for
+`WITH_HEADLESS=OFF`, `WITH_GHOST_WAYLAND=ON` and `WITH_GHOST_X11=ON`; investigate
+missing-header warnings rather than assuming a successful configure enables
+Wayland. Compiling a GUI does not establish GNOME/Mutter workflow acceptance.
+
+Acquire the exact official `v5.3.0` source pin and apply **only** the cumulative
+[M4 patch](../patches/blender-v5.3.0-tilt-shift-m4.patch):
+
+```sh
+python3 scripts/dev.py check-deps
+python3 scripts/prepare_blender.py --with-dependencies
+python3 scripts/dev.py test-optics
+```
+
+`prepare_blender.py` delegates acquisition, pin/origin/version verification and
+optional dependency acquisition to `dev.py`. Its default omits dependencies but
+still downloads the full source clone. `--with-dependencies` adds the large
+pinned Linux library checkout and required source LFS assets. Existing source is
+accepted only when clean at the pin or exactly equal to the unstaged M4 patch;
+staged edits, partial patches and unrelated source changes fail without resetting
+or overwriting them. It never stacks historical patches or changes upstream HEAD.
+The library pin and source provenance are in [source-revision.json](source-revision.json).
+
+Configure a fresh GUI host with HIP runtime available but no ahead-of-time HIP
+kernel yet. CPU rendering does not require an AMD GPU:
+
+```sh
+export CCACHE_DIR="$PWD/work/ccache"
+/usr/bin/cmake -S work/blender -B work/build-blender-m4 -G Ninja \
+  -DCMAKE_BUILD_TYPE=Release -DWITH_LIBS_PRECOMPILED=ON \
+  -DWITH_CYCLES_NATIVE_ONLY=ON -DWITH_COMPILER_CCACHE=ON \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DWITH_HEADLESS=OFF -DWITH_GHOST_WAYLAND=ON -DWITH_GHOST_X11=ON \
+  -DWITH_CYCLES_DEVICE_CUDA=OFF -DWITH_CYCLES_DEVICE_OPTIX=OFF \
+  -DWITH_CYCLES_DEVICE_ONEAPI=OFF -DWITH_CYCLES_DEVICE_HIPRT=OFF \
+  -DWITH_CYCLES_DEVICE_HIP=ON -DWITH_CYCLES_HIP_BINARIES=OFF \
+  -DCMAKE_INSTALL_PREFIX="$PWD/work/install-blender-m4"
+systemd-run --user --scope --unit=blender-tiltshift-m4-host \
+  -p MemoryHigh=16G -p MemoryMax=18G -p MemorySwapMax=0 -p CPUQuota=400% \
+  /usr/bin/cmake --build work/build-blender-m4 --target install --parallel 4
+```
+
+The user scope requires a functioning systemd user session. Use a distinct unit
+name if one is already active. The 18 GiB cap and four jobs protect headroom on
+the tested 32 GB host; a cap can still stop a build. Preserve completed outputs,
+diagnose failures and resume at suitable concurrency. No system install target
+is used: CMake's install prefix stays inside this project's ignored `work/`.
+Avoid `dev.py configure cpu` here; that older helper selects different build and
+install directories and headless defaults.
+
+Before running this build, isolate its configuration, scripts and caches:
+
+```sh
+export BLENDER_USER_RESOURCES="$PWD/work/blender-user"
+export BLENDER_USER_CONFIG="$PWD/work/blender-user-config"
+export BLENDER_USER_EXTENSIONS="$PWD/work/blender-user/extensions"
+export BLENDER_USER_SCRIPTS="$PWD/work/blender-user/scripts"
+export BLENDER_USER_DATAFILES="$PWD/work/blender-user/datafiles"
+export XDG_CACHE_HOME="$PWD/work/cache"
+mkdir -p "$BLENDER_USER_RESOURCES" "$BLENDER_USER_CONFIG" "$BLENDER_USER_EXTENSIONS" \
+  "$BLENDER_USER_SCRIPTS" "$BLENDER_USER_DATAFILES" "$XDG_CACHE_HOME"
+python3 scripts/dev.py validate --blender work/install-blender-m4/blender --require-feature
+work/install-blender-m4/blender --background -noaudio --factory-startup \
+  --threads 2 --python-exit-code 1 --python scripts/blender_m4_validation.py -- \
+  --output work/m4-validation/cpu --backend cpu --case all
+python3 scripts/run_m4_guards.py --blender work/install-blender-m4/blender \
+  --output work/m4-validation --backend cpu
+```
+
+The positive `all` fixture should exit zero. The guard runner creates its own
+fresh result directory and checks complete rejection records together with
+Blender's expected sticky render-error exit one; the host guard runner itself
+exits zero on success.
+See [M4 reproduction](m4-hip-camera.md#reproduction) for all cases and comparison
+requirements. For the editable example, launch the isolated GUI deliberately:
+
+```sh
+work/install-blender-m4/blender --factory-startup examples/full-scale-city/full-scale-city.blend
+```
+
+The file defaults to Cycles CPU. Select a perspective camera, open Camera Data
+and enable **Tilt-Shift**. In the example, the native tilted camera is already
+active. Changing to HIP is optional and requires the next build step.
+
+### Optional RDNA2 HIP kernel and host installation
+
+The validated configuration is RX 6900 XT / `gfx1030`, HIP 7.2.53211, one device
+and HIPRT disabled. On Fedora, check `/usr/bin/hipcc` and `/usr/include/hip`;
+the build host used the `hipcc` and `rocm-hip-devel` packages. Install a compatible
+ROCm toolchain if absent, and inspect GPU load and available RAM/VRAM before GPU
+work. The instructions below do not establish support on another architecture.
+
+Reconfigure the same fresh M4 tree, compile the HIP kernel with **one job**, then
+install the host and matching kernel together with four jobs under the cap:
+
+```sh
+/usr/bin/cmake -S work/blender -B work/build-blender-m4 \
+  -DWITH_CYCLES_DEVICE_HIP=ON -DWITH_CYCLES_DEVICE_HIPRT=OFF \
+  -DWITH_CYCLES_HIP_BINARIES=ON -DCYCLES_HIP_BINARIES_ARCH=gfx1030 \
+  -DHIP_ROOT_DIR=/usr -DHIP_HIPCC_EXECUTABLE=/usr/bin/hipcc \
+  -DCMAKE_INSTALL_PREFIX="$PWD/work/install-blender-m4"
+ninja -C work/build-blender-m4 -t targets all | rg '^cycles_kernel_hip:'
+systemd-run --user --scope --unit=blender-tiltshift-m4-kernel \
+  -p MemoryHigh=16G -p MemoryMax=18G -p MemorySwapMax=0 -p CPUQuota=400% \
+  /usr/bin/cmake --build work/build-blender-m4 --target cycles_kernel_hip --parallel 1
+systemd-run --user --scope --unit=blender-tiltshift-m4-hip-install \
+  -p MemoryHigh=16G -p MemoryMax=18G -p MemorySwapMax=0 -p CPUQuota=400% \
+  /usr/bin/cmake --build work/build-blender-m4 --target install --parallel 4
+```
+
+The target check must print `cycles_kernel_hip`; a silent missing target is not a
+HIP build. The `/usr` HIP root is deliberate on this Fedora toolchain. Use the
+official install target rather than copying an older fatbin: installed kernel,
+headers and host must match. Execute the [M4 CPU and HIP reproduction suite](m4-hip-camera.md#reproduction)
+with the same installed executable, one device, hard backend selection and
+retained kernel/device logs before claiming HIP support. Its full 19-pair
+comparison is stronger than simply opening the example or detecting a GPU.
+
+## Historical workflows
+
+The following sections preserve baseline/M2/M3 commands and the original M4
+build-tree provenance. For a new current build, use the fresh workflow above.
 
 ## Standalone optical reference
 
@@ -194,9 +342,9 @@ Optics, physical CPU images and HIP parity remain separate evidence gates.
 python3 scripts/dev.py patch
 ```
 
-This writes a binary-capable diff against the pinned commit to
-`patches/blender-v5.3.0-tilt-shift-m3.patch`, excluding submodules. Empty diffs fail.
-The earlier M2 patch is immutable evidence and is never overwritten. The exporter
+This now writes a binary-capable cumulative diff against the pinned commit to
+`patches/blender-v5.3.0-tilt-shift-m4.patch`, excluding submodules. Empty diffs fail.
+The earlier M2/M3 patches are immutable evidence and are never overwritten. The exporter
 includes the explicitly reviewed native mathematical header and verifies it against
 the standalone mirror; any other untracked source fails. Nothing is staged or
 committed upstream. See the [M3 interface guide](m3-native-interface.md) for the

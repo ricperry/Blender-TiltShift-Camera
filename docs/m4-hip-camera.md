@@ -36,7 +36,13 @@ unit-radiance images within `2e-4`; they do not weaken the rejection threshold.
 
 ## Build and execution provenance
 
-Use one GUI-capable official build tree and a distinct install prefix. Enable
+For a new checkout, follow the complete [fresh M4 GUI CPU and HIP build](build-instructions.md#current-m4-fresh-gui-build)
+using `work/build-blender-m4` and `work/install-blender-m4`. It includes source
+preparation, dependency acquisition, GUI prerequisites and resource caps. Apply
+only the cumulative M4 patch; do not stack M2/M3 patches.
+
+The commands below retain the original validation build's provenance: it reused
+one existing GUI-capable official build tree and a distinct install prefix. Enable
 HIP binaries for `gfx1030`, retain HIPRT off, compile the new kernel with one job,
 then build/install the host with four jobs. Blender's official `delayed_install`
 places its compressed fatbin and current kernel headers together. Do not copy an
