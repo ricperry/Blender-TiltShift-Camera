@@ -33,7 +33,8 @@ then Ry about fixed Y, then Rz about fixed Z.
 Shift in M1 moves the sensor rectangle relative to a fixed lens centre. M2 fixes
 the body/sensor anchor and additionally translates the actual lens centre using
 the existing sensor-fit-aware shift; see [native conventions](m2-native-camera.md).
-The physical shift RNA views and viewport UI remain M3 work. Coverage is an ideal binary angular stop at the rear
+M3 adds [mapped physical shift views and native viewport guides](m3-native-interface.md)
+without introducing a second shift state. Coverage is an ideal binary angular stop at the rear
 focal plane, not a realistic barrel/vignetting model. Ray weights in M1 establish
 coverage only; radiometric throughput/PDF and exposure await native integration.
 

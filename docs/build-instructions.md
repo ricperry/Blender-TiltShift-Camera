@@ -195,7 +195,9 @@ python3 scripts/dev.py patch
 ```
 
 This writes a binary-capable diff against the pinned commit to
-`patches/blender-v5.3.0-tilt-shift.patch`, excluding submodules. Empty diffs fail.
-Untracked upstream files fail rather than being silently omitted; review and
-stage intended new upstream files before generation (staging does not commit).
-No patch exists at M1, and no upstream commit/history change is required.
+`patches/blender-v5.3.0-tilt-shift-m3.patch`, excluding submodules. Empty diffs fail.
+The earlier M2 patch is immutable evidence and is never overwritten. The exporter
+includes the explicitly reviewed native mathematical header and verifies it against
+the standalone mirror; any other untracked source fails. Nothing is staged or
+committed upstream. See the [M3 interface guide](m3-native-interface.md) for the
+separate GUI-capable install prefix and validation workflow.

@@ -1,0 +1,1254 @@
+diff --git a/intern/cycles/blender/addon/ui.py b/intern/cycles/blender/addon/ui.py
+index fac304232a1..f408c6055de 100644
+--- a/intern/cycles/blender/addon/ui.py
++++ b/intern/cycles/blender/addon/ui.py
+@@ -1225,7 +1225,9 @@ class CYCLES_CAMERA_PT_dof(CyclesButtonsPanel, Panel):
+ 
+         cam = context.camera
+         dof = cam.dof
+-        layout.active = dof.use_dof
++        layout.active = dof.use_dof or cam.tilt_shift_enabled
++        if cam.tilt_shift_enabled and not dof.use_dof:
++            layout.label(text="Focus affects physical pinhole framing", icon='INFO')
+ 
+         split = layout.split()
+ 
+diff --git a/intern/cycles/blender/camera.cpp b/intern/cycles/blender/camera.cpp
+index 72f46d99e82..bdf0303c294 100644
+--- a/intern/cycles/blender/camera.cpp
++++ b/intern/cycles/blender/camera.cpp
+@@ -29,6 +29,7 @@ class BlenderCamera {
+  public:
+   explicit BlenderCamera(const blender::RenderData &b_render)
+   {
++    tilt_shift_multiview = (b_render.scemode & blender::R_MULTIVIEW) != 0;
+     full_width = render_width = render_resolution_x(b_render);
+     full_height = render_height = render_resolution_y(b_render);
+   };
+@@ -56,6 +57,12 @@ class BlenderCamera {
+   uint apertureblades = 0;
+   float aperturerotation = 0.0f;
+   float focaldistance = 10.0f;
++  bool tilt_shift_enabled = false;
++  bool tilt_shift_multiview = false;
++  bool tilt_shift_use_focus_point = false;
++  float3 tilt_shift_focus_point = zero_float3();
++  float tilt_shift_tilt = 0.0f, tilt_shift_swing = 0.0f;
++  float tilt_shift_axis_rotation = 0.0f, tilt_shift_circle_radius = 0.0f;
+ 
+   float2 shift = zero_float2();
+   float2 offset = zero_float2();
+@@ -143,11 +150,18 @@ static float blender_camera_focal_distance(blender::RenderEngine &b_engine,
+     }
+   }
+ 
+-  /* for dof object, return distance along camera Z direction */
++  /* Legacy cameras retain axial focus distance. Physical cameras additionally
++   * retain the evaluated off-axis target (including bone transform). */
+   blender::float4x4 b_ob_matrix;
+   RE_engine_get_camera_model_matrix(
+       &b_engine, &b_ob, bcam->use_spherical_stereo, b_ob_matrix.base_ptr());
+   const Transform obmat = transform_clear_scale(get_transform(b_ob_matrix));
++  if (bcam->tilt_shift_enabled) {
++    const Transform tolocal = transform_inverse(obmat);
++    const float3 local = transform_point(&tolocal, transform_get_column(&dofmat, 3));
++    bcam->tilt_shift_use_focus_point = true;
++    bcam->tilt_shift_focus_point = make_float3(local.x, local.y, -local.z);
++  }
+   const float3 view_dir = normalize(transform_get_column(&obmat, 2));
+   const float3 dof_dir = transform_get_column(&obmat, 3) - transform_get_column(&dofmat, 3);
+   return fabsf(dot(view_dir, dof_dir));
+@@ -288,6 +302,11 @@ static void blender_camera_from_object(BlenderCamera *bcam,
+     bcam->ortho_scale = b_camera.ortho_scale;
+ 
+     bcam->lens = b_camera.lens;
++    bcam->tilt_shift_enabled = b_camera.tilt_shift_enabled != 0;
++    bcam->tilt_shift_tilt = b_camera.tilt_shift_tilt;
++    bcam->tilt_shift_swing = b_camera.tilt_shift_swing;
++    bcam->tilt_shift_axis_rotation = b_camera.tilt_shift_axis_rotation;
++    bcam->tilt_shift_circle_radius = b_camera.tilt_shift_image_circle_diameter * 0.0005f;
+ 
+     if (b_camera.dof.flag & blender::CAM_DOF_ENABLED) {
+       /* allow f/stop number to change aperture_size but still
+@@ -330,6 +349,11 @@ static void blender_camera_from_object(BlenderCamera *bcam,
+     else {
+       bcam->shift.x = RE_engine_get_camera_shift_x(&b_engine, &b_ob, bcam->use_spherical_stereo);
+     }
++    if (bcam->tilt_shift_enabled) {
++      /* Physical focusing changes sensor distance even with a pinhole. */
++      bcam->focaldistance = blender_camera_focal_distance(b_engine, b_ob, b_camera, bcam);
++    }
++
+     bcam->shift.y = b_camera.shifty;
+ 
+     bcam->sensor_width = b_camera.sensor_x;
+@@ -698,6 +722,23 @@ static void blender_camera_sync(Camera *cam,
+ 
+   /* perspective */
+   cam->set_fov(2.0f * atanf((0.5f * sensor_size) / bcam->lens / aspectratio));
++  cam->set_tilt_shift_enabled(bcam->tilt_shift_enabled);
++  cam->set_tilt_shift_multiview(bcam->tilt_shift_multiview);
++  cam->set_tilt_shift_use_focus_point(bcam->tilt_shift_use_focus_point);
++  cam->set_tilt_shift_focus_point(bcam->tilt_shift_focus_point);
++  /* p=-f*q contains the sensor's displacement relative to this lens centre.
++   * Translating the outgoing origins makes the sensor/body stay fixed. Same
++   * roll/flip as viewplane, excluding viewport pan and zoom. */
++  const blender::float2 centre = blender::BKE_camera_viewplane_offset_transform(
++      bcam->roll,
++      bcam->is_flipped_x,
++      blender::float2(bcam->shift.x * sensor_size * 1e-3f, bcam->shift.y * sensor_size * 1e-3f));
++  cam->set_tilt_shift_lens_center(make_float3(centre.x, centre.y, 0.0f));
++  cam->set_tilt_shift_tilt(bcam->tilt_shift_tilt);
++  cam->set_tilt_shift_swing(bcam->tilt_shift_swing);
++  cam->set_tilt_shift_axis_rotation(bcam->tilt_shift_axis_rotation);
++  cam->set_tilt_shift_circle_radius(bcam->tilt_shift_circle_radius);
++  cam->set_tilt_shift_focal_length(bcam->lens * 1e-3f);
+   cam->set_focaldistance(bcam->focaldistance);
+   cam->set_aperturesize(bcam->aperturesize);
+   cam->set_blades(bcam->apertureblades);
+diff --git a/intern/cycles/kernel/CMakeLists.txt b/intern/cycles/kernel/CMakeLists.txt
+index 7d803ea19fc..5d0dc3b9b3a 100644
+--- a/intern/cycles/kernel/CMakeLists.txt
++++ b/intern/cycles/kernel/CMakeLists.txt
+@@ -167,6 +167,7 @@ set(SRC_KERNEL_BVH_HEADERS
+ 
+ set(SRC_KERNEL_CAMERA_HEADERS
+   camera/camera.h
++  camera/tilt_shift_math.h
+   camera/projection.h
+ )
+ 
+diff --git a/intern/cycles/kernel/camera/camera.h b/intern/cycles/kernel/camera/camera.h
+index dd9ece69341..b5dbe534a69 100644
+--- a/intern/cycles/kernel/camera/camera.h
++++ b/intern/cycles/kernel/camera/camera.h
+@@ -7,6 +7,9 @@
+ #include "kernel/globals.h"
+ 
+ #include "kernel/camera/projection.h"
++#define TILT_SHIFT_DEVICE ccl_device_inline
++#include "kernel/camera/tilt_shift_math.h"
++#undef TILT_SHIFT_DEVICE
+ #include "kernel/sample/mapping.h"
+ #include "kernel/util/differential.h"
+ #include "kernel/util/lookup_table.h"
+@@ -40,11 +43,82 @@ ccl_device float2 camera_sample_aperture(ccl_constant KernelCamera *cam, const f
+   return bokeh;
+ }
+ 
++/* Native physical camera is isolated from the original perspective code. */
++ccl_device_inline tilt_shift_native::State camera_tilt_shift_state(ccl_constant KernelCamera *cam)
++{
++  return {{cam->tilt_shift_normal_f.x, cam->tilt_shift_normal_f.y, cam->tilt_shift_normal_f.z},
++          {cam->tilt_shift_aperture_x_b.x,
++           cam->tilt_shift_aperture_x_b.y,
++           cam->tilt_shift_aperture_x_b.z},
++          {cam->tilt_shift_aperture_y_circle.x,
++           cam->tilt_shift_aperture_y_circle.y,
++           cam->tilt_shift_aperture_y_circle.z},
++          cam->tilt_shift_normal_f.w,
++          cam->tilt_shift_aperture_x_b.w,
++          cam->tilt_shift_aperture_y_circle.w};
++}
++
++ccl_device_inline float3 camera_tilt_shift_vector(const tilt_shift_native::Vec v)
++{
++  return make_float3(v.x, v.y, v.z);
++}
++
++ccl_device_inline tilt_shift_native::Ray camera_tilt_shift_ray(ccl_constant KernelCamera *cam,
++                                                               const float2 raster,
++                                                               const float2 aperture)
++{
++  const float3 q = transform_perspective(&cam->rastertocamera, make_float3(raster));
++  return tilt_shift_native::clip_near(
++      tilt_shift_native::sample(
++          camera_tilt_shift_state(cam), q.x / q.z, q.y / q.z, aperture.x, aperture.y),
++      cam->nearclip);
++}
++
++ccl_device Spectrum camera_sample_tilt_shift(KernelGlobals kg,
++                                             const float2 raster,
++                                             const float2 rand_lens,
++                                             ccl_private Ray *ray)
++{
++  ccl_constant KernelCamera *cam = &kernel_data.cam;
++  const float2 aperture = camera_sample_aperture(cam, rand_lens) * cam->aperturesize;
++  const auto physical = camera_tilt_shift_ray(cam, raster, aperture);
++  const float3 center = make_float3(cam->tilt_shift_lens_center);
++  const float3 origin = center + camera_tilt_shift_vector(physical.origin);
++  const float3 direction = camera_tilt_shift_vector(physical.direction);
++  const Transform toworld = cam->cameratoworld;
++  ray->P = transform_point(&toworld, origin);
++  ray->D = normalize(transform_direction(&toworld, direction));
++  ray->tmin = 0.0f;
++  ray->tmax = cam->cliplength == FLT_MAX ? FLT_MAX : cam->cliplength / direction.z;
++#ifdef __RAY_DIFFERENTIALS__
++  /* Exact finite differences, holding the actual aperture sample fixed; origins
++   * include the camera-Z near-plane intersection of each neighboring ray. */
++  const auto rx = camera_tilt_shift_ray(cam, raster + make_float2(1.0f, 0.0f), aperture);
++  const auto ry = camera_tilt_shift_ray(cam, raster + make_float2(0.0f, 1.0f), aperture);
++  differential3 dP, dD;
++  dP.dx = transform_point(&toworld, center + camera_tilt_shift_vector(rx.origin)) - ray->P;
++  dP.dy = transform_point(&toworld, center + camera_tilt_shift_vector(ry.origin)) - ray->P;
++  dD.dx = normalize(transform_direction(&toworld, camera_tilt_shift_vector(rx.direction))) -
++          ray->D;
++  dD.dy = normalize(transform_direction(&toworld, camera_tilt_shift_vector(ry.direction))) -
++          ray->D;
++  ray->dP = differential_make_compact(dP) * cam->differential_scale;
++  ray->dD = differential_make_compact(dD) * cam->differential_scale;
++#endif
++  /* Same exposure-normalized aperture convention as existing Cycles. Coverage
++   * is an ideal binary angular stop; no unvalidated radiometric falloff. */
++  return physical.weight == 0.0f ? zero_spectrum() : one_spectrum();
++}
++
+ ccl_device Spectrum camera_sample_perspective(KernelGlobals kg,
+                                               const float2 raster_xy,
+                                               const float2 rand_lens,
+                                               ccl_private Ray *ray)
+ {
++  if (kernel_data.cam.tilt_shift_enabled) {
++    return camera_sample_tilt_shift(kg, raster_xy, rand_lens, ray);
++  }
++
+   /* create ray form raster position */
+   const ProjectionTransform rastertocamera = kernel_data.cam.rastertocamera;
+   const float3 raster = make_float3(raster_xy);
+@@ -578,6 +652,14 @@ ccl_device_inline float3 camera_world_to_ndc(KernelGlobals kg,
+     /* perspective / ortho */
+     if (sd->object == PRIM_NONE && kernel_data.cam.type == CAMERA_PERSPECTIVE) {
+       P += camera_position(kg);
++      if (kernel_data.cam.tilt_shift_enabled) {
++        /* Background P is a direction. Anchor it at the physical lens centre
++         * before the chief projection subtracts that centre again. Generic
++         * camera-position helpers retain their camera-body convention. */
++        const Transform cameratoworld = kernel_data.cam.cameratoworld;
++        P += transform_direction(&cameratoworld,
++                                 make_float3(kernel_data.cam.tilt_shift_lens_center));
++      }
+     }
+ 
+     const ProjectionTransform tfm = kernel_data.cam.worldtondc;
+diff --git a/intern/cycles/kernel/types.h b/intern/cycles/kernel/types.h
+index d7b5f3cdfb6..4c88db9d1ab 100644
+--- a/intern/cycles/kernel/types.h
++++ b/intern/cycles/kernel/types.h
+@@ -1216,6 +1216,14 @@ struct KernelCamera {
+   float bladesrotation;
+   float focaldistance;
+ 
++  /* Physical tilted thin lens. Explicit float4 packing is device portable. */
++  float4 tilt_shift_lens_center;
++  float4 tilt_shift_normal_f;
++  float4 tilt_shift_aperture_x_b;
++  float4 tilt_shift_aperture_y_circle;
++  int tilt_shift_enabled;
++  int tilt_shift_pad[3];
++
+   /* motion blur */
+   float shuttertime;
+   int num_motion_steps, have_perspective_motion;
+diff --git a/intern/cycles/scene/camera.cpp b/intern/cycles/scene/camera.cpp
+index 4b28d92df0e..87066d445e6 100644
+--- a/intern/cycles/scene/camera.cpp
++++ b/intern/cycles/scene/camera.cpp
+@@ -3,8 +3,10 @@
+  * SPDX-License-Identifier: Apache-2.0 */
+ 
+ #include <algorithm>
++#include <cmath>
+ 
+ #include "scene/camera.h"
++#include "scene/film.h"
+ #include "scene/mesh.h"
+ #include "scene/object.h"
+ #include "scene/osl.h"
+@@ -29,6 +31,21 @@
+ 
+ CCL_NAMESPACE_BEGIN
+ 
++static tilt_shift_native::State camera_tilt_shift_optics(const Camera *cam)
++{
++  auto optics = tilt_shift_native::prepare(cam->get_tilt_shift_focal_length(),
++                                           cam->get_focaldistance(),
++                                           cam->get_tilt_shift_tilt(),
++                                           cam->get_tilt_shift_swing(),
++                                           cam->get_tilt_shift_axis_rotation(),
++                                           cam->get_tilt_shift_circle_radius());
++  if (cam->get_tilt_shift_use_focus_point()) {
++    const float3 target = cam->get_tilt_shift_focus_point() - cam->get_tilt_shift_lens_center();
++    optics = tilt_shift_native::focus_at(optics, {target.x, target.y, target.z});
++  }
++  return optics;
++}
++
+ static float shutter_curve_eval(float x, array<float> &shutter_curve)
+ {
+   if (shutter_curve.size() == 0) {
+@@ -67,6 +84,17 @@ NODE_DEFINE(Camera)
+ 
+   SOCKET_FLOAT_ARRAY(shutter_curve, "Shutter Curve", array<float>());
+ 
++  SOCKET_BOOLEAN(tilt_shift_enabled, "Physical Tilt-Shift", false);
++  SOCKET_BOOLEAN(tilt_shift_multiview, "Multiview Tilt-Shift", false);
++  SOCKET_BOOLEAN(tilt_shift_use_focus_point, "Use Physical Focus Point", false);
++  SOCKET_VECTOR(tilt_shift_focus_point, "Physical Focus Point", zero_float3());
++  SOCKET_VECTOR(tilt_shift_lens_center, "Physical Lens Center", zero_float3());
++  SOCKET_FLOAT(tilt_shift_tilt, "Lens Tilt", 0.0f);
++  SOCKET_FLOAT(tilt_shift_swing, "Lens Swing", 0.0f);
++  SOCKET_FLOAT(tilt_shift_axis_rotation, "Movement Axis Rotation", 0.0f);
++  SOCKET_FLOAT(tilt_shift_circle_radius, "Image Circle Radius", 0.0f);
++  SOCKET_FLOAT(tilt_shift_focal_length, "Physical Focal Length", 0.05f);
++
+   SOCKET_FLOAT(aperturesize, "Aperture Size", 0.0f);
+   SOCKET_FLOAT(focaldistance, "Focal Distance", 10.0f);
+   SOCKET_UINT(blades, "Blades", 0);
+@@ -295,6 +323,17 @@ void Camera::update(Scene *scene)
+    * is needed to avoid inverting near degenerate matrices that happen due to
+    * precision issues with large scenes */
+   worldtocamera = transform_inverse(matrix);
++  if (tilt_shift_enabled) {
++    const auto optics = camera_tilt_shift_optics(this);
++    const float scale = optics.sensor_distance / optics.focal_length;
++    cameratoscreen = cameratoscreen * transform_scale(scale, scale, 1.0f) *
++                     transform_translate(-tilt_shift_lens_center);
++    const Transform breathing = transform_translate(tilt_shift_lens_center) *
++                                transform_scale(1.0f / scale, 1.0f / scale, 1.0f);
++    screentoworld = cameratoworld * breathing * screentocamera;
++    rastertoworld = cameratoworld * breathing * rastertocamera;
++    ndctoworld = rastertoworld * ndctoraster;
++  }
+   worldtoscreen = cameratoscreen * worldtocamera;
+   worldtondc = screentondc * worldtoscreen;
+   worldtoraster = ndctoraster * worldtondc;
+@@ -450,6 +489,18 @@ void Camera::update(Scene *scene)
+     }
+   }
+ 
++  kcam->tilt_shift_enabled = tilt_shift_enabled;
++  if (tilt_shift_enabled) {
++    const auto optics = camera_tilt_shift_optics(this);
++    kcam->tilt_shift_lens_center = make_float4(tilt_shift_lens_center);
++    kcam->tilt_shift_normal_f = make_float4(
++        optics.normal.x, optics.normal.y, optics.normal.z, optics.focal_length);
++    kcam->tilt_shift_aperture_x_b = make_float4(
++        optics.aperture_x.x, optics.aperture_x.y, optics.aperture_x.z, optics.sensor_distance);
++    kcam->tilt_shift_aperture_y_circle = make_float4(
++        optics.aperture_y.x, optics.aperture_y.y, optics.aperture_y.z, optics.circle_radius);
++  }
++
+   /* depth of field */
+   kcam->aperturesize = aperturesize;
+   kcam->focaldistance = max(focaldistance, 1e-5f);
+@@ -536,6 +587,87 @@ void Camera::update(Scene *scene)
+   previous_need_motion = need_motion;
+ }
+ 
++/* M2 deliberately rejects projection-dependent modes which have not yet been
++ * validated, rather than silently rendering an ordinary or center-time camera. */
++string Camera::tilt_shift_error(Scene *scene, Device *device)
++{
++  if (!tilt_shift_enabled) {
++    return "";
++  }
++  const string prefix = "Physical Tilt-Shift: ";
++  if (device->info.type != DEVICE_CPU) {
++    return prefix + "only CPU rendering is validated; GPU support requires M4";
++  }
++  if (camera_type != CAMERA_PERSPECTIVE) {
++    return prefix + "requires a perspective camera";
++  }
++  if (scene->need_motion() != Scene::MOTION_NONE) {
++    return prefix + "motion blur and motion-vector passes are not supported in M2";
++  }
++  if (tilt_shift_multiview || use_spherical_stereo || stereo_eye != STEREO_NONE) {
++    return prefix + "stereo rendering is not supported in M2";
++  }
++  const float f = tilt_shift_focal_length;
++  if (!std::isfinite(f) || f <= 0.0f ||
++      (!tilt_shift_use_focus_point && (!std::isfinite(focaldistance) || focaldistance <= 0.0f)) ||
++      !std::isfinite(tilt_shift_tilt) || !std::isfinite(tilt_shift_swing) ||
++      !std::isfinite(tilt_shift_axis_rotation) || !std::isfinite(tilt_shift_circle_radius) ||
++      tilt_shift_circle_radius < 0.0f || !std::isfinite(aperturesize) || aperturesize < 0.0f ||
++      !std::isfinite(aperture_ratio) || aperture_ratio <= 0.0f)
++  {
++    return prefix + "nonfinite or invalid optical parameters";
++  }
++  const auto optics = camera_tilt_shift_optics(this);
++  const float3 target = tilt_shift_focus_point - tilt_shift_lens_center;
++  if (!isfinite_safe(tilt_shift_lens_center) ||
++      (tilt_shift_use_focus_point &&
++       (!isfinite_safe(target) || target.z <= 0.0f ||
++        tilt_shift_native::dot(optics.normal, {target.x, target.y, target.z}) <=
++            f * (1.0f + 1e-5f))))
++  {
++    return prefix + "focus target must lie in front of the lens beyond its focal plane";
++  }
++  /* Dimensionless float domain margin, independently measured against M1.
++   * This is rejection, never a silent angle/focus clamp. */
++  constexpr float epsilon = 1e-5f;
++  const float denominator = f / optics.sensor_distance;
++  if (optics.normal.z <= epsilon || denominator <= epsilon ||
++      !std::isfinite(optics.sensor_distance))
++  {
++    return prefix + "focus/tilt requires a nonpositive or singular sensor distance";
++  }
++  const float az = aperturesize * sqrtf((optics.aperture_x.z / aperture_ratio) *
++                                            (optics.aperture_x.z / aperture_ratio) +
++                                        optics.aperture_y.z * optics.aperture_y.z);
++  const float scale = max(
++      f, max(optics.sensor_distance, max(aperturesize / aperture_ratio, aperturesize)));
++  if (!std::isfinite(az) || !std::isfinite(nearclip) || nearclip <= az + epsilon * scale ||
++      !std::isfinite(farclip) || farclip <= nearclip)
++  {
++    return prefix + "clip planes must lie in front of the entire tilted aperture";
++  }
++  update(scene);
++  /* All supported filters fit 1.5*width; include one neighboring pixel for
++   * derivatives and numerical guard at the actual raster-domain corners. */
++  const float padding = 1.5f * scene->film->get_filter_width() + 1.0f;
++  for (const float x : {-padding, width + padding}) {
++    for (const float y : {-padding, height + padding}) {
++      const float3 q = transform_perspective(&rastertocamera, make_float3(x, y, 0.0f));
++      const auto p = tilt_shift_native::sensor(optics, q.x / q.z, q.y / q.z);
++      const float np = tilt_shift_native::dot(optics.normal, p);
++      const float h = 1.0f + np / f;
++      const float local_scale = max(scale, max(fabsf(p.x), fabsf(p.y)));
++      if (!std::isfinite(np) || np >= -epsilon * local_scale ||
++          optics.sensor_distance - fabsf(h) * az <= epsilon * local_scale ||
++          optics.sensor_distance - az <= epsilon * local_scale)
++      {
++        return prefix + "sensor/aperture crosses a singular or backward-ray domain";
++      }
++    }
++  }
++  return "";
++}
++
+ void Camera::update_interactive_motion()
+ {
+   array<Transform> motion = get_motion();
+@@ -607,7 +739,9 @@ void Camera::device_update_volume(Device * /*device*/, DeviceScene *dscene, Scen
+ 
+   KernelIntegrator *kintegrator = &dscene->data.integrator;
+   if (kintegrator->use_volumes) {
+-    if (camera_type == CAMERA_CUSTOM) {
++    if (camera_type == CAMERA_CUSTOM || tilt_shift_enabled) {
++      /* Tilted aperture origins and breathing invalidate the legacy frustum
++       * bound. Per-ray volume-stack initialization is conservative and exact. */
+       kernel_camera.is_inside_volume = 1;
+       LOG_INFO << "Considering custom camera to be inside volume.";
+     }
+diff --git a/intern/cycles/scene/camera.h b/intern/cycles/scene/camera.h
+index 48660ee497a..59ef63fadef 100644
+--- a/intern/cycles/scene/camera.h
++++ b/intern/cycles/scene/camera.h
+@@ -77,6 +77,18 @@ class Camera : public Node {
+   NODE_SOCKET_API(uint, blades)
+   NODE_SOCKET_API(float, bladesrotation)
+ 
++  /* Physical tilted thin lens; opt-in preserves the upstream path. */
++  NODE_SOCKET_API(bool, tilt_shift_enabled)
++  NODE_SOCKET_API(bool, tilt_shift_multiview)
++  NODE_SOCKET_API(bool, tilt_shift_use_focus_point)
++  NODE_SOCKET_API(float3, tilt_shift_focus_point)
++  NODE_SOCKET_API(float3, tilt_shift_lens_center)
++  NODE_SOCKET_API(float, tilt_shift_tilt)
++  NODE_SOCKET_API(float, tilt_shift_swing)
++  NODE_SOCKET_API(float, tilt_shift_axis_rotation)
++  NODE_SOCKET_API(float, tilt_shift_circle_radius)
++  NODE_SOCKET_API(float, tilt_shift_focal_length)
++
+   /* type */
+   NODE_SOCKET_API(CameraType, camera_type)
+   NODE_SOCKET_API(float, fov)
+@@ -220,6 +232,7 @@ class Camera : public Node {
+   void compute_auto_viewplane();
+ 
+   void update(Scene *scene);
++  std::string tilt_shift_error(Scene *scene, Device *device);
+ 
+   void update_interactive_motion();
+ 
+diff --git a/intern/cycles/scene/scene.cpp b/intern/cycles/scene/scene.cpp
+index fe56ce4fec4..e29d651b35a 100644
+--- a/intern/cycles/scene/scene.cpp
++++ b/intern/cycles/scene/scene.cpp
+@@ -179,6 +179,25 @@ void Scene::device_update(Device *device_, Progress &progress)
+     device = device_;
+   }
+ 
++  /* Either camera can drive projection-dependent dicing, including when the
++   * render camera itself uses the original perspective model. */
++  if (camera->get_tilt_shift_enabled() || dicing_camera->get_tilt_shift_enabled()) {
++    for (const Geometry *geometry : this->geometry) {
++      if (geometry->is_mesh() &&
++          static_cast<const Mesh *>(geometry)->get_subdivision_type() != Mesh::SUBDIVISION_NONE)
++      {
++        progress.set_error("Physical Tilt-Shift: adaptive subdivision is not supported in M2");
++        return;
++      }
++    }
++  }
++
++  const string camera_error = camera->tilt_shift_error(this, device);
++  if (!camera_error.empty()) {
++    progress.set_error(camera_error);
++    return;
++  }
++
+   const bool print_stats = need_data_update();
+   bool kernels_reloaded = false;
+ 
+diff --git a/scripts/startup/bl_ui/properties_data_camera.py b/scripts/startup/bl_ui/properties_data_camera.py
+index 31a95026677..4b506e8f220 100644
+--- a/scripts/startup/bl_ui/properties_data_camera.py
++++ b/scripts/startup/bl_ui/properties_data_camera.py
+@@ -157,9 +157,10 @@ class DATA_PT_lens(CameraButtonsPanel, Panel):
+         col = layout.column()
+         col.separator()
+ 
+-        sub = col.column(align=True)
+-        sub.prop(cam, "shift_x", text="Shift X")
+-        sub.prop(cam, "shift_y", text="Y")
++        if not (cam.tilt_shift_enabled and cam.type == 'PERSP' and context.engine == 'CYCLES'):
++            sub = col.column(align=True)
++            sub.prop(cam, "shift_x", text="Shift X")
++            sub.prop(cam, "shift_y", text="Y")
+ 
+         col.separator()
+         sub = col.column(align=True)
+@@ -167,6 +168,58 @@ class DATA_PT_lens(CameraButtonsPanel, Panel):
+         sub.prop(cam, "clip_end", text="End", text_ctxt=i18n_contexts.id_camera)
+ 
+ 
++class DATA_PT_tilt_shift(CameraButtonsPanel, Panel):
++    bl_label = "Tilt-Shift"
++    COMPAT_ENGINES = {'CYCLES', 'BLENDER_EEVEE', 'BLENDER_WORKBENCH'}
++
++    def draw_header(self, context):
++        self.layout.prop(context.camera, "tilt_shift_enabled", text="")
++
++    def draw(self, context):
++        layout = self.layout
++        layout.use_property_split = True
++        cam = context.camera
++        col = layout.column()
++        col.active = cam.tilt_shift_enabled and cam.type == 'PERSP' and context.engine == 'CYCLES'
++        if context.engine != 'CYCLES':
++            col.label(text="Physical rendering requires Cycles CPU", icon='INFO')
++        if cam.type != 'PERSP':
++            col.label(text="Perspective camera required", icon='ERROR')
++        col.label(text="Preview framing is approximate", icon='INFO')
++        col.label(text="Use Cycles for physical framing")
++        col.prop(cam, "tilt_shift_tilt")
++        col.prop(cam, "tilt_shift_swing")
++        col.prop(cam, "tilt_shift_axis_rotation", text="Axis Rotation")
++        col.separator()
++        col.prop(cam, "tilt_shift_shift_x_mm", text="Shift X")
++        col.prop(cam, "tilt_shift_shift_y_mm", text="Shift Y")
++        col.prop(cam, "tilt_shift_image_circle_diameter", text="Image Circle")
++        if cam.tilt_shift_image_circle_diameter == 0:
++            col.label(text="Image circle: unbounded")
++        col.separator()
++        col.label(text="Viewport Guides")
++        col.prop(cam, "tilt_shift_show_lens_plane", text="Lens Plane")
++        col.prop(cam, "tilt_shift_show_focus_plane", text="Focus Plane")
++        col.prop(cam, "tilt_shift_show_image_circle", text="Image Circle")
++        col.prop(cam, "display_size", text="Guide Size")
++        col.label(text="Focus also changes framing")
++
++
++class DATA_PT_tilt_shift_animation(CameraButtonsPanel, Panel):
++    bl_label = "Shift Animation"
++    bl_parent_id = "DATA_PT_tilt_shift"
++    bl_options = {'DEFAULT_CLOSED'}
++    COMPAT_ENGINES = {'CYCLES', 'BLENDER_EEVEE', 'BLENDER_WORKBENCH'}
++
++    def draw(self, context):
++        layout = self.layout
++        layout.use_property_split = True
++        layout.active = context.camera.tilt_shift_enabled
++        layout.label(text="Keyframe canonical dimensionless shifts here")
++        layout.prop(context.camera, "shift_x")
++        layout.prop(context.camera, "shift_y")
++
++
+ class DATA_PT_camera_stereoscopy(CameraButtonsPanel, Panel):
+     bl_label = "Stereoscopy"
+     COMPAT_ENGINES = {
+@@ -596,6 +649,8 @@ classes = (
+     CAMERA_PT_safe_areas_presets,
+     DATA_PT_context_camera,
+     DATA_PT_lens,
++    DATA_PT_tilt_shift,
++    DATA_PT_tilt_shift_animation,
+     DATA_PT_camera_dof,
+     DATA_PT_camera_dof_aperture,
+     DATA_PT_camera,
+diff --git a/source/blender/blenkernel/BKE_camera.h b/source/blender/blenkernel/BKE_camera.h
+index 8fbfa7a73e0..f729074180e 100644
+--- a/source/blender/blenkernel/BKE_camera.h
++++ b/source/blender/blenkernel/BKE_camera.h
+@@ -35,6 +35,27 @@ struct Camera *BKE_camera_add(struct Main *bmain, const char *name);
+  */
+ float BKE_camera_object_dof_distance(const struct Object *ob);
+ 
++/** Physical camera guides, in unscaled Blender camera-local metres (+Y up, -Z forward).
++ * Plane extents are display extents, not glass size. The coverage curve is the exact
++ * rear-focal angular boundary projected onto a finite forward display plane.
++ * False validity means absent geometry, never a clamped substitute plane. */
++struct CameraTiltShiftGuides {
++  bool valid = false;
++  bool focus_valid = false;
++  bool circle_valid = false;
++  float sensor_distance = 0.0f;
++  float3 lens_center = float3(0.0f);
++  float3 lens_normal = float3(0.0f);
++  float4 focus_plane = float4(0.0f);
++  float3 lens[4] = {};
++  float3 focus[4] = {};
++  static constexpr int circle_segments = 64;
++  float3 circle[circle_segments] = {};
++};
++CameraTiltShiftGuides BKE_camera_tilt_shift_guides(const Object *camera_object,
++                                                   float view_roll = 0.0f,
++                                                   bool view_flip_x = false);
++
+ int BKE_camera_sensor_fit(int sensor_fit, float sizex, float sizey);
+ float BKE_camera_sensor_size(int sensor_fit, float sensor_x, float sensor_y);
+ 
+diff --git a/source/blender/blenkernel/intern/camera.cc b/source/blender/blenkernel/intern/camera.cc
+index 45a547d5170..f0aef45a9a9 100644
+--- a/source/blender/blenkernel/intern/camera.cc
++++ b/source/blender/blenkernel/intern/camera.cc
+@@ -6,6 +6,7 @@
+  * \ingroup bke
+  */
+ 
++#include <cmath>
+ #include <cstdlib>
+ #include <optional>
+ 
+@@ -326,6 +327,117 @@ float BKE_camera_object_dof_distance(const Object *ob)
+   return fmax(cam->dof.focus_distance, 1e-5f);
+ }
+ 
++/* Original physical-guide implementation: GPL-3.0-or-later.
++ * Same Rz Ry Rx + Y reflection as the Cycles native camera. No kernel dependency:
++ * the RNA geometry API tests these independently against sampled physical rays. */
++CameraTiltShiftGuides BKE_camera_tilt_shift_guides(const Object *ob,
++                                                   const float view_roll,
++                                                   const bool view_flip_x)
++{
++  CameraTiltShiftGuides g;
++  if (!ob || ob->type != OB_CAMERA) {
++    return g;
++  }
++  const Camera *cam = id_cast<const Camera *>(ob->data);
++  if (!cam->tilt_shift_enabled || cam->type != CAM_PERSP) {
++    return g;
++  }
++  constexpr float margin = 1e-5f;
++  const float f = cam->lens * 1e-3f;
++  const float ct = cosf(cam->tilt_shift_tilt), st = sinf(cam->tilt_shift_tilt);
++  const float cs = cosf(cam->tilt_shift_swing), ss = sinf(cam->tilt_shift_swing);
++  const float ca = cosf(cam->tilt_shift_axis_rotation), sa = sinf(cam->tilt_shift_axis_rotation);
++  const float3 n(ca * ss * ct + sa * st, -sa * ss * ct + ca * st, cs * ct);
++  const float3 ex(ca * cs, -sa * cs, -ss);
++  const float3 ey(ca * ss * st - sa * ct, -sa * ss * st - ca * ct, cs * st);
++  const float sensor = BKE_camera_sensor_size(cam->sensor_fit, cam->sensor_x, cam->sensor_y) *
++                       1e-3f;
++  const float2 shift = BKE_camera_viewplane_offset_transform(
++      view_roll, view_flip_x, sensor * float2(cam->shiftx, cam->shifty));
++  const float3 center(shift.x, shift.y, 0.0f);
++  auto finite = [](const float3 &v) {
++    return std::isfinite(v.x) && std::isfinite(v.y) && std::isfinite(v.z);
++  };
++  auto local = [](const float3 &v) { return float3(v.x, v.y, -v.z); };
++  if (!(f > 0.0f && sensor > 0.0f && n.z > margin) || !finite(n) || !finite(center)) {
++    return g;
++  }
++  float3 anchor = center + float3(0.0f, 0.0f, cam->dof.focus_distance);
++  float b = f / (n.z - f / cam->dof.focus_distance);
++  if (cam->dof.focus_object) {
++    const Object *target = cam->dof.focus_object;
++    float4x4 target_mat = target->object_to_world();
++    if (bPoseChannel *pchan = BKE_pose_channel_find_name(target->pose, cam->dof.focus_subtarget)) {
++      target_mat = target_mat * float4x4(pchan->pose_mat);
++    }
++    float4x4 camera_mat = ob->object_to_world();
++    camera_mat.view<3, 3>() = math::normalize(camera_mat.view<3, 3>());
++    anchor = local(math::transform_point(math::invert(camera_mat), target_mat.location()));
++    const float3 q = anchor - center;
++    if (!(q.z > 0.0f && math::dot(n, q) > f * (1.0f + margin))) {
++      return g;
++    }
++    b = f * q.z / (math::dot(n, q) - f);
++  }
++  else if (!(cam->dof.focus_distance > 0.0f)) {
++    return g;
++  }
++  if (!std::isfinite(b) || !(b > 0.0f && f / b > margin) || !finite(anchor)) {
++    return g;
++  }
++  g.valid = true;
++  g.sensor_distance = b;
++  g.lens_center = local(center);
++  g.lens_normal = local(n);
++  const float extent = cam->drawsize * 0.5f;
++  if (!(extent > 0.0f) || !std::isfinite(extent)) {
++    return CameraTiltShiftGuides{};
++  }
++  const int signs[4][2] = {{-1, -1}, {1, -1}, {1, 1}, {-1, 1}};
++  for (int i = 0; i < 4; i++) {
++    g.lens[i] = local(center + extent * (signs[i][0] * ex + signs[i][1] * ey));
++  }
++  const float3 m = n - float3(0.0f, 0.0f, f / b);
++  const float m_length = math::length(m);
++  g.focus_plane = float4(local(m), f + math::dot(m, center));
++  /* Avoid constructing geometry at infinity or from a numerically singular normal. */
++  if (std::isfinite(m_length) && m_length > margin) {
++    const float3 unit = m / m_length;
++    const float3 seed = fabsf(unit.x) < 0.9f ? float3(1, 0, 0) : float3(0, 1, 0);
++    const float3 u = math::normalize(math::cross(unit, seed));
++    const float3 v = math::cross(unit, u);
++    g.focus_valid = true;
++    for (int i = 0; i < 4; i++) {
++      g.focus[i] = local(anchor + extent * (signs[i][0] * u + signs[i][1] * v));
++      g.focus_valid &= finite(g.focus[i]);
++    }
++  }
++  /* Project the actual angular boundary onto z=drawsize, not the tilted sensor.
++   * A closed curve is omitted entirely when it crosses an asymptote/back hemisphere. */
++  const float radius = cam->tilt_shift_image_circle_diameter * 0.0005f;
++  if (std::isfinite(radius) && radius > 0.0f &&
++      -f * n.z + radius * sqrtf(ex.z * ex.z + ey.z * ey.z) < -margin * math::max(f, radius))
++  {
++    g.circle_valid = true;
++    for (int i = 0; i < CameraTiltShiftGuides::circle_segments; i++) {
++      const float angle = 2.0f * float(M_PI) * i / CameraTiltShiftGuides::circle_segments;
++      const float3 rear = -f * n + radius * (cosf(angle) * ex + sinf(angle) * ey);
++      if (!(rear.z < -margin * math::max(f, radius))) {
++        g.circle_valid = false;
++        break;
++      }
++      g.circle[i] = local(center + (cam->drawsize / rear.z) * rear);
++      if (!finite(g.circle[i]) ||
++          math::length(g.circle[i] - g.lens_center) > cam->drawsize / margin)
++      {
++        g.circle_valid = false;
++        break;
++      }
++    }
++  }
++  return g;
++}
++
+ float BKE_camera_sensor_size(int sensor_fit, float sensor_x, float sensor_y)
+ {
+   /* sensor size used to fit to. for auto, sensor_x is both x and y. */
+diff --git a/source/blender/blenloader/intern/versioning_500.cc b/source/blender/blenloader/intern/versioning_500.cc
+index c4d1cc57c81..8932bd6eced 100644
+--- a/source/blender/blenloader/intern/versioning_500.cc
++++ b/source/blender/blenloader/intern/versioning_500.cc
+@@ -3302,6 +3302,27 @@ static void do_version_texture_gradient_clamp(bNodeTree *node_tree)
+ 
+ void blo_do_versions_500(FileData *fd, Library * /*lib*/, Main *bmain)
+ {
++  /* Fork schema migration, intentionally independent of upstream subversion:
++   * an upstream 5.3 file may have the same version but no native camera fields. */
++  if (!DNA_struct_member_exists(fd->filesdna, "Camera", "int", "tilt_shift_enabled")) {
++    for (Camera &camera : bmain->cameras) {
++      camera.tilt_shift_enabled = 0;
++      camera.tilt_shift_tilt = 0.0f;
++      camera.tilt_shift_swing = 0.0f;
++      camera.tilt_shift_axis_rotation = 0.0f;
++      camera.tilt_shift_image_circle_diameter = 0.0f;
++    }
++  }
++
++  /* M2 files have optical settings but no display state. */
++  if (!DNA_struct_member_exists(fd->filesdna, "Camera", "int", "tilt_shift_show_focus_plane")) {
++    for (Camera &camera : bmain->cameras) {
++      camera.tilt_shift_show_focus_plane = 0;
++      camera.tilt_shift_show_lens_plane = 0;
++      camera.tilt_shift_show_image_circle = 0;
++    }
++  }
++
+   if (!MAIN_VERSION_FILE_ATLEAST(bmain, 500, 1)) {
+     for (Mesh &mesh : bmain->meshes) {
+       bke::mesh_sculpt_mask_to_generic(mesh);
+diff --git a/source/blender/draw/engines/overlay/overlay_camera.hh b/source/blender/draw/engines/overlay/overlay_camera.hh
+index dfbdb0455f0..c9c7680d77a 100644
+--- a/source/blender/draw/engines/overlay/overlay_camera.hh
++++ b/source/blender/draw/engines/overlay/overlay_camera.hh
+@@ -84,6 +84,7 @@ class Cameras : Overlay {
+     CameraInstanceBuf volume_wire_buf = {selection_type_, "camera_volume_wire_buf"};
+     CameraInstanceBuf sphere_solid_buf = {selection_type_, "camera_sphere_solid_buf"};
+     LinePrimitiveBuf stereo_connect_lines = {selection_type_, "camera_dashed_lines_buf"};
++    LinePrimitiveBuf physical_guides = {selection_type_, "camera_physical_guides_buf"};
+     LinePrimitiveBuf tracking_path = {selection_type_, "camera_tracking_path_buf"};
+     Empties::CallBuffers empties{selection_type_};
+   } call_buffers_;
+@@ -118,6 +119,7 @@ class Cameras : Overlay {
+       call_buffers_.sphere_solid_buf.clear();
+       call_buffers_.stereo_connect_lines.clear();
+       call_buffers_.tracking_path.clear();
++      call_buffers_.physical_guides.clear();
+       Empties::begin_sync(call_buffers_.empties);
+     }
+ 
+@@ -213,6 +215,7 @@ class Cameras : Overlay {
+       sub_pass.shader_set(res.shaders->extra_wire.get());
+       call_buffers_.stereo_connect_lines.end_sync(sub_pass);
+       call_buffers_.tracking_path.end_sync(sub_pass);
++      call_buffers_.physical_guides.end_sync(sub_pass);
+     }
+ 
+     PassSimple::Sub &sub_pass = ps_.sub("empties");
+@@ -317,6 +320,35 @@ class Cameras : Overlay {
+       return;
+     }
+ 
++    if (cam.tilt_shift_enabled &&
++        (cam.tilt_shift_show_focus_plane || cam.tilt_shift_show_lens_plane ||
++         cam.tilt_shift_show_image_circle))
++    {
++      const CameraTiltShiftGuides g = BKE_camera_tilt_shift_guides(
++          ob,
++          is_camera_view ? rv3d->camroll : 0.0f,
++          is_camera_view && (rv3d->rflag & RV3D_FLIP_X));
++      auto loop = [&](const float3 *points, int count, const float4 &color) {
++        for (int i = 0; i < count; i++) {
++          call_buffers_.physical_guides.append(math::transform_point(mat, points[i]),
++                                               math::transform_point(mat, points[(i + 1) % count]),
++                                               color,
++                                               select_id);
++        }
++      };
++      if (g.valid) {
++        if (cam.tilt_shift_show_lens_plane) {
++          loop(g.lens, 4, float4(0.25f, 0.65f, 1.0f, 1.0f));
++        }
++        if (cam.tilt_shift_show_focus_plane && g.focus_valid) {
++          loop(g.focus, 4, float4(0.35f, 1.0f, 0.45f, 1.0f));
++        }
++        if (cam.tilt_shift_show_image_circle && g.circle_valid) {
++          loop(g.circle, CameraTiltShiftGuides::circle_segments, float4(1.0f, 0.65f, 0.2f, 1.0f));
++        }
++      }
++    }
++
+     float4x3 vecs;
+     float2 aspect_ratio;
+     float2 shift;
+diff --git a/source/blender/makesdna/DNA_camera_types.h b/source/blender/makesdna/DNA_camera_types.h
+index 50c291e7141..20d99cd5cc2 100644
+--- a/source/blender/makesdna/DNA_camera_types.h
++++ b/source/blender/makesdna/DNA_camera_types.h
+@@ -219,6 +219,18 @@ struct Camera {
+   float lens = 50.0f, ortho_scale = 6.0, drawsize = 1.0f;
+   float sensor_x = DEFAULT_SENSOR_WIDTH, sensor_y = DEFAULT_SENSOR_HEIGHT;
+   float shiftx = 0, shifty = 0;
++
++  /* Native physical tilted thin lens (Cycles opt-in). Angles are radians;
++   * image-circle diameter is millimetres, zero means unbounded coverage. */
++  int tilt_shift_enabled = 0;
++  float tilt_shift_tilt = 0.0f;
++  float tilt_shift_swing = 0.0f;
++  float tilt_shift_axis_rotation = 0.0f;
++  float tilt_shift_image_circle_diameter = 0.0f;
++  int tilt_shift_show_focus_plane = 0;
++  int tilt_shift_show_lens_plane = 0;
++  int tilt_shift_show_image_circle = 0;
++  char _pad_tilt_shift[8] = {};
+   DNA_DEPRECATED float dof_distance = 0;
+ 
+   eCamera_SensorFit sensor_fit = {};
+diff --git a/source/blender/makesrna/intern/rna_camera.cc b/source/blender/makesrna/intern/rna_camera.cc
+index e597338258f..30e0d94fdaf 100644
+--- a/source/blender/makesrna/intern/rna_camera.cc
++++ b/source/blender/makesrna/intern/rna_camera.cc
+@@ -44,6 +44,30 @@
+ 
+ namespace blender {
+ 
++static float rna_Camera_tilt_shift_x_mm_get(PointerRNA *ptr)
++{
++  const Camera *cam = id_cast<const Camera *>(ptr->owner_id);
++  return cam->shiftx * BKE_camera_sensor_size(cam->sensor_fit, cam->sensor_x, cam->sensor_y);
++}
++
++static void rna_Camera_tilt_shift_x_mm_set(PointerRNA *ptr, float value)
++{
++  Camera *cam = id_cast<Camera *>(ptr->owner_id);
++  cam->shiftx = value / BKE_camera_sensor_size(cam->sensor_fit, cam->sensor_x, cam->sensor_y);
++}
++
++static float rna_Camera_tilt_shift_y_mm_get(PointerRNA *ptr)
++{
++  const Camera *cam = id_cast<const Camera *>(ptr->owner_id);
++  return cam->shifty * BKE_camera_sensor_size(cam->sensor_fit, cam->sensor_x, cam->sensor_y);
++}
++
++static void rna_Camera_tilt_shift_y_mm_set(PointerRNA *ptr, float value)
++{
++  Camera *cam = id_cast<Camera *>(ptr->owner_id);
++  cam->shifty = value / BKE_camera_sensor_size(cam->sensor_fit, cam->sensor_x, cam->sensor_y);
++}
++
+ static float rna_Camera_angle_get(PointerRNA *ptr)
+ {
+   const Camera *cam = id_cast<const Camera *>(ptr->owner_id);
+@@ -271,8 +295,9 @@ static bool rna_Camera_background_images_override_apply(
+   return true;
+ }
+ 
+-static void rna_Camera_dof_update(Main *bmain, Scene *scene, PointerRNA * /*ptr*/)
++static void rna_Camera_dof_update(Main *bmain, Scene *scene, PointerRNA *ptr)
+ {
++  rna_Camera_update(bmain, scene, ptr);
+   seq::relations_invalidate_scene_strips(bmain, scene);
+   WM_main_add_notifier(NC_SCENE | ND_SEQUENCER, scene);
+ }
+@@ -850,6 +875,86 @@ void RNA_def_camera(BlenderRNA *brna)
+   RNA_def_property_ui_text(prop, "Shift Y", "Camera vertical shift");
+   RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
+ 
++  /* Native Cycles physical camera. Programmatic controls precede the M3 UI. */
++  prop = RNA_def_property(srna, "tilt_shift_enabled", PROP_BOOLEAN, PROP_NONE);
++  RNA_def_property_boolean_sdna(prop, nullptr, "tilt_shift_enabled", 1);
++  RNA_def_property_ui_text(
++      prop, "Physical Tilt-Shift", "Use the native physical thin lens in Cycles (CPU only)");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_tilt", PROP_FLOAT, PROP_ANGLE);
++  RNA_def_property_range(prop, -M_PI, M_PI);
++  RNA_def_property_ui_text(
++      prop, "Lens Tilt", "Fixed optical X rotation, applied before swing and axis rotation");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_swing", PROP_FLOAT, PROP_ANGLE);
++  RNA_def_property_range(prop, -M_PI, M_PI);
++  RNA_def_property_ui_text(prop, "Lens Swing", "Fixed optical Y rotation, applied after tilt");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_axis_rotation", PROP_FLOAT, PROP_ANGLE);
++  RNA_def_property_range(prop, -M_PI, M_PI);
++  RNA_def_property_ui_text(
++      prop, "Movement Axis Rotation", "Fixed optical Z rotation, applied after tilt and swing");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(
++      srna, "tilt_shift_image_circle_diameter", PROP_FLOAT, PROP_DISTANCE_CAMERA);
++  RNA_def_property_range(prop, 0.0f, FLT_MAX);
++  RNA_def_property_ui_range(prop, 0.0f, 200.0f, 10, 3);
++  RNA_def_property_ui_text(
++      prop,
++      "Image Circle Diameter (mm)",
++      "Rear-focal-plane angular coverage diameter in millimetres; zero is unbounded");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_shift_x_mm", PROP_FLOAT, PROP_DISTANCE_CAMERA);
++  RNA_def_property_float_funcs(
++      prop, "rna_Camera_tilt_shift_x_mm_get", "rna_Camera_tilt_shift_x_mm_set", nullptr);
++  RNA_def_property_clear_flag(prop, PROP_ANIMATABLE);
++  RNA_def_property_ui_range(prop, -100.0f, 100.0f, 10, 3);
++  RNA_def_property_ui_text(
++      prop,
++      "Horizontal Shift (mm)",
++      "Millimetre view of existing shift_x; animate the canonical dimensionless Shift X property");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_shift_y_mm", PROP_FLOAT, PROP_DISTANCE_CAMERA);
++  RNA_def_property_float_funcs(
++      prop, "rna_Camera_tilt_shift_y_mm_get", "rna_Camera_tilt_shift_y_mm_set", nullptr);
++  RNA_def_property_clear_flag(prop, PROP_ANIMATABLE);
++  RNA_def_property_ui_range(prop, -100.0f, 100.0f, 10, 3);
++  RNA_def_property_ui_text(
++      prop,
++      "Vertical Shift (mm)",
++      "Millimetre view of existing shift_y; animate the canonical dimensionless Shift Y property");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, "rna_Camera_update");
++
++  prop = RNA_def_property(srna, "tilt_shift_show_focus_plane", PROP_BOOLEAN, PROP_NONE);
++  RNA_def_property_boolean_sdna(prop, nullptr, "tilt_shift_show_focus_plane", 1);
++  RNA_def_property_ui_text(
++      prop,
++      "Display Focus Plane",
++      "Display a physical camera guide in the viewport; invalid or unbounded geometry is omitted");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, nullptr);
++
++  prop = RNA_def_property(srna, "tilt_shift_show_lens_plane", PROP_BOOLEAN, PROP_NONE);
++  RNA_def_property_boolean_sdna(prop, nullptr, "tilt_shift_show_lens_plane", 1);
++  RNA_def_property_ui_text(
++      prop,
++      "Display Lens Plane",
++      "Display a physical camera guide in the viewport; invalid or unbounded geometry is omitted");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, nullptr);
++
++  prop = RNA_def_property(srna, "tilt_shift_show_image_circle", PROP_BOOLEAN, PROP_NONE);
++  RNA_def_property_boolean_sdna(prop, nullptr, "tilt_shift_show_image_circle", 1);
++  RNA_def_property_ui_text(
++      prop,
++      "Display Image Circle",
++      "Display a physical camera guide in the viewport; invalid or unbounded geometry is omitted");
++  RNA_def_property_update(prop, NC_OBJECT | ND_DRAW, nullptr);
++
+   /* Stereo Settings */
+   prop = RNA_def_property(srna, "stereo", PROP_POINTER, PROP_NONE);
+   RNA_def_property_flag(prop, PROP_NEVER_NULL);
+diff --git a/source/blender/makesrna/intern/rna_camera_api.cc b/source/blender/makesrna/intern/rna_camera_api.cc
+index 4291dee34a8..f569a1e931c 100644
+--- a/source/blender/makesrna/intern/rna_camera_api.cc
++++ b/source/blender/makesrna/intern/rna_camera_api.cc
+@@ -9,12 +9,16 @@
+ #include <cstdlib>
+ #include <cstring>
+ 
++#include "BLI_math_base_c.hh"
++
+ #include "RNA_define.hh"
+ 
+ #include "rna_internal.hh" /* own include */
+ 
+ #ifdef RNA_RUNTIME
+ 
++#  include "DNA_camera_types.h"
++#  include "DNA_object_types.h"
+ #  include "DNA_scene_types.h"
+ 
+ #  include "BLI_math_vector_c.hh"
+@@ -42,6 +46,39 @@ static void rna_camera_view_frame(Camera *camera,
+   copy_v3_v3(r_vec4, vec[3]);
+ }
+ 
++static void rna_camera_tilt_shift_guide_geometry(Camera *camera,
++                                                 Object *camera_object,
++                                                 float view_roll,
++                                                 bool view_flip_x,
++                                                 bool *valid,
++                                                 bool *focus_valid,
++                                                 bool *circle_valid,
++                                                 float *sensor_distance,
++                                                 float lens[12],
++                                                 float focus[12],
++                                                 float circle_x[64],
++                                                 float circle_y[64],
++                                                 float circle_z[64])
++{
++  CameraTiltShiftGuides g;
++  if (camera_object && camera_object->type == OB_CAMERA && camera_object->data == &camera->id) {
++    g = BKE_camera_tilt_shift_guides(camera_object, view_roll, view_flip_x);
++  }
++  *valid = g.valid;
++  *focus_valid = g.focus_valid;
++  *circle_valid = g.circle_valid;
++  *sensor_distance = g.sensor_distance;
++  for (int i = 0; i < 12; i++) {
++    lens[i] = g.lens[i / 3][i % 3];
++    focus[i] = g.focus[i / 3][i % 3];
++  }
++  for (int i = 0; i < 64; i++) {
++    circle_x[i] = g.circle[i].x;
++    circle_y[i] = g.circle[i].y;
++    circle_z[i] = g.circle[i].z;
++  }
++}
++
+ }  // namespace blender
+ 
+ #else
+@@ -53,6 +90,73 @@ void RNA_api_camera(StructRNA *srna)
+   FunctionRNA *func;
+   PropertyRNA *parm;
+ 
++  func = RNA_def_function(
++      srna, "tilt_shift_guide_geometry", "rna_camera_tilt_shift_guide_geometry");
++  RNA_def_function_ui_description(
++      func,
++      "Physical viewport guide vertices in unscaled camera-local metres; use an evaluated "
++      "matching camera object for evaluated focus targets. Lens/focus extents use Display Size; "
++      "coverage lies at forward Display Size. Invalid/unbounded curves are absent");
++  parm = RNA_def_pointer(
++      func, "camera_object", "Object", "Camera Object", "Object using this Camera datablock");
++  RNA_def_parameter_flags(parm, PropertyFlag(0), PARM_REQUIRED);
++  RNA_def_float(func,
++                "view_roll",
++                0.0f,
++                -FLT_MAX,
++                FLT_MAX,
++                "View Roll",
++                "Optional rendered camera-view roll, radians",
++                -M_PI,
++                M_PI);
++  RNA_def_boolean(
++      func, "view_flip_x", false, "View Flip X", "Optional rendered camera-view horizontal flip");
++  for (const char *name : {"valid", "focus_valid", "circle_valid"}) {
++    parm = RNA_def_boolean(
++        func, name, false, "Valid", "Whether the corresponding finite geometry exists");
++    RNA_def_function_output(func, parm);
++  }
++  parm = RNA_def_float(func,
++                       "sensor_distance",
++                       0.0f,
++                       -FLT_MAX,
++                       FLT_MAX,
++                       "Sensor Distance",
++                       "Actual physical sensor distance in metres",
++                       0.0f,
++                       1.0f);
++  RNA_def_function_output(func, parm);
++  parm = RNA_def_float_array(
++      func, "lens", 12, nullptr, -FLT_MAX, FLT_MAX, "Lens", "Four lens plane corners", -1e4, 1e4);
++  RNA_def_property_flag(parm, PROP_THICK_WRAP);
++  RNA_def_function_output(func, parm);
++  parm = RNA_def_float_array(func,
++                             "focus",
++                             12,
++                             nullptr,
++                             -FLT_MAX,
++                             FLT_MAX,
++                             "Focus",
++                             "Four sharp plane corners",
++                             -1e4,
++                             1e4);
++  RNA_def_property_flag(parm, PROP_THICK_WRAP);
++  RNA_def_function_output(func, parm);
++  for (const char *name : {"circle_x", "circle_y", "circle_z"}) {
++    parm = RNA_def_float_array(func,
++                               name,
++                               64,
++                               nullptr,
++                               -FLT_MAX,
++                               FLT_MAX,
++                               "Circle Coordinate",
++                               "64 angular coverage boundary coordinates",
++                               -1e4,
++                               1e4);
++    RNA_def_property_flag(parm, PROP_THICK_WRAP);
++    RNA_def_function_output(func, parm);
++  }
++
+   func = RNA_def_function(srna, "view_frame", "rna_camera_view_frame");
+   RNA_def_function_ui_description(
+       func, "Return 4 points for the cameras frame (before object transformation)");
+diff --git a/intern/cycles/kernel/camera/tilt_shift_math.h b/intern/cycles/kernel/camera/tilt_shift_math.h
+new file mode 100644
+index 00000000000..ce62750ffbb
+--- /dev/null
++++ b/intern/cycles/kernel/camera/tilt_shift_math.h
+@@ -0,0 +1,110 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#pragma once
++
++/* Shared scalar float implementation: no STL, allocation, exceptions or Blender
++ * types. Lengths are metres; frame is Cycles (+X right, +Y up, +Z scene-going).
++ * Caller supplies sqrtf/sinf/cosf and a device-compatible inline qualifier. */
++#ifndef TILT_SHIFT_DEVICE
++#  define TILT_SHIFT_DEVICE inline
++#  define TILT_SHIFT_LOCAL_QUALIFIER
++#endif
++
++namespace tilt_shift_native {
++struct Vec {
++  float x, y, z;
++};
++struct State {
++  Vec normal, aperture_x, aperture_y;
++  float focal_length, sensor_distance, circle_radius;
++};
++struct Ray {
++  Vec origin, direction;
++  float weight;
++};
++
++TILT_SHIFT_DEVICE Vec add(Vec a, Vec b)
++{
++  return {a.x + b.x, a.y + b.y, a.z + b.z};
++}
++
++TILT_SHIFT_DEVICE Vec mul(Vec a, float b)
++{
++  return {a.x * b, a.y * b, a.z * b};
++}
++
++TILT_SHIFT_DEVICE float dot(Vec a, Vec b)
++{
++  return a.x * b.x + a.y * b.y + a.z * b.z;
++}
++
++TILT_SHIFT_DEVICE Vec normalize(Vec a)
++{
++  return mul(a, 1.0f / sqrtf(dot(a, a)));
++}
++
++/* Rz(axis) Ry(swing) Rx(tilt) in the reference's Y-down frame, followed by
++ * S=diag(1,-1,1). Reflection reverses basis handedness; do not rebuild ey by
++ * cross product. Basis Y points down at zero angle. */
++TILT_SHIFT_DEVICE State
++prepare(float f, float focus, float tilt, float swing, float axis, float circle_radius)
++{
++  const float ct = cosf(tilt), st = sinf(tilt);
++  const float cs = cosf(swing), ss = sinf(swing);
++  const float ca = cosf(axis), sa = sinf(axis);
++  State s;
++  s.normal = {ca * ss * ct + sa * st, -sa * ss * ct + ca * st, cs * ct};
++  s.aperture_x = {ca * cs, -sa * cs, -ss};
++  s.aperture_y = {ca * ss * st - sa * ct, -sa * ss * st - ca * ct, cs * st};
++  s.focal_length = f;
++  s.sensor_distance = f / (s.normal.z - f / focus);
++  s.circle_radius = circle_radius;
++  return s;
++}
++
++/* Focus object coordinates are relative to the translated lens centre. This
++ * follows directly from (n-(f/b)k).Q=f and keeps off-axis targets sharp. */
++TILT_SHIFT_DEVICE State focus_at(State s, Vec target)
++{
++  s.sensor_distance = s.focal_length * target.z / (dot(s.normal, target) - s.focal_length);
++  return s;
++}
++
++/* q is the legacy virtual-screen slope q.xy/q.z. Inversion maps raster to
++ * physical sensor; keeping nominal f here preserves sensor fit and shift. */
++TILT_SHIFT_DEVICE Vec sensor(State s, float qx, float qy)
++{
++  return {-s.focal_length * qx, -s.focal_length * qy, -s.sensor_distance};
++}
++
++TILT_SHIFT_DEVICE bool covered(State s, Vec p)
++{
++  if (s.circle_radius == 0.0f) {
++    return true; /* Explicit unbounded encoding. */
++  }
++  const Vec rear = add(mul(p, -s.focal_length / dot(s.normal, p)), mul(s.normal, s.focal_length));
++  return dot(rear, rear) <= s.circle_radius * s.circle_radius;
++}
++
++/* Aperture coordinates already contain radius, polygon and anamorphic scaling.
++ * Minus ey preserves the existing Cycles bokeh rotation at zero movements. */
++TILT_SHIFT_DEVICE Ray sample(State s, float qx, float qy, float ax, float ay)
++{
++  const Vec p = sensor(s, qx, qy);
++  const Vec a = add(mul(s.aperture_x, ax), mul(s.aperture_y, -ay));
++  const float h = 1.0f + dot(s.normal, p) / s.focal_length;
++  return {a, normalize(add(mul(a, h), mul(p, -1.0f))), covered(s, p) ? 1.0f : 0.0f};
++}
++
++/* Intersect camera-Z clip planes after sampling the genuinely tilted aperture.
++ * Validation guarantees origin.z<near and direction.z>0. */
++TILT_SHIFT_DEVICE Ray clip_near(Ray r, float nearclip)
++{
++  r.origin = add(r.origin, mul(r.direction, (nearclip - r.origin.z) / r.direction.z));
++  return r;
++}
++}  // namespace tilt_shift_native
++
++#ifdef TILT_SHIFT_LOCAL_QUALIFIER
++#  undef TILT_SHIFT_DEVICE
++#  undef TILT_SHIFT_LOCAL_QUALIFIER
++#endif

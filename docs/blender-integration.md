@@ -5,8 +5,9 @@ All paths below are relative to `work/blender` at the
 [source pin](source-revision.json). M2 now implements the native CPU patch;
 [its implemented conventions and acceptance limits](m2-native-camera.md) take
 precedence over the original proposed UI map below. The bounded static CPU gate
-passed; see [measured evidence](m2-validation.json). M3 panels and overlays are not
-implemented.
+passed; see [measured evidence](m2-validation.json). M3 panels, physical guides and animation fixtures are implemented in the
+[interface patch](m3-native-interface.md); [bounded M3 acceptance](m3-validation.json)
+includes actual isolated native GUI interactions and passes with documented limits.
 
 | Layer | Path and existing entry point | Required work |
 |---|---|---|
@@ -34,11 +35,11 @@ schema/member guards appropriate to the fork; version numbers alone must not
 accidentally enable old cameras or reinterpret unset fields. Test old-file loads
 and round trips rather than assuming new-ID initialization covers deserialization.
 
-## Proposed native controls (M2/M3)
+## Native controls (M2/M3)
 
-This table records the requested M2/M3 interface. M2 implements the enable,
-three angle fields and image-circle diameter programmatically; M3 still owns
-physical shift views, panels and visualization toggles. Implemented RNA identifiers
+This table records the M2/M3 interface. M2 implements the enable,
+three angle fields and image-circle diameter; M3 adds physical shift views,
+panels and visualization toggles, with [implemented workflow details](m3-native-interface.md). Implemented RNA identifiers
 are listed in [the M2 guide](m2-native-camera.md). Names below are UI labels. Angular controls display degrees and store radians. Production
 angle/shift limits remain subject to float-domain and rendered validation rather
 than an arbitrary range chosen here.

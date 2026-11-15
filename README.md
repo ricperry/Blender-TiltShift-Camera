@@ -8,8 +8,10 @@ M2's bounded static CPU camera foundation is complete: native physical rays,
 shifted lens origins, off-axis object focus, coverage, clipping and volume tests
 passed. All four disabled fixtures match the unmodified baseline bitwise.
 See [native conventions](docs/m2-native-camera.md) and the
-[measured M2 evidence](docs/m2-validation.json). M3 panels/overlays and new-camera
-HIP support remain separate work; the M1 RX 6900 XT baseline does not validate
+[measured M2 evidence](docs/m2-validation.json). The [M3 interface](docs/m3-native-interface.md)
+is complete within its bounded CPU/private-GUI scope: native panels, physical
+guides, persistence, animation and retained regressions pass. See the
+[M3 evidence](docs/m3-validation.json). New-camera HIP remains a separate gate; the M1 RX 6900 XT baseline does not validate
 the modified camera.
 
 Upstream: https://projects.blender.org/blender/blender.git

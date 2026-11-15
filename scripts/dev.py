@@ -155,8 +155,11 @@ def compare(first, second, rmse_limit, max_limit):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest="command", required=True)
-    for name in ("check-deps", "acquire", "verify-source", "dependencies", "test-optics", "patch"):
+    for name in ("check-deps", "acquire", "verify-source", "dependencies", "test-optics"):
         sub.add_parser(name)
+    q = sub.add_parser("patch")
+    q.add_argument("--milestone", choices=("m2", "m3"), default="m3",
+                   help="Export a cumulative patch without overwriting earlier milestone evidence")
     for name in ("configure", "build"):
         q = sub.add_parser(name)
         q.add_argument("backend", choices=("cpu", "hip"))
@@ -258,7 +261,10 @@ def main():
             if new_file.returncode != 1:
                 raise ValueError("Could not export reviewed native header")
             patch += new_file.stdout
-        target = ROOT / "patches/blender-v5.3.0-tilt-shift.patch"
+        target = ROOT / ("patches/blender-v5.3.0-tilt-shift.patch" if args.milestone == "m2"
+                         else "patches/blender-v5.3.0-tilt-shift-m3.patch")
+        if args.milestone == "m2" and target.exists():
+            raise ValueError("M2 patch is immutable evidence; use --milestone m3")
         target.write_text(patch)
         print(target)
 
