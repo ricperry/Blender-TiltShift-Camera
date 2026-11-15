@@ -158,7 +158,7 @@ def main():
     for name in ("check-deps", "acquire", "verify-source", "dependencies", "test-optics"):
         sub.add_parser(name)
     q = sub.add_parser("patch")
-    q.add_argument("--milestone", choices=("m2", "m3"), default="m3",
+    q.add_argument("--milestone", choices=("m2", "m3", "m4"), default="m4",
                    help="Export a cumulative patch without overwriting earlier milestone evidence")
     for name in ("configure", "build"):
         q = sub.add_parser(name)
@@ -262,9 +262,9 @@ def main():
                 raise ValueError("Could not export reviewed native header")
             patch += new_file.stdout
         target = ROOT / ("patches/blender-v5.3.0-tilt-shift.patch" if args.milestone == "m2"
-                         else "patches/blender-v5.3.0-tilt-shift-m3.patch")
-        if args.milestone == "m2" and target.exists():
-            raise ValueError("M2 patch is immutable evidence; use --milestone m3")
+                         else f"patches/blender-v5.3.0-tilt-shift-{args.milestone}.patch")
+        if args.milestone in ("m2", "m3") and target.exists():
+            raise ValueError("M2/M3 patches are immutable evidence; use --milestone m4")
         target.write_text(patch)
         print(target)
 

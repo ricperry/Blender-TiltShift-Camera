@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+"""Verify all retained rejection messages on one hard-selected M4 backend."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import tempfile
+
+from dev import ENV, PIN, ROOT
+from run_m2_guards import EXPECTED
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--blender', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--backend', choices=('cpu','hip'), required=True)
+    args = parser.parse_args()
+    output = args.output.resolve()
+    if not output.is_relative_to(ROOT/'work'):
+        raise ValueError('Artifacts must be below ignored work/')
+    output.mkdir(parents=True, exist_ok=True)
+    folder = Path(tempfile.mkdtemp(prefix='m4-'+args.backend+'-guards-',dir=output))
+    paths = dict(binary_sha256=args.blender.resolve(),
+                 fixture_script_sha256=ROOT/'scripts/blender_m4_validation.py',
+                 immutable_m2_script_sha256=ROOT/'scripts/blender_m2_validation.py',
+                 patch_sha256=ROOT/'patches/blender-v5.3.0-tilt-shift-m4.patch')
+    provenance = {key:digest(path) for key,path in paths.items()}
+    for name in ('BLENDER_USER_RESOURCES','BLENDER_USER_CONFIG','BLENDER_USER_EXTENSIONS',
+                 'BLENDER_USER_SCRIPTS','BLENDER_USER_DATAFILES','XDG_CACHE_HOME'):
+        Path(ENV[name]).mkdir(parents=True,exist_ok=True)
+    command = [str(paths['binary_sha256']),'--background','-noaudio','--factory-startup',
+               '--debug-cycles','--python-exit-code','1','--python',str(paths['fixture_script_sha256']),
+               '--','--output',str(folder),'--backend',args.backend,'--case','guards']
+    with (folder/'blender.log').open('w') as stream:
+        result = subprocess.run(command,env=ENV,stdout=stream,stderr=subprocess.STDOUT,
+                                timeout=300,check=False)
+    if result.returncode != 1:
+        raise RuntimeError('Expected sticky render-error exit 1; inspect '+str(folder))
+    data = json.loads((folder/'guards-results.json').read_text())
+    if data['source_pin'] != PIN or data['backend'] != args.backend:
+        raise RuntimeError('Wrong backend or source pin')
+    for key,path in paths.items():
+        if provenance[key] != data[key] or digest(path) != provenance[key]:
+            raise RuntimeError('Guard provenance changed: '+str(path))
+    records = data['results']
+    if len(records) != len(EXPECTED) or {x['name'] for x in records} != set(EXPECTED):
+        raise RuntimeError('Incomplete rejection set')
+    for item in records:
+        if (item.get('rejected') is not True or 'Physical Tilt-Shift:' not in item.get('error','')
+                or EXPECTED[item['name']] not in item['error']):
+            raise RuntimeError('Wrong rejection: '+str(item))
+    summary = dict(status='passed',backend=args.backend,blender_exit_code=1,
+                   host_runner_sha256=digest(Path(__file__)),
+                   fresh_guard_results=str((folder/'guards-results.json').relative_to(ROOT)),
+                   guard_results_sha256=digest(folder/'guards-results.json'),
+                   expected_rejections=list(EXPECTED),**provenance)
+    (output/('m4-'+args.backend+'-guards-host-results.json')).write_text(json.dumps(summary,indent=2)+'\n')
+    print(json.dumps(summary,indent=2))
+
+
+if __name__ == '__main__':
+    main()

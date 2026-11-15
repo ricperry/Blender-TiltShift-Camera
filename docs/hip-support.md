@@ -1,13 +1,15 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # AMD HIP support and evidence
 
-The [M2 static CPU camera foundation](m2-validation.json) is implemented and
-validated. Enabled GPU rendering is explicitly rejected until M4: new native
-device data and ray code require a fresh RDNA2 build and render. The preserved
-M1 HIP fatbin must not be copied into the M2 installation.
+The [M4 native camera](m4-hip-camera.md) now passes actual RX 6900 XT/gfx1030
+build/render acceptance with a fresh official kernel/install and 19 matching
+CPU/HIP float comparisons. See the [M4 ledger](m4-validation.json) for exact
+provenance, measured limits, disabled regressions, paired completed-render
+timings and remaining limits. Enabled execution permits CPU or one non-HIPRT HIP
+device; multi-device, HIPRT and other GPU backends remain rejected. The preserved
+M1 HIP fatbin must not be copied into a native-camera installation.
 
-HIP support for the new tilt-shift camera remains a target. The unmodified
-Blender baseline rendered successfully on actual RDNA2 hardware.
+The historical unmodified Blender baseline also rendered successfully on actual RDNA2 hardware.
 Initialization host inventory:
 Fedora 45, Radeon RX 6900 XT (RDNA2 / gfx1030), ROCm/HIP 7.2.53211,
 GCC 16.2.1, CMake 4.3 and Ninja 1.13.2, approximately 32 GB system RAM.
@@ -58,7 +60,13 @@ disables CPU devices and sets the pinned `_cycles.set_device_override('HIP')`
 hard override. This prevents upstream's ordinary preference fallback to CPU;
 missing/incompatible devices fail. Its smoke comparison defaults are RGB RMSE `0.003` and
 maximum absolute error `0.02` in linear EXR values at 320×240 / 32 samples. These
-are provisional thresholds, not established acceptance tolerances. Independent
+remain provisional smoke thresholds. At M4, grid/facade maximum errors
+`0.0212893188` / `0.0202977657` exceeded `0.02`; preserved unmodified M1 CPU/HIP
+reproduction gave exactly the same maxima. M4 HIP versus M1 HIP passed all four
+fixtures, with maximum error below `9.54e-7`; all four CPU baseline buffers
+remained bitwise identical. Those smoke failures were retained and attributed,
+with no enlarged limits. M4 enabled fixtures instead use the predeclared
+sample-scaled bounds in [M4 validation](m4-hip-camera.md). Independent
 stochastic CPU/HIP noise can exceed them; investigate and choose documented
 sample counts/tolerances rather than silently loosening checks. Exact parity is
 expected only for repeat comparisons where device and deterministic settings

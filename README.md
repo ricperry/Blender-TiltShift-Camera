@@ -11,8 +11,11 @@ See [native conventions](docs/m2-native-camera.md) and the
 [measured M2 evidence](docs/m2-validation.json). The [M3 interface](docs/m3-native-interface.md)
 is complete within its bounded CPU/private-GUI scope: native panels, physical
 guides, persistence, animation and retained regressions pass. See the
-[M3 evidence](docs/m3-validation.json). New-camera HIP remains a separate gate; the M1 RX 6900 XT baseline does not validate
-the modified camera.
+[M3 evidence](docs/m3-validation.json). [M4 native HIP](docs/m4-hip-camera.md)
+now passes on the actual RX 6900 XT/gfx1030: a fresh kernel build, 19 matching
+CPU/HIP render comparisons, retained physics/guard checks and disabled regressions.
+Support is bounded to CPU or one non-HIPRT HIP device; see the
+[M4 evidence and limits](docs/m4-validation.json).
 
 Upstream: https://projects.blender.org/blender/blender.git
 

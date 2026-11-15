@@ -1,0 +1,2814 @@
+{
+  "license": "GPL-3.0-or-later",
+  "date_local": "2026-11-14",
+  "timezone": "America/New_York",
+  "scope": "M4 bounded static native camera on one non-HIPRT HIP GPU; actual RX 6900 XT/gfx1030 build/render and CPU/HIP parity",
+  "status": "passed_with_documented_supported_modes",
+  "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+  "blender_version": "5.3.0",
+  "library_commit": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+  "upstream_head_unchanged": true,
+  "upstream_index_unstaged": true,
+  "patch_applies_to_exact_pin": true,
+  "patch_check": "Temporary GIT_INDEX_FILE: read-tree exact pin; git apply --cached --check --whitespace=error; actual upstream index untouched",
+  "installed_binary": "work/install-blender-m4/blender",
+  "binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+  "fixture_script_sha256": "bfa0e31da07dc809e95caf972103ea021e4c9bb85eb446f679a0153d1cf9fe3c",
+  "immutable_m2_script_sha256": "7220e31ce07a1e7a2ffdb601d18176e380c6d79cdfaef2d7928478dc50299761",
+  "immutable_visual_script_sha256": "fb99053046487b17dae166c9f21599c9df695d27110e5b2594c3ee7d11f4dfab",
+  "patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+  "source_pin": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+  "hip_kernel_sha256": "466b9fc17b95fa079eb260b33ca3277685b7172862cb41b9fdc6adef6fa9a994",
+  "native_delta_from_m3": [
+    "Host device gate admits CPU or one non-HIPRT HIP device; rejects all aggregates and other GPU backends",
+    "Non-Cycles Camera Data message says Physical rendering requires Cycles"
+  ],
+  "unchanged": [
+    "Shared kernel math and KernelCamera layout from M3",
+    "Disabled upstream camera branch",
+    "All M2 optical/geometry/mode guards",
+    "Earlier original fixtures, patches, evidence and preserved installations"
+  ],
+  "hardware": {
+    "os": "Fedora 45",
+    "gpu": "AMD Radeon RX 6900 XT",
+    "architecture": "gfx1030 / RDNA2",
+    "vram_bytes": 17163091968,
+    "hip": "7.2.53211-9999",
+    "hip_clang": "22.0.0.rocm",
+    "hardware_probe": {
+      "path": "work/m4-hardware.txt",
+      "sha256": "fb4b90dc6c66363754a2f16cbb4ad1c149cb96c77e22f8fb86ca56e01c85a0ff"
+    },
+    "toolchain_probe": {
+      "path": "work/m4-hip-toolchain.txt",
+      "sha256": "3ed344330499c54024ba10e5295df74b271076c3e74cb9101f7009d4e0330594"
+    }
+  },
+  "resources": {
+    "build_memory_high": "16GiB",
+    "build_memory_max": "18GiB",
+    "build_swap_max": 0,
+    "build_cpu_quota": "400%",
+    "hip_kernel_jobs": 1,
+    "host_build_jobs": 4,
+    "runtime_memory_high": "3GiB",
+    "runtime_memory_max": "4GiB",
+    "runtime_swap_max": 0,
+    "runtime_cpu_quota": "200%",
+    "runtime_threads": 2,
+    "sequential_renders": true,
+    "build_peak_from_journal": "2.1GiB",
+    "test_scope_peak_from_journal": "718.3MiB",
+    "runtime_scope_properties": {
+      "path": "work/m4-runtime-limits.txt",
+      "sha256": "a7da8c3a3cf1e8aa9eee86430cc0314a05f05fd1d9f1b26633f516745844cf25"
+    },
+    "scope_journal": {
+      "path": "work/m4-resource-journal.txt",
+      "sha256": "b79437f205acefb5f351e520d66785bd2bbff3b8d6c24e006355dae2118560e4"
+    },
+    "configuration_isolated": true,
+    "system_blender_unchanged": true,
+    "personal_desktop_not_used": true,
+    "all_task_scopes_inactive_at_closeout": true
+  },
+  "build": {
+    "status": "passed",
+    "gui_capable": true,
+    "hiprt": false,
+    "hip_arch": "gfx1030",
+    "official_install": true,
+    "build_tree": "work/build-blender-cpu",
+    "commands": [
+      [
+        "/usr/bin/cmake",
+        "-S",
+        "work/blender",
+        "-B",
+        "work/build-blender-cpu",
+        "-DWITH_CYCLES_HIP_BINARIES=ON",
+        "-DCYCLES_HIP_BINARIES_ARCH=gfx1030",
+        "-DHIP_ROOT_DIR=/usr",
+        "-DHIP_HIPCC_EXECUTABLE=/usr/bin/hipcc",
+        "-DWITH_CYCLES_DEVICE_HIPRT=OFF",
+        "-DCMAKE_INSTALL_PREFIX=work/install-blender-m4"
+      ],
+      [
+        "/usr/bin/cmake",
+        "--build",
+        "work/build-blender-cpu",
+        "--target",
+        "cycles_kernel_hip",
+        "--parallel",
+        "1"
+      ],
+      [
+        "/usr/bin/cmake",
+        "--build",
+        "work/build-blender-cpu",
+        "--parallel",
+        "4"
+      ],
+      [
+        "/usr/bin/cmake",
+        "--install",
+        "work/build-blender-cpu"
+      ]
+    ],
+    "generated_kernel": {
+      "path": "work/build-blender-cpu/intern/cycles/kernel/device/hip/kernel_gfx1030.fatbin.zst",
+      "sha256": "466b9fc17b95fa079eb260b33ca3277685b7172862cb41b9fdc6adef6fa9a994"
+    },
+    "installed_kernel": {
+      "path": "work/install-blender-m4/5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst",
+      "sha256": "466b9fc17b95fa079eb260b33ca3277685b7172862cb41b9fdc6adef6fa9a994"
+    },
+    "logs": [
+      {
+        "path": "work/m4-configure.log",
+        "sha256": "7dc617d0f145fd442965eecca63209a5d3d0a69374f37316fcb449db085e99de"
+      },
+      {
+        "path": "work/m4-hip-kernel.log",
+        "sha256": "279c834c4573bbb7f1ac47ab734826756fe030bc36e34968d1753057e6d35451"
+      },
+      {
+        "path": "work/m4-host.log",
+        "sha256": "6b3cace5a1f2bd06074c7e5b165245bf5caa2d9ae03776855957bf47a0e43a30"
+      },
+      {
+        "path": "work/m4-install.log",
+        "sha256": "e92fc39641a27c3f72634b418c01ac2c530c3446bfb97ae476799871c9f85fe4"
+      },
+      {
+        "path": "work/m4-install-ui.log",
+        "sha256": "db63d9216f0bdbb1a8dd37660eb9ed4fef15f5c76995e67512be7f85c8bd2011"
+      }
+    ],
+    "installed_provenance": {
+      "metadata": {
+        "path": "work/m4-installed-provenance.json",
+        "sha256": "cfdd8745f32ea871b36376ea7dd91090a3855ba0da5a4bc24f9480c3e1f910df"
+      },
+      "status": "passed",
+      "matching_files": [
+        {
+          "source": "work/build-blender-cpu/intern/cycles/kernel/device/hip/kernel_gfx1030.fatbin.zst",
+          "installed": "work/install-blender-m4/5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst",
+          "sha256": "466b9fc17b95fa079eb260b33ca3277685b7172862cb41b9fdc6adef6fa9a994"
+        },
+        {
+          "source": "work/blender/intern/cycles/kernel/camera/camera.h",
+          "installed": "work/install-blender-m4/5.3/scripts/addons_core/cycles/source/kernel/camera/camera.h",
+          "sha256": "0cb796dfb40a8e07d5f68689dd67c28b75fd59f66e1e415bc72b269b80f8e5f1"
+        },
+        {
+          "source": "work/blender/intern/cycles/kernel/camera/tilt_shift_math.h",
+          "installed": "work/install-blender-m4/5.3/scripts/addons_core/cycles/source/kernel/camera/tilt_shift_math.h",
+          "sha256": "a36ab21bc48b0b30fcce725b3bd1f842f6424bb37fe3408d25df501d3d5578cc"
+        },
+        {
+          "source": "work/blender/intern/cycles/kernel/types.h",
+          "installed": "work/install-blender-m4/5.3/scripts/addons_core/cycles/source/kernel/types.h",
+          "sha256": "878786e2f912c07cc98ce1bb474e79f8003312fe61ccbe4302cff641611e6768"
+        },
+        {
+          "source": "work/blender/scripts/startup/bl_ui/properties_data_camera.py",
+          "installed": "work/install-blender-m4/5.3/scripts/startup/bl_ui/properties_data_camera.py",
+          "sha256": "0bf7f26390c77253aa543092221f02ae7e4158a070d52bfe8a638e1ce480dfab"
+        }
+      ]
+    }
+  },
+  "execution": {
+    "status": "passed",
+    "same_executable_cpu_hip": true,
+    "hard_overrides": [
+      "CPU",
+      "HIP"
+    ],
+    "hiprt": false,
+    "cpu_fallback": false,
+    "hip_device_log": {
+      "path": "work/m4-hip-all.log",
+      "sha256": "c02a5caf60716f7b880fb51307c2ca9b308c17cdb81a2e44ce74060249403900"
+    },
+    "log_proof": [
+      "Path tracing on: AMD Radeon RX 6900 XT (HIP) [HIP_AMD Radeon RX 6900 XT_0000:0b:00]",
+      "Testing for pre-compiled kernel .../5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst.",
+      "Using precompiled kernel."
+    ],
+    "processes": [
+      {
+        "backend": "cpu",
+        "case": "all",
+        "process_wall_s": 25.657878949001315,
+        "exit_code": 0
+      },
+      {
+        "backend": "hip",
+        "case": "all",
+        "process_wall_s": 3.665435750001052,
+        "exit_code": 0
+      },
+      {
+        "backend": "cpu",
+        "case": "chart",
+        "process_wall_s": 11.266244669001026,
+        "exit_code": 0
+      },
+      {
+        "backend": "hip",
+        "case": "chart",
+        "process_wall_s": 1.7997061610003584,
+        "exit_code": 0
+      },
+      {
+        "backend": "cpu",
+        "case": "visual",
+        "process_wall_s": 32.49719005600491,
+        "exit_code": 0
+      },
+      {
+        "backend": "hip",
+        "case": "visual",
+        "process_wall_s": 2.751288924999244,
+        "exit_code": 0
+      },
+      {
+        "backend": "cpu",
+        "case": "guards",
+        "process_wall_s": 1.5614685830005328,
+        "exit_code": 0
+      },
+      {
+        "backend": "hip",
+        "case": "guards",
+        "process_wall_s": 1.637548067003081,
+        "exit_code": 0
+      }
+    ]
+  },
+  "float_comparisons": {
+    "metadata": {
+      "path": "work/m4-validation/final-cpu-hip-comparison.json",
+      "sha256": "dad9d02e66b3c5b2b0036d0c1d641c47003cedf97269fdd7249a77579b84c818"
+    },
+    "status": "passed",
+    "suite": "full",
+    "required_render_names": [
+      "boundary-near-aperture",
+      "boundary-sensor",
+      "combined-movements",
+      "coverage-tilted",
+      "coverage-untilted",
+      "disabled-centroid",
+      "large-filter-chart",
+      "offaxis-focus-object",
+      "physical-centroid",
+      "physical-focus-chart",
+      "physical-shift",
+      "pixel-aspect",
+      "scheimpflug-sharp",
+      "scheimpflug-untilted",
+      "shifted-world-window",
+      "tilted-aperture-clips",
+      "tilted-aperture-volume",
+      "untilted-coc",
+      "vertical-fit"
+    ],
+    "global_provenance": {
+      "binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+      "fixture_script_sha256": "bfa0e31da07dc809e95caf972103ea021e4c9bb85eb446f679a0153d1cf9fe3c",
+      "immutable_m2_script_sha256": "7220e31ce07a1e7a2ffdb601d18176e380c6d79cdfaef2d7928478dc50299761",
+      "immutable_visual_script_sha256": "fb99053046487b17dae166c9f21599c9df695d27110e5b2594c3ee7d11f4dfab",
+      "patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+      "source_pin": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+      "hip_kernel_sha256": "466b9fc17b95fa079eb260b33ca3277685b7172862cb41b9fdc6adef6fa9a994"
+    },
+    "comparator_sha256": "64850f5368e8d034fabd518ce2f2e3785b7711646b070baca0722610908e5a6f",
+    "predeclared_limits": {
+      "default": {
+        "rmse": 0.003,
+        "max_abs_rule": "max(0.0002, 2 / samples)"
+      },
+      "boundary": {
+        "rmse": 0.0002,
+        "max_abs": 0.0002
+      }
+    },
+    "results": [
+      {
+        "name": "disabled-centroid",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+        "hip_pixels_sha256": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb"
+      },
+      {
+        "name": "physical-centroid",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+        "hip_pixels_sha256": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494"
+      },
+      {
+        "name": "physical-shift",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+        "hip_pixels_sha256": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5"
+      },
+      {
+        "name": "vertical-fit",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf",
+        "hip_pixels_sha256": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf"
+      },
+      {
+        "name": "pixel-aspect",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+        "hip_pixels_sha256": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f"
+      },
+      {
+        "name": "offaxis-focus-object",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+        "hip_pixels_sha256": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312"
+      },
+      {
+        "name": "untilted-coc",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.001953125
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+        "hip_pixels_sha256": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5"
+      },
+      {
+        "name": "scheimpflug-sharp",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0078125
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+        "hip_pixels_sha256": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9"
+      },
+      {
+        "name": "scheimpflug-untilted",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0078125
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+        "hip_pixels_sha256": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e"
+      },
+      {
+        "name": "shifted-world-window",
+        "rmse_rgb": 3.489850017958537e-08,
+        "max_abs_rgb": 3.5762786865234375e-07,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.03125
+        },
+        "passed": true,
+        "bitwise": false,
+        "cpu_pixels_sha256": "361c495fa1e903ebbf54f550c57f7e4c818dc04930f912c09085081de576d514",
+        "hip_pixels_sha256": "f32e17641579d71cdf789ae71a8d81ff1965340dc4755e6b59a888e39ed69b45"
+      },
+      {
+        "name": "coverage-untilted",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+        "hip_pixels_sha256": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f"
+      },
+      {
+        "name": "coverage-tilted",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0625
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+        "hip_pixels_sha256": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479"
+      },
+      {
+        "name": "tilted-aperture-volume",
+        "rmse_rgb": 4.557246421744177e-08,
+        "max_abs_rgb": 2.384185791015625e-07,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.03125
+        },
+        "passed": true,
+        "bitwise": false,
+        "cpu_pixels_sha256": "b4268e0bf178bc4e600170ffbbf2248328b9d0e95f5c3f99392fe294b4de676b",
+        "hip_pixels_sha256": "8061a80fc5dddf64a126b32680f9b82dbe4f9dc6b6033375a435cd6c90d00d47"
+      },
+      {
+        "name": "tilted-aperture-clips",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0078125
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+        "hip_pixels_sha256": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8"
+      },
+      {
+        "name": "boundary-sensor",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.0002,
+          "max_abs": 0.0002
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+        "hip_pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f"
+      },
+      {
+        "name": "boundary-near-aperture",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.0002,
+          "max_abs": 0.0002
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+        "hip_pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f"
+      },
+      {
+        "name": "combined-movements",
+        "rmse_rgb": 0.0,
+        "max_abs_rgb": 0.0,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.0078125
+        },
+        "passed": true,
+        "bitwise": true,
+        "cpu_pixels_sha256": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78",
+        "hip_pixels_sha256": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78"
+      },
+      {
+        "name": "large-filter-chart",
+        "rmse_rgb": 5.047310488534147e-05,
+        "max_abs_rgb": 0.007818318903446198,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": false,
+        "cpu_pixels_sha256": "7c0d4db8bf4e4502bc18a8878e252d6069d7e726239b2c2c459ab4690a10fce5",
+        "hip_pixels_sha256": "3f285a8ac081937f33c8bc846e9b04c4ef68e7457dfeaa21903f1863b1644014"
+      },
+      {
+        "name": "physical-focus-chart",
+        "rmse_rgb": 0.0001215173174924633,
+        "max_abs_rgb": 0.006985008716583252,
+        "limits": {
+          "rmse": 0.003,
+          "max_abs": 0.015625
+        },
+        "passed": true,
+        "bitwise": false,
+        "cpu_pixels_sha256": "d8ad57a04d088694131e9e01af3411d2524f8f02679d83dbef7c790200d91bc1",
+        "hip_pixels_sha256": "3a2925075bb636fac1073e3764fd6297ad6fd390956aa210cb83a26f58bd598a"
+      }
+    ]
+  },
+  "comparator_rejection_checks": [
+    "Missing expected chart rejected before reading buffers",
+    "Changed patch SHA in one case rejected as mixed global provenance"
+  ],
+  "numeric_results": {
+    "cpu": {
+      "metadata": {
+        "path": "work/m4-validation/cpu/all-results.json",
+        "sha256": "a5658841004b3f399ac70a8216148621d6af4ac99908aa2a3135c7358cf31af6"
+      },
+      "devices": [
+        {
+          "backend": "CPU",
+          "selected": [
+            "CPU"
+          ],
+          "hard_override": "CPU"
+        }
+      ],
+      "maximum_centroid_error_px": 0.036621454993820635,
+      "measured_results": [
+        {
+          "name": "disabled-centroid",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            199.99229074889868,
+            111.99449339207048
+          ],
+          "variance": [
+            0.7477379242756507,
+            0.7477670340973045
+          ],
+          "flux": 7.09375,
+          "pixels_sha256": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": false,
+          "expected_centroid": [
+            200.0,
+            112.0
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0,
+            0,
+            0
+          ],
+          "sensor_distance_m": 0.05
+        },
+        {
+          "name": "physical-centroid",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            204.45272078501338,
+            113.77297056199822
+          ],
+          "variance": [
+            0.694464051387787,
+            0.8443095522110132
+          ],
+          "flux": 8.7578125,
+          "pixels_sha256": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_centroid": [
+            204.44444444444446,
+            113.77777777777777
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0,
+            0.0,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "physical-shift",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            161.7728888888889,
+            142.22533333333334
+          ],
+          "variance": [
+            0.8490872098765433,
+            0.8498915555555555
+          ],
+          "flux": 8.7890625,
+          "pixels_sha256": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_centroid": [
+            161.7777777777778,
+            142.22222222222223
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.004319999999999999,
+            -0.0028799999999999997,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "vertical-fit",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            182.92480790340286,
+            99.22008781558726
+          ],
+          "variance": [
+            0.7470903857114111,
+            0.6999148111687739
+          ],
+          "flux": 7.1171875,
+          "pixels_sha256": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_centroid": [
+            182.93333333333334,
+            99.2
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.00192,
+            0.0014399999999999999,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "pixel-aspect",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            179.16337854500617,
+            113.0363748458693
+          ],
+          "variance": [
+            1.0987698431401764,
+            0.24867687058798488
+          ],
+          "flux": 6.3359375,
+          "pixels_sha256": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_centroid": [
+            179.2,
+            113.06666666666666
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0028799999999999997,
+            -0.0010799999999999998,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "offaxis-focus-object",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            176.44458874458874,
+            124.64025974025974
+          ],
+          "variance": [
+            0.7224707183148742,
+            0.7872536121886772
+          ],
+          "flux": 9.0234375,
+          "pixels_sha256": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_centroid": [
+            176.44311134943206,
+            124.64517009846068
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0028799999999999997,
+            -0.0010799999999999998,
+            0
+          ],
+          "sensor_distance_m": 0.05614731750725435
+        },
+        {
+          "name": "untilted-coc",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.02385188479929,
+            95.98582230623819
+          ],
+          "variance": [
+            17.7230216580352,
+            17.698703696657997
+          ],
+          "flux": 8.7822265625,
+          "pixels_sha256": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+          "seed": 71,
+          "samples": 1024,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_coc_diameter_px": 16.460905349794213,
+          "measured_coc_diameter_px": 16.482362395735585,
+          "emitter_width_px": 2.9629629629629637,
+          "coc_tolerance_px": 0.8
+        },
+        {
+          "name": "scheimpflug-plane",
+          "tilted_window_variances": [
+            1.132509957976744,
+            0.4999993128177359,
+            0.46648985219070727
+          ],
+          "untilted_window_variances": [
+            7.036930759197132,
+            0.4999992322445025,
+            2.8732163252324017
+          ],
+          "required_outer_variance_ratio": 0.55
+        },
+        {
+          "name": "shifted-world-window",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            213.33277423082916,
+            95.99999246582676
+          ],
+          "variance": [
+            5688.864396428349,
+            3071.916973492579
+          ],
+          "flux": 30720.007261946797,
+          "pixels_sha256": "361c495fa1e903ebbf54f550c57f7e4c818dc04930f912c09085081de576d514",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "mean_window_xy": [
+            0.5000001181957486,
+            0.5000000652100312
+          ],
+          "expected_window_xy": [
+            0.5,
+            0.5
+          ],
+          "mean_tolerance": 0.0002
+        },
+        {
+          "name": "coverage-untilted",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.99988687530472,
+            95.9992097204386
+          ],
+          "variance": [
+            1560.7614988734822,
+            1560.9407961238403
+          ],
+          "flux": 19613.3125,
+          "pixels_sha256": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+          "seed": 71,
+          "samples": 32,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_center_sample_area_px": 19616,
+          "relative_area_tolerance": 0.015,
+          "edge_exclusion_rear_plane_m": 0.0003,
+          "max_interior_error": 0.0,
+          "max_exterior_error": 0.0
+        },
+        {
+          "name": "coverage-tilted",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            139.66785999212306,
+            126.579919143364
+          ],
+          "variance": [
+            1661.7846543854553,
+            1334.2139876582808
+          ],
+          "flux": 18566.8125,
+          "pixels_sha256": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+          "seed": 71,
+          "samples": 32,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "expected_center_sample_area_px": 18563,
+          "relative_area_tolerance": 0.015,
+          "edge_exclusion_rear_plane_m": 0.0003,
+          "max_interior_error": 0.0,
+          "max_exterior_error": 0.0
+        },
+        {
+          "name": "tilted-aperture-volume",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.99852106979813,
+            95.99882474983693
+          ],
+          "variance": [
+            8488.236876780029,
+            3066.0539769970674
+          ],
+          "flux": 40810.51644521952,
+          "pixels_sha256": "b4268e0bf178bc4e600170ffbbf2248328b9d0e95f5c3f99392fe294b4de676b",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "center_mean": 0.6702729687094688,
+          "analytic_axial_transmittance": 0.6703200460356393,
+          "radiance_tolerance": 0.005
+        },
+        {
+          "name": "tilted-aperture-clips",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.88340498264878,
+            95.74359040762418
+          ],
+          "variance": [
+            107.08023426510803,
+            296.3533016166646
+          ],
+          "flux": 754.1796875,
+          "pixels_sha256": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+          "seed": 71,
+          "samples": 256,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "pre_near_red_flux": 0.0,
+          "post_far_blue_flux": 0.0,
+          "excluded_flux_tolerance": 1e-08
+        },
+        {
+          "name": "boundary-sensor",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.0,
+            96.0
+          ],
+          "variance": [
+            8533.25,
+            3071.9166666666665
+          ],
+          "flux": 61440.0,
+          "pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "max_unit_radiance_error": 0.0,
+          "tolerance": 0.0002,
+          "focus_distance_m": 0.05000099912285805,
+          "clip_start_m": 0.05000000074505806
+        },
+        {
+          "name": "boundary-near-aperture",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.0,
+            96.0
+          ],
+          "variance": [
+            8533.25,
+            3071.9166666666665
+          ],
+          "flux": 61440.0,
+          "pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "max_unit_radiance_error": 0.0,
+          "tolerance": 0.0002,
+          "focus_distance_m": 0.5,
+          "clip_start_m": 0.003000000026077032
+        },
+        {
+          "name": "combined-movements",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            90.61542821807689,
+            138.9740801813872
+          ],
+          "variance": [
+            1161.5482552195974,
+            370.6805350062474
+          ],
+          "flux": 37.90234375,
+          "pixels_sha256": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78",
+          "seed": 71,
+          "samples": 256,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "cpu",
+          "camera_enabled": true,
+          "tilt_rad": 0.13,
+          "swing_rad": -0.09,
+          "axis_rotation_rad": 0.37,
+          "shifts": [
+            0.09,
+            -0.06
+          ],
+          "aperture_blades": 7,
+          "aperture_ratio": 1.4
+        }
+      ],
+      "tilted_plane_results": {
+        "name": "scheimpflug-plane",
+        "tilted_window_variances": [
+          1.132509957976744,
+          0.4999993128177359,
+          0.46648985219070727
+        ],
+        "untilted_window_variances": [
+          7.036930759197132,
+          0.4999992322445025,
+          2.8732163252324017
+        ],
+        "required_outer_variance_ratio": 0.55,
+        "renders": [
+          {
+            "name": "scheimpflug-sharp",
+            "width": 320,
+            "height": 192,
+            "centroid": [
+              134.15650478553704,
+              107.73750443105281
+            ],
+            "variance": [
+              2276.926676050048,
+              471.1963388979775
+            ],
+            "flux": 11.01953125,
+            "pixels_sha256": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+            "seed": 71,
+            "samples": 256,
+            "adaptive_sampling": false,
+            "denoising": false,
+            "backend": "cpu",
+            "camera_enabled": true,
+            "camera_settings": {
+              "lens": 50.0,
+              "sensor_width": 36.0,
+              "sensor_height": 24.0,
+              "sensor_fit": "HORIZONTAL",
+              "shift_x": 0.0,
+              "shift_y": 0.0,
+              "tilt_shift_enabled": true,
+              "tilt_shift_tilt": 0.18000000715255737,
+              "tilt_shift_swing": -0.11999999731779099,
+              "tilt_shift_axis_rotation": 0.0,
+              "tilt_shift_image_circle_diameter": 0.0,
+              "clip_start": 0.05000000074505806,
+              "clip_end": 10.0,
+              "dof": {
+                "use_dof": true,
+                "focus_distance": 0.5,
+                "focus_subtarget": "",
+                "aperture_fstop": 2.0,
+                "aperture_blades": 0,
+                "aperture_rotation": 0.0,
+                "aperture_ratio": 1.0
+              },
+              "focus_object": null,
+              "matrix_world": [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            },
+            "raster_settings": {
+              "pixel_aspect": [
+                1.0,
+                1.0
+              ],
+              "pixel_filter_type": "BOX",
+              "filter_width": 1.0,
+              "resolution_percentage": 100
+            }
+          },
+          {
+            "name": "scheimpflug-untilted",
+            "width": 320,
+            "height": 192,
+            "centroid": [
+              134.57636778115503,
+              107.59004559270517
+            ],
+            "variance": [
+              2143.5667363510593,
+              445.25898905567203
+            ],
+            "flux": 10.28125,
+            "pixels_sha256": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+            "seed": 71,
+            "samples": 256,
+            "adaptive_sampling": false,
+            "denoising": false,
+            "backend": "cpu",
+            "camera_enabled": true,
+            "camera_settings": {
+              "lens": 50.0,
+              "sensor_width": 36.0,
+              "sensor_height": 24.0,
+              "sensor_fit": "HORIZONTAL",
+              "shift_x": 0.0,
+              "shift_y": 0.0,
+              "tilt_shift_enabled": true,
+              "tilt_shift_tilt": 0.0,
+              "tilt_shift_swing": 0.0,
+              "tilt_shift_axis_rotation": 0.0,
+              "tilt_shift_image_circle_diameter": 0.0,
+              "clip_start": 0.05000000074505806,
+              "clip_end": 10.0,
+              "dof": {
+                "use_dof": true,
+                "focus_distance": 0.5,
+                "focus_subtarget": "",
+                "aperture_fstop": 2.0,
+                "aperture_blades": 0,
+                "aperture_rotation": 0.0,
+                "aperture_ratio": 1.0
+              },
+              "focus_object": null,
+              "matrix_world": [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            },
+            "raster_settings": {
+              "pixel_aspect": [
+                1.0,
+                1.0
+              ],
+              "pixel_filter_type": "BOX",
+              "filter_width": 1.0,
+              "resolution_percentage": 100
+            }
+          }
+        ]
+      }
+    },
+    "hip": {
+      "metadata": {
+        "path": "work/m4-validation/hip/all-results.json",
+        "sha256": "7d52584e0c04401ee62652fe74170a249d5de6bba0b80306d7382e89e8ecd94e"
+      },
+      "devices": [
+        {
+          "backend": "HIP",
+          "selected": [
+            "AMD Radeon RX 6900 XT"
+          ],
+          "selected_ids": [
+            "HIP_AMD Radeon RX 6900 XT_0000:0b:00"
+          ],
+          "hard_override": "HIP",
+          "use_hiprt": false,
+          "preferences": [
+            {
+              "name": "AMD Radeon RX 6900 XT",
+              "id": "HIP_AMD Radeon RX 6900 XT_0000:0b:00",
+              "type": "HIP",
+              "use": true
+            },
+            {
+              "name": "AMD Ryzen 9 5900X 12-Core Processor",
+              "id": "CPU",
+              "type": "CPU",
+              "use": false
+            }
+          ]
+        }
+      ],
+      "maximum_centroid_error_px": 0.036621454993820635,
+      "measured_results": [
+        {
+          "name": "disabled-centroid",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            199.99229074889868,
+            111.99449339207048
+          ],
+          "variance": [
+            0.7477379242756507,
+            0.7477670340973045
+          ],
+          "flux": 7.09375,
+          "pixels_sha256": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": false,
+          "expected_centroid": [
+            200.0,
+            112.0
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0,
+            0,
+            0
+          ],
+          "sensor_distance_m": 0.05
+        },
+        {
+          "name": "physical-centroid",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            204.45272078501338,
+            113.77297056199822
+          ],
+          "variance": [
+            0.694464051387787,
+            0.8443095522110132
+          ],
+          "flux": 8.7578125,
+          "pixels_sha256": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_centroid": [
+            204.44444444444446,
+            113.77777777777777
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0,
+            0.0,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "physical-shift",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            161.7728888888889,
+            142.22533333333334
+          ],
+          "variance": [
+            0.8490872098765433,
+            0.8498915555555555
+          ],
+          "flux": 8.7890625,
+          "pixels_sha256": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_centroid": [
+            161.7777777777778,
+            142.22222222222223
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.004319999999999999,
+            -0.0028799999999999997,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "vertical-fit",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            182.92480790340286,
+            99.22008781558726
+          ],
+          "variance": [
+            0.7470903857114111,
+            0.6999148111687739
+          ],
+          "flux": 7.1171875,
+          "pixels_sha256": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_centroid": [
+            182.93333333333334,
+            99.2
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.00192,
+            0.0014399999999999999,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "pixel-aspect",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            179.16337854500617,
+            113.0363748458693
+          ],
+          "variance": [
+            1.0987698431401764,
+            0.24867687058798488
+          ],
+          "flux": 6.3359375,
+          "pixels_sha256": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_centroid": [
+            179.2,
+            113.06666666666666
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0028799999999999997,
+            -0.0010799999999999998,
+            0
+          ],
+          "sensor_distance_m": 0.05555555555555556
+        },
+        {
+          "name": "offaxis-focus-object",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            176.44458874458874,
+            124.64025974025974
+          ],
+          "variance": [
+            0.7224707183148742,
+            0.7872536121886772
+          ],
+          "flux": 9.0234375,
+          "pixels_sha256": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+          "seed": 71,
+          "samples": 128,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_centroid": [
+            176.44311134943206,
+            124.64517009846068
+          ],
+          "centroid_tolerance_px": 0.22,
+          "physical_lens_center_m": [
+            0.0028799999999999997,
+            -0.0010799999999999998,
+            0
+          ],
+          "sensor_distance_m": 0.05614731750725435
+        },
+        {
+          "name": "untilted-coc",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.02385188479929,
+            95.98582230623819
+          ],
+          "variance": [
+            17.7230216580352,
+            17.698703696657997
+          ],
+          "flux": 8.7822265625,
+          "pixels_sha256": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+          "seed": 71,
+          "samples": 1024,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_coc_diameter_px": 16.460905349794213,
+          "measured_coc_diameter_px": 16.482362395735585,
+          "emitter_width_px": 2.9629629629629637,
+          "coc_tolerance_px": 0.8
+        },
+        {
+          "name": "scheimpflug-plane",
+          "tilted_window_variances": [
+            1.132509957976744,
+            0.4999993128177359,
+            0.46648985219070727
+          ],
+          "untilted_window_variances": [
+            7.036930759197132,
+            0.4999992322445025,
+            2.8732163252324017
+          ],
+          "required_outer_variance_ratio": 0.55
+        },
+        {
+          "name": "shifted-world-window",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            213.33277474756682,
+            95.9999925304299
+          ],
+          "variance": [
+            5688.864268242965,
+            3071.916966523884
+          ],
+          "flux": 30720.007318052347,
+          "pixels_sha256": "f32e17641579d71cdf789ae71a8d81ff1965340dc4755e6b59a888e39ed69b45",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "mean_window_xy": [
+            0.500000119108925,
+            0.5000000597441082
+          ],
+          "expected_window_xy": [
+            0.5,
+            0.5
+          ],
+          "mean_tolerance": 0.0002
+        },
+        {
+          "name": "coverage-untilted",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.99988687530472,
+            95.9992097204386
+          ],
+          "variance": [
+            1560.7614988734822,
+            1560.9407961238403
+          ],
+          "flux": 19613.3125,
+          "pixels_sha256": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+          "seed": 71,
+          "samples": 32,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_center_sample_area_px": 19616,
+          "relative_area_tolerance": 0.015,
+          "edge_exclusion_rear_plane_m": 0.0003,
+          "max_interior_error": 0.0,
+          "max_exterior_error": 0.0
+        },
+        {
+          "name": "coverage-tilted",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            139.66785999212306,
+            126.579919143364
+          ],
+          "variance": [
+            1661.7846543854553,
+            1334.2139876582808
+          ],
+          "flux": 18566.8125,
+          "pixels_sha256": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+          "seed": 71,
+          "samples": 32,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "expected_center_sample_area_px": 18563,
+          "relative_area_tolerance": 0.015,
+          "edge_exclusion_rear_plane_m": 0.0003,
+          "max_interior_error": 0.0,
+          "max_exterior_error": 0.0
+        },
+        {
+          "name": "tilted-aperture-volume",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.99852108498078,
+            95.99882473092077
+          ],
+          "variance": [
+            8488.236861577834,
+            3066.0539747305183
+          ],
+          "flux": 40810.515854775906,
+          "pixels_sha256": "8061a80fc5dddf64a126b32680f9b82dbe4f9dc6b6033375a435cd6c90d00d47",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "center_mean": 0.6702729593962431,
+          "analytic_axial_transmittance": 0.6703200460356393,
+          "radiance_tolerance": 0.005
+        },
+        {
+          "name": "tilted-aperture-clips",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            159.88340498264878,
+            95.74359040762418
+          ],
+          "variance": [
+            107.08023426510803,
+            296.3533016166646
+          ],
+          "flux": 754.1796875,
+          "pixels_sha256": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+          "seed": 71,
+          "samples": 256,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "pre_near_red_flux": 0.0,
+          "post_far_blue_flux": 0.0,
+          "excluded_flux_tolerance": 1e-08
+        },
+        {
+          "name": "boundary-sensor",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.0,
+            96.0
+          ],
+          "variance": [
+            8533.25,
+            3071.9166666666665
+          ],
+          "flux": 61440.0,
+          "pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "max_unit_radiance_error": 0.0,
+          "tolerance": 0.0002,
+          "focus_distance_m": 0.05000099912285805,
+          "clip_start_m": 0.05000000074505806
+        },
+        {
+          "name": "boundary-near-aperture",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            160.0,
+            96.0
+          ],
+          "variance": [
+            8533.25,
+            3071.9166666666665
+          ],
+          "flux": 61440.0,
+          "pixels_sha256": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+          "seed": 71,
+          "samples": 64,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "max_unit_radiance_error": 0.0,
+          "tolerance": 0.0002,
+          "focus_distance_m": 0.5,
+          "clip_start_m": 0.003000000026077032
+        },
+        {
+          "name": "combined-movements",
+          "width": 320,
+          "height": 192,
+          "centroid": [
+            90.61542821807689,
+            138.9740801813872
+          ],
+          "variance": [
+            1161.5482552195974,
+            370.6805350062474
+          ],
+          "flux": 37.90234375,
+          "pixels_sha256": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78",
+          "seed": 71,
+          "samples": 256,
+          "adaptive_sampling": false,
+          "denoising": false,
+          "backend": "hip",
+          "camera_enabled": true,
+          "tilt_rad": 0.13,
+          "swing_rad": -0.09,
+          "axis_rotation_rad": 0.37,
+          "shifts": [
+            0.09,
+            -0.06
+          ],
+          "aperture_blades": 7,
+          "aperture_ratio": 1.4
+        }
+      ],
+      "tilted_plane_results": {
+        "name": "scheimpflug-plane",
+        "tilted_window_variances": [
+          1.132509957976744,
+          0.4999993128177359,
+          0.46648985219070727
+        ],
+        "untilted_window_variances": [
+          7.036930759197132,
+          0.4999992322445025,
+          2.8732163252324017
+        ],
+        "required_outer_variance_ratio": 0.55,
+        "renders": [
+          {
+            "name": "scheimpflug-sharp",
+            "width": 320,
+            "height": 192,
+            "centroid": [
+              134.15650478553704,
+              107.73750443105281
+            ],
+            "variance": [
+              2276.926676050048,
+              471.1963388979775
+            ],
+            "flux": 11.01953125,
+            "pixels_sha256": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+            "seed": 71,
+            "samples": 256,
+            "adaptive_sampling": false,
+            "denoising": false,
+            "backend": "hip",
+            "camera_enabled": true,
+            "camera_settings": {
+              "lens": 50.0,
+              "sensor_width": 36.0,
+              "sensor_height": 24.0,
+              "sensor_fit": "HORIZONTAL",
+              "shift_x": 0.0,
+              "shift_y": 0.0,
+              "tilt_shift_enabled": true,
+              "tilt_shift_tilt": 0.18000000715255737,
+              "tilt_shift_swing": -0.11999999731779099,
+              "tilt_shift_axis_rotation": 0.0,
+              "tilt_shift_image_circle_diameter": 0.0,
+              "clip_start": 0.05000000074505806,
+              "clip_end": 10.0,
+              "dof": {
+                "use_dof": true,
+                "focus_distance": 0.5,
+                "focus_subtarget": "",
+                "aperture_fstop": 2.0,
+                "aperture_blades": 0,
+                "aperture_rotation": 0.0,
+                "aperture_ratio": 1.0
+              },
+              "focus_object": null,
+              "matrix_world": [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            },
+            "raster_settings": {
+              "pixel_aspect": [
+                1.0,
+                1.0
+              ],
+              "pixel_filter_type": "BOX",
+              "filter_width": 1.0,
+              "resolution_percentage": 100
+            }
+          },
+          {
+            "name": "scheimpflug-untilted",
+            "width": 320,
+            "height": 192,
+            "centroid": [
+              134.57636778115503,
+              107.59004559270517
+            ],
+            "variance": [
+              2143.5667363510593,
+              445.25898905567203
+            ],
+            "flux": 10.28125,
+            "pixels_sha256": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+            "seed": 71,
+            "samples": 256,
+            "adaptive_sampling": false,
+            "denoising": false,
+            "backend": "hip",
+            "camera_enabled": true,
+            "camera_settings": {
+              "lens": 50.0,
+              "sensor_width": 36.0,
+              "sensor_height": 24.0,
+              "sensor_fit": "HORIZONTAL",
+              "shift_x": 0.0,
+              "shift_y": 0.0,
+              "tilt_shift_enabled": true,
+              "tilt_shift_tilt": 0.0,
+              "tilt_shift_swing": 0.0,
+              "tilt_shift_axis_rotation": 0.0,
+              "tilt_shift_image_circle_diameter": 0.0,
+              "clip_start": 0.05000000074505806,
+              "clip_end": 10.0,
+              "dof": {
+                "use_dof": true,
+                "focus_distance": 0.5,
+                "focus_subtarget": "",
+                "aperture_fstop": 2.0,
+                "aperture_blades": 0,
+                "aperture_rotation": 0.0,
+                "aperture_ratio": 1.0
+              },
+              "focus_object": null,
+              "matrix_world": [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            },
+            "raster_settings": {
+              "pixel_aspect": [
+                1.0,
+                1.0
+              ],
+              "pixel_filter_type": "BOX",
+              "filter_width": 1.0,
+              "resolution_percentage": 100
+            }
+          }
+        ]
+      }
+    }
+  },
+  "guards": {
+    "cpu": {
+      "status": "passed",
+      "backend": "cpu",
+      "blender_exit_code": 1,
+      "host_runner_sha256": "032481d9bd3ffa41bf905e541af5cd97b548f53e7d66d12dc0926a85774c89b8",
+      "fresh_guard_results": "work/m4-validation/m4-cpu-guards-44s_f14d/guards-results.json",
+      "guard_results_sha256": "8ab981701af89c575afff76ba72b49fc9e92f58d57ca4bb9c71643d64a2848ee",
+      "expected_rejections": [
+        "invalid-focus",
+        "near-aperture",
+        "motion-blur",
+        "motion-pass",
+        "orthographic",
+        "multiview",
+        "adaptive-subdivision",
+        "adaptive-dicing-camera"
+      ],
+      "binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+      "fixture_script_sha256": "bfa0e31da07dc809e95caf972103ea021e4c9bb85eb446f679a0153d1cf9fe3c",
+      "immutable_m2_script_sha256": "7220e31ce07a1e7a2ffdb601d18176e380c6d79cdfaef2d7928478dc50299761",
+      "patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9"
+    },
+    "hip": {
+      "status": "passed",
+      "backend": "hip",
+      "blender_exit_code": 1,
+      "host_runner_sha256": "032481d9bd3ffa41bf905e541af5cd97b548f53e7d66d12dc0926a85774c89b8",
+      "fresh_guard_results": "work/m4-validation/m4-hip-guards-6amlac6z/guards-results.json",
+      "guard_results_sha256": "1563da4af68ee85abf35435cb167200841510548d24295230cafd7ba63a6194a",
+      "expected_rejections": [
+        "invalid-focus",
+        "near-aperture",
+        "motion-blur",
+        "motion-pass",
+        "orthographic",
+        "multiview",
+        "adaptive-subdivision",
+        "adaptive-dicing-camera"
+      ],
+      "binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+      "fixture_script_sha256": "bfa0e31da07dc809e95caf972103ea021e4c9bb85eb446f679a0153d1cf9fe3c",
+      "immutable_m2_script_sha256": "7220e31ce07a1e7a2ffdb601d18176e380c6d79cdfaef2d7928478dc50299761",
+      "patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9"
+    }
+  },
+  "benchmarks": {
+    "cpu": {
+      "metadata": {
+        "path": "work/m4-validation/cpu/benchmark-results.json",
+        "sha256": "1a37d64cdbe68847e45a3c3162d93a0dd4ebd0e605d7f19596b4c2916a14e8a2"
+      },
+      "process": {
+        "backend": "cpu",
+        "exit_code": 0,
+        "process_wall_s": 55.791944960001274
+      },
+      "log": {
+        "path": "work/m4-cpu-benchmark-final.log",
+        "sha256": "6a0ab305e3c711e6a4f0a8a326d86052af13ec69e361820fe67302774e40b82e"
+      },
+      "result": {
+        "name": "paired-camera-benchmark",
+        "width": 960,
+        "height": 600,
+        "samples": 64,
+        "seed": 71,
+        "warmups_per_variant": 1,
+        "repeats": 3,
+        "timings": [
+          {
+            "name": "ordinary",
+            "repeat": 0,
+            "elapsed_s": 3.9263210799981607
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 0,
+            "elapsed_s": 4.8867200310050976
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 0,
+            "elapsed_s": 4.9166545900006895
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 1,
+            "elapsed_s": 4.889934672995878
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 1,
+            "elapsed_s": 4.928996734000975
+          },
+          {
+            "name": "ordinary",
+            "repeat": 1,
+            "elapsed_s": 3.89072336400568
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 2,
+            "elapsed_s": 4.935521958999743
+          },
+          {
+            "name": "ordinary",
+            "repeat": 2,
+            "elapsed_s": 3.8878846049992717
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 2,
+            "elapsed_s": 4.89452399899892
+          }
+        ],
+        "median_s": {
+          "ordinary": 3.89072336400568,
+          "enabled-zero": 4.889934672995878,
+          "enabled-tilt": 4.928996734000975
+        },
+        "ratio_to_ordinary": {
+          "ordinary": 1.0,
+          "enabled-zero": 1.2568189037118958,
+          "enabled-tilt": 1.2668586976912037
+        },
+        "timing_scope": "bpy completed-render wall time; includes synchronization/session overhead; no exports",
+        "interpretation": "backend-specific camera overhead in this emission/image-texture workload only"
+      },
+      "interpretation": "Completed-render mode ratios; breathing/tilt also change texture and intersection workload. Not isolated camera-math overhead."
+    },
+    "hip": {
+      "metadata": {
+        "path": "work/m4-validation/hip/benchmark-results.json",
+        "sha256": "a024e239d2aa30c01c1be71849e0e1767eddb9cf8dbd4fc74c0d97bfb3370ac6"
+      },
+      "process": {
+        "backend": "hip",
+        "exit_code": 0,
+        "process_wall_s": 2.298449599999003
+      },
+      "log": {
+        "path": "work/m4-hip-benchmark-final.log",
+        "sha256": "c1a2b1db41fb0e953b5dba21c45a4336dd549fb4d8af69f003b033897cd53a40"
+      },
+      "result": {
+        "name": "paired-camera-benchmark",
+        "width": 960,
+        "height": 600,
+        "samples": 64,
+        "seed": 71,
+        "warmups_per_variant": 1,
+        "repeats": 3,
+        "timings": [
+          {
+            "name": "ordinary",
+            "repeat": 0,
+            "elapsed_s": 0.10133427400432993
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 0,
+            "elapsed_s": 0.10267784700408811
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 0,
+            "elapsed_s": 0.10476714800461195
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 1,
+            "elapsed_s": 0.11475487899588188
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 1,
+            "elapsed_s": 0.1070468809994054
+          },
+          {
+            "name": "ordinary",
+            "repeat": 1,
+            "elapsed_s": 0.09825141400506254
+          },
+          {
+            "name": "enabled-tilt",
+            "repeat": 2,
+            "elapsed_s": 0.10385588899953291
+          },
+          {
+            "name": "ordinary",
+            "repeat": 2,
+            "elapsed_s": 0.09723274299904006
+          },
+          {
+            "name": "enabled-zero",
+            "repeat": 2,
+            "elapsed_s": 0.10428522399888607
+          }
+        ],
+        "median_s": {
+          "ordinary": 0.09825141400506254,
+          "enabled-zero": 0.10428522399888607,
+          "enabled-tilt": 0.10476714800461195
+        },
+        "ratio_to_ordinary": {
+          "ordinary": 1.0,
+          "enabled-zero": 1.0614119405295543,
+          "enabled-tilt": 1.0663169488758062
+        },
+        "timing_scope": "bpy completed-render wall time; includes synchronization/session overhead; no exports",
+        "interpretation": "backend-specific camera overhead in this emission/image-texture workload only"
+      },
+      "interpretation": "Completed-render mode ratios; breathing/tilt also change texture and intersection workload. Not isolated camera-math overhead."
+    },
+    "scope_note": "CPU is limited to two threads and 200% quota. Cross-backend ratios are not unrestricted CPU/GPU hardware comparisons."
+  },
+  "retained_cpu": {
+    "metadata": {
+      "path": "work/m4-retained-cpu-comparison.json",
+      "sha256": "aa24e5c5954b879835129f8cf119077488631b57a50493c7b3033b7716346831"
+    },
+    "status": "passed",
+    "count": 14,
+    "results": [
+      {
+        "m3": "work/m3-validation/disabled-centroid.rgba32f",
+        "m4": "work/m4-validation/cpu/disabled-centroid.rgba32f",
+        "sha256": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/physical-centroid.rgba32f",
+        "m4": "work/m4-validation/cpu/physical-centroid.rgba32f",
+        "sha256": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/physical-shift.rgba32f",
+        "m4": "work/m4-validation/cpu/physical-shift.rgba32f",
+        "sha256": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/vertical-fit.rgba32f",
+        "m4": "work/m4-validation/cpu/vertical-fit.rgba32f",
+        "sha256": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/pixel-aspect.rgba32f",
+        "m4": "work/m4-validation/cpu/pixel-aspect.rgba32f",
+        "sha256": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/offaxis-focus-object.rgba32f",
+        "m4": "work/m4-validation/cpu/offaxis-focus-object.rgba32f",
+        "sha256": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/untilted-coc.rgba32f",
+        "m4": "work/m4-validation/cpu/untilted-coc.rgba32f",
+        "sha256": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/scheimpflug-sharp.rgba32f",
+        "m4": "work/m4-validation/cpu/scheimpflug-sharp.rgba32f",
+        "sha256": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/scheimpflug-untilted.rgba32f",
+        "m4": "work/m4-validation/cpu/scheimpflug-untilted.rgba32f",
+        "sha256": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/shifted-world-window.rgba32f",
+        "m4": "work/m4-validation/cpu/shifted-world-window.rgba32f",
+        "sha256": "361c495fa1e903ebbf54f550c57f7e4c818dc04930f912c09085081de576d514",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/coverage-untilted.rgba32f",
+        "m4": "work/m4-validation/cpu/coverage-untilted.rgba32f",
+        "sha256": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/coverage-tilted.rgba32f",
+        "m4": "work/m4-validation/cpu/coverage-tilted.rgba32f",
+        "sha256": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/tilted-aperture-volume.rgba32f",
+        "m4": "work/m4-validation/cpu/tilted-aperture-volume.rgba32f",
+        "sha256": "b4268e0bf178bc4e600170ffbbf2248328b9d0e95f5c3f99392fe294b4de676b",
+        "bitwise": true
+      },
+      {
+        "m3": "work/m3-validation/tilted-aperture-clips.rgba32f",
+        "m4": "work/m4-validation/cpu/tilted-aperture-clips.rgba32f",
+        "sha256": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+        "bitwise": true
+      }
+    ]
+  },
+  "disabled_regression": {
+    "initial": {
+      "status": "failed",
+      "results": [
+        {
+          "scene": "grid",
+          "comparison": "cpu-vs-baseline",
+          "first": "work/renders/baseline/cpu/grid.json",
+          "second": "work/renders/m4-disabled/cpu/grid.json",
+          "passed": true,
+          "rmse_rgb": 0.0,
+          "max_abs_rgb": 0.0,
+          "rmse_limit": 0,
+          "max_limit": 0
+        },
+        {
+          "scene": "grid",
+          "comparison": "cpu-vs-hip",
+          "first": "work/renders/m4-disabled/cpu/grid.json",
+          "second": "work/renders/m4-disabled/hip/grid.json",
+          "passed": false,
+          "rmse_rgb": 0.00012963276792422746,
+          "max_abs_rgb": 0.021289318799972534,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "tabletop",
+          "comparison": "cpu-vs-baseline",
+          "first": "work/renders/baseline/cpu/tabletop.json",
+          "second": "work/renders/m4-disabled/cpu/tabletop.json",
+          "passed": true,
+          "rmse_rgb": 0.0,
+          "max_abs_rgb": 0.0,
+          "rmse_limit": 0,
+          "max_limit": 0
+        },
+        {
+          "scene": "tabletop",
+          "comparison": "cpu-vs-hip",
+          "first": "work/renders/m4-disabled/cpu/tabletop.json",
+          "second": "work/renders/m4-disabled/hip/tabletop.json",
+          "passed": true,
+          "rmse_rgb": 0.00010564282482933323,
+          "max_abs_rgb": 0.01770835369825363,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "facade",
+          "comparison": "cpu-vs-baseline",
+          "first": "work/renders/baseline/cpu/facade.json",
+          "second": "work/renders/m4-disabled/cpu/facade.json",
+          "passed": true,
+          "rmse_rgb": 0.0,
+          "max_abs_rgb": 0.0,
+          "rmse_limit": 0,
+          "max_limit": 0
+        },
+        {
+          "scene": "facade",
+          "comparison": "cpu-vs-hip",
+          "first": "work/renders/m4-disabled/cpu/facade.json",
+          "second": "work/renders/m4-disabled/hip/facade.json",
+          "passed": false,
+          "rmse_rgb": 7.868575847761363e-05,
+          "max_abs_rgb": 0.020297765731811523,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "measurable-targets",
+          "comparison": "cpu-vs-baseline",
+          "first": "work/renders/baseline/cpu/measurable-targets.json",
+          "second": "work/renders/m4-disabled/cpu/measurable-targets.json",
+          "passed": true,
+          "rmse_rgb": 0.0,
+          "max_abs_rgb": 0.0,
+          "rmse_limit": 0,
+          "max_limit": 0
+        },
+        {
+          "scene": "measurable-targets",
+          "comparison": "cpu-vs-hip",
+          "first": "work/renders/m4-disabled/cpu/measurable-targets.json",
+          "second": "work/renders/m4-disabled/hip/measurable-targets.json",
+          "passed": true,
+          "rmse_rgb": 3.2579657738829514e-05,
+          "max_abs_rgb": 0.008577793836593628,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        }
+      ]
+    },
+    "attribution": {
+      "interpretation": "Two 32-sample ordinary CPU/HIP provisional max-error failures also occur on the unmodified upstream binary; modified-versus-upstream HIP errors are below 1e-6. No acceptance bound was increased.",
+      "results": [
+        {
+          "scene": "grid",
+          "comparison": "upstream-cpu-vs-hip",
+          "first": "work/renders/baseline/cpu/grid.json",
+          "second": "work/renders/m4-upstream-reference/hip/grid.json",
+          "passed": false,
+          "rmse_rgb": 0.00012963282100225709,
+          "max_abs_rgb": 0.021289318799972534,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "grid",
+          "comparison": "upstream-hip-vs-m4-hip",
+          "first": "work/renders/m4-upstream-reference/hip/grid.json",
+          "second": "work/renders/m4-disabled/hip/grid.json",
+          "passed": true,
+          "rmse_rgb": 4.219203562605141e-08,
+          "max_abs_rgb": 2.980232238769531e-07,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "tabletop",
+          "comparison": "upstream-cpu-vs-hip",
+          "first": "work/renders/baseline/cpu/tabletop.json",
+          "second": "work/renders/m4-upstream-reference/hip/tabletop.json",
+          "passed": true,
+          "rmse_rgb": 0.00010564283173012378,
+          "max_abs_rgb": 0.01770835742354393,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "tabletop",
+          "comparison": "upstream-hip-vs-m4-hip",
+          "first": "work/renders/m4-upstream-reference/hip/tabletop.json",
+          "second": "work/renders/m4-disabled/hip/tabletop.json",
+          "passed": true,
+          "rmse_rgb": 5.360930815769319e-08,
+          "max_abs_rgb": 4.76837158203125e-07,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "facade",
+          "comparison": "upstream-cpu-vs-hip",
+          "first": "work/renders/baseline/cpu/facade.json",
+          "second": "work/renders/m4-upstream-reference/hip/facade.json",
+          "passed": false,
+          "rmse_rgb": 7.86858958092589e-05,
+          "max_abs_rgb": 0.020297765731811523,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "facade",
+          "comparison": "upstream-hip-vs-m4-hip",
+          "first": "work/renders/m4-upstream-reference/hip/facade.json",
+          "second": "work/renders/m4-disabled/hip/facade.json",
+          "passed": true,
+          "rmse_rgb": 5.911660979202166e-08,
+          "max_abs_rgb": 9.5367431640625e-07,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "measurable-targets",
+          "comparison": "upstream-cpu-vs-hip",
+          "first": "work/renders/baseline/cpu/measurable-targets.json",
+          "second": "work/renders/m4-upstream-reference/hip/measurable-targets.json",
+          "passed": true,
+          "rmse_rgb": 3.257966373793787e-05,
+          "max_abs_rgb": 0.008577793836593628,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        },
+        {
+          "scene": "measurable-targets",
+          "comparison": "upstream-hip-vs-m4-hip",
+          "first": "work/renders/m4-upstream-reference/hip/measurable-targets.json",
+          "second": "work/renders/m4-disabled/hip/measurable-targets.json",
+          "passed": true,
+          "rmse_rgb": 3.222793198695069e-08,
+          "max_abs_rgb": 2.980232238769531e-07,
+          "rmse_limit": 0.003,
+          "max_limit": 0.02
+        }
+      ]
+    },
+    "cpu_baseline": "All four M1 CPU baseline raw RGBA buffers remain bitwise identical",
+    "hip_baseline": "All four M1 HIP versus M4 HIP comparisons passed original .003/.02 limits; maximum below 1e-6; not bitwise",
+    "interpretation": "Two 32-sample ordinary cross-backend maximum-error smoke failures reproduce unchanged on unmodified M1. No bound increased.",
+    "upstream_reference_processes": [
+      {
+        "scene": "grid",
+        "backend": "hip",
+        "exit_code": 0,
+        "process_wall_s": 0.7314269000053173
+      },
+      {
+        "scene": "tabletop",
+        "backend": "hip",
+        "exit_code": 0,
+        "process_wall_s": 0.6881802470015828
+      },
+      {
+        "scene": "facade",
+        "backend": "hip",
+        "exit_code": 0,
+        "process_wall_s": 0.699256477993913
+      },
+      {
+        "scene": "measurable-targets",
+        "backend": "hip",
+        "exit_code": 0,
+        "process_wall_s": 0.733439059004013
+      }
+    ],
+    "artifacts": {
+      "m1-cpu": {
+        "grid": {
+          "metadata": {
+            "path": "work/renders/baseline/cpu/grid.json",
+            "sha256": "7e206fe8abfa5a0b629e896642d6d7da7182a59b484a5d7b4c8cecebde4a2e23"
+          },
+          "raw_pixels": {
+            "path": "work/renders/baseline/cpu/grid.rgba32f",
+            "sha256": "3d5447315b70666ed8d9249c8c8e25ba16e197da0f5f1e4f7562c710d45bce32"
+          },
+          "preview": {
+            "path": "work/renders/baseline/cpu/grid.png",
+            "sha256": "5a472de8c80d408be3e489bf625352b21969379e4517f5da6ad3bf395f021f8d"
+          }
+        },
+        "tabletop": {
+          "metadata": {
+            "path": "work/renders/baseline/cpu/tabletop.json",
+            "sha256": "dde42c4427c919aef3caa67ff8573b6fbe020feeb88db27a4652da6ab1aed3d7"
+          },
+          "raw_pixels": {
+            "path": "work/renders/baseline/cpu/tabletop.rgba32f",
+            "sha256": "839b569e4f160b21a2e6e70e5e43e0b6b4f46a90d7783195e5ad994109f2e91e"
+          },
+          "preview": {
+            "path": "work/renders/baseline/cpu/tabletop.png",
+            "sha256": "f8923f2102692305c351acd65dbcf83d2b4045d68c89dde4e29cab1d0cba11de"
+          }
+        },
+        "facade": {
+          "metadata": {
+            "path": "work/renders/baseline/cpu/facade.json",
+            "sha256": "c8072bd665bd6780918436536029e34106a55c0dde5221248c6ab08850dab9a5"
+          },
+          "raw_pixels": {
+            "path": "work/renders/baseline/cpu/facade.rgba32f",
+            "sha256": "ba19b4b4b1669a4007cdf2cbcc5da64722329a84d7e5c64aa454eadab5512066"
+          },
+          "preview": {
+            "path": "work/renders/baseline/cpu/facade.png",
+            "sha256": "2e7319f794513dfceda7ca9e12fdafbdb72133c8cecaeb574bc39511dff8eec2"
+          }
+        },
+        "measurable-targets": {
+          "metadata": {
+            "path": "work/renders/baseline/cpu/measurable-targets.json",
+            "sha256": "27b677fe11e74bbb35ad78f1248dc09ef1ace97185f4595993ad47448566dcf1"
+          },
+          "raw_pixels": {
+            "path": "work/renders/baseline/cpu/measurable-targets.rgba32f",
+            "sha256": "ee6beb86d3e4524e0458d11a6585daf777674af415b9030e47e64311396a9d62"
+          },
+          "preview": {
+            "path": "work/renders/baseline/cpu/measurable-targets.png",
+            "sha256": "02921e657dedc5c92000a781ecac51aa22051ba68b51e2e9d6b806946e58197e"
+          }
+        }
+      },
+      "m1-hip": {
+        "grid": {
+          "metadata": {
+            "path": "work/renders/m4-upstream-reference/hip/grid.json",
+            "sha256": "f93d4aa37b5c0df4d974d4026e9c2418ef0e4842361230e59dfd257e2c556eca"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-upstream-reference/hip/grid.rgba32f",
+            "sha256": "ce21379ab3b58e9538c31592cefc4b141b6a0e62126419b4821afddfc1cacea3"
+          },
+          "preview": {
+            "path": "work/renders/m4-upstream-reference/hip/grid.png",
+            "sha256": "19554341462108ac616c4738058507cf8987c23ddd75c8f59148f72486d4949e"
+          }
+        },
+        "tabletop": {
+          "metadata": {
+            "path": "work/renders/m4-upstream-reference/hip/tabletop.json",
+            "sha256": "4d0703faada60452c860d422eab944cb65233441d48577cb133ce16086f54aa7"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-upstream-reference/hip/tabletop.rgba32f",
+            "sha256": "470d9b52f0297a2c6ee8f4a64f4f3041b06bf049d71d3e09ec9a4afe4ea38189"
+          },
+          "preview": {
+            "path": "work/renders/m4-upstream-reference/hip/tabletop.png",
+            "sha256": "4e84905adfbd5dc7b32daa3415fee1f5f0b9a475985663604c7ff5b6c9fb44af"
+          }
+        },
+        "facade": {
+          "metadata": {
+            "path": "work/renders/m4-upstream-reference/hip/facade.json",
+            "sha256": "a0b510daec749e1c7017b1467e2ca1c2ba635fcc319a88f825b291099d97a2f0"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-upstream-reference/hip/facade.rgba32f",
+            "sha256": "8de07638555ac7715ea1b5cabaeb6a799c9abb3d49c96e383ee129df5a81987b"
+          },
+          "preview": {
+            "path": "work/renders/m4-upstream-reference/hip/facade.png",
+            "sha256": "041ec2a70fb49df93707ad513e8556c3f1214484a83a41861327bfaf6654b7c5"
+          }
+        },
+        "measurable-targets": {
+          "metadata": {
+            "path": "work/renders/m4-upstream-reference/hip/measurable-targets.json",
+            "sha256": "5dd5ff0c50154fb33b529909de864bb4baff92842c5be219a837c47085a0374b"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-upstream-reference/hip/measurable-targets.rgba32f",
+            "sha256": "6dbb49e980131a1fa9afa3bca65a5236ad88593d0175a440f309ff96c6a08ad4"
+          },
+          "preview": {
+            "path": "work/renders/m4-upstream-reference/hip/measurable-targets.png",
+            "sha256": "4d2cfd5a427c1b1be2db42d4ba270619b7fcb9a79e28fb6f1e6bd52c041b5936"
+          }
+        }
+      },
+      "m4-cpu": {
+        "grid": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/cpu/grid.json",
+            "sha256": "8808483c9dfcdca9e2bedabe59a18942d72fd0616c22ca6a6191d85bb5fc8490"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/cpu/grid.rgba32f",
+            "sha256": "3d5447315b70666ed8d9249c8c8e25ba16e197da0f5f1e4f7562c710d45bce32"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/cpu/grid.png",
+            "sha256": "d052a2447631ffb216b46f3dadc1191577292adf3ea902d959198000568c3039"
+          }
+        },
+        "tabletop": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/cpu/tabletop.json",
+            "sha256": "5733db06578a32088f5e33b48518f8bba3d2bbcf15ed65c3fec9419a2749582d"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/cpu/tabletop.rgba32f",
+            "sha256": "839b569e4f160b21a2e6e70e5e43e0b6b4f46a90d7783195e5ad994109f2e91e"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/cpu/tabletop.png",
+            "sha256": "79ca1172dc1e5b00bee949a7bba98523592b126e270135929a3158b41b461bfd"
+          }
+        },
+        "facade": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/cpu/facade.json",
+            "sha256": "f60c03ff76c8f1823dc3f3dae8f757b73727f3834b52275b81180cbcfccfd00f"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/cpu/facade.rgba32f",
+            "sha256": "ba19b4b4b1669a4007cdf2cbcc5da64722329a84d7e5c64aa454eadab5512066"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/cpu/facade.png",
+            "sha256": "81ca03433607b2e7a55a2ce41eb3a63b309ef2053338520859b64a5dd2fe54b6"
+          }
+        },
+        "measurable-targets": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/cpu/measurable-targets.json",
+            "sha256": "f8c339b75cbf771864c3798397c008f3f4a15648ed1c6fa97bbee34b1e1838ed"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/cpu/measurable-targets.rgba32f",
+            "sha256": "ee6beb86d3e4524e0458d11a6585daf777674af415b9030e47e64311396a9d62"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/cpu/measurable-targets.png",
+            "sha256": "541b6f0bcecf7cdc531278be1fe032ff5cf0ab65243bf2c3aec51795cd84a049"
+          }
+        }
+      },
+      "m4-hip": {
+        "grid": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/hip/grid.json",
+            "sha256": "6319310d27f362be3777f220d2b6ffeb261c1996b773867657f292b5629106b8"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/hip/grid.rgba32f",
+            "sha256": "4cc92c178427736a4050ca682c4a32322042fba7a66d7b8ce26badb5b3c64073"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/hip/grid.png",
+            "sha256": "5489acffed189f84b76697c6ca731cf24c784dbac722f19733feb9c00e72fc2a"
+          }
+        },
+        "tabletop": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/hip/tabletop.json",
+            "sha256": "f38c9bc41f1a5895765c89b426ff5c06fc3142d62ea1e584258ae973c10a78cd"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/hip/tabletop.rgba32f",
+            "sha256": "3877ba8dbc6a03f2be5bcaa0bd32ae20a38ac2f264213e14271f3f718f29a9cd"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/hip/tabletop.png",
+            "sha256": "362e1dd75da5d6bdb86ff82a7fe49e48abc79da8f8f4bff150d7631b35956d90"
+          }
+        },
+        "facade": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/hip/facade.json",
+            "sha256": "539ab56d26dbb1986da6318434b4c838d800babce308d00a2278e099a3796e91"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/hip/facade.rgba32f",
+            "sha256": "29eb193000be7a074d92ad1f0c5fe491479e3685ac5f422d7e8f0b99758e482f"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/hip/facade.png",
+            "sha256": "4c01602bb3a629bda75789ccad3ef0caf038956f9e2b16ff0581cb63127e5ce2"
+          }
+        },
+        "measurable-targets": {
+          "metadata": {
+            "path": "work/renders/m4-disabled/hip/measurable-targets.json",
+            "sha256": "4a9c79728a2ed337556fb801f258b836cffb5f8b942c6b1f446f9e9d612ee888"
+          },
+          "raw_pixels": {
+            "path": "work/renders/m4-disabled/hip/measurable-targets.rgba32f",
+            "sha256": "6306f5b43880a36f2aaadc0d57bdde29fad05e289016aa00f87d19e4c579906e"
+          },
+          "preview": {
+            "path": "work/renders/m4-disabled/hip/measurable-targets.png",
+            "sha256": "9b2122c4ea0c2ca4350908777f29b311f30d4a62bb38f04aa9c88462930a6d59"
+          }
+        }
+      }
+    }
+  },
+  "benchmark_interruption": {
+    "status": "excluded_from_final_timing_acceptance",
+    "outer_scope_exit": 143,
+    "observation": "CPU benchmark wrote JSON and printed Blender quit, but outer test scope exited 143 before process-result record or HIP launch",
+    "peak_memory_from_journal": "718.3MiB",
+    "oom_in_checked_journal": false,
+    "cause": "unestablished",
+    "retained_artifacts": [
+      {
+        "path": "work/m4-benchmark-interrupted/cpu-benchmark.log",
+        "sha256": "27ef9b1abc0ab531dc9a91bbb7ca7e2f53d25861aeab49af76ad7cb48d749d25"
+      },
+      {
+        "path": "work/m4-benchmark-interrupted/cpu-benchmark-results.json",
+        "sha256": "f1673402c881cf79b29701575bdc9eddeccec30c4b98eede006f5c0bf1708fa8"
+      }
+    ],
+    "resolution": "Separate CPU and HIP final runs both completed with observed exit zero under the same caps"
+  },
+  "visual_inspection": {
+    "status": "passed",
+    "images": [
+      "CPU/HIP physical-focus-chart.png",
+      "CPU/HIP large-filter-chart.png"
+    ],
+    "focus_chart": "All five depth rows .503-.920m sharp with fine line pairs, checkers and labels at matched -8 degree tilt",
+    "texture_chart": "15 panels present; sharp middle-depth frame/texture and blurred outer-depth pupil footprints; no obvious missing tiles or device artifacts",
+    "limits": "Visual inspection and pixel parity, not MTF, direct derivative-buffer comparison, physical radiometry or real-lens calibration"
+  },
+  "preserved_artifacts": {
+    "patches/blender-v5.3.0-tilt-shift.patch": "6eb1f544cbc4105b0738daf6eccbc5906bb2edbb85350140b454b11b19d4afb6",
+    "patches/blender-v5.3.0-tilt-shift-m3.patch": "bac9eabc75a39e54078a982e4d221d7e86d7ca005dd7c3a34afc287ecb422887",
+    "src/native/tilt_shift_math.h": "a36ab21bc48b0b30fcce725b3bd1f842f6424bb37fe3408d25df501d3d5578cc",
+    "scripts/blender_reference.py": "228f5fc7fd573cb926b56b3a8f8522cc2fa6041de43efca10eac0307a8cb1fe5",
+    "scripts/blender_m2_validation.py": "7220e31ce07a1e7a2ffdb601d18176e380c6d79cdfaef2d7928478dc50299761",
+    "scripts/blender_m3_validation.py": "5cd88dcf4ab901a4c28eefef3df3d56ed29bb95f436c9c6a0dc69665766c0d15",
+    "scripts/blender_visual_comparison.py": "fb99053046487b17dae166c9f21599c9df695d27110e5b2594c3ee7d11f4dfab",
+    "work/install-blender-baseline/blender": "a7e29865c5203192da0f371939c1a3be37457238ad840958b36f165924f8557b",
+    "work/install-blender-m2/blender": "ead0fc12ff20b6960b704376a217b95c6dcadf565fc8d93ca4603cb80e32df39",
+    "work/install-blender-m3/blender": "9c5a635e23bd49e59f60ee67341b081d0f88fb3637d86a46416b133cd222324f"
+  },
+  "render_artifacts": {
+    "cpu": {
+      "boundary-near-aperture.exr": "3aae2f0014cb0783f6c675b3ea5ddca54e6f45fb87461390a5d19edf87c88108",
+      "boundary-near-aperture.png": "74aaeaab41690fc7f90d73fff2385a3f4d3e294b89a001e8555d29675df73250",
+      "boundary-near-aperture.rgba32f": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+      "boundary-sensor.exr": "ee51c960658cd9c19fd580d054b3988b3c0022fc3d65b3dce0034c83824a5653",
+      "boundary-sensor.png": "7fcf31bbaddca465d53229fbdff8c96bdd3dd2ab0731d0b79e1235067e007312",
+      "boundary-sensor.rgba32f": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+      "combined-movements.exr": "6ad66467d6830f8638cbd53a7f9dfb4d708e0494420894b616f0edb754e3de2b",
+      "combined-movements.png": "68061107bcf6818b254e2a2fe8d6e7e1e79f8fd960de707eae3251c37b87d889",
+      "combined-movements.rgba32f": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78",
+      "coverage-tilted.exr": "f628a79509241985aa17e149229c09c3241a457775d38864b90e63781035cfb1",
+      "coverage-tilted.png": "47161e689cd461e443533b8ffe4ba1e413dc4f655be20856fd6ac5b729159088",
+      "coverage-tilted.rgba32f": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+      "coverage-untilted.exr": "e47e483306f82d05eaab74c8d7ae3d94c0ec635b60bf43125f3960a8849aaf50",
+      "coverage-untilted.png": "8d025f2db950f2a4b88a72a4ea161c5c9c429fd65bd9e7fa4dcd4ea8c42d5c5d",
+      "coverage-untilted.rgba32f": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+      "disabled-centroid.exr": "308671a432da9f2f465589f66d3ade795bb55324f83783dbca177c3fb96641d2",
+      "disabled-centroid.png": "91a6e13d07e49bc67683b1b4eda30c2d993f53e52b15467f9e7b714c1451cb34",
+      "disabled-centroid.rgba32f": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+      "large-filter-chart.exr": "b430f4dc1147b958f8efcc88f7653a194a84e104a9a2f07c1dab5912a0f7c3f7",
+      "large-filter-chart.png": "8fa7d7dedf4b25fc4231955a61ba4adc42e95a293d417f16503b82927720d38d",
+      "large-filter-chart.rgba32f": "7c0d4db8bf4e4502bc18a8878e252d6069d7e726239b2c2c459ab4690a10fce5",
+      "offaxis-focus-object.exr": "e9b2a1738696370d0bf4c15dad2d999206a1f0c2c8b8c61fae4ed423729c41c1",
+      "offaxis-focus-object.png": "e4e8f8240305a28600a1f7fdd03dc099a9d7f582e9dfd9d13c136c5957559cc7",
+      "offaxis-focus-object.rgba32f": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+      "physical-centroid.exr": "d7c3e7ce0a67f3b99fec397cf3464d0e08fc9cf3528be45611ff92c5cc8c2c3d",
+      "physical-centroid.png": "f64c9c9c77c1dcf97514fd4a9c440df2344968628a22da2f924cbee7f2435e82",
+      "physical-centroid.rgba32f": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+      "physical-focus-chart.blend": "1bafe2e90465ab500a50eb28a500631d7a995909b93b7300ccf02d38c673baf5",
+      "physical-focus-chart.exr": "231544ef3b771d9829e4ca2ef2400477c5467f8fda15b266d076e08638f30074",
+      "physical-focus-chart.png": "423778b550840a7aad20686839971ec25ab9fbfa9ebf14a4173aa77beb7f6f85",
+      "physical-focus-chart.rgba32f": "d8ad57a04d088694131e9e01af3411d2524f8f02679d83dbef7c790200d91bc1",
+      "physical-shift.exr": "c042ce6ed431c400d037981f6c9646d59def71268fbb15d8ecc436908841a0d3",
+      "physical-shift.png": "62c4650df34bfa9407f129668629c96441fbb431746bdc45180af65d1d5468e8",
+      "physical-shift.rgba32f": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+      "pixel-aspect.exr": "df8f393b4b588b66d53494622454114ca641905fe0df3c22ffe6885ccfd44ef7",
+      "pixel-aspect.png": "aee9af8cf51e53629571f20ad8998326b2d13dbce787c3b79f9349f75c26d374",
+      "pixel-aspect.rgba32f": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+      "scheimpflug-sharp.exr": "408ea5aa10c36c206fa42ae22194691f7ad4890e8739250865bf7f4bd232a777",
+      "scheimpflug-sharp.png": "d8897a963e9c40d46d48adbfa5affbae33a3a4302e19d5a1d63fc4058b9e5d2a",
+      "scheimpflug-sharp.rgba32f": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+      "scheimpflug-untilted.exr": "b62a72639ff19b76b34a7ffc8d31af229cfd007f173766fc03ef64741fffbc0a",
+      "scheimpflug-untilted.png": "fb5e1b7eae8e3f0dcabe5a1b3983e3a7b939be66e87395dc7c7784e8aa9e8161",
+      "scheimpflug-untilted.rgba32f": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+      "shifted-world-window.exr": "587f7708a3882715324f8ce449dcc7f0a9a11757554533b3dedf63769ae190be",
+      "shifted-world-window.png": "695dd66a5132d4c4f2e4823b05fe0e659610687bb44003ec223b67614490879e",
+      "shifted-world-window.rgba32f": "361c495fa1e903ebbf54f550c57f7e4c818dc04930f912c09085081de576d514",
+      "tilted-aperture-clips.exr": "83ccf5a6230bded208bf66343f56ccf9956b762080df138fcb1ceab4048c4089",
+      "tilted-aperture-clips.png": "05bcdff4e927d53e1c7388fcba30a67d21a0f6975f50c03593b1fe8156257d82",
+      "tilted-aperture-clips.rgba32f": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+      "tilted-aperture-volume.exr": "1b571763f4244db52193caa9b1d0dce311fa67b4218643a84c28ad76554b3f5a",
+      "tilted-aperture-volume.png": "b1d372795873ef751b98cb778ad116900bbb00973927ee766698a7d90a8dcef9",
+      "tilted-aperture-volume.rgba32f": "b4268e0bf178bc4e600170ffbbf2248328b9d0e95f5c3f99392fe294b4de676b",
+      "untilted-coc.exr": "598e82f520238cf9e2f9d63d23bc77cbaf5aaf1eac0d571a8a47270714c41d61",
+      "untilted-coc.png": "f03ca537d295557a8474087c0586ff49e4101b222ea385bfe3c9d7945af95df9",
+      "untilted-coc.rgba32f": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+      "vertical-fit.exr": "f49a88fe32b1d7fbd02da60741be93f500bbd40c4d25dd2634368514b1c6a240",
+      "vertical-fit.png": "33d086fc0020ae8926d2524b202fdd01e34e458455abff4043061fa2310b411b",
+      "vertical-fit.rgba32f": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf"
+    },
+    "hip": {
+      "boundary-near-aperture.exr": "d90c827af591bba4fd24c6d6df0dc4e0104fe4f6d62dcba4dc935a5184a34ca3",
+      "boundary-near-aperture.png": "8b485ff9d5c9e5bf044a4004b6a6df0c9222cc33d63998edc2951499233c9e58",
+      "boundary-near-aperture.rgba32f": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+      "boundary-sensor.exr": "d90c827af591bba4fd24c6d6df0dc4e0104fe4f6d62dcba4dc935a5184a34ca3",
+      "boundary-sensor.png": "8b485ff9d5c9e5bf044a4004b6a6df0c9222cc33d63998edc2951499233c9e58",
+      "boundary-sensor.rgba32f": "6af2c0b291f0efd3f734c12745bb245bd16fc4fb52c72a1508612f2729efbe9f",
+      "combined-movements.exr": "481ec7ab89ac18923221cc534bb04f0f3b2153225cb9550dbe540c4c27b08981",
+      "combined-movements.png": "a1cbb57f6522800c0592d67e5f2d0eb27735bf85ee64e6379fca5bb62c017ad9",
+      "combined-movements.rgba32f": "fdfb1b6cd6fb4d1ce8a1fe746b6fed2e3085b33dace22df77e097a5070cc9e78",
+      "coverage-tilted.exr": "d5c49436209db3f97d396a960e9bb5f1d44a31aaa667412f9a6e993422ed2873",
+      "coverage-tilted.png": "1d6920cdfb076985fa3fd1d8734015743c5df7f37cbf4bf05019e79ccff7b85a",
+      "coverage-tilted.rgba32f": "d90a5189cef9c2c4411ba6d1368c4e01fb2deadddc821d8eb3e67325b2a3c479",
+      "coverage-untilted.exr": "9b6dc4f73eaac106a20a21682aabeaf931084f0a10fa32c748883100736ccc87",
+      "coverage-untilted.png": "e027de893cd7e11e0dc9e9fcd16823bbcfbd7d40de1d7f8bed6c2e01e03b89db",
+      "coverage-untilted.rgba32f": "4620601278190c03f1cf8842a73af71ddf8e0a88d2866113b7a8dbe9ad317c5f",
+      "disabled-centroid.exr": "3dfe2108c5bb96e751994ef026f49ceb51aec1399737dec16d73772412b60cb7",
+      "disabled-centroid.png": "baea53b0eaa9031f699f321177745a1d4e6d71eaefdacb54c41d6c121ab2cbf3",
+      "disabled-centroid.rgba32f": "e252dc55838370b455751188ad9338ef577de8977e5a66013fceba3cccc7bafb",
+      "large-filter-chart.exr": "f6a31818aaca73c4c668c9d819f308cf6aea60673202d051a1f3542b8f2094de",
+      "large-filter-chart.png": "c601ec74089a9510ac120420363b1cc19640db0da3ff33c379e55a11333d57b6",
+      "large-filter-chart.rgba32f": "3f285a8ac081937f33c8bc846e9b04c4ef68e7457dfeaa21903f1863b1644014",
+      "offaxis-focus-object.exr": "774f2f6d7d7b0f2e41747104f2971c91f233f2317d7378050edc70252b89ea3b",
+      "offaxis-focus-object.png": "5a309da9d360f3422185917fad10dfdb75e7e57b9fee17a73d9af24121c7df03",
+      "offaxis-focus-object.rgba32f": "d84e85c904c0e9915b06a3762b1232f4118b5f000a90953bd16be784da476312",
+      "physical-centroid.exr": "b574de557aa5bb8c93684a002b4121542d8ee3ef0a5dc4a0c537dde6e2ecb67d",
+      "physical-centroid.png": "45f96e832112f5b9837a1dc9f165aec23f34b6c535fac7cd6f3ebadcb330b5cc",
+      "physical-centroid.rgba32f": "64f7a054f187fcd1ab695010cbb373f58967e664dace8fd3756a29a535041494",
+      "physical-focus-chart.blend": "18b8403b6909cb363ad907cd608f45a2cc48e6689b5fc9f61575a89362966fec",
+      "physical-focus-chart.exr": "50fdad4ef3042f09b9c0daa60c15c7385b98d64ab801c397e13d0a1fc12c92ec",
+      "physical-focus-chart.png": "b2559f7bbf014a0869def432e753a498545567ffe08a3f5f94c0728376992a19",
+      "physical-focus-chart.rgba32f": "3a2925075bb636fac1073e3764fd6297ad6fd390956aa210cb83a26f58bd598a",
+      "physical-shift.exr": "23338829656d7f2c328a2bb52564ea0a854457a3be780dca3823dcd9b88d1887",
+      "physical-shift.png": "80d1b115666ca3f4d40a9a447b61f8dd328c14c61f29f6b167ca8986abff7f93",
+      "physical-shift.rgba32f": "e3621cf1a7aa03bae7d0a60db924472f7334c6d8e827f129b55ae499faf2a0a5",
+      "pixel-aspect.exr": "1228ddcf6bd7737de15132aada65ae0d6863c12b0d420edfe0d47037f8874107",
+      "pixel-aspect.png": "b30e33ac36685f221a05981846ea1bbf40d67c145c94ec0974a8faa16f45a51b",
+      "pixel-aspect.rgba32f": "ac3fb1cc91c6b8f91f0c27add0d3679123ab8bc78d87d5d35104349e946b776f",
+      "scheimpflug-sharp.exr": "69ff82c88957e92b21816382c800c98217e2b16cc60f8db47a4553cd974a87cc",
+      "scheimpflug-sharp.png": "e43fbbfd1ec012c39664b28daf40b3066a706759291fdebe7903ddc18eee77fd",
+      "scheimpflug-sharp.rgba32f": "eb1fefee173330f7bc2032e869f45439ed8cbc6430c66b290c9b1575144dc7a9",
+      "scheimpflug-untilted.exr": "6c17a6d1a75b80fd9515f9c05bdb75d71f98b0aee56976ca13fcbc15c08f61a8",
+      "scheimpflug-untilted.png": "a6d1931d7b2490b3a60e5668c5e4411c2b1e5d33d7c1fb549abcc040a99747ff",
+      "scheimpflug-untilted.rgba32f": "dcf596ab1dc387140f235b9a8ef27a6be65645825580627b6195784dae235f6e",
+      "shifted-world-window.exr": "c197f1e9ba1182befae11b4180fa19cc5af1e326ea5cae9650de6d5c72ef5169",
+      "shifted-world-window.png": "060794a2efbc20aaebb62e7989092f9aa91392b6ecbf321e4cfa07dcbb0a997c",
+      "shifted-world-window.rgba32f": "f32e17641579d71cdf789ae71a8d81ff1965340dc4755e6b59a888e39ed69b45",
+      "tilted-aperture-clips.exr": "2106e3a23f47b782bda2d9474ad86c121e1572c96d69846e8844433b1f4c2c4b",
+      "tilted-aperture-clips.png": "ef90c49f1646984b1ef1827f7d824ae8061e4611996ede2c89d43bba927c9a2c",
+      "tilted-aperture-clips.rgba32f": "b51a77dd1513c74b4b98e4c8698016f4da4ee12ad4494d956ea5b9f74867e4b8",
+      "tilted-aperture-volume.exr": "a45294ae175e6a228add43d89b03b98453c52c938f21f2358c26bb2f930180d2",
+      "tilted-aperture-volume.png": "efb044884c40e7e5bb0c47e5aa4199b19e8141eb3e3392f4bc19789b3e0c2bc7",
+      "tilted-aperture-volume.rgba32f": "8061a80fc5dddf64a126b32680f9b82dbe4f9dc6b6033375a435cd6c90d00d47",
+      "untilted-coc.exr": "e202b40d36f9c421ca744d917cb201700ac746ec914d0675223f67728139fec0",
+      "untilted-coc.png": "d14a51c7dc949f5fba0f1b7799224f8f779ff3c78187751cad9b0707b1157eb8",
+      "untilted-coc.rgba32f": "1ad279f2fca6548d61339323a82b665c7cc1db152671474d5d649e8f269ec3a5",
+      "vertical-fit.exr": "eadd0c412947c741fb79f775d6be25dff7a1c161aee5fcbd534e3b168003d151",
+      "vertical-fit.png": "599c3b9d67838479234d9ec076e860c809d669fe5b855a04f854633b7539dce6",
+      "vertical-fit.rgba32f": "eb22f1147abf203d0d3ca25f704b95f8ead03f618a4de9146d1b22c3f6b09fbf"
+    }
+  },
+  "limitations": [
+    "Validated hardware is RX 6900 XT/gfx1030 with recorded HIP toolchain only",
+    "No HIPRT, multi-GPU, mixed CPU/HIP or other GPU-backend acceptance",
+    "Existing motion blur/vector, stereo, adaptive dicing and invalid geometry rejections remain",
+    "Boundary uniform worlds establish finite execution and unit weight, not near-singularity ray-direction/differential accuracy",
+    "Image-texture parity exercises filtering, not direct ray differential buffer equality",
+    "Completed-render timing ratios include changed framing/texture/intersection workload and session synchronization; not isolated camera overhead or general speedup",
+    "No new GNOME/Mutter, accessibility, human-workflow, cross-platform, production-radiometry or real-lens acceptance",
+    "No push, publication, deployment or destructive cleanup authorized by this acceptance"
+  ],
+  "new_script_hashes": {
+    "scripts/blender_m4_validation.py": "bfa0e31da07dc809e95caf972103ea021e4c9bb85eb446f679a0153d1cf9fe3c",
+    "scripts/compare_m4.py": "64850f5368e8d034fabd518ce2f2e3785b7711646b070baca0722610908e5a6f",
+    "scripts/run_m4_guards.py": "032481d9bd3ffa41bf905e541af5cd97b548f53e7d66d12dc0926a85774c89b8",
+    "scripts/dev.py": "d316d06082734c6cc56b717948038222e5c093cf37e55ea38f9daf435481f9ec"
+  },
+  "additional_checks": {
+    "standalone_optical_ctest": {
+      "status": "passed",
+      "tests_passed": 2,
+      "command": "/usr/bin/ctest --test-dir work/build-optics --output-on-failure",
+      "log": {
+        "path": "work/build-optics/Testing/Temporary/LastTest.log",
+        "sha256": "bd488acdef617151bcfe1e2f37d052c6528dd42eeff5b905c2c413d21f0b00b6"
+      },
+      "optical_checks": 14120,
+      "native_float_checks": 39214
+    },
+    "python_compile": {
+      "status": "passed",
+      "scripts": [
+        "scripts/dev.py",
+        "scripts/blender_m4_validation.py",
+        "scripts/compare_m4.py",
+        "scripts/run_m4_guards.py"
+      ]
+    },
+    "native_whitespace": "passed",
+    "actual_upstream_index_unchanged": true
+  }
+}

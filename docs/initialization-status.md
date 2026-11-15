@@ -1,11 +1,12 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Initialization evidence
 
-Update 2026-11-14: the bounded static native CPU M2 foundation and bounded M3
-native interface are complete. See [M2 evidence](m2-validation.json),
+Update 2026-11-14: the bounded static native CPU M2 foundation, bounded M3
+native interface and single-device non-HIPRT M4 HIP gate are complete.
+See [M4 evidence](m4-validation.json), [HIP scope](m4-hip-camera.md), [M2 evidence](m2-validation.json),
 [native conventions](m2-native-camera.md), [M3 evidence](m3-validation.json) and
 [interface workflow/limits](m3-native-interface.md). M3 GUI evidence uses an
-isolated Sway/software OpenGL session; new-camera HIP remains M4 work.
+isolated Sway/software OpenGL session; M4 adds actual RX 6900 XT/gfx1030 build/render evidence.
 The snapshot below remains the historical unmodified M1 initialization record.
 
 Snapshot: 2026-11-14. This ledger distinguishes implemented geometry from future

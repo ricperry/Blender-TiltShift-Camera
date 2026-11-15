@@ -201,3 +201,22 @@ includes the explicitly reviewed native mathematical header and verifies it agai
 the standalone mirror; any other untracked source fails. Nothing is staged or
 committed upstream. See the [M3 interface guide](m3-native-interface.md) for the
 separate GUI-capable install prefix and validation workflow.
+
+## M4 single-device native HIP
+
+The current cumulative exporter defaults to `--milestone m4`; existing M2/M3
+patches are immutable. Preserve all earlier installations and use a distinct
+`work/install-blender-m4` prefix. Reconfigure the existing GUI-capable CPU build
+tree with HIP binaries ON for gfx1030 and HIPRT OFF, compile `cycles_kernel_hip`
+with one job, then build/install the host with four jobs under the 18 GiB build
+cap. Use the official install target so the new fatbin and current source
+headers are installed together. The ordinary `dev.py configure cpu` command
+resets the prefix and disables HIP binaries; follow the explicit
+[M4 build/reproduction commands](m4-hip-camera.md) instead.
+
+The same M4 executable selects hard CPU or single HIP execution, with CPU fallback
+and HIPRT disabled. The final comparison requires all 19 declared float buffers,
+matching actual camera/raster settings and one global executable/script/patch/
+fatbin provenance tuple. The [M4 ledger](m4-validation.json) includes retained
+physics/rejections, ordinary-camera attribution, actual device/kernel log proof,
+resource caps, completed-render mode timings and the interruption/rerun record.

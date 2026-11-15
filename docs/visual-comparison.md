@@ -67,3 +67,23 @@ enable and lens tilt. Compare
 [ordinary](../work/visual-comparison/ordinary.png),
 [physical zero tilt](../work/visual-comparison/physical-zero.png), and
 [physical −8° tilt](../work/visual-comparison/physical-tilted.png).
+
+## M4 CPU/HIP reproduction
+
+M4 imports this frozen chart without changing its geometry or accepted −8°
+settings. The same new executable rendered CPU and hard-selected RX 6900 XT HIP
+at 1280×800, 128 samples and seed 203, with denoising/adaptive sampling off.
+Both final images were inspected: all five depth rows and their fine line pairs
+remain sharp. Linear RGB RMSE was `0.0001215173175`, maximum absolute difference
+`0.006985008717`, within the predeclared `0.003` / `0.015625` bounds. This is
+qualitative focus evidence plus CPU/HIP pixel parity, not an MTF or physical-lens
+calibration result.
+
+The new runner saves EXR/raw measurements, PNG previews and editable scenes:
+[CPU chart](../work/m4-validation/cpu/physical-focus-chart.png),
+[HIP chart](../work/m4-validation/hip/physical-focus-chart.png),
+[CPU scene](../work/m4-validation/cpu/physical-focus-chart.blend),
+[HIP scene](../work/m4-validation/hip/physical-focus-chart.blend).
+See [M4 reproduction](m4-hip-camera.md) and its
+[machine-readable ledger](m4-validation.json) for exact hashes and device scope.
+The M3 comparison and original script above remain historical evidence.
