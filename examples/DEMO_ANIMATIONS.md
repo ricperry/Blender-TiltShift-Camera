@@ -122,7 +122,8 @@ ffprobe available:
 python examples/encode_demo_animations.py --output work/demo-animations/960x540
 ```
 
-Open the generated [local gallery](../work/demo-gallery/index.html).
+Explore the [photo and video gallery](https://ricperry.github.io/Blender-TiltShift-Camera/).
+Local generation writes `work/demo-gallery/index.html`.
 To refresh its presentation without encoding, run
 `python3 examples/build_demo_gallery.py`; see the
 [gallery guide](DEMO_GALLERY.md) for alternate input directories. The old video
@@ -196,7 +197,7 @@ separately; this document describes the reproducible workflow, not unrun results
 
 ## Current results
 
-The [local gallery](../work/demo-gallery/index.html) contains all eight
+The [photo and video gallery](https://ricperry.github.io/Blender-TiltShift-Camera/) contains all eight
 clips: **400 frames, 50 frames per clip, exactly 10 seconds at 5 fps, 960 × 540,
 H.264/yuv420p**. Each frame used 256 samples on one Radeon RX 6900 XT HIP device.
 The [artifact audit](../work/demo-animations/960x540/artifact-audit.json) passes

@@ -7,11 +7,11 @@ physical rays during rendering; depth blur comes from the lens and aperture.
 This repository publishes the source modifications, build tools, optical
 reference, validation evidence and an editable full-scale city example.
 
-<a href="work/demo-gallery/index.html"><img src="examples/full-scale-city/native-tilt.png" alt="Preview the tilt-shift camera photo and video gallery: a full-scale city with a selective band of focus" width="960"></a>
+<a href="https://ricperry.github.io/Blender-TiltShift-Camera/"><img src="examples/full-scale-city/native-tilt.png" alt="Preview the tilt-shift camera photo and video gallery: a full-scale city with a selective band of focus" width="960"></a>
 
-**[Explore the photo & video gallery →](work/demo-gallery/index.html)**
-17 photographs · 11 comparisons · 8 camera-control videos. The linked gallery is
-generated locally under ignored `work/` and is not published.
+**[Explore the photo & video gallery →](https://ricperry.github.io/Blender-TiltShift-Camera/)**
+17 photographs · 11 comparisons · 8 camera-control videos, with original 4K
+images, editable scenes and optional focus-plane overlays.
 [Build or refresh it from existing artifacts](examples/DEMO_GALLERY.md).
 
 ## What tilt-shift photography does
@@ -66,12 +66,11 @@ It includes a botanical tabletop with extended focus at −10° tilt, +10° city
 selective focus, optimized ordinary cameras, swing, movement-axis rotation,
 architectural shifts, and optional focus-plane intersections on scene surfaces. Generated 4K
 images and editable scenes are available through the
-[shared photo and video gallery](work/demo-gallery/index.html) after generation;
-these local artifacts have not been published.
+[shared photo and video gallery](https://ricperry.github.io/Blender-TiltShift-Camera/).
 
 For eight **10-second tilt-shift camera animations**, see the
-[photographic controls in motion](examples/DEMO_ANIMATIONS.md) and generated
-[shared gallery](work/demo-gallery/index.html). Each clip changes
+[photographic controls in motion](examples/DEMO_ANIMATIONS.md) and the
+[shared gallery](https://ricperry.github.io/Blender-TiltShift-Camera/). Each clip changes
 one real camera setting and labels its current value in every frame.
 
 ## Build the camera

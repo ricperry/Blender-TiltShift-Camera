@@ -1,18 +1,19 @@
 # Reference scenes
 
 Explore photographs and videos together in the
-[local tilt-shift camera gallery](../work/demo-gallery/index.html).
+[tilt-shift camera gallery](https://ricperry.github.io/Blender-TiltShift-Camera/).
 [Rebuild the gallery from existing artifacts](DEMO_GALLERY.md) with ordinary Python;
-the generated gallery remains under ignored `work/` and is not published.
+local generation and the portable publication export remain under ignored `work/`.
 
 For the larger photographic suite, see [17 tilt-shift/ordinary comparison images](DEMO_COMPARISONS.md):
 botanical extended focus, 10° city tilt, optimized ordinary DOF, architecture
 shift parity, and optional focus-plane intersections on scene surfaces. The generator saves
-editable scenes and full resolution images in ignored `work/`, linked from the shared gallery.
+editable scenes and full resolution images in ignored `work/`; the public gallery
+provides portable copies of the active examples.
 
 For eight **10-second camera-control animations**, see
-[Tilt-shift photographic controls in motion](DEMO_ANIMATIONS.md) and the generated
-[shared gallery](../work/demo-gallery/index.html). Each clip changes
+[Tilt-shift photographic controls in motion](DEMO_ANIMATIONS.md) and the
+[shared gallery](https://ricperry.github.io/Blender-TiltShift-Camera/). Each clip changes
 one tilt-shift camera setting and labels its current value in every frame.
 
 For a real city-scale comparison of lens tilt and standard depth of field, see

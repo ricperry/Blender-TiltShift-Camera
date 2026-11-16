@@ -3,9 +3,9 @@
 
 The [demo generator](create_demo_comparisons.py) creates **17 active editable scenes**
 under ignored `work/demo-comparisons/` and refreshes the shared photo/video gallery.
-Open the [local gallery](../work/demo-gallery/index.html) after generation;
+Explore the [photo and video gallery](https://ricperry.github.io/Blender-TiltShift-Camera/);
 click an image for its full resolution PNG, or follow its `.blend` and JSON links.
-These are local artifacts, separate from the published city example.
+Generation remains local; the public gallery provides copies of the active artifacts.
 
 The suite combines a botanical product still life, the existing full-scale city,
 and level architectural shift views. The still life's three detailed paper

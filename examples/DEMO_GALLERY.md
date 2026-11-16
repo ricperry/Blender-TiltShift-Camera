@@ -1,10 +1,11 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Photo and video gallery
 
-The [local tilt-shift camera gallery](../work/demo-gallery/index.html) combines
-**17 photographs in 11 pairs and eight videos**. It is generated under ignored
-`work/` and has not been published. The README thumbnail is a portable published
-city preview; the linked gallery becomes available locally after generation.
+The [tilt-shift camera gallery](https://ricperry.github.io/Blender-TiltShift-Camera/) combines
+**17 photographs in 11 pairs and eight videos**, with original 4K images,
+editable Blender scenes and six optional focus-plane overlays. Its portable
+static export is served separately from the source repository through GitHub Pages.
+Local generation remains under ignored `work/`.
 
 ## Build from existing artifacts
 
@@ -36,6 +37,43 @@ can select a separate inspection directory under `work/` if needed. Links are
 relative to the selected gallery output. Both original gallery entrypoints now
 delegate to this builder; their input directories' `index.html` files redirect
 to the shared gallery rather than maintaining different photo/video layouts.
+
+## Export for GitHub Pages
+
+From the complete verified artifact set, export a fresh portable directory:
+
+```sh
+python3 examples/export_demo_gallery.py
+python3 -m http.server 8765 --directory work/demo-gallery-public
+```
+
+Preview `http://localhost:8765/`. The exporter accepts `--photos`, `--videos` and
+`--output`; all directories must remain below `work/`. Output must be new and
+must not overlap either input or the canonical local gallery. Preserve or move
+an earlier export before rebuilding. Missing active photos, videos or any of the
+six verified focus-plane pairs fail the export instead of publishing an incomplete
+gallery. The exporter does not change the canonical gallery or input redirects.
+
+Only explicit active dependencies are copied: 17 original PNGs, 25 Blender scenes,
+eight MP4s and first-frame posters, render/animation/encoding JSON, ten overlay
+masks and their surface/provenance records, and matching captured generator
+sources. The export also includes `LICENSE`, `.nojekyll` and
+`publication-manifest.json`, which records every other file's size and SHA-256,
+source paths and gallery counts. All copied bytes are verified. No rendering,
+re-encoding or image editing occurs; raw animation sequences, unrelated examples,
+caches and browser profiles are excluded. Render-time paths and frame hashes in
+the original JSON remain provenance records, rather than downloadable site URLs.
+
+The HTML's media URLs are relative to the export and its method links point to
+the source repository on GitHub. Publish only the export directory's contents to
+the separate `gh-pages` branch, and configure GitHub Pages to serve that branch's
+root. This is a separate publication action: running the exporter does not push
+or deploy. Keep generated media out of the source branch. Source-only commits
+cannot publish ignored `work/` files. The public entrypoint is
+[the GitHub Pages gallery](https://ricperry.github.io/Blender-TiltShift-Camera/).
+
+Run the bounded packaging tests with
+`python3 -m unittest discover -s tests -p 'test_gallery_export.py'`.
 
 ## Explore the controls
 

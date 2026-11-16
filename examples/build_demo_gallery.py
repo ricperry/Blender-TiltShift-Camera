@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PHOTO_DEFAULT = ROOT / 'work/demo-comparisons/4k'
 VIDEO_DEFAULT = ROOT / 'work/demo-animations/960x540'
 GALLERY_DEFAULT = ROOT / 'work/demo-gallery'
+REPOSITORY_URL = 'https://github.com/ricperry/Blender-TiltShift-Camera'
 
 # Stable artifact identifiers are deliberately independent of display copy.
 PAIRS = [
@@ -149,7 +150,8 @@ def value_label(record, frame):
     return f'{value:.3g} {unit}'
 
 
-def build_gallery(photos=PHOTO_DEFAULT, videos=VIDEO_DEFAULT, output=GALLERY_DEFAULT):
+def build_gallery(photos=PHOTO_DEFAULT, videos=VIDEO_DEFAULT, output=GALLERY_DEFAULT,
+                  *, public=False):
     photos, videos, output = map(below_work, (photos, videos, output))
     if output in (photos, videos):
         raise ValueError('Canonical gallery must have its own directory')
@@ -159,6 +161,8 @@ def build_gallery(photos=PHOTO_DEFAULT, videos=VIDEO_DEFAULT, output=GALLERY_DEF
     output.mkdir(parents=True, exist_ok=True)
 
     def url(path):
+        if public and Path(path).is_relative_to(ROOT / 'examples'):
+            return REPOSITORY_URL + '/blob/main/' + quote(Path(path).relative_to(ROOT).as_posix())
         return quote(Path(os.path.relpath(path, output)).as_posix(), safe='/')
 
     def link(path, label, download=False):
@@ -220,15 +224,20 @@ def build_gallery(photos=PHOTO_DEFAULT, videos=VIDEO_DEFAULT, output=GALLERY_DEF
     cards.sort(key=lambda card: next(index for index, identifier in enumerate(order)
                                     if card.startswith(f'<section id="{identifier}" ')))
     intro = f'{len(photo_records)} photographs in {pair_count} comparisons · {len(video_records)} videos · editable Blender scenes'
+    context = 'Photo &amp; video demonstrations' if public else 'Local demonstration'
+    footer = (f'<a href="{REPOSITORY_URL}">Source &amp; build instructions</a> · '
+              '<a href="LICENSE">GPL-3.0-or-later</a> · '
+              '<a href="publication-manifest.json">Publication manifest</a>' if public else
+              'Generated local artifacts. This gallery is not published.')
     document = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tilt-shift camera — photo &amp; video gallery</title><style>{CSS}</style></head><body>
-<a class="skip-link" href="#gallery">Skip to gallery</a><main><header class="hero"><p class="eyebrow">Blender 5.3 / Cycles · Local demonstration</p><h1>A new plane of focus.</h1><p class="lede">Explore the tilt-shift camera in photographs and motion. Follow a tabletop, place a band of focus across a city, or reframe architecture while keeping the camera level.</p><p class="inventory">{intro}</p><p class="intro-note">Every image uses physical camera rays. Open a 4K photo to inspect detail; play a clip to watch one setting change.</p></header>
+<a class="skip-link" href="#gallery">Skip to gallery</a><main><header class="hero"><p class="eyebrow">Blender 5.3 / Cycles · {context}</p><h1>A new plane of focus.</h1><p class="lede">Explore the tilt-shift camera in photographs and motion. Follow a tabletop, place a band of focus across a city, or reframe architecture while keeping the camera level.</p><p class="inventory">{intro}</p><p class="intro-note">Every image uses physical camera rays. Open a 4K photo to inspect detail; play a clip to watch one setting change.</p></header>
 <nav class="gallery-toolbar" aria-label="Gallery filters"><div class="type-filters" role="group" aria-label="Media type"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="photos" aria-pressed="false">Photos <span>{pair_count}</span></button><button type="button" data-filter="videos" aria-pressed="false">Videos <span>{len(video_records)}</span></button></div><label class="theme-filter">Explore <select id="theme"><option value="all">All camera controls</option><option value="focus">Focus &amp; aperture</option><option value="movements">Lens movements</option><option value="framing">Framing &amp; shift</option></select></label><p id="result-count" role="status" aria-live="polite">{len(cards)} demonstrations</p></nav>
 <div id="gallery" class="gallery">{''.join(cards)}</div><p id="empty-state" hidden>No demonstrations match these filters.</p>
 <details class="technical-notes"><summary>About these demonstrations</summary><p>Blur comes from finite-aperture camera rays, without image-space blur, denoising, interpolation or motion blur. The videos add only a setting/value corner label. Focus, focal length, shift and aperture also exist in standard Cycles. The special lens movements rotate the sharp plane.</p><p>These ideal geometric optics examples do not simulate diffraction, shutter exposure or sensor noise. Video ranges are representative photographic choices, except for the full movement-axis cycle; they do not cover every valid optical configuration. Finite-distance focusing can change framing. Large movements can encounter singularities or invalid ray domains, guarded by the camera.</p><p>Photo pairs compare matched physical pupils where indicated. Standard focus/aperture fits approximate scalar blur rather than full image equivalence. Green overlays are optional, verified surface intersections of the exact sharp plane; they are not sharpness masks or depth-of-field boundaries.</p><p>{link(ROOT/'examples/DEMO_COMPARISONS.md', 'Photo methods & reproduction')} · {link(ROOT/'examples/DEMO_ANIMATIONS.md', 'Video methods & reproduction')} · {link(ROOT/'examples/DEMO_GALLERY.md', 'Rebuild this gallery')}</p></details>
-<footer><p>Tilt-Shift Camera for Blender / GPL-3.0-or-later</p><p>Generated local artifacts. This gallery is not published.</p></footer></main><script>{SCRIPT}</script></body></html>'''
+<footer><p>Tilt-Shift Camera for Blender / GPL-3.0-or-later</p><p>{footer}</p></footer></main><script>{SCRIPT}</script></body></html>'''
     (output / 'index.html').write_text(document)
-    for directory in (photos, videos):
+    for directory in (() if public else (photos, videos)):
         if not directory.exists():
             continue
         destination = quote(Path(os.path.relpath(output/'index.html', directory)).as_posix(), safe='/')
