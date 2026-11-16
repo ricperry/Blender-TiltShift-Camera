@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "f4d6030bb55afa5962e08836b0cdfb7b1b5707b9d8354d1a82da3279db409dd8",
+  "animation_manifest_sha256": "c473fc2b8895a9cfcf5f8eb4655e865d53139b1db330e52b72ffaf09fe6064e6",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "c72c15d7a7a8cb5ad2192a1066917e6e3a95d415c79e87f3115a9ed8fad94e4a",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Horizontal shift  -18.00 mm  (-0.500)",
+      "sha256": "9ac1f772f4a9a42d3cec4a9d352f12652b851acbaff85e5eef66d87c46bde8f7"
+    },
+    {
+      "frame": 2,
+      "text": "Horizontal shift  -17.27 mm  (-0.480)",
+      "sha256": "47ab03691fa82942d92512dc524dae012606f2979ea3ca8adb81113b8a762da4"
+    },
+    {
+      "frame": 3,
+      "text": "Horizontal shift  -16.53 mm  (-0.459)",
+      "sha256": "34d2d19b7a46226844bd370bbad3c0e6076d0e4f3c60487cfab98243c52a34bb"
+    },
+    {
+      "frame": 4,
+      "text": "Horizontal shift  -15.80 mm  (-0.439)",
+      "sha256": "c14256e0dc5740c6e442897e4037d7a261cc4265571660e211fd74813f9dd954"
+    },
+    {
+      "frame": 5,
+      "text": "Horizontal shift  -15.06 mm  (-0.418)",
+      "sha256": "356b64bf642bef73150c27956635ab9c3fcdcc2f024fe829210f0d3faa2c9ae6"
+    },
+    {
+      "frame": 6,
+      "text": "Horizontal shift  -14.33 mm  (-0.398)",
+      "sha256": "9a359fdeb78b24111945766b39b4b34018f397205e4ff7393a7c68808d6db196"
+    },
+    {
+      "frame": 7,
+      "text": "Horizontal shift  -13.59 mm  (-0.378)",
+      "sha256": "873dc073c46e032fa35e4edf4d98169d6ada7458f98ecffb2cc3805c0920b6ac"
+    },
+    {
+      "frame": 8,
+      "text": "Horizontal shift  -12.86 mm  (-0.357)",
+      "sha256": "3babe772dff0abcf58d2170cf845186da8143a20dbe7c13bc0d7d15826e323e0"
+    },
+    {
+      "frame": 9,
+      "text": "Horizontal shift  -12.12 mm  (-0.337)",
+      "sha256": "3e30c9f1020d836c3a8c45aaba2402f604819f7a86d9bbb469ceda56a144b2c6"
+    },
+    {
+      "frame": 10,
+      "text": "Horizontal shift  -11.39 mm  (-0.316)",
+      "sha256": "72d8b010d9fb4f07847423f9618a9e11619cbdac289dba217ba2e42257866b5f"
+    },
+    {
+      "frame": 11,
+      "text": "Horizontal shift  -10.65 mm  (-0.296)",
+      "sha256": "c4ef3eaef163b3638e4450944397beef877152571fecc2b9b885bdb1b3b3e5e0"
+    },
+    {
+      "frame": 12,
+      "text": "Horizontal shift  -9.92 mm  (-0.276)",
+      "sha256": "2b1ccf7612763e8fc1a9169b4ae1c7266937ff2af924b9a25fa5461527ae7ef4"
+    },
+    {
+      "frame": 13,
+      "text": "Horizontal shift  -9.18 mm  (-0.255)",
+      "sha256": "4a2c6ad8769c944d4029772175193f599ef4e1468619090d295abd3e48aef084"
+    },
+    {
+      "frame": 14,
+      "text": "Horizontal shift  -8.45 mm  (-0.235)",
+      "sha256": "c3e6d08e04af9b481cd82899863b17eba2c6b7093e2f415c7b65f06e61cb5407"
+    },
+    {
+      "frame": 15,
+      "text": "Horizontal shift  -7.71 mm  (-0.214)",
+      "sha256": "5c89f4a4002d1dedb2720da2d1a60c2865c0e61471d5e6315b3d799c8298f127"
+    },
+    {
+      "frame": 16,
+      "text": "Horizontal shift  -6.98 mm  (-0.194)",
+      "sha256": "5bc49ea1038ad86c6e80d85b2b1ac35c01a7b8d1b48140abcf94d311baf3f0c5"
+    },
+    {
+      "frame": 17,
+      "text": "Horizontal shift  -6.24 mm  (-0.173)",
+      "sha256": "77e082f7b713fb6c8bf9eba4efcfdf3ed29958b92bf4273a8e7d8da72452aafa"
+    },
+    {
+      "frame": 18,
+      "text": "Horizontal shift  -5.51 mm  (-0.153)",
+      "sha256": "a25509854b3c38dbe2f685b7749222cb1adf793da858f4a18d41a0f2e58b0455"
+    },
+    {
+      "frame": 19,
+      "text": "Horizontal shift  -4.78 mm  (-0.133)",
+      "sha256": "34bc0ff19ca07fb3dd6300de62bc28b38257607311c2da0e1603a808185153f5"
+    },
+    {
+      "frame": 20,
+      "text": "Horizontal shift  -4.04 mm  (-0.112)",
+      "sha256": "08461e3dfb0130771316544d33e63ffa211dc86a2df3b81d6891bd5d73d70eeb"
+    },
+    {
+      "frame": 21,
+      "text": "Horizontal shift  -3.31 mm  (-0.092)",
+      "sha256": "8b63a14640e48567cfdd086f51508f44bba331854fa7c0b13b77696447477586"
+    },
+    {
+      "frame": 22,
+      "text": "Horizontal shift  -2.57 mm  (-0.071)",
+      "sha256": "ef9a023f75cb8fa15318375ed4611de16769068c38c02b174b3a2f659d0328f4"
+    },
+    {
+      "frame": 23,
+      "text": "Horizontal shift  -1.84 mm  (-0.051)",
+      "sha256": "e2aeef1d6af223e77f85b5d7c9df9b92db8f0f36fa9b37470b4ec0ef07fe038d"
+    },
+    {
+      "frame": 24,
+      "text": "Horizontal shift  -1.10 mm  (-0.031)",
+      "sha256": "6e8d2259e6e76d2049015d9dfa2fdfec449315258c7a5eb931eb7ccf2aa688c0"
+    },
+    {
+      "frame": 25,
+      "text": "Horizontal shift  -0.37 mm  (-0.010)",
+      "sha256": "400b9fb82921a66262e7a52cbc4e6198feaf1a37d212b93e597fc2a5913bf062"
+    },
+    {
+      "frame": 26,
+      "text": "Horizontal shift  +0.37 mm  (+0.010)",
+      "sha256": "0e1a3e0e6003328ccb1551ce89d791e88ab1298436b37ac8f6f7cae806b09e54"
+    },
+    {
+      "frame": 27,
+      "text": "Horizontal shift  +1.10 mm  (+0.031)",
+      "sha256": "2e4c2e639c2b8e00438935befc441c2bdceaa8bea2387476c775f5911d9dd0a5"
+    },
+    {
+      "frame": 28,
+      "text": "Horizontal shift  +1.84 mm  (+0.051)",
+      "sha256": "8794c3de405ee69d92f5a4c5c5a3a4f55de37ff143154dabb3e4b55ed540a71c"
+    },
+    {
+      "frame": 29,
+      "text": "Horizontal shift  +2.57 mm  (+0.071)",
+      "sha256": "83d22c0f2e4dd9c576dbbbde13523149b73fe62a32b39bd55332e633bc2ead9a"
+    },
+    {
+      "frame": 30,
+      "text": "Horizontal shift  +3.31 mm  (+0.092)",
+      "sha256": "9ce046ad99949fbcce0476f8967cdf913a85549afa76303158230cfd6f410236"
+    },
+    {
+      "frame": 31,
+      "text": "Horizontal shift  +4.04 mm  (+0.112)",
+      "sha256": "8a8ab60311420ca81c851b2d76754eb66fe460b1626051dc3c5705e29658c112"
+    },
+    {
+      "frame": 32,
+      "text": "Horizontal shift  +4.78 mm  (+0.133)",
+      "sha256": "a18e1fbb3be05556ce5211d649954740818ca240110e1adc5e8c69f6f6be471d"
+    },
+    {
+      "frame": 33,
+      "text": "Horizontal shift  +5.51 mm  (+0.153)",
+      "sha256": "b13c2946fdfcf23b99a6f6f8a59422fa043dfa07699e84a5032b7455ec48d67d"
+    },
+    {
+      "frame": 34,
+      "text": "Horizontal shift  +6.24 mm  (+0.173)",
+      "sha256": "d3727809be5c91f10ca0774f823b024a222a7f904d1e8dbca93ae0b27169b681"
+    },
+    {
+      "frame": 35,
+      "text": "Horizontal shift  +6.98 mm  (+0.194)",
+      "sha256": "8d0f01d6bf0440ff640cf2ea15c0909e5052431e36cf0ede280f4c18678c3ad2"
+    },
+    {
+      "frame": 36,
+      "text": "Horizontal shift  +7.71 mm  (+0.214)",
+      "sha256": "29b2794fc62b8b5fef1eb9b47b366595a4212cf89004f53ca83ebd13603fcd3a"
+    },
+    {
+      "frame": 37,
+      "text": "Horizontal shift  +8.45 mm  (+0.235)",
+      "sha256": "3580809e7ecbce4b9345721d6bed26edbef67b54dc3d2d6446843aeffe8a8507"
+    },
+    {
+      "frame": 38,
+      "text": "Horizontal shift  +9.18 mm  (+0.255)",
+      "sha256": "7e367a8020a5dd7583dc39f2773b0ddc8777c4ce88bfd8f9439c559afd62bc2c"
+    },
+    {
+      "frame": 39,
+      "text": "Horizontal shift  +9.92 mm  (+0.276)",
+      "sha256": "c5d1e500c7ff4d513eac10850fc71393ea533049303ff59708905ab72fe5b6c7"
+    },
+    {
+      "frame": 40,
+      "text": "Horizontal shift  +10.65 mm  (+0.296)",
+      "sha256": "8d8acba72e8a7c8a39588d1bff68d831f8705d99a5f52038082bdf3ff6d3a42a"
+    },
+    {
+      "frame": 41,
+      "text": "Horizontal shift  +11.39 mm  (+0.316)",
+      "sha256": "c640201dae9d434c65dcfcbc43e726965f7517f45d8ed84dd8d6c4b60136065d"
+    },
+    {
+      "frame": 42,
+      "text": "Horizontal shift  +12.12 mm  (+0.337)",
+      "sha256": "d997256cd54e112c8df780e6348a44199d74de6c1e2a96ea72623788befd43e5"
+    },
+    {
+      "frame": 43,
+      "text": "Horizontal shift  +12.86 mm  (+0.357)",
+      "sha256": "ea00bf6d7e66b9733865c6355d28cda08ce27d6272b8ef4f0f20f999f75b0926"
+    },
+    {
+      "frame": 44,
+      "text": "Horizontal shift  +13.59 mm  (+0.378)",
+      "sha256": "ad7d5f4a8a070a1619ce719e0f86e4757a9a12ebb1a1621ec1d1065252741015"
+    },
+    {
+      "frame": 45,
+      "text": "Horizontal shift  +14.33 mm  (+0.398)",
+      "sha256": "95b3377f913a3b5f640ad6b66ae4b8b1f5fe4d5380bbdfdb4c7a4ee47a1d51fd"
+    },
+    {
+      "frame": 46,
+      "text": "Horizontal shift  +15.06 mm  (+0.418)",
+      "sha256": "6491e0d6659277765b8be0ac90bc7ccf43db4fa5d96385040303bbe45d57ae61"
+    },
+    {
+      "frame": 47,
+      "text": "Horizontal shift  +15.80 mm  (+0.439)",
+      "sha256": "514ffbbb2dbc51744a851b6544179e730951606bd87fe992b266259a35900c06"
+    },
+    {
+      "frame": 48,
+      "text": "Horizontal shift  +16.53 mm  (+0.459)",
+      "sha256": "441b534c43af87a478742dbc9c46a3236dde4c9714c397c95ca0bb0430bbda4e"
+    },
+    {
+      "frame": 49,
+      "text": "Horizontal shift  +17.27 mm  (+0.480)",
+      "sha256": "ba3ff4391869867ffb093a2275b8bd4230ceab06963906451ff7f4a3443f7bc5"
+    },
+    {
+      "frame": 50,
+      "text": "Horizontal shift  +18.00 mm  (+0.500)",
+      "sha256": "900dc1f65d3f4f8c54d3c21fc802be22ff4c647aefff98aee5e82854736da59d"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/shift-x/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/shift-x/shift-x.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

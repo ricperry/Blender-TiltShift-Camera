@@ -1,0 +1,813 @@
+{
+  "schema": 1,
+  "public_url": "https://ricperry.github.io/Blender-TiltShift-Camera/",
+  "license": "GPL-3.0-or-later",
+  "counts": {
+    "photographs": 17,
+    "comparisons": 11,
+    "videos": 8,
+    "focus_plane_pairs": 6,
+    "blender_scenes": 25
+  },
+  "inventory": {
+    "files_excluding_manifest": 131,
+    "bytes_excluding_manifest": 606304356,
+    "extensions": {
+      "": 2,
+      ".blend": 25,
+      ".html": 1,
+      ".json": 44,
+      ".mp4": 8,
+      ".png": 35,
+      ".py": 6,
+      ".z": 10
+    }
+  },
+  "scope": "Byte-identical active media, scenes and provenance; no raw animation frames except posters. Source JSON retains original render-time paths and frame hashes as provenance, not site URLs.",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "source": "LICENSE"
+    },
+    {
+      "path": "assets/photos/axis-native.blend",
+      "bytes": 320767,
+      "sha256": "0de58fc5b94849be2b6f67a3fb9b528082f8ac3de4fa2f2adf3d990466af9ba1",
+      "source": "work/demo-comparisons/4k/axis-native.blend"
+    },
+    {
+      "path": "assets/photos/axis-native.focus-surface.f32.z",
+      "bytes": 2286940,
+      "sha256": "5b9e0062ffdb2df0c19c01c37e69979a16289871997ba7517eb6710f8431316d",
+      "source": "work/demo-comparisons/4k/axis-native.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/axis-native.focus.json",
+      "bytes": 1987,
+      "sha256": "4f9026db00c90afded307aea3469d3498533a454665285729b8a18bf77a67540",
+      "source": "work/demo-comparisons/4k/axis-native.focus.json"
+    },
+    {
+      "path": "assets/photos/axis-native.focus.png",
+      "bytes": 24220,
+      "sha256": "0b4a8d60164f278905e5f34e6feb878081925e78f7f783164c42221ea7d6295a",
+      "source": "work/demo-comparisons/4k/axis-native.focus.png"
+    },
+    {
+      "path": "assets/photos/axis-native.json",
+      "bytes": 6152,
+      "sha256": "5d38502e5e5d4d25b29e90b4538b19079b6b89d69caa7d70b7e690232327d33a",
+      "source": "work/demo-comparisons/4k/axis-native.json"
+    },
+    {
+      "path": "assets/photos/axis-native.png",
+      "bytes": 37010439,
+      "sha256": "37a61ee2d5c2b5d09b8095f77a3308dd0f75bf707208f9dc18a9f1a64f9d8e75",
+      "source": "work/demo-comparisons/4k/axis-native.png"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.blend",
+      "bytes": 321197,
+      "sha256": "6cb3468ca762a390069a0b945f07ae25a24be30444d930e8c3428559e4c8a6e5",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.blend"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.focus-surface.f32.z",
+      "bytes": 492566,
+      "sha256": "6c9148134f941a0ca9b7cb2b9458bc7cd9a9f5b20a65e0269b69393b1fc7759f",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.focus.json",
+      "bytes": 1948,
+      "sha256": "8dfa1317a5e5ad0acc27e1d11e944a63fe411d774979c8fc3747d40b76477f0d",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.focus.json"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.focus.png",
+      "bytes": 2350,
+      "sha256": "df762fbb66981c5d449a01c04d685e413ed130338dbace6b510afc9eab214b7e",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.focus.png"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.json",
+      "bytes": 6367,
+      "sha256": "d4f1707aa9e0d8f55324ec8e78aaf6cc75a39a337bd48666605be155008fcc0a",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.json"
+    },
+    {
+      "path": "assets/photos/axis-ordinary-best.png",
+      "bytes": 36801454,
+      "sha256": "500c324c35007f884c19ad102df3dccb12d46b90ca36455278926f7518783e5f",
+      "source": "work/demo-comparisons/4k/axis-ordinary-best.png"
+    },
+    {
+      "path": "assets/photos/city-native-object.blend",
+      "bytes": 327456,
+      "sha256": "2fb984c0c2cb4b1602db2a8db070a9d21d3c8a8cdffdcbd75dc229314b8ddc65",
+      "source": "work/demo-comparisons/4k/city-native-object.blend"
+    },
+    {
+      "path": "assets/photos/city-native-object.json",
+      "bytes": 102019,
+      "sha256": "62799e65fe7c44f28c151d041430b7505317929bb8ce7d42421497ca9577e76b",
+      "source": "work/demo-comparisons/4k/city-native-object.json"
+    },
+    {
+      "path": "assets/photos/city-native-object.png",
+      "bytes": 39659495,
+      "sha256": "489ad53b391c264e279fabd6136ef95f5ed4002dc41d2d5758e388ec732d2a85",
+      "source": "work/demo-comparisons/4k/city-native-object.png"
+    },
+    {
+      "path": "assets/photos/city-native.blend",
+      "bytes": 327472,
+      "sha256": "92429edc6219ccc308d60fcb70ebdf5f8192e40e05f04c815906346813f86145",
+      "source": "work/demo-comparisons/4k/city-native.blend"
+    },
+    {
+      "path": "assets/photos/city-native.focus-surface.f32.z",
+      "bytes": 1578705,
+      "sha256": "a3b80cc3f9baa371f5c5da21d3acf69eb7453eb7beb383d43504879f595ed11f",
+      "source": "work/demo-comparisons/4k/city-native.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/city-native.focus.json",
+      "bytes": 2019,
+      "sha256": "7d53fb52b00d6d21a0e1b0e13db537633f8a878828aba854fa7863d9edef81f2",
+      "source": "work/demo-comparisons/4k/city-native.focus.json"
+    },
+    {
+      "path": "assets/photos/city-native.focus.png",
+      "bytes": 3087,
+      "sha256": "125b07895e028dd687185828876804f3609f2838c2b8ab18760ce1be77ba7454",
+      "source": "work/demo-comparisons/4k/city-native.focus.png"
+    },
+    {
+      "path": "assets/photos/city-native.json",
+      "bytes": 101977,
+      "sha256": "ddc5324c9e6b7825ff38cadcd7e08932d8f04db894cc377fb73140d85e39d3dd",
+      "source": "work/demo-comparisons/4k/city-native.json"
+    },
+    {
+      "path": "assets/photos/city-native.png",
+      "bytes": 39662231,
+      "sha256": "6ebfe028d79dbfba2ecd56fbf7e78dbd430cee5fa6f8ffb4637ef04e5c3106f2",
+      "source": "work/demo-comparisons/4k/city-native.png"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.blend",
+      "bytes": 327371,
+      "sha256": "7d20a6457696328621d1d688d445e65f29b54b8652ae5fd42aedbd8a4dd06218",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.blend"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.focus-surface.f32.z",
+      "bytes": 1148032,
+      "sha256": "1455a8a114e268f9d2914c3d2a18667a52f83617849b4eeac85644b525d76b69",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.focus.json",
+      "bytes": 2002,
+      "sha256": "9add6c699febee8cd04187559c7bc9a289a37b64a5ad85a1be1ced2fc231a195",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.focus.json"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.focus.png",
+      "bytes": 7725,
+      "sha256": "76779500e386b5fc1cccfba9120bc855925157f328156ed27d0e35531017d067",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.focus.png"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.json",
+      "bytes": 106858,
+      "sha256": "919ee73fecc35e22eb5470130c83c86a38b536a2113a9245762758883ab13be4",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.json"
+    },
+    {
+      "path": "assets/photos/city-ordinary-best.png",
+      "bytes": 39443496,
+      "sha256": "cb1c61a499250a37541a30df6cc2451e3ff839da0d2bc5fbadc3c8d3da43fd80",
+      "source": "work/demo-comparisons/4k/city-ordinary-best.png"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.blend",
+      "bytes": 327382,
+      "sha256": "abfeb6a9b4440b08147151156514f798213358ead5b7fc94b23ce4c41dc3344b",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.blend"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.focus-surface.f32.z",
+      "bytes": 1149048,
+      "sha256": "add71efff16cf0ed32ac1e81d68c375fddea43abc701737b9eec5fb4b4db8939",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.focus.json",
+      "bytes": 2014,
+      "sha256": "66102168c3244a46b8e1520d08173fe220c41017063968f58ad39d5dbdfc545a",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.focus.json"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.focus.png",
+      "bytes": 5236,
+      "sha256": "4bb8ab865ecd351810166b02cd5d4e321a9a57766ac7cd52b803d46a16bcc0d5",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.focus.png"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.json",
+      "bytes": 115398,
+      "sha256": "ba66ef94a72aef39ad03bf576ceeb5f37cf2010cdde6dc100f4deaf5b3dd5818",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.json"
+    },
+    {
+      "path": "assets/photos/city-ordinary-blur-fit.png",
+      "bytes": 39679939,
+      "sha256": "76bfc0757a616c239d73994cfd13a2a3c281da70d34464f8401fb027b4ace354",
+      "source": "work/demo-comparisons/4k/city-ordinary-blur-fit.png"
+    },
+    {
+      "path": "assets/photos/focus-guides.json",
+      "bytes": 1952,
+      "sha256": "902a49984b93cf798a3769ef37beff129e1aba41fceae357944f69dea6f16337",
+      "source": "work/demo-comparisons/4k/focus-guides.json"
+    },
+    {
+      "path": "assets/photos/focus-overlay-source.py",
+      "bytes": 17109,
+      "sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff",
+      "source": "work/demo-comparisons/4k/focus-overlay-source.py"
+    },
+    {
+      "path": "assets/photos/shift-x-native.blend",
+      "bytes": 327492,
+      "sha256": "dcd044cb366273b63f275d18aaceedfaf17d4b89bdbba7f61df9fa665d2aeb76",
+      "source": "work/demo-comparisons/4k/shift-x-native.blend"
+    },
+    {
+      "path": "assets/photos/shift-x-native.json",
+      "bytes": 72675,
+      "sha256": "878df988b6dea1e0f0694bf47df91946f1fdddc2f20c72a0ceadc3c1e56fea4b",
+      "source": "work/demo-comparisons/4k/shift-x-native.json"
+    },
+    {
+      "path": "assets/photos/shift-x-native.png",
+      "bytes": 27876945,
+      "sha256": "37ffb66412e4af460145ec7ef87f50befb335dc281e3c38aa860c768accefcf8",
+      "source": "work/demo-comparisons/4k/shift-x-native.png"
+    },
+    {
+      "path": "assets/photos/shift-x-ordinary.blend",
+      "bytes": 327316,
+      "sha256": "dd441762762e24f84ee466719f121847632cc7862ce76e5e836a7c4ae7aa5ba2",
+      "source": "work/demo-comparisons/4k/shift-x-ordinary.blend"
+    },
+    {
+      "path": "assets/photos/shift-x-ordinary.json",
+      "bytes": 76192,
+      "sha256": "27661cc292a72e95cb0ad187f87adac9013a2bf9afa7ef5f8ed31fcd3765d2d8",
+      "source": "work/demo-comparisons/4k/shift-x-ordinary.json"
+    },
+    {
+      "path": "assets/photos/shift-x-ordinary.png",
+      "bytes": 27877531,
+      "sha256": "e2a2c7bea7f09f981a8aab164b3734541034318cf942b60d5107a82c6f7a8e30",
+      "source": "work/demo-comparisons/4k/shift-x-ordinary.png"
+    },
+    {
+      "path": "assets/photos/shift-y-native.blend",
+      "bytes": 327549,
+      "sha256": "505e69f086189ef99d9156666ea40ddd2cd71f1ba14820db66dde9a422360a94",
+      "source": "work/demo-comparisons/4k/shift-y-native.blend"
+    },
+    {
+      "path": "assets/photos/shift-y-native.json",
+      "bytes": 42725,
+      "sha256": "5ee686677ab164d8cd152bc6f2515fb3dd4eeb54f5ff00307bcdde38fba517f0",
+      "source": "work/demo-comparisons/4k/shift-y-native.json"
+    },
+    {
+      "path": "assets/photos/shift-y-native.png",
+      "bytes": 15959587,
+      "sha256": "f3e9e274e6c977ed869fc276232c21d7d5b2ca9c71144f105bc167b42a522cfe",
+      "source": "work/demo-comparisons/4k/shift-y-native.png"
+    },
+    {
+      "path": "assets/photos/shift-y-ordinary.blend",
+      "bytes": 327370,
+      "sha256": "a09892f0a3d5ab8ea4f9ce466dd5a182e82267be191eef45a1c81bf830471af2",
+      "source": "work/demo-comparisons/4k/shift-y-ordinary.blend"
+    },
+    {
+      "path": "assets/photos/shift-y-ordinary.json",
+      "bytes": 44712,
+      "sha256": "31a362617460578859868b04dae2cf4e1b37f6d688648780f5f87e43df7edd7b",
+      "source": "work/demo-comparisons/4k/shift-y-ordinary.json"
+    },
+    {
+      "path": "assets/photos/shift-y-ordinary.png",
+      "bytes": 15958401,
+      "sha256": "43f2dd4f3df53bfd8a51600060361049c8cae7f8b49a9209b5b374611d701406",
+      "source": "work/demo-comparisons/4k/shift-y-ordinary.png"
+    },
+    {
+      "path": "assets/photos/swing-native.blend",
+      "bytes": 318872,
+      "sha256": "34ed18aa5086762f844d761c6bb039ef025425c80356eb3b59114742091fab4a",
+      "source": "work/demo-comparisons/4k/swing-native.blend"
+    },
+    {
+      "path": "assets/photos/swing-native.focus-surface.f32.z",
+      "bytes": 2279211,
+      "sha256": "ad3218d2d153f1a7bfe5eac23b38b57e915923ab0165c493df7f3fc8f3160a4d",
+      "source": "work/demo-comparisons/4k/swing-native.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/swing-native.focus.json",
+      "bytes": 1968,
+      "sha256": "c9887a4c33ee7d06379e2ef5ceb33c3590db21e6ae247b9464b7226a60ad2ef7",
+      "source": "work/demo-comparisons/4k/swing-native.focus.json"
+    },
+    {
+      "path": "assets/photos/swing-native.focus.png",
+      "bytes": 8562,
+      "sha256": "e88245fa7b3267103a3973ffa36999999602113ce1b448ffb3f5dd132d522a86",
+      "source": "work/demo-comparisons/4k/swing-native.focus.png"
+    },
+    {
+      "path": "assets/photos/swing-native.json",
+      "bytes": 6119,
+      "sha256": "c8e7856501588feacc65481dcee5b9721e4717696e0fc924c5df412abfd26e85",
+      "source": "work/demo-comparisons/4k/swing-native.json"
+    },
+    {
+      "path": "assets/photos/swing-native.png",
+      "bytes": 37084232,
+      "sha256": "da9094c7bc864a5e347be51a9f9a718ccff033fbcebdf647eb18571e216d4c64",
+      "source": "work/demo-comparisons/4k/swing-native.png"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.blend",
+      "bytes": 319365,
+      "sha256": "9f86ea64d0d2d2c2b9849270ed8fc3189377ff2c78ba5a1d8ea8f3e55f53a1ef",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.blend"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.focus-surface.f32.z",
+      "bytes": 492566,
+      "sha256": "6c9148134f941a0ca9b7cb2b9458bc7cd9a9f5b20a65e0269b69393b1fc7759f",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.focus.json",
+      "bytes": 1951,
+      "sha256": "e12618d52d8428540defcce00d09b67775ac0603f11753e3d8f941def31a3609",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.focus.json"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.focus.png",
+      "bytes": 2350,
+      "sha256": "df762fbb66981c5d449a01c04d685e413ed130338dbace6b510afc9eab214b7e",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.focus.png"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.json",
+      "bytes": 6337,
+      "sha256": "bf37e0fb0e88f043a80324030d70da4f865e603486817d97faf419fd49edda5f",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.json"
+    },
+    {
+      "path": "assets/photos/swing-ordinary-best.png",
+      "bytes": 36796173,
+      "sha256": "ee37494174b17b52bad175323fc8774173772b82851322053a4330cabded502e",
+      "source": "work/demo-comparisons/4k/swing-ordinary-best.png"
+    },
+    {
+      "path": "assets/photos/table-native-f16.blend",
+      "bytes": 324475,
+      "sha256": "4a37b3ed19b4bb8e0d590c1c08f8d4605aab340deccf4f6557328ed578a5098d",
+      "source": "work/demo-comparisons/4k/table-native-f16.blend"
+    },
+    {
+      "path": "assets/photos/table-native-f16.json",
+      "bytes": 6115,
+      "sha256": "fc814cc52622dd0630c14e32ba121da7cd4bc94773fbd8b89a9e255b0429b58c",
+      "source": "work/demo-comparisons/4k/table-native-f16.json"
+    },
+    {
+      "path": "assets/photos/table-native-f16.png",
+      "bytes": 36596119,
+      "sha256": "3b6b2f2c7c352ad3b4c65500166c30f2091d8eb4e25fd2b667e8316671351f57",
+      "source": "work/demo-comparisons/4k/table-native-f16.png"
+    },
+    {
+      "path": "assets/photos/table-native-zero.blend",
+      "bytes": 319463,
+      "sha256": "aaab96b2b2c824f4b338825ef8810657a3c477309a24525cba68c769bb02d7d6",
+      "source": "work/demo-comparisons/4k/table-native-zero.blend"
+    },
+    {
+      "path": "assets/photos/table-native-zero.json",
+      "bytes": 6112,
+      "sha256": "2aff8ce78518f4c5d9f329b3ec73ee5cfcc8f1d67ce4ca46d38a6939bfd6add2",
+      "source": "work/demo-comparisons/4k/table-native-zero.json"
+    },
+    {
+      "path": "assets/photos/table-native-zero.png",
+      "bytes": 36767093,
+      "sha256": "5cb81f02ba9edbbffe40c282cff6fea938c791dab1466d8d3d2de27f474cb192",
+      "source": "work/demo-comparisons/4k/table-native-zero.png"
+    },
+    {
+      "path": "assets/photos/table-native.blend",
+      "bytes": 319947,
+      "sha256": "33b6e340ea87bd3602adbd2d929d787e17ed61a2cf1845944c5f71fcdb808e9d",
+      "source": "work/demo-comparisons/4k/table-native.blend"
+    },
+    {
+      "path": "assets/photos/table-native.focus-surface.f32.z",
+      "bytes": 736940,
+      "sha256": "d04558a21a4ee6e80742bd03e310a4705f1cfddacbec19f9ded45aa2f1c4fe5f",
+      "source": "work/demo-comparisons/4k/table-native.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/table-native.focus.json",
+      "bytes": 1976,
+      "sha256": "4f113be879cce635c57eef648941fe6e638f9302a57c73abb20511addc9c4285",
+      "source": "work/demo-comparisons/4k/table-native.focus.json"
+    },
+    {
+      "path": "assets/photos/table-native.focus.png",
+      "bytes": 29451,
+      "sha256": "b73209aab4c4be9bbb88f5e326910fedd38c01c46bb1703ec35e90f06400c16d",
+      "source": "work/demo-comparisons/4k/table-native.focus.png"
+    },
+    {
+      "path": "assets/photos/table-native.json",
+      "bytes": 6126,
+      "sha256": "041dc1f92a4dba0827d2ceb280cad91f147807645f30b287ac11a2d48c6274f8",
+      "source": "work/demo-comparisons/4k/table-native.json"
+    },
+    {
+      "path": "assets/photos/table-native.png",
+      "bytes": 36702738,
+      "sha256": "3f29cea10f9f317622ec5f9ff00ab4eaa536d847151f61156e26aaa133fafc37",
+      "source": "work/demo-comparisons/4k/table-native.png"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.blend",
+      "bytes": 325411,
+      "sha256": "8866958d0bdf77ecfc6b8d52b1ff97f2f2c06c4522b240acea92f6b9370bede0",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.blend"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.focus-surface.f32.z",
+      "bytes": 492566,
+      "sha256": "6c9148134f941a0ca9b7cb2b9458bc7cd9a9f5b20a65e0269b69393b1fc7759f",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.focus.json",
+      "bytes": 1951,
+      "sha256": "ab7fd15836e2dc26b13955c96df0de9a7dd63dbb81694aafd9f8255ac03e9624",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.focus.json"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.focus.png",
+      "bytes": 2350,
+      "sha256": "df762fbb66981c5d449a01c04d685e413ed130338dbace6b510afc9eab214b7e",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.focus.png"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.json",
+      "bytes": 6341,
+      "sha256": "98a1ac98c8a57f02ca79ee359931bc65dec6fc60144c6d1516471ac4dfaa7849",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.json"
+    },
+    {
+      "path": "assets/photos/table-ordinary-best.png",
+      "bytes": 36801224,
+      "sha256": "26676611c747af966865525ccc909f8982f537cd3635a84b599ac05b4b9f51c9",
+      "source": "work/demo-comparisons/4k/table-ordinary-best.png"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.blend",
+      "bytes": 322780,
+      "sha256": "912091ae9333bf5addb370f60bd7169cf2cb405940a1b2de9d99266eb1856b6b",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.blend"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.focus-surface.f32.z",
+      "bytes": 492566,
+      "sha256": "6c9148134f941a0ca9b7cb2b9458bc7cd9a9f5b20a65e0269b69393b1fc7759f",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.focus-surface.f32.z"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.focus.json",
+      "bytes": 1948,
+      "sha256": "f75c65703337e4d2858763c6c98d03652814e28d82d9cb3ff4948cacf485ee49",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.focus.json"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.focus.png",
+      "bytes": 2350,
+      "sha256": "df762fbb66981c5d449a01c04d685e413ed130338dbace6b510afc9eab214b7e",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.focus.png"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.json",
+      "bytes": 6339,
+      "sha256": "2d051f1be3935b4424334139236b7f5dc5bed1ad2cd2dc13814a71cdd6839268",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.json"
+    },
+    {
+      "path": "assets/photos/table-ordinary-f16.png",
+      "bytes": 36801958,
+      "sha256": "86f09904c925a7e989bfa7b2d661e0310ae9a0f1e530cc81bdfbe6818f928050",
+      "source": "work/demo-comparisons/4k/table-ordinary-f16.png"
+    },
+    {
+      "path": "assets/sources/266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84.py",
+      "bytes": 11705,
+      "sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+      "source": "work/demo-animations/960x540/sources/encode_demo_animations.py"
+    },
+    {
+      "path": "assets/sources/2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20.py",
+      "bytes": 35257,
+      "sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20",
+      "source": "work/demo-comparisons/4k/render-generator-source.py"
+    },
+    {
+      "path": "assets/sources/31016fbf2debd26686c86019018917c79ea666d9cc28bd74044d9263b3d3ce6e.py",
+      "bytes": 39999,
+      "sha256": "31016fbf2debd26686c86019018917c79ea666d9cc28bd74044d9263b3d3ce6e",
+      "source": "work/demo-animations/960x540/sources/create_demo_comparisons.py"
+    },
+    {
+      "path": "assets/sources/7486d15305330ac30050d87064a3610d389b0f671e6d30249fc79711375e20a5.py",
+      "bytes": 19175,
+      "sha256": "7486d15305330ac30050d87064a3610d389b0f671e6d30249fc79711375e20a5",
+      "source": "work/demo-animations/960x540/sources/create_demo_animations.py"
+    },
+    {
+      "path": "assets/sources/af111b5e09ff5fadccbc9d9a853502c5babc87be7f8552dbc623b890a9caa35a.py",
+      "bytes": 39922,
+      "sha256": "af111b5e09ff5fadccbc9d9a853502c5babc87be7f8552dbc623b890a9caa35a",
+      "source": "work/demo-comparisons/4k/grid-render-generator-source.py"
+    },
+    {
+      "path": "assets/videos/axis/animation.json",
+      "bytes": 124951,
+      "sha256": "6d761b1babcc41349afbcedbfe1bc4b6c713242cf5ee14f24a3b2522ce4c9292",
+      "source": "work/demo-animations/960x540/axis/animation.json"
+    },
+    {
+      "path": "assets/videos/axis/axis.blend",
+      "bytes": 320581,
+      "sha256": "806d2713f4072d89669cb4e3eb7cb826c677565d488a0717758c82fdacbcd665",
+      "source": "work/demo-animations/960x540/axis/axis.blend"
+    },
+    {
+      "path": "assets/videos/axis/axis.mp4",
+      "bytes": 492771,
+      "sha256": "9a6b4c4f835533222023dd2bb1a59013ffdf57a0f4d82ba824385e73b89fc78e",
+      "source": "work/demo-animations/960x540/axis/axis.mp4"
+    },
+    {
+      "path": "assets/videos/axis/encoding.json",
+      "bytes": 10014,
+      "sha256": "29c58eea1c7ee171ec521ae68028a45a3d8f9a6cb706b571c25b965890bf205b",
+      "source": "work/demo-animations/960x540/axis/encoding.json"
+    },
+    {
+      "path": "assets/videos/axis/labeled/frame-0001.png",
+      "bytes": 395280,
+      "sha256": "834026378a2b64c755fc0aa12d1168ead22e834c40f1fdbb30df11714e04400d",
+      "source": "work/demo-animations/960x540/axis/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/focus/animation.json",
+      "bytes": 123165,
+      "sha256": "c431007b89e8240b86ad13aa397c9bfb622e0e1ad23aa7f3ede4c695992d6794",
+      "source": "work/demo-animations/960x540/focus/animation.json"
+    },
+    {
+      "path": "assets/videos/focus/encoding.json",
+      "bytes": 9397,
+      "sha256": "dab94462e298ac32574c219e5d0e1bab0205cafd91a6ba2e9e048bd8dbdd54da",
+      "source": "work/demo-animations/960x540/focus/encoding.json"
+    },
+    {
+      "path": "assets/videos/focus/focus.blend",
+      "bytes": 320522,
+      "sha256": "b888b722c435831f4285580687844791be34a99cfa5ccdddeb3ca915b5220385",
+      "source": "work/demo-animations/960x540/focus/focus.blend"
+    },
+    {
+      "path": "assets/videos/focus/focus.mp4",
+      "bytes": 451920,
+      "sha256": "59b085e6a748bb62208c4f64ba59c3881d69e09b1954d7e14884b80f1ca3d2cf",
+      "source": "work/demo-animations/960x540/focus/focus.mp4"
+    },
+    {
+      "path": "assets/videos/focus/labeled/frame-0001.png",
+      "bytes": 396184,
+      "sha256": "5e5cc097dcaaf31eca35f1049b64a1a00dd080694e467df4ed16dc3da7a93a3f",
+      "source": "work/demo-animations/960x540/focus/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/fstop/animation.json",
+      "bytes": 123196,
+      "sha256": "c8322698c873e1f3acc75e801f20c6d263b82f24e056a2cf713eb22b962182be",
+      "source": "work/demo-animations/960x540/fstop/animation.json"
+    },
+    {
+      "path": "assets/videos/fstop/encoding.json",
+      "bytes": 9064,
+      "sha256": "0543983034a73213ce7e320a9ce888ad90e1cb61667895ac29aed741afc82ed2",
+      "source": "work/demo-animations/960x540/fstop/encoding.json"
+    },
+    {
+      "path": "assets/videos/fstop/fstop.blend",
+      "bytes": 320504,
+      "sha256": "219727c83424e8a179d0710040a1d3c80a346e9c9f62528b5a67cfcc61798628",
+      "source": "work/demo-animations/960x540/fstop/fstop.blend"
+    },
+    {
+      "path": "assets/videos/fstop/fstop.mp4",
+      "bytes": 256349,
+      "sha256": "1763bc32d49d161e6d15847207791e3711fcc47879d8a0ff2e7d381eac9fcbb2",
+      "source": "work/demo-animations/960x540/fstop/fstop.mp4"
+    },
+    {
+      "path": "assets/videos/fstop/labeled/frame-0001.png",
+      "bytes": 423680,
+      "sha256": "93063c4c5087a1dc629679d12693902e280ba1b87470560d77f1fc0fafd725af",
+      "source": "work/demo-animations/960x540/fstop/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/lens/animation.json",
+      "bytes": 123809,
+      "sha256": "7d9ae5bb7602743afcbd55e21e0a8283736d175374482735f4f75ab9061dff94",
+      "source": "work/demo-animations/960x540/lens/animation.json"
+    },
+    {
+      "path": "assets/videos/lens/encoding.json",
+      "bytes": 9362,
+      "sha256": "7718699243f34e9966f2969e6da8771205119d3edaadaa5741022f96539c62ef",
+      "source": "work/demo-animations/960x540/lens/encoding.json"
+    },
+    {
+      "path": "assets/videos/lens/labeled/frame-0001.png",
+      "bytes": 247797,
+      "sha256": "f4ba065da252b7a26c7e64594dd901efdb0e5fb17f98d23362e42530accaa8ea",
+      "source": "work/demo-animations/960x540/lens/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/lens/lens.blend",
+      "bytes": 320511,
+      "sha256": "eb070cfc34affd9fc2a2d9e93f40d10f5241cef76865fedd31f43c28574530e0",
+      "source": "work/demo-animations/960x540/lens/lens.blend"
+    },
+    {
+      "path": "assets/videos/lens/lens.mp4",
+      "bytes": 712324,
+      "sha256": "21680c8cd232340fabba64685079c3c33a279725d07e40ad5aaeb354f1f2d69b",
+      "source": "work/demo-animations/960x540/lens/lens.mp4"
+    },
+    {
+      "path": "assets/videos/shift-x/animation.json",
+      "bytes": 125121,
+      "sha256": "c473fc2b8895a9cfcf5f8eb4655e865d53139b1db330e52b72ffaf09fe6064e6",
+      "source": "work/demo-animations/960x540/shift-x/animation.json"
+    },
+    {
+      "path": "assets/videos/shift-x/encoding.json",
+      "bytes": 10075,
+      "sha256": "2ba0afcd25768f7b1332c73f9e4591225dd909bc406c53325439cb3b1bbc61a1",
+      "source": "work/demo-animations/960x540/shift-x/encoding.json"
+    },
+    {
+      "path": "assets/videos/shift-x/labeled/frame-0001.png",
+      "bytes": 268895,
+      "sha256": "9ac1f772f4a9a42d3cec4a9d352f12652b851acbaff85e5eef66d87c46bde8f7",
+      "source": "work/demo-animations/960x540/shift-x/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/shift-x/shift-x.blend",
+      "bytes": 322763,
+      "sha256": "47ddda697415d0c120bb76ef8cfdc6ded4260dd00182f7de33cff1575fa8fb69",
+      "source": "work/demo-animations/960x540/shift-x/shift-x.blend"
+    },
+    {
+      "path": "assets/videos/shift-x/shift-x.mp4",
+      "bytes": 751921,
+      "sha256": "c72c15d7a7a8cb5ad2192a1066917e6e3a95d415c79e87f3115a9ed8fad94e4a",
+      "source": "work/demo-animations/960x540/shift-x/shift-x.mp4"
+    },
+    {
+      "path": "assets/videos/shift-y/animation.json",
+      "bytes": 125312,
+      "sha256": "52471f8e640cdb23a89adc0a2285628f7f4d16eb50b086267fa506a20820ec59",
+      "source": "work/demo-animations/960x540/shift-y/animation.json"
+    },
+    {
+      "path": "assets/videos/shift-y/encoding.json",
+      "bytes": 9969,
+      "sha256": "d2e3021831434d5972ffe14e67ed192991794bf2ea7ca7c9738af99167d63cf4",
+      "source": "work/demo-animations/960x540/shift-y/encoding.json"
+    },
+    {
+      "path": "assets/videos/shift-y/labeled/frame-0001.png",
+      "bytes": 457641,
+      "sha256": "2a452053acd024c9c212e43c63294af0fa2f37fd638742dda09ab26ca8cbd7e1",
+      "source": "work/demo-animations/960x540/shift-y/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/shift-y/shift-y.blend",
+      "bytes": 322950,
+      "sha256": "8c7bec12dc8185a763be1955e8fd5d234a30d9efe68a279a5da740306c2e4821",
+      "source": "work/demo-animations/960x540/shift-y/shift-y.blend"
+    },
+    {
+      "path": "assets/videos/shift-y/shift-y.mp4",
+      "bytes": 719286,
+      "sha256": "969597fbcaeb46935b6339aa2037df7aa3e567bb51919cca14862451871f2638",
+      "source": "work/demo-animations/960x540/shift-y/shift-y.mp4"
+    },
+    {
+      "path": "assets/videos/swing/animation.json",
+      "bytes": 123416,
+      "sha256": "f33241a0bc4c495ec84887f40b3124cce00cb7fed145413f178fd22c227a6700",
+      "source": "work/demo-animations/960x540/swing/animation.json"
+    },
+    {
+      "path": "assets/videos/swing/encoding.json",
+      "bytes": 9373,
+      "sha256": "c226b7ba356cdb2aabec724802272d15abed0c46863e2d737fce0902e4080919",
+      "source": "work/demo-animations/960x540/swing/encoding.json"
+    },
+    {
+      "path": "assets/videos/swing/labeled/frame-0001.png",
+      "bytes": 420201,
+      "sha256": "2587967b1ee54cee1ff986a865e3276f783e00a63dd23de532a6ce7f9f45f52b",
+      "source": "work/demo-animations/960x540/swing/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/swing/swing.blend",
+      "bytes": 320508,
+      "sha256": "37ffeaf6476642ba0e247e99bb2a011bbab68c84a88ed6f768ca9b01ba46089e",
+      "source": "work/demo-animations/960x540/swing/swing.blend"
+    },
+    {
+      "path": "assets/videos/swing/swing.mp4",
+      "bytes": 531419,
+      "sha256": "af40c287ff042edc563b6beb25271458f80ad6a5d7303c2569d32f64888073d9",
+      "source": "work/demo-animations/960x540/swing/swing.mp4"
+    },
+    {
+      "path": "assets/videos/tilt/animation.json",
+      "bytes": 123394,
+      "sha256": "6dd467fcd05bd9149053c4e5ef875d436adb1aa7312b7df82eed267055f7d99a",
+      "source": "work/demo-animations/960x540/tilt/animation.json"
+    },
+    {
+      "path": "assets/videos/tilt/encoding.json",
+      "bytes": 9320,
+      "sha256": "32f11a8e18aa961d9677509a54e7e8bcdaacdc859acabc14e6b00d7c30fc83eb",
+      "source": "work/demo-animations/960x540/tilt/encoding.json"
+    },
+    {
+      "path": "assets/videos/tilt/labeled/frame-0001.png",
+      "bytes": 410603,
+      "sha256": "c07e6f63ff4ab3db2afca22d4a3ddc9e00482b80a33a24cfd00f8e14ac515d87",
+      "source": "work/demo-animations/960x540/tilt/labeled/frame-0001.png"
+    },
+    {
+      "path": "assets/videos/tilt/tilt.blend",
+      "bytes": 320511,
+      "sha256": "26f4f7488c6d45b8d6a46c5104ffc5c68482193bf9b453996c1f30a1e1dd3d7d",
+      "source": "work/demo-animations/960x540/tilt/tilt.blend"
+    },
+    {
+      "path": "assets/videos/tilt/tilt.mp4",
+      "bytes": 510418,
+      "sha256": "b83e341831dd91040fa9e0e0d777f07e37e468d225de5fcccbad1461e3a347a7",
+      "source": "work/demo-animations/960x540/tilt/tilt.mp4"
+    },
+    {
+      "path": "index.html",
+      "bytes": 53722,
+      "sha256": "85a35a4f4083856f1622d35e49163554d99ebcb9e42d91b2032d6036a55ae9f9"
+    }
+  ]
+}

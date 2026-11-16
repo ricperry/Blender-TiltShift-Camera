@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "6cf9900de9cb4d7171b2b230d854173810c5e08d5425bddef5a691fb63e0fe4c",
+  "animation_manifest_sha256": "6d761b1babcc41349afbcedbfe1bc4b6c713242cf5ee14f24a3b2522ce4c9292",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "9a6b4c4f835533222023dd2bb1a59013ffdf57a0f4d82ba824385e73b89fc78e",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Movement axis rotation  -180.0\u00b0",
+      "sha256": "834026378a2b64c755fc0aa12d1168ead22e834c40f1fdbb30df11714e04400d"
+    },
+    {
+      "frame": 2,
+      "text": "Movement axis rotation  -172.7\u00b0",
+      "sha256": "ae64175389f3f7402b51062e9c9d51323e1c86d5053fbf50fd2df7f5a3ae73d2"
+    },
+    {
+      "frame": 3,
+      "text": "Movement axis rotation  -165.3\u00b0",
+      "sha256": "3deea108619742768d6ff70e7ed19498a661b2735e8fb0fc272b9ec05258304b"
+    },
+    {
+      "frame": 4,
+      "text": "Movement axis rotation  -158.0\u00b0",
+      "sha256": "80ca8503547fbd513edd63e779cb201b9dd645e0ce31d3ac5fe3064d018051cd"
+    },
+    {
+      "frame": 5,
+      "text": "Movement axis rotation  -150.6\u00b0",
+      "sha256": "aa18f5a7e0b325e19e3c1f95c968155129d282b1bc21b34c48b7e12e26adc168"
+    },
+    {
+      "frame": 6,
+      "text": "Movement axis rotation  -143.3\u00b0",
+      "sha256": "62968f73617553fcfbbcbaf54180708bcb73300181f60f0c15894e13902ce151"
+    },
+    {
+      "frame": 7,
+      "text": "Movement axis rotation  -135.9\u00b0",
+      "sha256": "410b882b699d475087ffbc18cf955119f25af4d8f2b8fde12bb61d846547c4a1"
+    },
+    {
+      "frame": 8,
+      "text": "Movement axis rotation  -128.6\u00b0",
+      "sha256": "24d7f8603873b1b9e105438be772124f619bf74eae4fb8cd5340209622e3c3c9"
+    },
+    {
+      "frame": 9,
+      "text": "Movement axis rotation  -121.2\u00b0",
+      "sha256": "28648b7d3c9fadc426e5116a5e1981e10a7d926cb3a6c87849871d78b99ab283"
+    },
+    {
+      "frame": 10,
+      "text": "Movement axis rotation  -113.9\u00b0",
+      "sha256": "d002ac4fd89ea0d3729a1f653a431c9f34db759b300b72bcf6bca839eee9be4a"
+    },
+    {
+      "frame": 11,
+      "text": "Movement axis rotation  -106.5\u00b0",
+      "sha256": "d238263eb43309c037b7c710bda857dcf804b73f3b61ee2cb43161f6fb7b094a"
+    },
+    {
+      "frame": 12,
+      "text": "Movement axis rotation  -99.2\u00b0",
+      "sha256": "697cb1992ecae1ed69dfc622f6d2b3a963ecbc30c928ba3ae638ef4be321b676"
+    },
+    {
+      "frame": 13,
+      "text": "Movement axis rotation  -91.8\u00b0",
+      "sha256": "3f50881a2844a2012377a265f24721c56f03e1b249925aafacbcf2ccb3227450"
+    },
+    {
+      "frame": 14,
+      "text": "Movement axis rotation  -84.5\u00b0",
+      "sha256": "132abef24219a5d9dadda58e8fb9ca36cc31105bec532a36fcbb1fa686db88f5"
+    },
+    {
+      "frame": 15,
+      "text": "Movement axis rotation  -77.1\u00b0",
+      "sha256": "999cfe45271f25b7247671753b464655dbac1c46a83fe21c4b8a8bf73902706d"
+    },
+    {
+      "frame": 16,
+      "text": "Movement axis rotation  -69.8\u00b0",
+      "sha256": "81457bb501a3690b5630ac0030bcb91a1b3211f04bb72b1c594c1db50b7acd90"
+    },
+    {
+      "frame": 17,
+      "text": "Movement axis rotation  -62.4\u00b0",
+      "sha256": "257401ac8b1678423d90386176987218b145c5b106d02d998bd7d50f79063845"
+    },
+    {
+      "frame": 18,
+      "text": "Movement axis rotation  -55.1\u00b0",
+      "sha256": "b9a37d8cac420cfae32b2ae19f0c28c1ddc29f030a5e4c09bdae86022709e22e"
+    },
+    {
+      "frame": 19,
+      "text": "Movement axis rotation  -47.8\u00b0",
+      "sha256": "5cc5dcbd5cf38510f67ee978520b10beca350d80b1166fda5b1928000db1796d"
+    },
+    {
+      "frame": 20,
+      "text": "Movement axis rotation  -40.4\u00b0",
+      "sha256": "c689e54dbafd692b93573f374cd483d3c57ec4be57ebc9d73f20d266bb8ea499"
+    },
+    {
+      "frame": 21,
+      "text": "Movement axis rotation  -33.1\u00b0",
+      "sha256": "0f442ae11bdf04233dd818bc9837d5728ecd3f838055e26263554c13c4355b4c"
+    },
+    {
+      "frame": 22,
+      "text": "Movement axis rotation  -25.7\u00b0",
+      "sha256": "7683d477d4819b1b32f10da83f9de56e02a2f41f491e44e5ddc7c16d23dcb78f"
+    },
+    {
+      "frame": 23,
+      "text": "Movement axis rotation  -18.4\u00b0",
+      "sha256": "b0388d00b2da618497753f5222cb477d86f6ba9c62724308cac1afbac637186d"
+    },
+    {
+      "frame": 24,
+      "text": "Movement axis rotation  -11.0\u00b0",
+      "sha256": "2ec44ec70ac38aaa80957841302499cb789ce46746cb3e9c08ddea2d538fdf28"
+    },
+    {
+      "frame": 25,
+      "text": "Movement axis rotation  -3.7\u00b0",
+      "sha256": "bb7d8657d12dfd1dffaecfa63984b465aafc195982d859df8f585098dfdb1cdd"
+    },
+    {
+      "frame": 26,
+      "text": "Movement axis rotation  +3.7\u00b0",
+      "sha256": "a29326decef6c6ea52e502bb202e84ccc9b406d3e2f953302056293bbc863ac6"
+    },
+    {
+      "frame": 27,
+      "text": "Movement axis rotation  +11.0\u00b0",
+      "sha256": "76836826eb8fb051ff54bcadffb295e1354fc614aef708613752a42feb6be42f"
+    },
+    {
+      "frame": 28,
+      "text": "Movement axis rotation  +18.4\u00b0",
+      "sha256": "42288351c9f31ac1ce7ecf68bfbb85018bfe8350fbb08d9ca1db983b4764b848"
+    },
+    {
+      "frame": 29,
+      "text": "Movement axis rotation  +25.7\u00b0",
+      "sha256": "8263fbf9f3fe20f6a47e9bef40120d0b7d859452515ca209054fdd680c9003c2"
+    },
+    {
+      "frame": 30,
+      "text": "Movement axis rotation  +33.1\u00b0",
+      "sha256": "560e1a9dafdd14a82ed42e3d49949a908317bc2db44fae17ab57a5163d318264"
+    },
+    {
+      "frame": 31,
+      "text": "Movement axis rotation  +40.4\u00b0",
+      "sha256": "282b8fa3eedb31b70ea0fb3eb4f3a78609a1dc8b2dcdd5e1dcfe430394fd1f81"
+    },
+    {
+      "frame": 32,
+      "text": "Movement axis rotation  +47.8\u00b0",
+      "sha256": "59f6d20f58f244e181d514dfd4d06f36cc9e48676bd51bf367e4e420f5380918"
+    },
+    {
+      "frame": 33,
+      "text": "Movement axis rotation  +55.1\u00b0",
+      "sha256": "9d181024982ccb7397f861e93ee3fe04a3ca320183bfb6ff5033f482ec2b63a7"
+    },
+    {
+      "frame": 34,
+      "text": "Movement axis rotation  +62.4\u00b0",
+      "sha256": "91c3a80e38c28cf660bbdd55c3d29aae0f64e4c790ac974bdeadb862dd919226"
+    },
+    {
+      "frame": 35,
+      "text": "Movement axis rotation  +69.8\u00b0",
+      "sha256": "721cc96802a47396e6503d335c224c827f6c82859842bc8931ee00a3544a14a1"
+    },
+    {
+      "frame": 36,
+      "text": "Movement axis rotation  +77.1\u00b0",
+      "sha256": "b427d5c610bbd243254069d74af11177051d2e458f7a821e968e7b9f161eaa38"
+    },
+    {
+      "frame": 37,
+      "text": "Movement axis rotation  +84.5\u00b0",
+      "sha256": "9008aa01aa0c4b3288cbb63f3ca588b8c65b52a948bebe826ad3460ec9115c09"
+    },
+    {
+      "frame": 38,
+      "text": "Movement axis rotation  +91.8\u00b0",
+      "sha256": "1faf301de0bcb556cddd9b7a22ca895f85143fb3e6f437a5adecfe7adf7c61ec"
+    },
+    {
+      "frame": 39,
+      "text": "Movement axis rotation  +99.2\u00b0",
+      "sha256": "d8585b805d98ffa48e152d7ac31a0043d6148201a0dddaaac3aaaef9630789e7"
+    },
+    {
+      "frame": 40,
+      "text": "Movement axis rotation  +106.5\u00b0",
+      "sha256": "0ae23a564d732d1641e10cca722e9754e8d785c03aea475bc5828c3415a08094"
+    },
+    {
+      "frame": 41,
+      "text": "Movement axis rotation  +113.9\u00b0",
+      "sha256": "068fc8bf19e2f9d5bfd3b8100f58ce3dc2d8052467a8d38a3b918d8209be9391"
+    },
+    {
+      "frame": 42,
+      "text": "Movement axis rotation  +121.2\u00b0",
+      "sha256": "8a61c3e4f12f4bfd872db65033078dddc544ed9656a79313ed46647d39b087ff"
+    },
+    {
+      "frame": 43,
+      "text": "Movement axis rotation  +128.6\u00b0",
+      "sha256": "04a2a27935386315d4da33c9421adb0c2f0a0704e8082039f5536cdd07bd6bc1"
+    },
+    {
+      "frame": 44,
+      "text": "Movement axis rotation  +135.9\u00b0",
+      "sha256": "09ece523ad47011f127fb7c33ac8d5030be947cdf4d1452a2378976f62ab765f"
+    },
+    {
+      "frame": 45,
+      "text": "Movement axis rotation  +143.3\u00b0",
+      "sha256": "e9b3de59b4b3058becdfd7e7532505f302bedf511da6a73de8d98cc1ba3d7155"
+    },
+    {
+      "frame": 46,
+      "text": "Movement axis rotation  +150.6\u00b0",
+      "sha256": "158a5f03a080e2d7e299b7574feee9480718c9ba5c42873af313945a0512b178"
+    },
+    {
+      "frame": 47,
+      "text": "Movement axis rotation  +158.0\u00b0",
+      "sha256": "21e12a55f7664ce296c5bbe36e67cb27d8b122834e502276635715443edfddde"
+    },
+    {
+      "frame": 48,
+      "text": "Movement axis rotation  +165.3\u00b0",
+      "sha256": "80ef0c9ac8e07efc3623ca886eb9095108a99369f5c65a5bd0dbbc3b36f67146"
+    },
+    {
+      "frame": 49,
+      "text": "Movement axis rotation  +172.7\u00b0",
+      "sha256": "1f8df4db0d67f928b9b02ce6a8576112f13a94a7951e8cba0b05a17494f46755"
+    },
+    {
+      "frame": 50,
+      "text": "Movement axis rotation  +180.0\u00b0",
+      "sha256": "a14e517a718266a20299b9572af9c00a4535933f77457bfc205c0ec62e58a1da"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/axis/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/axis/axis.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

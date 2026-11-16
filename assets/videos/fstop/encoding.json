@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "1fe91ddaf4f2621e0bd9a195b62f11d35bfb4f09f4eac399eaf42588bc6bbbdf",
+  "animation_manifest_sha256": "c8322698c873e1f3acc75e801f20c6d263b82f24e056a2cf713eb22b962182be",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "1763bc32d49d161e6d15847207791e3711fcc47879d8a0ff2e7d381eac9fcbb2",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Aperture  f/1.00",
+      "sha256": "93063c4c5087a1dc629679d12693902e280ba1b87470560d77f1fc0fafd725af"
+    },
+    {
+      "frame": 2,
+      "text": "Aperture  f/1.07",
+      "sha256": "42c8bd7a665a9472d69163a9d0fa1ac70b4792dba4893d8f2a29adf12fa6eec6"
+    },
+    {
+      "frame": 3,
+      "text": "Aperture  f/1.15",
+      "sha256": "68994f7a75271904cc553f13e0ed480dc9ac2c76b2d0f46da5aed184c0e9f71e"
+    },
+    {
+      "frame": 4,
+      "text": "Aperture  f/1.24",
+      "sha256": "7e5078f4ad9caf121fe0f2040e21416bf8e193854d1a6eb93eb0736fa184b2b8"
+    },
+    {
+      "frame": 5,
+      "text": "Aperture  f/1.33",
+      "sha256": "e4ebc3fba4f512ac6779c2c1135884fa09d0b34997b8d8f53bbede712c7ca73c"
+    },
+    {
+      "frame": 6,
+      "text": "Aperture  f/1.42",
+      "sha256": "8c6dfb4ba4b838aecf1901cc051c013b7722e1fb923ae164ee38849153a7cd4b"
+    },
+    {
+      "frame": 7,
+      "text": "Aperture  f/1.53",
+      "sha256": "df4419d49a160069b196b6e489b5db89f020777e843ddf7d858f4a49273cc239"
+    },
+    {
+      "frame": 8,
+      "text": "Aperture  f/1.64",
+      "sha256": "e95343ded18024e426da1162aff6555c0da7b82f674b1bb552feba7c07adfaef"
+    },
+    {
+      "frame": 9,
+      "text": "Aperture  f/1.76",
+      "sha256": "890f96c2e18485ebf8eb04f9183c52bbcadf2c7c658b98b502b00948dd78c433"
+    },
+    {
+      "frame": 10,
+      "text": "Aperture  f/1.89",
+      "sha256": "6eae3d5389b9c573f1d9ea1d51e5ae06c02b42017d0f2f8d820ca79166057dc6"
+    },
+    {
+      "frame": 11,
+      "text": "Aperture  f/2.03",
+      "sha256": "e8c83e1ea470b11ea538dd0f0ed11d17bc9e64cf2287fcc2ac24f56c6b10e9ee"
+    },
+    {
+      "frame": 12,
+      "text": "Aperture  f/2.18",
+      "sha256": "f1d6df03362e5441ce7f76992270fc14a8a889156d1f71e28777f70af4475252"
+    },
+    {
+      "frame": 13,
+      "text": "Aperture  f/2.34",
+      "sha256": "fa44b9d82b9ef070c819d7e480edfe2294aa4cb8a57e10ecd507925e697a3172"
+    },
+    {
+      "frame": 14,
+      "text": "Aperture  f/2.51",
+      "sha256": "1bdfc3ba2bb94e5a5ee7362ecab07ef4b562c3184462af5313c37cc937b0e51a"
+    },
+    {
+      "frame": 15,
+      "text": "Aperture  f/2.69",
+      "sha256": "901da823063b01ec3d282d45cf231031d3edee7ae93541ccb02cefd42a4fd1a0"
+    },
+    {
+      "frame": 16,
+      "text": "Aperture  f/2.89",
+      "sha256": "b37be4026f1d0bda085c9beda7f5183917a40c4c9959f46bd40b6c61f3f6b400"
+    },
+    {
+      "frame": 17,
+      "text": "Aperture  f/3.10",
+      "sha256": "0b107449028314996e8d5a68e510794d66c130b83ddd3aa64fad3fd93c38791a"
+    },
+    {
+      "frame": 18,
+      "text": "Aperture  f/3.33",
+      "sha256": "9d0af743eca1c237271d72eb396be4e1d1ba0c47d600cc5a47cc6bfbf56cb5f0"
+    },
+    {
+      "frame": 19,
+      "text": "Aperture  f/3.57",
+      "sha256": "90b35fe93e3a7ad59587ef3b973d3991825b7edab34526176e76f830f76c66e4"
+    },
+    {
+      "frame": 20,
+      "text": "Aperture  f/3.83",
+      "sha256": "d60042532efb688edb53b89e1b4582d05ba9c803a69e7b2eaf432f595525e1a2"
+    },
+    {
+      "frame": 21,
+      "text": "Aperture  f/4.11",
+      "sha256": "413d28390ccdc8430266587fee958a0cf2bab94441f5a234ad4125d97563346c"
+    },
+    {
+      "frame": 22,
+      "text": "Aperture  f/4.42",
+      "sha256": "cadc27a3349b86d3be4c60b618a950e3c7e39df03672f80bf81d2047a02bdfd2"
+    },
+    {
+      "frame": 23,
+      "text": "Aperture  f/4.74",
+      "sha256": "8e2cc560fcd69f4ea05d757726fa16e8bf362697433a6ea40fbc24466d7ada84"
+    },
+    {
+      "frame": 24,
+      "text": "Aperture  f/5.09",
+      "sha256": "c5d23f7e0d471c1696a4dae43bdca5ecb1a0439b665bb71668094ff0a206627c"
+    },
+    {
+      "frame": 25,
+      "text": "Aperture  f/5.46",
+      "sha256": "babf7881e35f054ead086c714624b28b526cec07c9062df349e215e7fdb486bd"
+    },
+    {
+      "frame": 26,
+      "text": "Aperture  f/5.86",
+      "sha256": "fe8931276e7ccba868342d8ffb1f3c15206312fa8ec02b6c05d5ebadba840c33"
+    },
+    {
+      "frame": 27,
+      "text": "Aperture  f/6.29",
+      "sha256": "b433c61628ef1e39c631ba301aff6709f12b73431f4bec8e0d96ea91014fd432"
+    },
+    {
+      "frame": 28,
+      "text": "Aperture  f/6.75",
+      "sha256": "c16105c5f41a69289ff30370176968807a6e83d4f065d5972524dd30caba9a1a"
+    },
+    {
+      "frame": 29,
+      "text": "Aperture  f/7.25",
+      "sha256": "0ca17481640a2adddc94960518391708193b23fd3d2878f0a89cade7835af801"
+    },
+    {
+      "frame": 30,
+      "text": "Aperture  f/7.78",
+      "sha256": "dc02f2319d076064773eb609f6e3bef82db37c627070618c9232869a5c2090a1"
+    },
+    {
+      "frame": 31,
+      "text": "Aperture  f/8.35",
+      "sha256": "adaf36c457e5d31da1037521746caf30334fdbd50e65112a43feaf10aee40ed8"
+    },
+    {
+      "frame": 32,
+      "text": "Aperture  f/8.96",
+      "sha256": "3f8e00d21d6d9e185242a38354d7e5fd5f96fce49f52c8c3bf6d0c1da882e619"
+    },
+    {
+      "frame": 33,
+      "text": "Aperture  f/9.62",
+      "sha256": "68fc3c66efcc11106b8f48f244a790651bbf18daaebeb8f07ba0377d269f272d"
+    },
+    {
+      "frame": 34,
+      "text": "Aperture  f/10.32",
+      "sha256": "bd542abb624471dfac4df70040098edad091003c08790d5e136301b58d794835"
+    },
+    {
+      "frame": 35,
+      "text": "Aperture  f/11.08",
+      "sha256": "9a0fb11f99607f6e3f9dfd2a74d120999871af64e2b24bf4251abf5adb98f08f"
+    },
+    {
+      "frame": 36,
+      "text": "Aperture  f/11.89",
+      "sha256": "6a149a0400f83ec316317193e14ef325d3595661ba1be6953bcb793efebb2ff0"
+    },
+    {
+      "frame": 37,
+      "text": "Aperture  f/12.76",
+      "sha256": "6e49634c15b1e9cca8062b5fb1dd0a24aca7467327c360ae45a0429032fc1868"
+    },
+    {
+      "frame": 38,
+      "text": "Aperture  f/13.69",
+      "sha256": "cd8c121e724fcdd5a16cabc64c202508a37dde70f3365a9c476345e280f24810"
+    },
+    {
+      "frame": 39,
+      "text": "Aperture  f/14.70",
+      "sha256": "ea2174e4ca3d7ef5e923ba4483a7e58b0e832b2588b83b84d3e6800eeefb92e4"
+    },
+    {
+      "frame": 40,
+      "text": "Aperture  f/15.78",
+      "sha256": "f4c4921e8c3c0428e4bd8f47ba53671f7b602236281dfd7abbc4db12b8ab6dff"
+    },
+    {
+      "frame": 41,
+      "text": "Aperture  f/16.93",
+      "sha256": "7609b740c3bb6f6cec8d955259eeb6bce46cfb7e5a36c04425848d85f52547bd"
+    },
+    {
+      "frame": 42,
+      "text": "Aperture  f/18.17",
+      "sha256": "948be7d4ee54da8b883fecab3ed7f1d8b9ae0f88314adb6f76fd128aed8c423d"
+    },
+    {
+      "frame": 43,
+      "text": "Aperture  f/19.50",
+      "sha256": "f98101b5c265a491a9f73af780c093e1edb76fce7af6eb34f05e6bd6ac6a1341"
+    },
+    {
+      "frame": 44,
+      "text": "Aperture  f/20.93",
+      "sha256": "67367346f90c7c68822cfc5730a8f1d6a5827df804c6490640ee717cda6623e0"
+    },
+    {
+      "frame": 45,
+      "text": "Aperture  f/22.47",
+      "sha256": "cbf9e45b89f8815841ee1443f2dfab2c55b705e24a754db28500268b41ee8c89"
+    },
+    {
+      "frame": 46,
+      "text": "Aperture  f/24.11",
+      "sha256": "c299ae88e72d486ac29d2f3f3c68096c41376ee05a8b829b5f94bb46c7f68678"
+    },
+    {
+      "frame": 47,
+      "text": "Aperture  f/25.88",
+      "sha256": "35cb564c99e912bef8680a38b9b5c7b7bcca611ce61c7652edba978eb083f8d1"
+    },
+    {
+      "frame": 48,
+      "text": "Aperture  f/27.78",
+      "sha256": "7c335e1b632f9e5776711ed56e2f9b65b8b314b4583f951d8b63620425b6a1ce"
+    },
+    {
+      "frame": 49,
+      "text": "Aperture  f/29.81",
+      "sha256": "032ca65f705b8744c467c29632e19a2af86c46b521cc519d688e9fc2b5db2ad3"
+    },
+    {
+      "frame": 50,
+      "text": "Aperture  f/32.00",
+      "sha256": "5f7cf53739952766b9b9f1fdd6bf2b182ffe07e4d8289559ae0e43ffdcdea29d"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/fstop/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/fstop/fstop.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

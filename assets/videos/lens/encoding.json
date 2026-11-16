@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "8dab2a926ab7529fb6c2885c635f337711e0a47a8713988a71a14c821531aa49",
+  "animation_manifest_sha256": "7d9ae5bb7602743afcbd55e21e0a8283736d175374482735f4f75ab9061dff94",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "21680c8cd232340fabba64685079c3c33a279725d07e40ad5aaeb354f1f2d69b",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Focal length  35.00 mm",
+      "sha256": "f4ba065da252b7a26c7e64594dd901efdb0e5fb17f98d23362e42530accaa8ea"
+    },
+    {
+      "frame": 2,
+      "text": "Focal length  37.04 mm",
+      "sha256": "733da796b36e905f91c2ed1342f24f94301de2d597f9613169308159412abf47"
+    },
+    {
+      "frame": 3,
+      "text": "Focal length  39.08 mm",
+      "sha256": "d4830a98572168c58d4d60dfec1abb32d521fa5e9172deaa44c6ef76f894eceb"
+    },
+    {
+      "frame": 4,
+      "text": "Focal length  41.12 mm",
+      "sha256": "d9af436899a5137a9bd746e2ed7ffe2c07bacac48ec27c5dd25645765827aebe"
+    },
+    {
+      "frame": 5,
+      "text": "Focal length  43.16 mm",
+      "sha256": "c7236f26153dfd64dbb2074caa22f4544e453b121bed979d3b70be4452956a2c"
+    },
+    {
+      "frame": 6,
+      "text": "Focal length  45.20 mm",
+      "sha256": "24c4662a9130f4bca3c6a29f419e8fa3ec1db2230c41c9d790fe924bbc77279f"
+    },
+    {
+      "frame": 7,
+      "text": "Focal length  47.24 mm",
+      "sha256": "9f5af16f475ff2cc6de59fccf6eca67e040042bd512f7cca35523955ec029264"
+    },
+    {
+      "frame": 8,
+      "text": "Focal length  49.29 mm",
+      "sha256": "0523ed58f85d8846d31cc24e3db835fa89ad57aaad869c562ea7269299bd1cf9"
+    },
+    {
+      "frame": 9,
+      "text": "Focal length  51.33 mm",
+      "sha256": "6f391569e1920bc972e4d73dc7ca41b552f9167d7e60ebcf7a9b77280f2aed44"
+    },
+    {
+      "frame": 10,
+      "text": "Focal length  53.37 mm",
+      "sha256": "e56fd320f24403879f1194d76c1d03588f6c55c9ba6b16edfde31a7a91e5fdf9"
+    },
+    {
+      "frame": 11,
+      "text": "Focal length  55.41 mm",
+      "sha256": "9461d1cc624c2963292b5d9d8ec6806102fe6079118c5e4618f052882bf6092f"
+    },
+    {
+      "frame": 12,
+      "text": "Focal length  57.45 mm",
+      "sha256": "1cd92f2193cab83f1f13deac1ceff6732b04a20d8779e3816f88443b991d35e1"
+    },
+    {
+      "frame": 13,
+      "text": "Focal length  59.49 mm",
+      "sha256": "8a1f33492f800e76015d4330532bc097f95fa8357ae68e3dab826d2d64d1fac1"
+    },
+    {
+      "frame": 14,
+      "text": "Focal length  61.53 mm",
+      "sha256": "26d07b854447a8298d60c73a2802b0dee26eaef87fc25e4b7a40ad949d5a9aa7"
+    },
+    {
+      "frame": 15,
+      "text": "Focal length  63.57 mm",
+      "sha256": "421572b7ec11bc1c4981c3b4f26c0dcf05519d900509115854f334d5c4eb8bcc"
+    },
+    {
+      "frame": 16,
+      "text": "Focal length  65.61 mm",
+      "sha256": "076cec6460dd09bd15e87ff147fe0506e417281035319467992d669b6d22eea3"
+    },
+    {
+      "frame": 17,
+      "text": "Focal length  67.65 mm",
+      "sha256": "e9c15710b5ccb514203c9848f00c6ad703645fd0f5911c550f0b8923b57262bf"
+    },
+    {
+      "frame": 18,
+      "text": "Focal length  69.69 mm",
+      "sha256": "86506e6eed70c1067bde53d743f32810ccf316620fe46e267b6c35ca691e588b"
+    },
+    {
+      "frame": 19,
+      "text": "Focal length  71.73 mm",
+      "sha256": "7df145b84a78f8459b39e9954258c16ca0aebf6c8d61cae95c9673f4346dd8d8"
+    },
+    {
+      "frame": 20,
+      "text": "Focal length  73.78 mm",
+      "sha256": "e4a1bdc245d27fd3646fd54052a7258f8963c901b5d8c1090a847df43325fc5c"
+    },
+    {
+      "frame": 21,
+      "text": "Focal length  75.82 mm",
+      "sha256": "85ffb417b7f4d5f195d1855acb5dbe66069cfc7c88a939d006c556817a480265"
+    },
+    {
+      "frame": 22,
+      "text": "Focal length  77.86 mm",
+      "sha256": "7bbb4a7eb0def7dc6af1d326b5f1ef6e6b864aa96314c925ff087320f6478d93"
+    },
+    {
+      "frame": 23,
+      "text": "Focal length  79.90 mm",
+      "sha256": "2e1574b29e995831bed98744806059f6be431c692919e5c3a3d7ad6dde82bd21"
+    },
+    {
+      "frame": 24,
+      "text": "Focal length  81.94 mm",
+      "sha256": "97027492ab2233bf5342bc78cd359c3e5a73687cd65c8b07f4b2e5ada2bec604"
+    },
+    {
+      "frame": 25,
+      "text": "Focal length  83.98 mm",
+      "sha256": "e7cfd2f43d6a8e491d0cf6db8d41eb2d07fca30eef454487b0f41920e05177c4"
+    },
+    {
+      "frame": 26,
+      "text": "Focal length  86.02 mm",
+      "sha256": "03fbcdb2c93a40fc3129a8b5968e49bdb57c0303fe027abadcf69739ee033ae5"
+    },
+    {
+      "frame": 27,
+      "text": "Focal length  88.06 mm",
+      "sha256": "20a8d0bb4b63bb191406221f41de43d5e40393947a60226dae5181c39b2f68f3"
+    },
+    {
+      "frame": 28,
+      "text": "Focal length  90.10 mm",
+      "sha256": "6a2a95fda9b03f5146b3283b6667215f55917795f80904e68b88fcd247f3d573"
+    },
+    {
+      "frame": 29,
+      "text": "Focal length  92.14 mm",
+      "sha256": "c57a0874faab02d0c4d66a26d11d42f6024ac28fe4e3c9c6777f82f011779cc8"
+    },
+    {
+      "frame": 30,
+      "text": "Focal length  94.18 mm",
+      "sha256": "cd6b21785f26a0a22387c5caccbe30813cda53d3825f68bf1064a1b4c448d7d9"
+    },
+    {
+      "frame": 31,
+      "text": "Focal length  96.22 mm",
+      "sha256": "9fb4132630fadfa4b5463170606eecef2205b8688c2f5b0a35d9834f70d3cdff"
+    },
+    {
+      "frame": 32,
+      "text": "Focal length  98.27 mm",
+      "sha256": "1f2ece7d41c567fe83f14a98a6d07b321143e2f2df441eabbeea91b5e2cfee79"
+    },
+    {
+      "frame": 33,
+      "text": "Focal length  100.31 mm",
+      "sha256": "51174f46fd47c46ceae877f873632ac1e1c30da88f81b19c9f23ec674eb7cef4"
+    },
+    {
+      "frame": 34,
+      "text": "Focal length  102.35 mm",
+      "sha256": "790c8cb9e6d541293a32b2d2a0111a18628c4e9d4d4b7bfeae653ec784abe6f0"
+    },
+    {
+      "frame": 35,
+      "text": "Focal length  104.39 mm",
+      "sha256": "2512f5fe2491e56af9541aa98c81987386f6238895322cc1a92abbbdef0ed299"
+    },
+    {
+      "frame": 36,
+      "text": "Focal length  106.43 mm",
+      "sha256": "44bfb2cada61f8c272bc479bcae0a497116c8dfd75f40ac3e80a882733e4e76f"
+    },
+    {
+      "frame": 37,
+      "text": "Focal length  108.47 mm",
+      "sha256": "6d2a27751a7f66dcf606a9bc8e2c3372afb44625af275f787f1bba72999be82b"
+    },
+    {
+      "frame": 38,
+      "text": "Focal length  110.51 mm",
+      "sha256": "43e3a64fe1301aaf40d9bc517bd9dc96c3ba5e522667e61a61a77a5c65bb0d42"
+    },
+    {
+      "frame": 39,
+      "text": "Focal length  112.55 mm",
+      "sha256": "63b44ddf6997ebb7049641ddb763c1b70bc401db6372cb12edab735f1a30e436"
+    },
+    {
+      "frame": 40,
+      "text": "Focal length  114.59 mm",
+      "sha256": "3e7dcbeed2add5746c836054b567e2152909fbe13c17ca2f438e7fcdda572920"
+    },
+    {
+      "frame": 41,
+      "text": "Focal length  116.63 mm",
+      "sha256": "d06dafa9b18072a1fdbf5985d39776335687adb3b367d02c192176c6444d19e1"
+    },
+    {
+      "frame": 42,
+      "text": "Focal length  118.67 mm",
+      "sha256": "64f6a624d1f2221be9271022a41f6aeb4f94219630363c66bea1fb333f682773"
+    },
+    {
+      "frame": 43,
+      "text": "Focal length  120.71 mm",
+      "sha256": "68f9270225d8fcfe749e551800d462fbb6f187fea21cf14d6bbf7ae1b3df196a"
+    },
+    {
+      "frame": 44,
+      "text": "Focal length  122.76 mm",
+      "sha256": "af89129e1a5e8816e3c75e41c3e038948f6bc381dc08d17267db597dccdc4ef9"
+    },
+    {
+      "frame": 45,
+      "text": "Focal length  124.80 mm",
+      "sha256": "93e892c1214667ebcce2a984d6f1a18f66983f6e7ef72d29f8a67fbe7a51c1a9"
+    },
+    {
+      "frame": 46,
+      "text": "Focal length  126.84 mm",
+      "sha256": "439144c58f81dbed83b6595316a976e7615c1bb1490421e8c35da27d66468a54"
+    },
+    {
+      "frame": 47,
+      "text": "Focal length  128.88 mm",
+      "sha256": "abccc9b20c37a26f3db0e6dd34651168534ea47d6a5504517b75d1832a1bfc55"
+    },
+    {
+      "frame": 48,
+      "text": "Focal length  130.92 mm",
+      "sha256": "a96d96391de093e1204a2599c3e2493655b1979e3d27e8e14fd1d6602746c3b0"
+    },
+    {
+      "frame": 49,
+      "text": "Focal length  132.96 mm",
+      "sha256": "7c9aae06b4f0cda22f8b47f8de9ce260f046695e42affc2c1b9b7dc57186e6db"
+    },
+    {
+      "frame": 50,
+      "text": "Focal length  135.00 mm",
+      "sha256": "41f18b4215859a8a31c73c23e3acedc89059a062456c146ea96e4c92d5d9eb9c"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/lens/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/lens/lens.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

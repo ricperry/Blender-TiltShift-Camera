@@ -1,0 +1,1317 @@
+{
+  "case": "shift-y-ordinary",
+  "family": "shift-y",
+  "kind": "ordinary",
+  "options": {},
+  "generator": "examples/create_demo_comparisons.py",
+  "source_sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20",
+  "provenance": {
+    "generator_sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20",
+    "blender_binary_path": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/install-blender-m4/blender",
+    "blender_binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+    "cumulative_patch_path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+    "cumulative_patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+    "city_source_path": "examples/full-scale-city/full-scale-city.blend",
+    "city_source_sha256": "947c0d3baf979798ab1216b845ff9bdf0a2b01aa2dcaf4383e18b8035d22a19e",
+    "source_revision": {
+      "license": "GPL-3.0-or-later",
+      "blender": {
+        "url": "https://projects.blender.org/blender/blender.git",
+        "release_branch": "blender-v5.3-release",
+        "tag": "v5.3.0",
+        "commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "checkout": "work/blender",
+        "history": "Original upstream history retained; detached release tag"
+      },
+      "linux_x64_libraries": {
+        "url": "https://projects.blender.org/blender/lib-linux_x64.git",
+        "gitlink": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+        "checkout": "work/blender/lib/linux_x64",
+        "lfs": "716 library LFS objects acquired; git lfs fsck passed during initialization"
+      },
+      "dependency_versions": {
+        "path": "build_files/build_environment/cmake/versions.cmake",
+        "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "sha256": "dc57206aea3914e6c743d7467284b2deaa21792d501f697d809405347da84c86"
+      },
+      "developer_handbook": {
+        "url": "https://projects.blender.org/blender/blender-developer-docs.git",
+        "commit": "0074023d5f64eac025d88e79640c006516eca57c",
+        "checkout": "work/developer-docs"
+      },
+      "project": {
+        "url": "https://github.com/ricperry/Blender-TiltShift-Camera",
+        "initial_commit": "eb2303109632d6f11bc4ad6a0110c86883728fa4"
+      },
+      "source_lfs": "Required Linux runtime assets acquired; optional regression media deferred",
+      "native_feature_patch": null,
+      "native_feature_patch_note": "The null field above is the historical initialization state; current source modifications are recorded below.",
+      "current_native_feature_patch": {
+        "path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+        "sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+        "base_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "cumulative": true,
+        "modified_upstream_files": 16,
+        "new_upstream_files": 1,
+        "application": "Apply M4 once to the exact clean pin; do not stack M2/M3/M4 patches."
+      }
+    }
+  },
+  "blend_sha256": "a09892f0a3d5ab8ea4f9ce466dd5a182e82267be191eef45a1c81bf830471af2",
+  "blender": "5.3.0",
+  "blender_build_hash": "02f0899d78e3",
+  "scene": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/shift-y-ordinary.blend",
+  "image": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/shift-y-ordinary.png",
+  "saved_device": "CPU",
+  "resolution": [
+    3840,
+    2160
+  ],
+  "samples": 256,
+  "seed": 71,
+  "denoising": false,
+  "adaptive_sampling": false,
+  "compositor": false,
+  "motion_blur": false,
+  "native_enabled": false,
+  "dof_enabled": true,
+  "camera": {
+    "position_m": [
+      55.0,
+      -80.0,
+      5.0064802169799805
+    ],
+    "rotation_euler_xyz_rad": [
+      1.5707964897155762,
+      -2.5002574233212727e-08,
+      0.6022874116897583
+    ],
+    "lens_mm": 40.00727844238281,
+    "sensor_width_mm": 36.0,
+    "focus_distance_m": 219.98342895507812,
+    "focus_object": null,
+    "fstop": 2.800509452819824,
+    "pupil_diameter_m": 0.014285714480306291,
+    "tilt_deg": 0.0,
+    "swing_deg": 0.0,
+    "axis_deg": 0.0,
+    "shift": [
+      0.0,
+      0.18000000715255737
+    ],
+    "image_circle_mm": 0.0,
+    "blades": 0,
+    "aperture_rotation_deg": 0.0,
+    "aperture_ratio": 1.0
+  },
+  "native_reference": {
+    "lens_mm": 40.0,
+    "fstop": 2.799999952316284,
+    "sensor_distance_m": 0.04000727832317352,
+    "manual_conjugate_focus_m": 219.98342858309942,
+    "normal_cycles": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "ordinary_optimization": {
+    "objective": "match native zero-angle axial sharp plane and physical pupil",
+    "focus_m": 219.98342858309942
+  },
+  "landmarks": [
+    {
+      "name": "Surface grid 00,00 / District connector road.002",
+      "world_m": [
+        1.0670945644378662,
+        -45.909427642822266,
+        0.8049996495246887
+      ],
+      "camera_depth_m": 58.64661407470703,
+      "native_reference_rms_sensor_blur_diameter_m": 7.145572438564197e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.147292265599101e-06
+    },
+    {
+      "name": "Surface grid 01,00 / District connector road.002",
+      "world_m": [
+        3.137876033782959,
+        -44.485755920410156,
+        0.8049996495246887
+      ],
+      "camera_depth_m": 58.6466178894043,
+      "native_reference_rms_sensor_blur_diameter_m": 7.145572438564197e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.147291631707298e-06
+    },
+    {
+      "name": "Surface grid 02,00 / Continuous city terrain",
+      "world_m": [
+        2.186702251434326,
+        -40.82024002075195,
+        0.5500006079673767
+      ],
+      "camera_depth_m": 62.206024169921875,
+      "native_reference_rms_sensor_blur_diameter_m": 6.5877102150846355e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.589665497806354e-06
+    },
+    {
+      "name": "Surface grid 03,00 / Continuous city terrain",
+      "world_m": [
+        4.383172035217285,
+        -39.310157775878906,
+        0.5499997138977051
+      ],
+      "camera_depth_m": 62.206031799316406,
+      "native_reference_rms_sensor_blur_diameter_m": 6.587477561369633e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.589664370956366e-06
+    },
+    {
+      "name": "Surface grid 04,00 / Continuous city terrain",
+      "world_m": [
+        6.579646587371826,
+        -37.80008316040039,
+        0.550000011920929
+      ],
+      "camera_depth_m": 62.206031799316406,
+      "native_reference_rms_sensor_blur_diameter_m": 6.5879431239013785e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.589664370956366e-06
+    },
+    {
+      "name": "Surface grid 05,00 / Continuous city terrain",
+      "world_m": [
+        8.776121139526367,
+        -36.29001235961914,
+        0.5500003099441528
+      ],
+      "camera_depth_m": 62.20602798461914,
+      "native_reference_rms_sensor_blur_diameter_m": 6.5877102150846355e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.589664934381326e-06
+    },
+    {
+      "name": "Surface grid 06,00 / North\u2013south avenue.001",
+      "world_m": [
+        13.442442893981934,
+        -37.31668472290039,
+        0.8000004291534424
+      ],
+      "camera_depth_m": 58.716400146484375,
+      "native_reference_rms_sensor_blur_diameter_m": 7.134163748398888e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.135709630852266e-06
+    },
+    {
+      "name": "Surface grid 07,00 / North\u2013south avenue.001",
+      "world_m": [
+        15.51569652557373,
+        -35.89132308959961,
+        0.800000011920929
+      ],
+      "camera_depth_m": 58.716400146484375,
+      "native_reference_rms_sensor_blur_diameter_m": 7.134163748398888e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.135709630852266e-06
+    },
+    {
+      "name": "Surface grid 08,00 / North\u2013south avenue.001",
+      "world_m": [
+        16.599998474121094,
+        -33.262271881103516,
+        0.6888023614883423
+      ],
+      "camera_depth_m": 60.268558502197266,
+      "native_reference_rms_sensor_blur_diameter_m": 6.882823158026937e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.88502553901845e-06
+    },
+    {
+      "name": "Surface grid 09,00 / Canal / limestone quay",
+      "world_m": [
+        18.97321128845215,
+        -32.125003814697266,
+        0.7179845571517944
+      ],
+      "camera_depth_m": 59.86122131347656,
+      "native_reference_rms_sensor_blur_diameter_m": 6.949529176589407e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.9495550921684135e-06
+    },
+    {
+      "name": "Surface grid 10,00 / Canal / limestone quay",
+      "world_m": [
+        22.0859317779541,
+        -32.125003814697266,
+        0.844319224357605
+      ],
+      "camera_depth_m": 58.0977783203125,
+      "native_reference_rms_sensor_blur_diameter_m": 7.238937508143387e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.239354370630416e-06
+    },
+    {
+      "name": "Surface grid 11,00 / Canal / limestone quay",
+      "world_m": [
+        25.0205135345459,
+        -32.125003814697266,
+        0.9634237885475159
+      ],
+      "camera_depth_m": 56.43525314331055,
+      "native_reference_rms_sensor_blur_diameter_m": 7.526483487591127e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.52915491823152e-06
+    },
+    {
+      "name": "Surface grid 12,00 / Canal / limestone quay",
+      "world_m": [
+        27.791805267333984,
+        -32.125003814697266,
+        1.075900673866272
+      ],
+      "camera_depth_m": 54.865234375,
+      "native_reference_rms_sensor_blur_diameter_m": 7.817870957223422e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.818954731503052e-06
+    },
+    {
+      "name": "Surface grid 13,00 / Canal / limestone quay",
+      "world_m": [
+        30.4130802154541,
+        -32.125003814697266,
+        1.1822892427444458
+      ],
+      "camera_depth_m": 53.38020706176758,
+      "native_reference_rms_sensor_blur_diameter_m": 8.108094334602356e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 8.108754425143963e-06
+    },
+    {
+      "name": "Surface grid 14,00 / Canal / limestone quay",
+      "world_m": [
+        32.89619445800781,
+        -32.125,
+        1.2830699682235718
+      ],
+      "camera_depth_m": 51.973453521728516,
+      "native_reference_rms_sensor_blur_diameter_m": 8.397735603665174e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 8.398553610538336e-06
+    },
+    {
+      "name": "Surface grid 15,00 / Canal / limestone quay",
+      "world_m": [
+        35.25179672241211,
+        -32.125,
+        1.378675937652588
+      ],
+      "camera_depth_m": 50.638938903808594,
+      "native_reference_rms_sensor_blur_diameter_m": 8.687144142249396e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 8.688353447096576e-06
+    },
+    {
+      "name": "Surface grid 16,00 / Canal / limestone quay",
+      "world_m": [
+        37.48945617675781,
+        -32.125003814697266,
+        1.469494104385376
+      ],
+      "camera_depth_m": 49.37123489379883,
+      "native_reference_rms_sensor_blur_diameter_m": 8.977018248408473e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 8.97815469456264e-06
+    },
+    {
+      "name": "Surface grid 17,00 / Canal / limestone quay",
+      "world_m": [
+        39.61781692504883,
+        -32.12500762939453,
+        1.555877685546875
+      ],
+      "camera_depth_m": 48.16545486450195,
+      "native_reference_rms_sensor_blur_diameter_m": 9.266194038041046e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 9.267955377036954e-06
+    },
+    {
+      "name": "Surface grid 18,00 / Canal / limestone quay",
+      "world_m": [
+        41.644691467285156,
+        -32.125003814697266,
+        1.6381409168243408
+      ],
+      "camera_depth_m": 47.017173767089844,
+      "native_reference_rms_sensor_blur_diameter_m": 9.55699938184589e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 9.557754457582661e-06
+    },
+    {
+      "name": "Surface grid 19,00 / Canal / limestone quay",
+      "world_m": [
+        43.577178955078125,
+        -32.12500762939453,
+        1.71657395362854
+      ],
+      "camera_depth_m": 45.92236328125,
+      "native_reference_rms_sensor_blur_diameter_m": 9.844778124889263e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 9.847554985352184e-06
+    },
+    {
+      "name": "Surface grid 20,00 / Canal / limestone quay",
+      "world_m": [
+        45.421714782714844,
+        -32.12500762939453,
+        1.7914371490478516
+      ],
+      "camera_depth_m": 44.87738037109375,
+      "native_reference_rms_sensor_blur_diameter_m": 1.0135117821975628e-05,
+      "ordinary_rms_sensor_blur_diameter_m": 1.01373550203897e-05
+    },
+    {
+      "name": "Surface grid 00,01 / Canal / limestone quay.001",
+      "world_m": [
+        -35.16120910644531,
+        -23.009807586669922,
+        1.8000000715255737
+      ],
+      "camera_depth_m": 98.0412368774414,
+      "native_reference_rms_sensor_blur_diameter_m": 3.2298266887664795e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.2314409360539784e-06
+    },
+    {
+      "name": "Surface grid 01,01 / Canal Books / shopfront.002",
+      "world_m": [
+        -32.327091217041016,
+        -20.19999885559082,
+        1.7767856121063232
+      ],
+      "camera_depth_m": 98.75102996826172,
+      "native_reference_rms_sensor_blur_diameter_m": 3.1890813176277225e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.189540135042488e-06
+    },
+    {
+      "name": "Surface grid 02,01 / The Bread Shop / shopfront",
+      "world_m": [
+        -25.60881996154785,
+        -20.19999885559082,
+        1.901266098022461
+      ],
+      "camera_depth_m": 94.94493103027344,
+      "native_reference_rms_sensor_blur_diameter_m": 3.4207478165626526e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.421550629421667e-06
+    },
+    {
+      "name": "Surface grid 03,01 / Canal / pedestrian bridge deck",
+      "world_m": [
+        -14.823997497558594,
+        -23.869901657104492,
+        2.1999998092651367
+      ],
+      "camera_depth_m": 85.81086730957031,
+      "native_reference_rms_sensor_blur_diameter_m": 4.05940231884495e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.062304053361185e-06
+    },
+    {
+      "name": "Surface grid 04,01 / The Bread Shop",
+      "world_m": [
+        -18.74999237060547,
+        -15.724475860595703,
+        1.9077320098876953
+      ],
+      "camera_depth_m": 94.74723052978516,
+      "native_reference_rms_sensor_blur_diameter_m": 3.4333207028987817e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.434111230839323e-06
+    },
+    {
+      "name": "Surface grid 05,01 / Coral Workshop / shopfront.001",
+      "world_m": [
+        -8.239265441894531,
+        -20.19999885559082,
+        2.2230987548828125
+      ],
+      "camera_depth_m": 85.10458374023438,
+      "native_reference_rms_sensor_blur_diameter_m": 4.117609873774246e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.1175785546931915e-06
+    },
+    {
+      "name": "Surface grid 06,01 / Coral Workshop / shopfront.003",
+      "world_m": [
+        -3.2546591758728027,
+        -20.167266845703125,
+        2.3145751953125
+      ],
+      "camera_depth_m": 82.30763244628906,
+      "native_reference_rms_sensor_blur_diameter_m": 4.344619810581207e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.345787579797852e-06
+    },
+    {
+      "name": "Surface grid 07,01 / Coral Workshop / east window",
+      "world_m": [
+        -0.42000001668930054,
+        -18.089231491088867,
+        2.3110926151275635
+      ],
+      "camera_depth_m": 82.41410064697266,
+      "native_reference_rms_sensor_blur_diameter_m": 4.335306484800403e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.336817026006864e-06
+    },
+    {
+      "name": "Surface grid 08,01 / The Glasshouse / storefront awning",
+      "world_m": [
+        6.669029235839844,
+        -21.17500114440918,
+        2.5256059169769287
+      ],
+      "camera_depth_m": 75.85515594482422,
+      "native_reference_rms_sensor_blur_diameter_m": 4.936126059411073e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.936453875396164e-06
+    },
+    {
+      "name": "Surface grid 09,01 / Citizen 15 / coat",
+      "world_m": [
+        10.852968215942383,
+        -21.33424186706543,
+        2.6074202060699463
+      ],
+      "camera_depth_m": 73.3536148071289,
+      "native_reference_rms_sensor_blur_diameter_m": 5.192821840192538e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.1933999555860545e-06
+    },
+    {
+      "name": "Surface grid 10,01 / The Glasshouse / east window.001",
+      "world_m": [
+        10.329999923706055,
+        -15.025466918945312,
+        2.427704095840454
+      ],
+      "camera_depth_m": 78.84858703613281,
+      "native_reference_rms_sensor_blur_diameter_m": 4.647998086778209e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.6504109454605595e-06
+    },
+    {
+      "name": "Surface grid 11,01 / Launch / roof",
+      "world_m": [
+        22.734874725341797,
+        -28.474994659423828,
+        3.0200228691101074
+      ],
+      "camera_depth_m": 60.737892150878906,
+      "native_reference_rms_sensor_blur_diameter_m": 6.810529121700466e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.8117477857697585e-06
+    },
+    {
+      "name": "Surface grid 12,01 / Launch / roof",
+      "world_m": [
+        25.334047317504883,
+        -27.800365447998047,
+        3.049999952316284
+      ],
+      "camera_depth_m": 59.82130813598633,
+      "native_reference_rms_sensor_blur_diameter_m": 6.95453494861954e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.95592533221374e-06
+    },
+    {
+      "name": "Surface grid 13,01 / Canal Corner",
+      "world_m": [
+        24.237468719482422,
+        -20.100000381469727,
+        2.8221516609191895
+      ],
+      "camera_depth_m": 66.78797912597656,
+      "native_reference_rms_sensor_blur_diameter_m": 5.957670582608914e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.959345564755038e-06
+    },
+    {
+      "name": "Surface grid 14,01 / Canal Corner / south window.003",
+      "world_m": [
+        27.381216049194336,
+        -20.18000030517578,
+        2.8825573921203613
+      ],
+      "camera_depth_m": 64.94103240966797,
+      "native_reference_rms_sensor_blur_diameter_m": 6.2019098156741954e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.202721620497295e-06
+    },
+    {
+      "name": "Surface grid 15,01 / Canal Corner",
+      "world_m": [
+        29.000001907348633,
+        -16.96893882751465,
+        2.826010227203369
+      ],
+      "camera_depth_m": 66.66999053955078,
+      "native_reference_rms_sensor_blur_diameter_m": 5.973735892287894e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.974489971846297e-06
+    },
+    {
+      "name": "Surface grid 16,01 / Riverside Cycles",
+      "world_m": [
+        33.091251373291016,
+        -20.100000381469727,
+        2.9862000942230225
+      ],
+      "camera_depth_m": 61.77205276489258,
+      "native_reference_rms_sensor_blur_diameter_m": 6.654299730454565e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.6542127277408166e-06
+    },
+    {
+      "name": "Surface grid 17,01 / Riverside Cycles",
+      "world_m": [
+        35.75419998168945,
+        -20.100000381469727,
+        3.035540819168091
+      ],
+      "camera_depth_m": 60.2634162902832,
+      "native_reference_rms_sensor_blur_diameter_m": 6.884103636976624e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.8858347213503975e-06
+    },
+    {
+      "name": "Surface grid 18,01 / Street tree canopy.035",
+      "world_m": [
+        38.50638961791992,
+        -20.87505340576172,
+        3.1074233055114746
+      ],
+      "camera_depth_m": 58.06554412841797,
+      "native_reference_rms_sensor_blur_diameter_m": 7.243826985359192e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.244815465676506e-06
+    },
+    {
+      "name": "Surface grid 19,01 / Bluebird House / south window.002",
+      "world_m": [
+        37.02889633178711,
+        -4.679999828338623,
+        2.643580198287964
+      ],
+      "camera_depth_m": 72.24799346923828,
+      "native_reference_rms_sensor_blur_diameter_m": 5.3120311298604574e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.312633944907284e-06
+    },
+    {
+      "name": "Surface grid 20,01 / Bluebird House / east window.001",
+      "world_m": [
+        38.32999801635742,
+        3.321449041366577,
+        2.4520442485809326
+      ],
+      "camera_depth_m": 78.10440826416016,
+      "native_reference_rms_sensor_blur_diameter_m": 4.718778787046874e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.719474478136396e-06
+    },
+    {
+      "name": "Surface grid 00,02 / Surrounding block 19 / south window.011",
+      "world_m": [
+        -70.64623260498047,
+        -0.5800000429153442,
+        5.857642650604248
+      ],
+      "camera_depth_m": 136.62762451171875,
+      "native_reference_rms_sensor_blur_diameter_m": 1.5823173283513019e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 1.5850695965533032e-06
+    },
+    {
+      "name": "Surface grid 01,02 / Canal Books",
+      "world_m": [
+        -32.47310256958008,
+        -20.100000381469727,
+        5.622707366943359
+      ],
+      "camera_depth_m": 98.91615295410156,
+      "native_reference_rms_sensor_blur_diameter_m": 3.1779054467024467e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.179878744117369e-06
+    },
+    {
+      "name": "Surface grid 02,02 / The Bread Shop",
+      "world_m": [
+        -25.74361801147461,
+        -20.100000381469727,
+        5.59895658493042
+      ],
+      "camera_depth_m": 95.10370635986328,
+      "native_reference_rms_sensor_blur_diameter_m": 3.409106316183079e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.4115008907085684e-06
+    },
+    {
+      "name": "Surface grid 03,02 / The Bread Shop",
+      "world_m": [
+        -19.513622283935547,
+        -20.100000381469727,
+        5.576969146728516
+      ],
+      "camera_depth_m": 91.57423400878906,
+      "native_reference_rms_sensor_blur_diameter_m": 3.6403071656489583e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.643123004366067e-06
+    },
+    {
+      "name": "Surface grid 04,02 / The Bread Shop",
+      "world_m": [
+        -18.75,
+        -15.724456787109375,
+        5.596736431121826
+      ],
+      "camera_depth_m": 94.74724578857422,
+      "native_reference_rms_sensor_blur_diameter_m": 3.431690912103566e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.4341102593726106e-06
+    },
+    {
+      "name": "Surface grid 05,02 / Coral Workshop",
+      "world_m": [
+        -8.345008850097656,
+        -20.100000381469727,
+        5.537550926208496
+      ],
+      "camera_depth_m": 85.24688720703125,
+      "native_reference_rms_sensor_blur_diameter_m": 4.104804221204716e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.106368054967274e-06
+    },
+    {
+      "name": "Surface grid 06,02 / Coral Workshop",
+      "world_m": [
+        -3.320159673690796,
+        -20.100000381469727,
+        5.5198163986206055
+      ],
+      "camera_depth_m": 82.4001693725586,
+      "native_reference_rms_sensor_blur_diameter_m": 4.337867715666771e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.33798949722989e-06
+    },
+    {
+      "name": "Surface grid 07,02 / Coral Workshop",
+      "world_m": [
+        -0.49999523162841797,
+        -17.999868392944336,
+        5.520644187927246
+      ],
+      "camera_depth_m": 82.5330581665039,
+      "native_reference_rms_sensor_blur_diameter_m": 4.326458995316401e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.326821551591594e-06
+    },
+    {
+      "name": "Surface grid 08,02 / The Glasshouse",
+      "world_m": [
+        5.785804748535156,
+        -20.100000381469727,
+        5.487678527832031
+      ],
+      "camera_depth_m": 77.24137878417969,
+      "native_reference_rms_sensor_blur_diameter_m": 4.799803713277405e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.8012345078134614e-06
+    },
+    {
+      "name": "Surface grid 09,02 / Street tree canopy.024",
+      "world_m": [
+        10.161691665649414,
+        -20.415605545043945,
+        5.470614910125732
+      ],
+      "camera_depth_m": 74.50223541259766,
+      "native_reference_rms_sensor_blur_diameter_m": 5.072448381268868e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.073276794524757e-06
+    },
+    {
+      "name": "Surface grid 10,02 / The Glasshouse",
+      "world_m": [
+        10.25,
+        -14.909086227416992,
+        5.498571395874023
+      ],
+      "camera_depth_m": 78.98980712890625,
+      "native_reference_rms_sensor_blur_diameter_m": 4.637055005485404e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.637451915399413e-06
+    },
+    {
+      "name": "Surface grid 11,02 / Meridian Hotel",
+      "world_m": [
+        -5.898286819458008,
+        17.25,
+        5.720656871795654
+      ],
+      "camera_depth_m": 114.63871765136719,
+      "native_reference_rms_sensor_blur_diameter_m": 2.385349932870759e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.3874397699761995e-06
+    },
+    {
+      "name": "Surface grid 12,02 / Canal Corner",
+      "world_m": [
+        20.957794189453125,
+        -20.100000381469727,
+        5.434131145477295
+      ],
+      "camera_depth_m": 68.64600372314453,
+      "native_reference_rms_sensor_blur_diameter_m": 5.724839941915581e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.727724064567127e-06
+    },
+    {
+      "name": "Surface grid 13,02 / Canal Corner",
+      "world_m": [
+        24.237468719482422,
+        -20.100000381469727,
+        5.422555923461914
+      ],
+      "camera_depth_m": 66.78797912597656,
+      "native_reference_rms_sensor_blur_diameter_m": 5.957670582608914e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.959345564755038e-06
+    },
+    {
+      "name": "Surface grid 14,02 / Canal Corner",
+      "world_m": [
+        27.344280242919922,
+        -20.099994659423828,
+        5.411591053009033
+      ],
+      "camera_depth_m": 65.02788543701172,
+      "native_reference_rms_sensor_blur_diameter_m": 6.190501083413228e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.190967040562177e-06
+    },
+    {
+      "name": "Surface grid 15,02 / Riverside Cycles / cornice",
+      "world_m": [
+        30.366029739379883,
+        -20.280582427978516,
+        5.399999618530273
+      ],
+      "camera_depth_m": 63.16716384887695,
+      "native_reference_rms_sensor_blur_diameter_m": 6.447778976872578e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.44986662894203e-06
+    },
+    {
+      "name": "Surface grid 16,02 / Riverside Cycles",
+      "world_m": [
+        33.09124755859375,
+        -20.100000381469727,
+        5.391308307647705
+      ],
+      "camera_depth_m": 61.772056579589844,
+      "native_reference_rms_sensor_blur_diameter_m": 6.651971472892095e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.6542121563714445e-06
+    },
+    {
+      "name": "Surface grid 17,02 / Riverside Cycles",
+      "world_m": [
+        35.75420379638672,
+        -20.100006103515625,
+        5.3819098472595215
+      ],
+      "camera_depth_m": 60.26340866088867,
+      "native_reference_rms_sensor_blur_diameter_m": 6.8848021170971645e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.885835922020251e-06
+    },
+    {
+      "name": "Surface grid 18,02 / Street tree canopy.033",
+      "world_m": [
+        38.45621871948242,
+        -20.695213317871094,
+        5.369317531585693
+      ],
+      "camera_depth_m": 58.242164611816406,
+      "native_reference_rms_sensor_blur_diameter_m": 7.212860596184435e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 7.214966723488364e-06
+    },
+    {
+      "name": "Surface grid 19,02 / Bluebird House",
+      "world_m": [
+        37.00981140136719,
+        -4.600005626678467,
+        5.457049369812012
+      ],
+      "camera_depth_m": 72.32472229003906,
+      "native_reference_rms_sensor_blur_diameter_m": 5.303416380704375e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.304241530270563e-06
+    },
+    {
+      "name": "Surface grid 20,02 / Bluebird House",
+      "world_m": [
+        38.250003814697266,
+        3.7213025093078613,
+        5.49539041519165
+      ],
+      "camera_depth_m": 78.4792251586914,
+      "native_reference_rms_sensor_blur_diameter_m": 4.6829227300222166e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.6845258704541535e-06
+    },
+    {
+      "name": "Surface grid 03,03 / The Bread Shop / rooftop service room",
+      "world_m": [
+        -22.02019691467285,
+        -18.085004806518555,
+        9.281563758850098
+      ],
+      "camera_depth_m": 94.65471649169922,
+      "native_reference_rms_sensor_blur_diameter_m": 3.43867576824159e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.440006991265079e-06
+    },
+    {
+      "name": "Surface grid 04,03 / Old Post Office",
+      "world_m": [
+        -31.34212875366211,
+        -4.750005722045898,
+        10.016386032104492
+      ],
+      "camera_depth_m": 110.9244613647461,
+      "native_reference_rms_sensor_blur_diameter_m": 2.553919319626175e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.5543773803926563e-06
+    },
+    {
+      "name": "Surface grid 05,03 / Seabird Apartments",
+      "world_m": [
+        -24.577821731567383,
+        -4.75,
+        9.843305587768555
+      ],
+      "camera_depth_m": 107.09229278564453,
+      "native_reference_rms_sensor_blur_diameter_m": 2.7352945601956346e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.738751531569348e-06
+    },
+    {
+      "name": "Surface grid 06,03 / Coral Workshop / roof shrub.001",
+      "world_m": [
+        -7.523001670837402,
+        -15.783299446105957,
+        8.996282577514648
+      ],
+      "camera_depth_m": 88.33834075927734,
+      "native_reference_rms_sensor_blur_diameter_m": 3.870576620101929e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 3.871742165623455e-06
+    },
+    {
+      "name": "Surface grid 07,03 / Seabird Apartments",
+      "world_m": [
+        -18.75,
+        2.3875598907470703,
+        9.959833145141602
+      ],
+      "camera_depth_m": 109.67230987548828,
+      "native_reference_rms_sensor_blur_diameter_m": 2.6097987574173793e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.6132039506719847e-06
+    },
+    {
+      "name": "Surface grid 08,03 / The Glasshouse",
+      "world_m": [
+        5.785813331604004,
+        -20.100006103515625,
+        8.495088577270508
+      ],
+      "camera_depth_m": 77.24136352539062,
+      "native_reference_rms_sensor_blur_diameter_m": 4.800036549568176e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.801235969523041e-06
+    },
+    {
+      "name": "Surface grid 09,03 / The Glasshouse",
+      "world_m": [
+        9.924181938171387,
+        -20.099994659423828,
+        8.389198303222656
+      ],
+      "camera_depth_m": 74.8968734741211,
+      "native_reference_rms_sensor_blur_diameter_m": 5.030771712041309e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.032855804155373e-06
+    },
+    {
+      "name": "Surface grid 10,03 / The Glasshouse",
+      "world_m": [
+        10.249996185302734,
+        -14.909092903137207,
+        8.574056625366211
+      ],
+      "camera_depth_m": 78.98980712890625,
+      "native_reference_rms_sensor_blur_diameter_m": 4.637055005485404e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.637451915399413e-06
+    },
+    {
+      "name": "Surface grid 11,03 / Meridian Hotel",
+      "world_m": [
+        -5.898277282714844,
+        17.249988555908203,
+        10.184139251708984
+      ],
+      "camera_depth_m": 114.63870239257812,
+      "native_reference_rms_sensor_blur_diameter_m": 2.386514052021794e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.387440433564104e-06
+    },
+    {
+      "name": "Surface grid 12,03 / Meridian Hotel",
+      "world_m": [
+        -2.000004768371582,
+        20.296077728271484,
+        10.197761535644531
+      ],
+      "camera_depth_m": 114.94032287597656,
+      "native_reference_rms_sensor_blur_diameter_m": 2.372777078053239e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.374357711030225e-06
+    },
+    {
+      "name": "Surface grid 13,03 / Canal Corner / rooftop service room",
+      "world_m": [
+        23.20263671875,
+        -18.08499526977539,
+        8.124433517456055
+      ],
+      "camera_depth_m": 69.0346908569336,
+      "native_reference_rms_sensor_blur_diameter_m": 5.6785066014871274e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.680847206587366e-06
+    },
+    {
+      "name": "Surface grid 14,03 / Canal Corner / rooftop service room",
+      "world_m": [
+        26.255001068115234,
+        -17.74069595336914,
+        8.059144973754883
+      ],
+      "camera_depth_m": 67.58914947509766,
+      "native_reference_rms_sensor_blur_diameter_m": 5.856389175197495e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.8579099286161435e-06
+    },
+    {
+      "name": "Surface grid 15,03 / The Lantern / corner cafe / south window.013",
+      "world_m": [
+        23.930877685546875,
+        -4.679999828338623,
+        8.604705810546875
+      ],
+      "camera_depth_m": 79.66839599609375,
+      "native_reference_rms_sensor_blur_diameter_m": 4.573957941246703e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.575822141129504e-06
+    },
+    {
+      "name": "Surface grid 16,03 / Riverside Cycles / roof shrub",
+      "world_m": [
+        32.54043197631836,
+        -18.594018936157227,
+        7.8665595054626465
+      ],
+      "camera_depth_m": 63.32509994506836,
+      "native_reference_rms_sensor_blur_diameter_m": 6.426125764846802e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 6.427300601563785e-06
+    },
+    {
+      "name": "Surface grid 17,03 / Bluebird House",
+      "world_m": [
+        30.77407455444336,
+        -4.600005626678467,
+        8.432583808898926
+      ],
+      "camera_depth_m": 75.8574447631836,
+      "native_reference_rms_sensor_blur_diameter_m": 4.93461263962874e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.936226538991768e-06
+    },
+    {
+      "name": "Surface grid 18,03 / Bluebird House",
+      "world_m": [
+        33.96627426147461,
+        -4.59999418258667,
+        8.350903511047363
+      ],
+      "camera_depth_m": 74.04898071289062,
+      "native_reference_rms_sensor_blur_diameter_m": 5.119945832772546e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.1202332061158e-06
+    },
+    {
+      "name": "Surface grid 19,03 / Bluebird House",
+      "world_m": [
+        37.00981140136719,
+        -4.599999904632568,
+        8.273028373718262
+      ],
+      "camera_depth_m": 72.32472229003906,
+      "native_reference_rms_sensor_blur_diameter_m": 5.303416380704375e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.304241530270563e-06
+    },
+    {
+      "name": "Surface grid 20,03 / Bluebird House",
+      "world_m": [
+        38.25,
+        3.7213025093078613,
+        8.550996780395508
+      ],
+      "camera_depth_m": 78.4792251586914,
+      "native_reference_rms_sensor_blur_diameter_m": 4.6829227300222166e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.6845258704541535e-06
+    },
+    {
+      "name": "Surface grid 05,04 / Seabird Apartments",
+      "world_m": [
+        -24.577829360961914,
+        -4.749994277954102,
+        14.012968063354492
+      ],
+      "camera_depth_m": 107.09230041503906,
+      "native_reference_rms_sensor_blur_diameter_m": 2.735527222380784e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.738751151367186e-06
+    },
+    {
+      "name": "Surface grid 06,04 / Seabird Apartments",
+      "world_m": [
+        -18.75,
+        -4.252170562744141,
+        13.769800186157227
+      ],
+      "camera_depth_m": 104.20089721679688,
+      "native_reference_rms_sensor_blur_diameter_m": 2.8858194292047592e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.8868391706787458e-06
+    },
+    {
+      "name": "Surface grid 07,04 / Seabird Apartments",
+      "world_m": [
+        -18.75,
+        2.387554168701172,
+        14.229948043823242
+      ],
+      "camera_depth_m": 109.67230987548828,
+      "native_reference_rms_sensor_blur_diameter_m": 2.6104971766471863e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.6132039506719847e-06
+    },
+    {
+      "name": "Surface grid 08,04 / The Glasshouse / roof shrub",
+      "world_m": [
+        4.363605499267578,
+        -18.369014739990234,
+        11.690220832824707
+      ],
+      "camera_depth_m": 79.47349548339844,
+      "native_reference_rms_sensor_blur_diameter_m": 4.592584392955321e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.593415370571601e-06
+    },
+    {
+      "name": "Surface grid 09,04 / Terracotta House",
+      "world_m": [
+        -18.75,
+        18.00431251525879,
+        15.312222480773926
+      ],
+      "camera_depth_m": 122.54116821289062,
+      "native_reference_rms_sensor_blur_diameter_m": 2.064160094293113e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.0659335159756893e-06
+    },
+    {
+      "name": "Surface grid 10,04 / Meridian Hotel",
+      "world_m": [
+        -11.859390258789062,
+        17.250011444091797,
+        14.931641578674316
+      ],
+      "camera_depth_m": 118.01586151123047,
+      "native_reference_rms_sensor_blur_diameter_m": 2.243439663906381e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.24477431225346e-06
+    },
+    {
+      "name": "Surface grid 11,04 / Meridian Hotel",
+      "world_m": [
+        -5.898286819458008,
+        17.250011444091797,
+        14.647623062133789
+      ],
+      "camera_depth_m": 114.63872528076172,
+      "native_reference_rms_sensor_blur_diameter_m": 2.3862812554498094e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.3874394381823127e-06
+    },
+    {
+      "name": "Surface grid 12,04 / Mint Studios / cornice",
+      "world_m": [
+        -0.39027833938598633,
+        17.46364974975586,
+        14.399999618530273
+      ],
+      "camera_depth_m": 111.69432830810547,
+      "native_reference_rms_sensor_blur_diameter_m": 2.517714140928206e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.5188634943829047e-06
+    },
+    {
+      "name": "Surface grid 13,04 / Mint Studios",
+      "world_m": [
+        5.055820465087891,
+        17.25,
+        14.125713348388672
+      ],
+      "camera_depth_m": 108.43289947509766,
+      "native_reference_rms_sensor_blur_diameter_m": 2.6712660456691074e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.672769897325379e-06
+    },
+    {
+      "name": "Surface grid 14,04 / The Lantern / corner cafe",
+      "world_m": [
+        20.187955856323242,
+        -4.599999904632568,
+        11.890487670898438
+      ],
+      "camera_depth_m": 81.85478973388672,
+      "native_reference_rms_sensor_blur_diameter_m": 4.38326967269274e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.384202872774053e-06
+    },
+    {
+      "name": "Surface grid 15,04 / The Lantern / corner cafe",
+      "world_m": [
+        23.897871017456055,
+        -4.599999904632568,
+        11.713729858398438
+      ],
+      "camera_depth_m": 79.75302124023438,
+      "native_reference_rms_sensor_blur_diameter_m": 4.566623792208491e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.568209984944651e-06
+    },
+    {
+      "name": "Surface grid 16,04 / The Lantern / corner cafe",
+      "world_m": [
+        27.422035217285156,
+        -4.599999904632568,
+        11.545819282531738
+      ],
+      "camera_depth_m": 77.75647735595703,
+      "native_reference_rms_sensor_blur_diameter_m": 4.7497451305389404e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.752217733896394e-06
+    },
+    {
+      "name": "Surface grid 17,04 / Bluebird House",
+      "world_m": [
+        30.774070739746094,
+        -4.599999904632568,
+        11.386109352111816
+      ],
+      "camera_depth_m": 75.85745239257812,
+      "native_reference_rms_sensor_blur_diameter_m": 4.934729086534189e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.936225781226694e-06
+    },
+    {
+      "name": "Surface grid 18,04 / Bluebird House",
+      "world_m": [
+        33.96627426147461,
+        -4.599999904632568,
+        11.234016418457031
+      ],
+      "camera_depth_m": 74.04898071289062,
+      "native_reference_rms_sensor_blur_diameter_m": 5.118665284084663e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.1202332061158e-06
+    },
+    {
+      "name": "Surface grid 19,04 / Bluebird House / south window.014",
+      "world_m": [
+        37.02889633178711,
+        -4.679999828338623,
+        11.082554817199707
+      ],
+      "camera_depth_m": 72.24799346923828,
+      "native_reference_rms_sensor_blur_diameter_m": 5.3120311298604574e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.312633944907284e-06
+    },
+    {
+      "name": "Surface grid 20,04 / Bluebird House / east window.009",
+      "world_m": [
+        38.32999801635742,
+        3.321439266204834,
+        11.575079917907715
+      ],
+      "camera_depth_m": 78.10440063476562,
+      "native_reference_rms_sensor_blur_diameter_m": 4.718080163002014e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.719475192928913e-06
+    },
+    {
+      "name": "Surface grid 09,05 / Terracotta House / water tank",
+      "world_m": [
+        -21.481874465942383,
+        21.634647369384766,
+        20.641874313354492
+      ],
+      "camera_depth_m": 127.08040618896484,
+      "native_reference_rms_sensor_blur_diameter_m": 1.8989667867352815e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 1.8993379973823984e-06
+    },
+    {
+      "name": "Surface grid 10,05 / Meridian Hotel",
+      "world_m": [
+        -11.85938549041748,
+        17.250011444091797,
+        19.526615142822266
+      ],
+      "camera_depth_m": 118.01586151123047,
+      "native_reference_rms_sensor_blur_diameter_m": 2.2428575782326725e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.24477431225346e-06
+    },
+    {
+      "name": "Surface grid 11,05 / Meridian Hotel",
+      "world_m": [
+        -5.89829158782959,
+        17.250011444091797,
+        19.111106872558594
+      ],
+      "camera_depth_m": 114.63873291015625,
+      "native_reference_rms_sensor_blur_diameter_m": 2.3858155941602846e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.3874391063884705e-06
+    },
+    {
+      "name": "Surface grid 12,05 / Meridian Hotel",
+      "world_m": [
+        -2.000004768371582,
+        20.296100616455078,
+        19.148216247558594
+      ],
+      "camera_depth_m": 114.94034576416016,
+      "native_reference_rms_sensor_blur_diameter_m": 2.3739412426948547e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 2.3743567208656382e-06
+    },
+    {
+      "name": "Surface grid 17,05 / Bluebird House",
+      "world_m": [
+        30.774070739746094,
+        -4.59999418258667,
+        14.33963680267334
+      ],
+      "camera_depth_m": 75.85746002197266,
+      "native_reference_rms_sensor_blur_diameter_m": 4.93344863474705e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.936225023461773e-06
+    },
+    {
+      "name": "Surface grid 18,05 / Bluebird House",
+      "world_m": [
+        33.966270446777344,
+        -4.59999418258667,
+        14.117131233215332
+      ],
+      "camera_depth_m": 74.04898834228516,
+      "native_reference_rms_sensor_blur_diameter_m": 5.118316034147319e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.120232410885659e-06
+    },
+    {
+      "name": "Surface grid 19,05 / Bluebird House / south window.017",
+      "world_m": [
+        37.02889633178711,
+        -4.679999828338623,
+        13.89554500579834
+      ],
+      "camera_depth_m": 72.24799346923828,
+      "native_reference_rms_sensor_blur_diameter_m": 5.3122639656066895e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 5.312633944907284e-06
+    },
+    {
+      "name": "Surface grid 20,05 / Bluebird House",
+      "world_m": [
+        38.250003814697266,
+        3.721313953399658,
+        14.66220760345459
+      ],
+      "camera_depth_m": 78.47923278808594,
+      "native_reference_rms_sensor_blur_diameter_m": 4.682457346589004e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.684525162473171e-06
+    },
+    {
+      "name": "Surface grid 19,06 / Bluebird House / tank support.003",
+      "world_m": [
+        35.37541580200195,
+        2.25,
+        17.785213470458984
+      ],
+      "camera_depth_m": 78.89534759521484,
+      "native_reference_rms_sensor_blur_diameter_m": 4.645669826991183e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.646114835790618e-06
+    },
+    {
+      "name": "Surface grid 19,07 / Bluebird House / water tank",
+      "world_m": [
+        35.83102798461914,
+        0.34047651290893555,
+        20.489032745361328
+      ],
+      "camera_depth_m": 77.06370544433594,
+      "native_reference_rms_sensor_blur_diameter_m": 4.816334852200519e-06,
+      "ordinary_rms_sensor_blur_diameter_m": 4.818293891408288e-06
+    }
+  ],
+  "shift_optical_centre_camera_m": [
+    0.0,
+    0.006480000447481871,
+    0.0
+  ],
+  "limitations": [
+    "Thin-lens geometric optics; no diffraction/exposure penalty at f/16",
+    "Blur-fit uses finite named landmarks and RMS diameter, not full image equivalence",
+    "Ordinary Cycles supports shift and aperture shape; these demonstrate parity controls"
+  ],
+  "render_backend": "HIP",
+  "render_devices": [
+    "AMD Radeon RX 6900 XT"
+  ],
+  "image_sha256": "43f2dd4f3df53bfd8a51600060361049c8cae7f8b49a9209b5b374611d701406",
+  "elapsed_s": 34.107745011000134
+}

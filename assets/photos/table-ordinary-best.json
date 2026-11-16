@@ -1,0 +1,173 @@
+{
+  "case": "table-ordinary-best",
+  "family": "table",
+  "kind": "ordinary",
+  "options": {},
+  "generator": "examples/create_demo_comparisons.py",
+  "source_sha256": "af111b5e09ff5fadccbc9d9a853502c5babc87be7f8552dbc623b890a9caa35a",
+  "provenance": {
+    "generator_sha256": "af111b5e09ff5fadccbc9d9a853502c5babc87be7f8552dbc623b890a9caa35a",
+    "blender_binary_path": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/install-blender-m4/blender",
+    "blender_binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+    "cumulative_patch_path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+    "cumulative_patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+    "city_source_path": "examples/full-scale-city/full-scale-city.blend",
+    "city_source_sha256": "947c0d3baf979798ab1216b845ff9bdf0a2b01aa2dcaf4383e18b8035d22a19e",
+    "source_revision": {
+      "license": "GPL-3.0-or-later",
+      "blender": {
+        "url": "https://projects.blender.org/blender/blender.git",
+        "release_branch": "blender-v5.3-release",
+        "tag": "v5.3.0",
+        "commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "checkout": "work/blender",
+        "history": "Original upstream history retained; detached release tag"
+      },
+      "linux_x64_libraries": {
+        "url": "https://projects.blender.org/blender/lib-linux_x64.git",
+        "gitlink": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+        "checkout": "work/blender/lib/linux_x64",
+        "lfs": "716 library LFS objects acquired; git lfs fsck passed during initialization"
+      },
+      "dependency_versions": {
+        "path": "build_files/build_environment/cmake/versions.cmake",
+        "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "sha256": "dc57206aea3914e6c743d7467284b2deaa21792d501f697d809405347da84c86"
+      },
+      "developer_handbook": {
+        "url": "https://projects.blender.org/blender/blender-developer-docs.git",
+        "commit": "0074023d5f64eac025d88e79640c006516eca57c",
+        "checkout": "work/developer-docs"
+      },
+      "project": {
+        "url": "https://github.com/ricperry/Blender-TiltShift-Camera",
+        "initial_commit": "eb2303109632d6f11bc4ad6a0110c86883728fa4"
+      },
+      "source_lfs": "Required Linux runtime assets acquired; optional regression media deferred",
+      "native_feature_patch": null,
+      "native_feature_patch_note": "The null field above is the historical initialization state; current source modifications are recorded below.",
+      "current_native_feature_patch": {
+        "path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+        "sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+        "base_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "cumulative": true,
+        "modified_upstream_files": 16,
+        "new_upstream_files": 1,
+        "application": "Apply M4 once to the exact clean pin; do not stack M2/M3/M4 patches."
+      }
+    }
+  },
+  "blend_sha256": "8866958d0bdf77ecfc6b8d52b1ff97f2f2c06c4522b240acea92f6b9370bede0",
+  "blender": "5.3.0",
+  "blender_build_hash": "02f0899d78e3",
+  "scene": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/table-ordinary-best.blend",
+  "image": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/table-ordinary-best.png",
+  "saved_device": "CPU",
+  "resolution": [
+    3840,
+    2160
+  ],
+  "samples": 256,
+  "seed": 71,
+  "denoising": false,
+  "adaptive_sampling": false,
+  "compositor": false,
+  "motion_blur": false,
+  "native_enabled": false,
+  "dof_enabled": true,
+  "camera": {
+    "position_m": [
+      0.0,
+      -1.3381112813949585,
+      0.4902326762676239
+    ],
+    "rotation_euler_xyz_rad": [
+      1.2217304706573486,
+      -0.0,
+      0.0
+    ],
+    "lens_mm": 97.65573120117188,
+    "sensor_width_mm": 36.0,
+    "focus_distance_m": 1.4029438495635986,
+    "focus_object": null,
+    "fstop": 3.0381782054901123,
+    "pupil_diameter_m": 0.03214285818544284,
+    "tilt_deg": -9.99999970909292,
+    "swing_deg": 0.0,
+    "axis_deg": 0.0,
+    "shift": [
+      0.0,
+      0.0
+    ],
+    "image_circle_mm": 0.0,
+    "blades": 0,
+    "aperture_rotation_deg": 0.0,
+    "aperture_ratio": 1.0
+  },
+  "native_reference": {
+    "lens_mm": 90.0,
+    "fstop": 2.799999952316284,
+    "sensor_distance_m": 0.09765572845935822,
+    "manual_conjugate_focus_m": 1.4239873686723836,
+    "normal_cycles": [
+      0.0,
+      -0.1736481785774231,
+      0.9848077297210693
+    ]
+  },
+  "ordinary_optimization": {
+    "objective": "minimize maximum absolute inverse-depth error at named detail targets",
+    "focus_m": 1.4029438826478062
+  },
+  "landmarks": [
+    {
+      "name": "Paper detail 1",
+      "world_m": [
+        -0.0820000022649765,
+        -0.1809999942779541,
+        0.0031999999191612005
+      ],
+      "camera_depth_m": 1.253903865814209,
+      "native_reference_rms_sensor_blur_diameter_m": 2.7939677238464355e-09,
+      "ordinary_rms_sensor_blur_diameter_m": 0.00026593804996096057
+    },
+    {
+      "name": "Paper detail 2",
+      "world_m": [
+        0.07500000298023224,
+        0.004000000189989805,
+        0.0031999999191612005
+      ],
+      "camera_depth_m": 1.4277470111846924,
+      "native_reference_rms_sensor_blur_diameter_m": 1.4725502860585132e-09,
+      "ordinary_rms_sensor_blur_diameter_m": 3.8868493679643126e-05
+    },
+    {
+      "name": "Paper detail 3",
+      "world_m": [
+        -0.07000000029802322,
+        0.17900000512599945,
+        0.0031999999191612005
+      ],
+      "camera_depth_m": 1.5921932458877563,
+      "native_reference_rms_sensor_blur_diameter_m": 2.9451005721170265e-09,
+      "ordinary_rms_sensor_blur_diameter_m": 0.00026593815548523104
+    }
+  ],
+  "shift_optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "limitations": [
+    "Thin-lens geometric optics; no diffraction/exposure penalty at f/16",
+    "Blur-fit uses finite named landmarks and RMS diameter, not full image equivalence",
+    "Ordinary Cycles supports shift and aperture shape; these demonstrate parity controls"
+  ],
+  "render_backend": "HIP",
+  "render_devices": [
+    "AMD Radeon RX 6900 XT"
+  ],
+  "image_sha256": "26676611c747af966865525ccc909f8982f537cd3635a84b599ac05b4b9f51c9",
+  "elapsed_s": 44.89526790800028
+}

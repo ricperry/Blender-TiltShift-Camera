@@ -1,0 +1,76 @@
+{
+  "case": "table-native",
+  "source": {
+    "blend_sha256": "33b6e340ea87bd3602adbd2d929d787e17ed61a2cf1845944c5f71fcdb808e9d",
+    "image_sha256": "3f29cea10f9f317622ec5f9ff00ab4eaa536d847151f61156e26aaa133fafc37",
+    "manifest_sha256": "041dc1f92a4dba0827d2ceb280cad91f147807645f30b287ac11a2d48c6274f8",
+    "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff"
+  },
+  "resolution": [
+    3840,
+    2160
+  ],
+  "mask_file": "table-native.focus.png",
+  "mask_sha256": "b73209aab4c4be9bbb88f5e326910fedd38c01c46bb1703ec35e90f06400c16d",
+  "surface_file": "table-native.focus-surface.f32.z",
+  "surface_sha256": "d04558a21a4ee6e80742bd03e310a4705f1cfddacbec19f9ded45aa2f1c4fe5f",
+  "surface_format": "zlib compressed row-major interleaved little-endian float32 [camera-forward depth m, signed plane distance m]; top-left first; NaN means no visible mesh hit",
+  "sensor_distance_m": 0.09765572845935822,
+  "chief_ray_bounds": [
+    -0.18432098438025715,
+    0.18432098438025715,
+    -0.10368055371389466,
+    0.10368055371389466
+  ],
+  "optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.3420201539993286,
+      -0.9396926164627075,
+      -1.3381112813949585
+    ],
+    [
+      0.0,
+      0.9396926164627075,
+      0.3420201539993286,
+      0.4902326762676239
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "plane_normal_camera": [
+    0.0,
+    -0.1736481785774231,
+    0.06320279836654663
+  ],
+  "plane_constant_m": 0.09,
+  "evaluated_guide_max_plane_error_m": 2.3102570181198952e-07,
+  "sample_grid": [
+    960,
+    540
+  ],
+  "sample_count": 518400,
+  "marked_sample_count": 483297,
+  "bright_centre_sample_count": 187248,
+  "plane_visual_half_width_m": 0.004,
+  "signed_distance_range_m": [
+    -0.11340782150921037,
+    0.002200428286316499
+  ],
+  "max_reprojection_error_uv": 5.952794879249268e-07
+}

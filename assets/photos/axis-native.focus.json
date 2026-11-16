@@ -1,0 +1,76 @@
+{
+  "case": "axis-native",
+  "source": {
+    "blend_sha256": "0de58fc5b94849be2b6f67a3fb9b528082f8ac3de4fa2f2adf3d990466af9ba1",
+    "image_sha256": "37a61ee2d5c2b5d09b8095f77a3308dd0f75bf707208f9dc18a9f1a64f9d8e75",
+    "manifest_sha256": "5d38502e5e5d4d25b29e90b4538b19079b6b89d69caa7d70b7e690232327d33a",
+    "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff"
+  },
+  "resolution": [
+    3840,
+    2160
+  ],
+  "mask_file": "axis-native.focus.png",
+  "mask_sha256": "0b4a8d60164f278905e5f34e6feb878081925e78f7f783164c42221ea7d6295a",
+  "surface_file": "axis-native.focus-surface.f32.z",
+  "surface_sha256": "5b9e0062ffdb2df0c19c01c37e69979a16289871997ba7517eb6710f8431316d",
+  "surface_format": "zlib compressed row-major interleaved little-endian float32 [camera-forward depth m, signed plane distance m]; top-left first; NaN means no visible mesh hit",
+  "sensor_distance_m": 0.09765572845935822,
+  "chief_ray_bounds": [
+    -0.18432098438025715,
+    0.18432098438025715,
+    -0.10368055371389466,
+    0.10368055371389466
+  ],
+  "optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.3420201539993286,
+      -0.9396926164627075,
+      -1.3381112813949585
+    ],
+    [
+      0.0,
+      0.9396926164627075,
+      0.3420201539993286,
+      0.4902326762676239
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "plane_normal_camera": [
+    -0.12278780341148376,
+    -0.12278779596090317,
+    0.06320279836654663
+  ],
+  "plane_constant_m": 0.09,
+  "evaluated_guide_max_plane_error_m": 2.7134433081686675e-07,
+  "sample_grid": [
+    960,
+    540
+  ],
+  "sample_count": 518400,
+  "marked_sample_count": 11869,
+  "bright_centre_sample_count": 1421,
+  "plane_visual_half_width_m": 0.004,
+  "signed_distance_range_m": [
+    -0.21575709436138596,
+    0.30366751782298534
+  ],
+  "max_reprojection_error_uv": 5.952794879249268e-07
+}

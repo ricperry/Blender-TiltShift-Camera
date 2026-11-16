@@ -1,0 +1,76 @@
+{
+  "case": "swing-native",
+  "source": {
+    "blend_sha256": "34ed18aa5086762f844d761c6bb039ef025425c80356eb3b59114742091fab4a",
+    "image_sha256": "da9094c7bc864a5e347be51a9f9a718ccff033fbcebdf647eb18571e216d4c64",
+    "manifest_sha256": "c8e7856501588feacc65481dcee5b9721e4717696e0fc924c5df412abfd26e85",
+    "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff"
+  },
+  "resolution": [
+    3840,
+    2160
+  ],
+  "mask_file": "swing-native.focus.png",
+  "mask_sha256": "e88245fa7b3267103a3973ffa36999999602113ce1b448ffb3f5dd132d522a86",
+  "surface_file": "swing-native.focus-surface.f32.z",
+  "surface_sha256": "ad3218d2d153f1a7bfe5eac23b38b57e915923ab0165c493df7f3fc8f3160a4d",
+  "surface_format": "zlib compressed row-major interleaved little-endian float32 [camera-forward depth m, signed plane distance m]; top-left first; NaN means no visible mesh hit",
+  "sensor_distance_m": 0.09765572845935822,
+  "chief_ray_bounds": [
+    -0.18432098438025715,
+    0.18432098438025715,
+    -0.10368055371389466,
+    0.10368055371389466
+  ],
+  "optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.3420201539993286,
+      -0.9396926164627075,
+      -1.3381112813949585
+    ],
+    [
+      0.0,
+      0.9396926164627075,
+      0.3420201539993286,
+      0.4902326762676239
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "plane_normal_camera": [
+    0.1736481785774231,
+    0.0,
+    0.06320279836654663
+  ],
+  "plane_constant_m": 0.09,
+  "evaluated_guide_max_plane_error_m": 2.3102570181198952e-07,
+  "sample_grid": [
+    960,
+    540
+  ],
+  "sample_count": 518400,
+  "marked_sample_count": 8420,
+  "bright_centre_sample_count": 1025,
+  "plane_visual_half_width_m": 0.004,
+  "signed_distance_range_m": [
+    -0.2988143687509555,
+    0.5423989365350826
+  ],
+  "max_reprojection_error_uv": 5.952794879249268e-07
+}

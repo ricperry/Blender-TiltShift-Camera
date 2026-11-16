@@ -1,0 +1,76 @@
+{
+  "case": "axis-ordinary-best",
+  "source": {
+    "blend_sha256": "6cb3468ca762a390069a0b945f07ae25a24be30444d930e8c3428559e4c8a6e5",
+    "image_sha256": "500c324c35007f884c19ad102df3dccb12d46b90ca36455278926f7518783e5f",
+    "manifest_sha256": "d4f1707aa9e0d8f55324ec8e78aaf6cc75a39a337bd48666605be155008fcc0a",
+    "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff"
+  },
+  "resolution": [
+    3840,
+    2160
+  ],
+  "mask_file": "axis-ordinary-best.focus.png",
+  "mask_sha256": "df762fbb66981c5d449a01c04d685e413ed130338dbace6b510afc9eab214b7e",
+  "surface_file": "axis-ordinary-best.focus-surface.f32.z",
+  "surface_sha256": "6c9148134f941a0ca9b7cb2b9458bc7cd9a9f5b20a65e0269b69393b1fc7759f",
+  "surface_format": "zlib compressed row-major interleaved little-endian float32 [camera-forward depth m, signed plane distance m]; top-left first; NaN means no visible mesh hit",
+  "sensor_distance_m": 0.09765573120117188,
+  "chief_ray_bounds": [
+    -0.18432098460525956,
+    0.18432098460525956,
+    -0.1036805538404585,
+    0.1036805538404585
+  ],
+  "optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_matrix_world": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.3420201539993286,
+      -0.9396926164627075,
+      -1.3381112813949585
+    ],
+    [
+      0.0,
+      0.9396926164627075,
+      0.3420201539993286,
+      0.4902326762676239
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "plane_normal_camera": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "plane_constant_m": 1.4029438495635986,
+  "evaluated_guide_max_plane_error_m": null,
+  "sample_grid": [
+    960,
+    540
+  ],
+  "sample_count": 518400,
+  "marked_sample_count": 5146,
+  "bright_centre_sample_count": 916,
+  "plane_visual_half_width_m": 0.004,
+  "signed_distance_range_m": [
+    -0.2891976833343506,
+    0.5957788228988647
+  ],
+  "max_reprojection_error_uv": 5.958887117074596e-07
+}

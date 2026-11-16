@@ -1,0 +1,4552 @@
+{
+  "schema": 1,
+  "configuration": {
+    "clip": "shift-x",
+    "spec": {
+      "label": "Horizontal shift",
+      "path": "shift_x",
+      "unit": "sensor widths",
+      "bounds": [
+        -0.5,
+        0.5
+      ]
+    },
+    "source": {
+      "case": "shift-x-native",
+      "directory": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k",
+      "manifest_sha256": "878df988b6dea1e0f0694bf47df91946f1fdddc2f20c72a0ceadc3c1e56fea4b",
+      "blend_sha256": "dcd044cb366273b63f275d18aaceedfaf17d4b89bdbba7f61df9fa665d2aeb76",
+      "image_sha256": "37ffb66412e4af460145ec7ef87f50befb335dc281e3c38aa860c768accefcf8",
+      "captured_generator_sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20"
+    },
+    "frames": 50,
+    "fps": 5,
+    "resolution": [
+      960,
+      540
+    ],
+    "samples": 256,
+    "seed": 71,
+    "backend": "HIP",
+    "generator_sha256": "7486d15305330ac30050d87064a3610d389b0f671e6d30249fc79711375e20a5",
+    "helper_sha256": "31016fbf2debd26686c86019018917c79ea666d9cc28bd74044d9263b3d3ce6e",
+    "blender_binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+    "cumulative_patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9"
+  },
+  "configuration_sha256": "f4d6030bb55afa5962e08836b0cdfb7b1b5707b9d8354d1a82da3279db409dd8",
+  "duration_s": 10,
+  "range_kind": "representative photographic range",
+  "guard_method": "evaluated RNA guides plus Python mirror of internal Cycles camera gate; actual render calls native gate",
+  "frames": [
+    {
+      "frame": 1,
+      "time_s": 0.0,
+      "requested_value": -0.5,
+      "value": -0.5,
+      "native_value": -0.5,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.5,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -18.0,
+      "render": {
+        "sha256": "0619580baeaa67ded25812dc7a8a83097f6b1aac55b7ffeea22cbda715fbe767",
+        "elapsed_s": 2.1534986699998626,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 2,
+      "time_s": 0.2,
+      "requested_value": -0.47959183673469385,
+      "value": -0.47959184646606445,
+      "native_value": -0.47959184646606445,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.47959184646606445,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -17.26530647277832,
+      "render": {
+        "sha256": "103d8a5066cc7c21c4ff93f3c63273d5410d5d00eb08d602cde35fcfacb212ad",
+        "elapsed_s": 1.8887733760002448,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 3,
+      "time_s": 0.4,
+      "requested_value": -0.45918367346938777,
+      "value": -0.4591836631298065,
+      "native_value": -0.4591836631298065,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.4591836631298065,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -16.530611872673035,
+      "render": {
+        "sha256": "06906c908c7fdc9cf78949780642030656201962c27e3d7611ea25d50838bd8d",
+        "elapsed_s": 1.8995070680002755,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 4,
+      "time_s": 0.6,
+      "requested_value": -0.4387755102040816,
+      "value": -0.43877550959587097,
+      "native_value": -0.43877550959587097,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.43877550959587097,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -15.795918345451355,
+      "render": {
+        "sha256": "0c74cca59ce7110c218bced5b4ba1526c4155a0af69be40de3bdf5890da408ac",
+        "elapsed_s": 1.928144073999647,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 5,
+      "time_s": 0.8,
+      "requested_value": -0.41836734693877553,
+      "value": -0.4183673560619354,
+      "native_value": -0.4183673560619354,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.4183673560619354,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -15.061224818229675,
+      "render": {
+        "sha256": "924e557dadbeee32668531887224011f7434a61745102be16581a56b15b0bc2c",
+        "elapsed_s": 1.9558778500004337,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 6,
+      "time_s": 1.0,
+      "requested_value": -0.3979591836734694,
+      "value": -0.3979591727256775,
+      "native_value": -0.3979591727256775,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.3979591727256775,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -14.32653021812439,
+      "render": {
+        "sha256": "a8d4de7088848bed3ae31f2e2ab27d11a46259f08c70035b7e2f2cea0f5d3d67",
+        "elapsed_s": 1.9730427149997922,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 7,
+      "time_s": 1.2,
+      "requested_value": -0.37755102040816324,
+      "value": -0.37755101919174194,
+      "native_value": -0.37755101919174194,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.37755101919174194,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -13.59183669090271,
+      "render": {
+        "sha256": "a149871f34e28f54edadc69fe11ba36839675bea7b16f0a98bbd29d0c1022249",
+        "elapsed_s": 2.0081225339999946,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 8,
+      "time_s": 1.4,
+      "requested_value": -0.35714285714285715,
+      "value": -0.3571428656578064,
+      "native_value": -0.3571428656578064,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.3571428656578064,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -12.85714316368103,
+      "render": {
+        "sha256": "3ff0261e3c7289dc5cbaf9f0fa364bcf8b0b035aa4d6bf1f628c7eabd19d3cb9",
+        "elapsed_s": 2.006714658999954,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 9,
+      "time_s": 1.6,
+      "requested_value": -0.33673469387755106,
+      "value": -0.33673468232154846,
+      "native_value": -0.33673468232154846,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.33673468232154846,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -12.122448563575745,
+      "render": {
+        "sha256": "d8fbea95a048873a6a663a9a8a2e6b05f7333953e1eaab0de39e7d1a3e2e545e",
+        "elapsed_s": 2.0253141500006677,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 10,
+      "time_s": 1.8,
+      "requested_value": -0.3163265306122449,
+      "value": -0.3163265287876129,
+      "native_value": -0.3163265287876129,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.3163265287876129,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -11.387755036354065,
+      "render": {
+        "sha256": "99b3404ecbea48f64365bf81d3b1b0c1fbe61adbde5cc0fb30bd4dce256fdcb6",
+        "elapsed_s": 2.030124335000437,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 11,
+      "time_s": 2.0,
+      "requested_value": -0.29591836734693877,
+      "value": -0.29591837525367737,
+      "native_value": -0.29591837525367737,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.29591837525367737,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -10.653061509132385,
+      "render": {
+        "sha256": "49543ca559133b9a62f4cd9827dec2b55131a1e0ea3aab4a69378057f3df7ea6",
+        "elapsed_s": 2.05573586599985,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 12,
+      "time_s": 2.2,
+      "requested_value": -0.2755102040816326,
+      "value": -0.27551019191741943,
+      "native_value": -0.27551019191741943,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.27551019191741943,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -9.9183669090271,
+      "render": {
+        "sha256": "127ea4fb2648cc2f6e13ed6505b28fc617fbd82a9871154e4ed9d8a71fe37f63",
+        "elapsed_s": 2.075343409999732,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 13,
+      "time_s": 2.4,
+      "requested_value": -0.25510204081632654,
+      "value": -0.2551020383834839,
+      "native_value": -0.2551020383834839,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.2551020383834839,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -9.18367338180542,
+      "render": {
+        "sha256": "ae15927ff9d1bc2d2d2cfc37a504e75ae6390afb74dc6579293ce1ebcab38338",
+        "elapsed_s": 2.083048017000692,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 14,
+      "time_s": 2.6,
+      "requested_value": -0.2346938775510204,
+      "value": -0.23469388484954834,
+      "native_value": -0.23469388484954834,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.23469388484954834,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -8.44897985458374,
+      "render": {
+        "sha256": "c948a282f1f39184b471145e46b9700a56f8ee737ac024bef5dd906f2ef979fd",
+        "elapsed_s": 2.10923986600028,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 15,
+      "time_s": 2.8,
+      "requested_value": -0.2142857142857143,
+      "value": -0.2142857164144516,
+      "native_value": -0.2142857164144516,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.2142857164144516,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -7.714285790920258,
+      "render": {
+        "sha256": "e692c29790d45d37098710bf38acf8c485e1e81d8c8f85080a36e4da2345c03c",
+        "elapsed_s": 2.11155465200045,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 16,
+      "time_s": 3.0,
+      "requested_value": -0.19387755102040816,
+      "value": -0.19387754797935486,
+      "native_value": -0.19387754797935486,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.19387754797935486,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -6.979591727256775,
+      "render": {
+        "sha256": "cf92e43ece18036362f420b43d872b949c5b8d865ee97ef19c4200ec73c45d69",
+        "elapsed_s": 2.1349432079996404,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 17,
+      "time_s": 3.2,
+      "requested_value": -0.17346938775510207,
+      "value": -0.1734693944454193,
+      "native_value": -0.1734693944454193,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.1734693944454193,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -6.244898200035095,
+      "render": {
+        "sha256": "a0dc82bd1f5c02f45af8f9ebd384f1b0e8e3696821f52d3c79c837a6fca7912a",
+        "elapsed_s": 2.15811504300018,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 18,
+      "time_s": 3.4,
+      "requested_value": -0.15306122448979592,
+      "value": -0.15306122601032257,
+      "native_value": -0.15306122601032257,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.15306122601032257,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -5.5102041363716125,
+      "render": {
+        "sha256": "bf7baa5f8070f0a92d69612075ad9591e4c96e220ca1edf2ae6b260870bbd2a5",
+        "elapsed_s": 2.163070368999797,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 19,
+      "time_s": 3.6,
+      "requested_value": -0.13265306122448978,
+      "value": -0.13265305757522583,
+      "native_value": -0.13265305757522583,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.13265305757522583,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -4.77551007270813,
+      "render": {
+        "sha256": "b7c855992354ce5d1dc214cc27858d25d2c99babb82877805e70b414f029fe05",
+        "elapsed_s": 2.181648060000043,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 20,
+      "time_s": 3.8,
+      "requested_value": -0.11224489795918369,
+      "value": -0.11224489659070969,
+      "native_value": -0.11224489659070969,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.11224489659070969,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -4.040816277265549,
+      "render": {
+        "sha256": "0a1b0b506f111e623da4ee461dd060da53194332dc10d0ce44275585d35703a1",
+        "elapsed_s": 2.2031223349995344,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 21,
+      "time_s": 4.0,
+      "requested_value": -0.09183673469387754,
+      "value": -0.09183673560619354,
+      "native_value": -0.09183673560619354,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.09183673560619354,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -3.3061224818229675,
+      "render": {
+        "sha256": "bffc59fbbf558af06df105ceb18cf24f5d3d54bd8557a9e84f81ac1273d4acd2",
+        "elapsed_s": 2.2292521030003627,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 22,
+      "time_s": 4.2,
+      "requested_value": -0.07142857142857145,
+      "value": -0.0714285746216774,
+      "native_value": -0.0714285746216774,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.0714285746216774,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -2.5714286863803864,
+      "render": {
+        "sha256": "bcd1b1a25b5803f9aa757f1656c7447364cb704909c97d34ad9bf67029d17d30",
+        "elapsed_s": 2.2488489549996302,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 23,
+      "time_s": 4.4,
+      "requested_value": -0.05102040816326531,
+      "value": -0.051020409911870956,
+      "native_value": -0.051020409911870956,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.051020409911870956,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -1.8367347568273544,
+      "render": {
+        "sha256": "9f36a9b4e97543aeb4e62a437e1bc6e76201197eb82edd61cb0ca713b27b01dd",
+        "elapsed_s": 2.2880944019998424,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 24,
+      "time_s": 4.6,
+      "requested_value": -0.030612244897959162,
+      "value": -0.030612245202064514,
+      "native_value": -0.030612245202064514,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.030612245202064514,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -1.1020408272743225,
+      "render": {
+        "sha256": "c9b7692edbfaafc6f97ded23f92b5f5a519bb7abe1a2faf41b86473e4d7f0da0",
+        "elapsed_s": 2.297046902999682,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 25,
+      "time_s": 4.8,
+      "requested_value": -0.010204081632653073,
+      "value": -0.010204081423580647,
+      "native_value": -0.010204081423580647,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": -0.010204081423580647,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": -0.3673469312489033,
+      "render": {
+        "sha256": "ffab889c2840bed5b38ca6bc2f8723b24cfe9eb316b4f805cfd67fa40e0d8245",
+        "elapsed_s": 2.308547460999762,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 26,
+      "time_s": 5.0,
+      "requested_value": 0.010204081632653073,
+      "value": 0.010204081423580647,
+      "native_value": 0.010204081423580647,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.010204081423580647,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 0.3673469312489033,
+      "render": {
+        "sha256": "42210346f50278bbdbf150f0ebe669dc1d5cf5c0c3cf32ae8711b8b7e8e4403a",
+        "elapsed_s": 2.327400922000379,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 27,
+      "time_s": 5.2,
+      "requested_value": 0.030612244897959218,
+      "value": 0.030612245202064514,
+      "native_value": 0.030612245202064514,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.030612245202064514,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 1.1020408272743225,
+      "render": {
+        "sha256": "64c74d4a42d3fe55a98d0b7113e5f67aef61febb3f8e88166bddd64f1bc93d12",
+        "elapsed_s": 2.3233141600003364,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 28,
+      "time_s": 5.4,
+      "requested_value": 0.05102040816326525,
+      "value": 0.051020409911870956,
+      "native_value": 0.051020409911870956,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.051020409911870956,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 1.8367347568273544,
+      "render": {
+        "sha256": "c35a23d13ffc0c0d9482199b080092b44593e5b9c8fadf748fe07c29be8ac3e9",
+        "elapsed_s": 2.407594882999547,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 29,
+      "time_s": 5.6,
+      "requested_value": 0.0714285714285714,
+      "value": 0.0714285746216774,
+      "native_value": 0.0714285746216774,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.0714285746216774,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 2.5714286863803864,
+      "render": {
+        "sha256": "2210f8595214d071bfaf57d44ffc9597adfb32cede14d9cefde13bd731b20186",
+        "elapsed_s": 2.336038348999864,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 30,
+      "time_s": 5.8,
+      "requested_value": 0.09183673469387754,
+      "value": 0.09183673560619354,
+      "native_value": 0.09183673560619354,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.09183673560619354,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 3.3061224818229675,
+      "render": {
+        "sha256": "6cdd97ee49cf6e5497e49275c05892484b87219171401cce00014021f63437c1",
+        "elapsed_s": 2.3409137779999583,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 31,
+      "time_s": 6.0,
+      "requested_value": 0.11224489795918369,
+      "value": 0.11224489659070969,
+      "native_value": 0.11224489659070969,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.11224489659070969,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 4.040816277265549,
+      "render": {
+        "sha256": "2a5486b48d6af06c640d9dcef7ad500b06266469bc30c0faa6491c9922957410",
+        "elapsed_s": 2.327801675000046,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 32,
+      "time_s": 6.2,
+      "requested_value": 0.13265306122448983,
+      "value": 0.13265305757522583,
+      "native_value": 0.13265305757522583,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.13265305757522583,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 4.77551007270813,
+      "render": {
+        "sha256": "a18c949eeb8b0ec3cf75358866e3d5cb44cf4987221cf33bb9954ace2875fe28",
+        "elapsed_s": 2.3287358759998824,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 33,
+      "time_s": 6.4,
+      "requested_value": 0.15306122448979587,
+      "value": 0.15306122601032257,
+      "native_value": 0.15306122601032257,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.15306122601032257,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 5.5102041363716125,
+      "render": {
+        "sha256": "4ba7387ddb7eef5eeeced32cfc96de78819aa94ee41f3fa52997a0e14fd23007",
+        "elapsed_s": 2.327451311999539,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 34,
+      "time_s": 6.6,
+      "requested_value": 0.173469387755102,
+      "value": 0.1734693944454193,
+      "native_value": 0.1734693944454193,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.1734693944454193,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 6.244898200035095,
+      "render": {
+        "sha256": "9978627f51656d14f808e497f4d5f13f2cdd2ed7f866697abe1fc2dca01ce761",
+        "elapsed_s": 2.3028620939994653,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 35,
+      "time_s": 6.8,
+      "requested_value": 0.19387755102040816,
+      "value": 0.19387754797935486,
+      "native_value": 0.19387754797935486,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.19387754797935486,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 6.979591727256775,
+      "render": {
+        "sha256": "dbba7103e123389ee27fb80afc8a426bb30272a606ebe15838849a706245e8a1",
+        "elapsed_s": 2.3117876739997882,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 36,
+      "time_s": 7.0,
+      "requested_value": 0.2142857142857143,
+      "value": 0.2142857164144516,
+      "native_value": 0.2142857164144516,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.2142857164144516,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 7.714285790920258,
+      "render": {
+        "sha256": "9612b1b41f230a0cfb57fe978c60354d67aca9d1036e62c9b637aebf1860c834",
+        "elapsed_s": 2.287769389999994,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 37,
+      "time_s": 7.2,
+      "requested_value": 0.23469387755102045,
+      "value": 0.23469388484954834,
+      "native_value": 0.23469388484954834,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.23469388484954834,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 8.44897985458374,
+      "render": {
+        "sha256": "42273ed5df4eb9d2a4187f42fccad3ce1121b87599df0f78f4ab6f5c7cbaf8fe",
+        "elapsed_s": 2.2908483219998743,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 38,
+      "time_s": 7.4,
+      "requested_value": 0.2551020408163265,
+      "value": 0.2551020383834839,
+      "native_value": 0.2551020383834839,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.2551020383834839,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 9.18367338180542,
+      "render": {
+        "sha256": "97b5914affe53266c9928dee99dc65cb10fa3855f2d7aa4a49e4aab78958e126",
+        "elapsed_s": 2.2667969789999916,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 39,
+      "time_s": 7.6,
+      "requested_value": 0.2755102040816326,
+      "value": 0.27551019191741943,
+      "native_value": 0.27551019191741943,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.27551019191741943,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 9.9183669090271,
+      "render": {
+        "sha256": "3a6f2f6e539104915ca2aaf76f56e7d3b25ddfa5ed36183765815de2485ff3f5",
+        "elapsed_s": 2.2535616749992187,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 40,
+      "time_s": 7.8,
+      "requested_value": 0.29591836734693877,
+      "value": 0.29591837525367737,
+      "native_value": 0.29591837525367737,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.29591837525367737,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 10.653061509132385,
+      "render": {
+        "sha256": "f8358ead8c27814fcb42c6ad421a00731f9f97b2ca513fc306b83db49b9dc2c1",
+        "elapsed_s": 2.2528293579998717,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 41,
+      "time_s": 8.0,
+      "requested_value": 0.3163265306122449,
+      "value": 0.3163265287876129,
+      "native_value": 0.3163265287876129,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.3163265287876129,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 11.387755036354065,
+      "render": {
+        "sha256": "d54ba91de8019f9dbba098bdac97c16c3558e538a6e34a1c95fa566a77cf4a45",
+        "elapsed_s": 2.242285300999356,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 42,
+      "time_s": 8.2,
+      "requested_value": 0.33673469387755106,
+      "value": 0.33673468232154846,
+      "native_value": 0.33673468232154846,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.33673468232154846,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 12.122448563575745,
+      "render": {
+        "sha256": "0dbb755d3e354d81d2e042ecb4083c5989bb1a33690968adafcd774623f7b104",
+        "elapsed_s": 2.224977095998838,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 43,
+      "time_s": 8.4,
+      "requested_value": 0.3571428571428571,
+      "value": 0.3571428656578064,
+      "native_value": 0.3571428656578064,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.3571428656578064,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 12.85714316368103,
+      "render": {
+        "sha256": "d711d3a896aa636b93b8ae96b1fdb895e711991a3e1b65fedd68fb59edd7850b",
+        "elapsed_s": 2.226715814000272,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 44,
+      "time_s": 8.6,
+      "requested_value": 0.37755102040816324,
+      "value": 0.37755101919174194,
+      "native_value": 0.37755101919174194,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.37755101919174194,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 13.59183669090271,
+      "render": {
+        "sha256": "22ea5b5f3d98dd2ef0d84184bf8d813953c703713d9c3e1f164d96227fce955e",
+        "elapsed_s": 2.2187022430007346,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 45,
+      "time_s": 8.8,
+      "requested_value": 0.3979591836734694,
+      "value": 0.3979591727256775,
+      "native_value": 0.3979591727256775,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.3979591727256775,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 14.32653021812439,
+      "render": {
+        "sha256": "305bf55c10bda89c11c927f9e5d31299568509b5c86cda37059b127f315fbd1c",
+        "elapsed_s": 2.216760212000736,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 46,
+      "time_s": 9.0,
+      "requested_value": 0.41836734693877553,
+      "value": 0.4183673560619354,
+      "native_value": 0.4183673560619354,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.4183673560619354,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 15.061224818229675,
+      "render": {
+        "sha256": "c7e22e922ce00811ccade56216c504ae8f723f023d76a3cb9aac037a41a61f0c",
+        "elapsed_s": 2.206726880000133,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 47,
+      "time_s": 9.2,
+      "requested_value": 0.4387755102040817,
+      "value": 0.43877550959587097,
+      "native_value": 0.43877550959587097,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.43877550959587097,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 15.795918345451355,
+      "render": {
+        "sha256": "be20c78ec011a6e4ebf1e978aea5c4065889fb5b19280a2c8cb572dae74ade21",
+        "elapsed_s": 2.1980245530012326,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 48,
+      "time_s": 9.4,
+      "requested_value": 0.4591836734693877,
+      "value": 0.4591836631298065,
+      "native_value": 0.4591836631298065,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.4591836631298065,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 16.530611872673035,
+      "render": {
+        "sha256": "3cd1bcec837871b78f9d5e525c4cdaeea18128b4d808dc82feb72b3af8fed654",
+        "elapsed_s": 2.1951987339998595,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 49,
+      "time_s": 9.6,
+      "requested_value": 0.47959183673469385,
+      "value": 0.47959184646606445,
+      "native_value": 0.47959184646606445,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.47959184646606445,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 17.26530647277832,
+      "render": {
+        "sha256": "129efdfc843b07adcd41592c7f8a8017d8da3a5c9ab6a123f2cd56e509111058",
+        "elapsed_s": 2.1935938589995203,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    },
+    {
+      "frame": 50,
+      "time_s": 9.8,
+      "requested_value": 0.5,
+      "value": 0.5,
+      "native_value": 0.5,
+      "optical_state": {
+        "values": {
+          "tilt_shift_tilt": 0.0,
+          "tilt_shift_swing": 0.0,
+          "tilt_shift_axis_rotation": 0.0,
+          "shift_x": 0.5,
+          "shift_y": 0.0,
+          "dof.focus_distance": 219.98342895507812,
+          "lens": 40.0,
+          "dof.aperture_fstop": 2.799999952316284
+        },
+        "matrix_world": [
+          [
+            0.8240419030189514,
+            7.169609972379476e-08,
+            0.566528856754303,
+            55.0
+          ],
+          [
+            0.566528856754303,
+            -1.484181382238603e-07,
+            -0.8240419030189514,
+            -80.0
+          ],
+          [
+            2.5002574233212727e-08,
+            1.0,
+            -1.6292068494294654e-07,
+            5.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "clip": [
+          0.029999999329447746,
+          2000.0
+        ],
+        "sensor": [
+          36.0,
+          24.0
+        ],
+        "sensor_fit": "HORIZONTAL",
+        "focus_object": null,
+        "dof": true,
+        "native": true,
+        "circle": 0.0,
+        "blades": 0,
+        "aperture_rotation": 0.0,
+        "ratio": 1.0
+      },
+      "preflight": {
+        "guide_valid": true,
+        "focus_guide_valid": true,
+        "sensor_distance_m": 0.04000727832317352,
+        "expected_manual_sensor_distance_m": 0.04000727459787092,
+        "sensor_distance_error_m": 3.725302601120806e-09,
+        "sensor_distance_tolerance_m": 8.001454919574183e-08,
+        "normal_cycles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "focus_guide_error_m": 1.5570539548415364e-05,
+        "guide_tolerance_m": 0.04399668579101563,
+        "guard_mirror_valid": true,
+        "minimum_raster_guard_margin_m": 0.040006878250390294,
+        "aperture_forward_extent_m": 0.0,
+        "near_clip_margin_m": 0.029999599256664514
+      },
+      "shift_mm": 18.0,
+      "render": {
+        "sha256": "24b7ac968855144b5cff5233ec571e26206085f92000cbb2f867a81282c2a734",
+        "elapsed_s": 2.184267254000588,
+        "backend": "HIP",
+        "devices": [
+          "AMD Radeon RX 6900 XT"
+        ],
+        "native_gate_passed": true
+      }
+    }
+  ],
+  "saved_device": "CPU",
+  "denoising": false,
+  "adaptive_sampling": false,
+  "animated_seed": false,
+  "compositor": false,
+  "motion_blur": false,
+  "render_devices": [
+    "AMD Radeon RX 6900 XT"
+  ],
+  "blend_sha256": "47ddda697415d0c120bb76ef8cfdc6ded4260dd00182f7de33cff1575fa8fb69"
+}

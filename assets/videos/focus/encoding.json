@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "038e911e478d70032fabc43c2608f4ba47090c316fcdff657e7aea374596df8d",
+  "animation_manifest_sha256": "c431007b89e8240b86ad13aa397c9bfb622e0e1ad23aa7f3ede4c695992d6794",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "59b085e6a748bb62208c4f64ba59c3881d69e09b1954d7e14884b80f1ca3d2cf",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Focus distance  1.000 m",
+      "sha256": "5e5cc097dcaaf31eca35f1049b64a1a00dd080694e467df4ed16dc3da7a93a3f"
+    },
+    {
+      "frame": 2,
+      "text": "Focus distance  1.024 m",
+      "sha256": "5c61b426b4bd5810ab161cd982676ea453b81a371ebf6e16a77c8102b048b6eb"
+    },
+    {
+      "frame": 3,
+      "text": "Focus distance  1.049 m",
+      "sha256": "b6d9065974d5c914c52ba1e02d759b4b2d32929f5dd56d66caf6dd33b01c101d"
+    },
+    {
+      "frame": 4,
+      "text": "Focus distance  1.073 m",
+      "sha256": "ff5b7256478ca5a638be1e1ddaf68b75fc569d0e0741ae9850616d61821005d6"
+    },
+    {
+      "frame": 5,
+      "text": "Focus distance  1.098 m",
+      "sha256": "b17db6e57353bbf23374c78757deb232cddb0293eebba86079f4d2b8818758da"
+    },
+    {
+      "frame": 6,
+      "text": "Focus distance  1.122 m",
+      "sha256": "b03b2387e4efb32ceb1020aad51386d7006b6db66ad8fd420a8a995cf8467f94"
+    },
+    {
+      "frame": 7,
+      "text": "Focus distance  1.147 m",
+      "sha256": "abb190ea394016113b4191509a32a154449a9d2d5d4cde23244ef9b7c4f052de"
+    },
+    {
+      "frame": 8,
+      "text": "Focus distance  1.171 m",
+      "sha256": "d789a363b67bae25775815e35bf69844b2f66f5376a7a8d378a51d6a8e25b45b"
+    },
+    {
+      "frame": 9,
+      "text": "Focus distance  1.196 m",
+      "sha256": "64f1ec51e4b5589004f1f2755452da7ae9ccfc284f62ee31571b0d0544a2581c"
+    },
+    {
+      "frame": 10,
+      "text": "Focus distance  1.220 m",
+      "sha256": "daaffdea45d696bd28cb5e2365dd2b3fccd892dc8c6c6aefe28dfd3bdca02d0e"
+    },
+    {
+      "frame": 11,
+      "text": "Focus distance  1.245 m",
+      "sha256": "edfba1b26d85138be3cdcb05334b75235a7dee3831ca85610764deee9995a08e"
+    },
+    {
+      "frame": 12,
+      "text": "Focus distance  1.269 m",
+      "sha256": "9b5118f365071b8b57060eee3564f8a4447cb283e131de5f20a4686d6e6b84ce"
+    },
+    {
+      "frame": 13,
+      "text": "Focus distance  1.294 m",
+      "sha256": "f41ae224375d858b4785a6794e94139fe530c8d6c147c30e6a058aef6ac98715"
+    },
+    {
+      "frame": 14,
+      "text": "Focus distance  1.318 m",
+      "sha256": "f1f48af6a47dd55b7d5b6d5e92908d1ff261a5755861d1efe93401bf97e043c8"
+    },
+    {
+      "frame": 15,
+      "text": "Focus distance  1.343 m",
+      "sha256": "054bc8127d80f311470a3c755079a4ee99efea2ea7b4cbde0c0762021658bf9a"
+    },
+    {
+      "frame": 16,
+      "text": "Focus distance  1.367 m",
+      "sha256": "6837d0bf2b5c98263f3d85b14ece1e4b0082505edd2a432d227b14c77e2620d3"
+    },
+    {
+      "frame": 17,
+      "text": "Focus distance  1.392 m",
+      "sha256": "82f7fa420f1cedd23abb52ded8c56cfa04207b315cc926759af8b73232e39555"
+    },
+    {
+      "frame": 18,
+      "text": "Focus distance  1.416 m",
+      "sha256": "d049e7b72fd0a82b90791b0dd0fb8cc25b8791e2d9e9aacde296d8ee9abc204a"
+    },
+    {
+      "frame": 19,
+      "text": "Focus distance  1.441 m",
+      "sha256": "a4bb18988fdd1cbfa3d49165a414885751de73c1dd774cd4d55746d8c33c42ca"
+    },
+    {
+      "frame": 20,
+      "text": "Focus distance  1.465 m",
+      "sha256": "084faa23aa5c3186b9971cb726ccd50becb55b91c41185729dd9f641c0f0e9ef"
+    },
+    {
+      "frame": 21,
+      "text": "Focus distance  1.490 m",
+      "sha256": "4b42ac6b4011400274434718de4b463695c03cfd053a0c7adac79c99eb34b098"
+    },
+    {
+      "frame": 22,
+      "text": "Focus distance  1.514 m",
+      "sha256": "94f31bcaf18b695b6cb8107c2a58eabf3ed120993b4e0c4047fd2f68f0e6f67a"
+    },
+    {
+      "frame": 23,
+      "text": "Focus distance  1.539 m",
+      "sha256": "44eb7e885b7d8132a9b497f69ca52387a3b3f88b86fbee8568f9b974f73874b9"
+    },
+    {
+      "frame": 24,
+      "text": "Focus distance  1.563 m",
+      "sha256": "d4e53bfffbd7777375ddff085a6448c97b7bc2f496cded464f578ef883621fe0"
+    },
+    {
+      "frame": 25,
+      "text": "Focus distance  1.588 m",
+      "sha256": "1fa863dde81cb34c378497222f50bc675bdf0f16ae3914a1281a63e442124431"
+    },
+    {
+      "frame": 26,
+      "text": "Focus distance  1.612 m",
+      "sha256": "11c3aef364d214d88ec070baa420a6b9076b669d484145cdef93bcc757b9bc0f"
+    },
+    {
+      "frame": 27,
+      "text": "Focus distance  1.637 m",
+      "sha256": "011444fb9525fc56c8e44978e2ab327c7a2625a9097a532c1f321baf3861e350"
+    },
+    {
+      "frame": 28,
+      "text": "Focus distance  1.661 m",
+      "sha256": "0e0df89b4935da771bf61d60f20362c7e28991ab0ecea47ff7113205bbd333b1"
+    },
+    {
+      "frame": 29,
+      "text": "Focus distance  1.686 m",
+      "sha256": "deb82072aead0404ccb832b24e6a317f0ceb2da241a5e29fac0c897d0173b2c1"
+    },
+    {
+      "frame": 30,
+      "text": "Focus distance  1.710 m",
+      "sha256": "1eedf1f9dbf579866f546f1588d6df112f2d5b6fe7f8f5e99d36c83f8e32db3c"
+    },
+    {
+      "frame": 31,
+      "text": "Focus distance  1.735 m",
+      "sha256": "a16f1ab17ff81c3ae64a813d8f7d07f0630234d6e9c6d140f23f8f82bf05a040"
+    },
+    {
+      "frame": 32,
+      "text": "Focus distance  1.759 m",
+      "sha256": "8bf3bc29af39ec88b85dfe4eeff386b4ca99899dade863e1eace77821881c37d"
+    },
+    {
+      "frame": 33,
+      "text": "Focus distance  1.784 m",
+      "sha256": "4f7b9aafdcd90f434ada578f0c0838cb237eeeb527f05ec1583c35fc4219a295"
+    },
+    {
+      "frame": 34,
+      "text": "Focus distance  1.808 m",
+      "sha256": "90b9c42648486688b358a4ecf362ac65a1d1b7c250c32fc8cf6b9e8a68ced59e"
+    },
+    {
+      "frame": 35,
+      "text": "Focus distance  1.833 m",
+      "sha256": "c0bc96a1fb0699f8e5e5640e930a26bf2f3fc46ca5c95f31fef10c65728aedd6"
+    },
+    {
+      "frame": 36,
+      "text": "Focus distance  1.857 m",
+      "sha256": "47eb7a05609ffd14abef5cd19cc965b33b0008f7b368bbd4f785468219f60f24"
+    },
+    {
+      "frame": 37,
+      "text": "Focus distance  1.882 m",
+      "sha256": "8ebe8ac201673c3a0fa073607e1866ce0cb363e306c8b899e5e7d9284132713e"
+    },
+    {
+      "frame": 38,
+      "text": "Focus distance  1.906 m",
+      "sha256": "88df874bc60c16e0772a9256bca89c5d2645d0449022d21b51fb3f49dd8eaef4"
+    },
+    {
+      "frame": 39,
+      "text": "Focus distance  1.931 m",
+      "sha256": "f1f34f31dea76ab5a5232ba4911b545f60ec06bca1f9ce2e58e9b7765e6579e4"
+    },
+    {
+      "frame": 40,
+      "text": "Focus distance  1.955 m",
+      "sha256": "7e61b16a690308a15da5944111d2122a27006b4460f6567e43a6909181d876ce"
+    },
+    {
+      "frame": 41,
+      "text": "Focus distance  1.980 m",
+      "sha256": "f3b1019b26953e9e927f247e80b2f5221c456158c762b3e9ecb2514c3b40599b"
+    },
+    {
+      "frame": 42,
+      "text": "Focus distance  2.004 m",
+      "sha256": "a98a2d837c09d9fde00e563160612b5c9d447954c44b35de8959fc86699e4eff"
+    },
+    {
+      "frame": 43,
+      "text": "Focus distance  2.029 m",
+      "sha256": "56d7e785f69539f434e7fbbb5477b127aa96e99f78b1b77f212357bc3dd0d9ac"
+    },
+    {
+      "frame": 44,
+      "text": "Focus distance  2.053 m",
+      "sha256": "4aed8c07e2410b5f5fd3350b3403a565094e01708b9012a457275f87556320d6"
+    },
+    {
+      "frame": 45,
+      "text": "Focus distance  2.078 m",
+      "sha256": "74567f39f0b6ead32c14d190b777e7a94523b5355b858c1ea9286931629b78a0"
+    },
+    {
+      "frame": 46,
+      "text": "Focus distance  2.102 m",
+      "sha256": "068d48020fdc0b10c36cf1fb7f0db8d04a918c61d0c876938d0b460560efebbb"
+    },
+    {
+      "frame": 47,
+      "text": "Focus distance  2.127 m",
+      "sha256": "4ea371f483ab685411573226fc35c777d6b1771656fdabead1d5294f05f224b6"
+    },
+    {
+      "frame": 48,
+      "text": "Focus distance  2.151 m",
+      "sha256": "821c2e569d0d0fc249a770628953aa9945add5f510bb11ccadb81d48b62ffaf6"
+    },
+    {
+      "frame": 49,
+      "text": "Focus distance  2.176 m",
+      "sha256": "cbf224c3444df6626aa3439dd35d7d606ecdfe9e1f09e3f53a64cd2e26d279bc"
+    },
+    {
+      "frame": 50,
+      "text": "Focus distance  2.200 m",
+      "sha256": "9f524a303762d42c9ff42a020fe8f2abd26ef4d7a129f15813e0ffe3a0aa960a"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/focus/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/focus/focus.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

@@ -1,0 +1,40 @@
+{
+  "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff",
+  "cases": [
+    "table-native",
+    "table-ordinary-best",
+    "table-ordinary-f16",
+    "swing-native",
+    "swing-ordinary-best",
+    "axis-native",
+    "axis-ordinary-best",
+    "city-native",
+    "city-ordinary-best",
+    "city-ordinary-blur-fit"
+  ],
+  "pairs": {
+    "table-native--table-ordinary-best": true,
+    "table-native--table-ordinary-f16": true,
+    "swing-native--swing-ordinary-best": true,
+    "axis-native--axis-ordinary-best": true,
+    "city-native--city-ordinary-best": true,
+    "city-native--city-ordinary-blur-fit": true
+  },
+  "method": "Dense chief-ray first mesh hits; signed distance to exact optical sharp plane; feathered RGBA band at scene surfaces only",
+  "visual_half_width_m_by_family": {
+    "table": 0.004,
+    "swing": 0.004,
+    "axis": 0.004,
+    "city": 0.65
+  },
+  "coordinates": "Lens-relative camera X right, Y up, Z forward; metres. Full evaluated camera pose.",
+  "rotation": "Rz(axis) Ry(swing) Rx(tilt), reference Y-down then reflected; native evaluated guide b.",
+  "plane_equations": "Native (n-f/b*Z) dot Q=f; ordinary Qz=D. Plane is zero blur, not finite depth of field.",
+  "tolerances": "Guide plane distance <=2e-4*max(1,D) m (float32 RNA); plane normal length and visible depth >1e-10; chief-ray reprojection <=2e-5 normalized UV.",
+  "limitations": [
+    "Finite displayed band thickness makes the zero-thickness plane visible; it is independent of aperture and is not a depth-of-field boundary.",
+    "One first-surface sample per mask pixel, nearest-neighbour display with no depth interpolation; tiny geometry below sample spacing can be missed.",
+    "Chief-ray mesh visibility excludes material transparency, reflections, refraction and finite-pupil occlusion changes, especially the enormous city blur-fit pupil.",
+    "A geometric reference, not a measurement of rendered image sharpness."
+  ]
+}

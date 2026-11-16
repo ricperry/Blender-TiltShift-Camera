@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "configuration_sha256": "339dc4499d4ca5864afe543091960524a84597d33783021cfdaae580d4e61991",
+  "animation_manifest_sha256": "6dd467fcd05bd9149053c4e5ef875d436adb1aa7312b7df82eed267055f7d99a",
+  "encoder_sha256": "266d455345a71161db8aa7608801a4cec32e95310ebdb07989de5d46203bfb84",
+  "video_sha256": "b83e341831dd91040fa9e0e0d777f07e37e468d225de5fcccbad1461e3a347a7",
+  "label_font": "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf",
+  "labels": [
+    {
+      "frame": 1,
+      "text": "Lens tilt  -20.0\u00b0",
+      "sha256": "c07e6f63ff4ab3db2afca22d4a3ddc9e00482b80a33a24cfd00f8e14ac515d87"
+    },
+    {
+      "frame": 2,
+      "text": "Lens tilt  -19.2\u00b0",
+      "sha256": "dc3af3ca5f780a46e66623d78bdb345ea3de23b8e4e9350cf4cc1e732a0c577c"
+    },
+    {
+      "frame": 3,
+      "text": "Lens tilt  -18.4\u00b0",
+      "sha256": "34933aa973858819d39840a8b0de5f26a8f9f31bbb04b9297358d9067342445b"
+    },
+    {
+      "frame": 4,
+      "text": "Lens tilt  -17.6\u00b0",
+      "sha256": "7588d0fe25b8ea66e5e4b9ee4e55bbf3b3ea8840df18bb4fd05901fc21ad6798"
+    },
+    {
+      "frame": 5,
+      "text": "Lens tilt  -16.7\u00b0",
+      "sha256": "a71b9e6fce1eea14efa13d292c3d29188b5a7137b3df0af902dd63f89cb56910"
+    },
+    {
+      "frame": 6,
+      "text": "Lens tilt  -15.9\u00b0",
+      "sha256": "b34b38bce46b642ea09fc167cd8f130680f04de9bacc1421ec636440270fc76d"
+    },
+    {
+      "frame": 7,
+      "text": "Lens tilt  -15.1\u00b0",
+      "sha256": "df03986c90530348a37bb68d71fce1059d8bc40be4e29685b68b76f18092cc9d"
+    },
+    {
+      "frame": 8,
+      "text": "Lens tilt  -14.3\u00b0",
+      "sha256": "669041db6f5c143b6e5337a05bd2b6e8f98cb2f45d79e9cf96f9ca4593aa914d"
+    },
+    {
+      "frame": 9,
+      "text": "Lens tilt  -13.5\u00b0",
+      "sha256": "898be49145ec1f19e8c21ce66be0aa546a0cab079e66bae7dac58279c8769b51"
+    },
+    {
+      "frame": 10,
+      "text": "Lens tilt  -12.7\u00b0",
+      "sha256": "20314b423b69b7048547069ee3fe2a6dbbfd2fb3e6e22931f8a297e892a8e98d"
+    },
+    {
+      "frame": 11,
+      "text": "Lens tilt  -11.8\u00b0",
+      "sha256": "025bf24cac85e2a4e214e4000d3a9389afaeb338f9f0aa786f95f41998755d70"
+    },
+    {
+      "frame": 12,
+      "text": "Lens tilt  -11.0\u00b0",
+      "sha256": "8ccb6bfc2d0ea8e554b603a609f2c090288a1223a9e0f29efe886902e22331b5"
+    },
+    {
+      "frame": 13,
+      "text": "Lens tilt  -10.2\u00b0",
+      "sha256": "444a740915991567c8f80e510f567097fef801f03d73b8cdecf09b5b597c3e4c"
+    },
+    {
+      "frame": 14,
+      "text": "Lens tilt  -9.4\u00b0",
+      "sha256": "8bdbb7a2e6c1c213c1fe1209ca2b079b07100ab55f4346403ebd901048747b68"
+    },
+    {
+      "frame": 15,
+      "text": "Lens tilt  -8.6\u00b0",
+      "sha256": "5745494e84cede76330091c3c034dd7036267eb8d3c9bdbc10d56cb0a07c9d40"
+    },
+    {
+      "frame": 16,
+      "text": "Lens tilt  -7.8\u00b0",
+      "sha256": "2c883cfd5feafbf015f7f7f4ac25332889702167a4b67e90e0495d4a82022901"
+    },
+    {
+      "frame": 17,
+      "text": "Lens tilt  -6.9\u00b0",
+      "sha256": "33002d7561f4f6e38b249d5d841249e469f576fce21cac30932f6b641c4fdff1"
+    },
+    {
+      "frame": 18,
+      "text": "Lens tilt  -6.1\u00b0",
+      "sha256": "b5670dc81fec547cad48ca06ae38ea9fc6024f287bb08ee63914278c4cce739b"
+    },
+    {
+      "frame": 19,
+      "text": "Lens tilt  -5.3\u00b0",
+      "sha256": "6e2ada6b6ab48f5e05174db170135bace9c8d1cab416e4d9ceedf54a3b6da75a"
+    },
+    {
+      "frame": 20,
+      "text": "Lens tilt  -4.5\u00b0",
+      "sha256": "133fef918702eecddd503d9a17181fbd51719e6e8692eec6e74f7a940352c11d"
+    },
+    {
+      "frame": 21,
+      "text": "Lens tilt  -3.7\u00b0",
+      "sha256": "5895c4155859b8b81f6a5ecf7a1ab9ed288a534184f84f5d86efae631e62e7a6"
+    },
+    {
+      "frame": 22,
+      "text": "Lens tilt  -2.9\u00b0",
+      "sha256": "77b117d609372051ddfb9009aba4beebc2f8463c5e0045fc83501e92f5811a1e"
+    },
+    {
+      "frame": 23,
+      "text": "Lens tilt  -2.0\u00b0",
+      "sha256": "f2e55270f243ee763bf6bfd6d400005894de6d53bbf963dfaeb659b8502dab45"
+    },
+    {
+      "frame": 24,
+      "text": "Lens tilt  -1.2\u00b0",
+      "sha256": "cdc94bea47a7927fc245dd5d7834f8c4ca8f6eb539a51a80fd5de57b692eb5a6"
+    },
+    {
+      "frame": 25,
+      "text": "Lens tilt  -0.4\u00b0",
+      "sha256": "4c05cdf6ee4ef7a0df217cbd647e963fabbd0c7a103240208436c5f1cf446d68"
+    },
+    {
+      "frame": 26,
+      "text": "Lens tilt  +0.4\u00b0",
+      "sha256": "945c5d02cf32848930f6bda5f36d0cc1c2bd75098a697e29185af147c51a070d"
+    },
+    {
+      "frame": 27,
+      "text": "Lens tilt  +1.2\u00b0",
+      "sha256": "edd9dd394b2a31bcdbee8cd748f5d33b0fd067c139244c3363a979f42ca447ac"
+    },
+    {
+      "frame": 28,
+      "text": "Lens tilt  +2.0\u00b0",
+      "sha256": "c0261a6e1bac49fc2abc12236c2ed27d3c27380ddbdd6ce807db07cfccc6ffe4"
+    },
+    {
+      "frame": 29,
+      "text": "Lens tilt  +2.9\u00b0",
+      "sha256": "c9952120652486a9c1b0c4cc6803f4b0e25173eb8aef4bcd639219ca8d8cc7c3"
+    },
+    {
+      "frame": 30,
+      "text": "Lens tilt  +3.7\u00b0",
+      "sha256": "895ec27d47798331bc65742c92ccced96d228946554beda71efb05920e632716"
+    },
+    {
+      "frame": 31,
+      "text": "Lens tilt  +4.5\u00b0",
+      "sha256": "10009109a30e29030777074f5ef271d397f3c99c28ed08b8eb8c6f77b3fc723a"
+    },
+    {
+      "frame": 32,
+      "text": "Lens tilt  +5.3\u00b0",
+      "sha256": "e5100d55dc18a5b04d4c9efde2687046cb4b1871a1fa566c4aba787eaa2bd56f"
+    },
+    {
+      "frame": 33,
+      "text": "Lens tilt  +6.1\u00b0",
+      "sha256": "e7e0b3f2dee328126992782bb69db709901f7b0f1ca8648c844a5505611a10fc"
+    },
+    {
+      "frame": 34,
+      "text": "Lens tilt  +6.9\u00b0",
+      "sha256": "3062ba6fe91038153f4a9593f3fc671bd604101942d321ee8af84df59d5c46a3"
+    },
+    {
+      "frame": 35,
+      "text": "Lens tilt  +7.8\u00b0",
+      "sha256": "92091ee732cac23bd0267d0681a2caac5fab23294b06c9041acf13536a79a20b"
+    },
+    {
+      "frame": 36,
+      "text": "Lens tilt  +8.6\u00b0",
+      "sha256": "b16105b8268a1cbcca367362077d30d4b78e1300c9544ef11a07d36ab939f451"
+    },
+    {
+      "frame": 37,
+      "text": "Lens tilt  +9.4\u00b0",
+      "sha256": "02a4037ebc3962b3c3de5f9459e3ab70d39f565d3e384cde9673917c9a58b7cd"
+    },
+    {
+      "frame": 38,
+      "text": "Lens tilt  +10.2\u00b0",
+      "sha256": "b509d0629719e3e4c78d9dd92f29f200671d97e36759eb99ce998d6d0749a4f7"
+    },
+    {
+      "frame": 39,
+      "text": "Lens tilt  +11.0\u00b0",
+      "sha256": "d8bc04dffe32f71b35d4344e8dca3075779b8a3ccf9c367fa76c4a8eb08a98d7"
+    },
+    {
+      "frame": 40,
+      "text": "Lens tilt  +11.8\u00b0",
+      "sha256": "0b372f7b915b61758b842c151574f9e67bd5ff4a96b23968e53429298c96c1b2"
+    },
+    {
+      "frame": 41,
+      "text": "Lens tilt  +12.7\u00b0",
+      "sha256": "822e35a15fd38ec29470c23abb3e13330efc09771345a273e2287add2b385af1"
+    },
+    {
+      "frame": 42,
+      "text": "Lens tilt  +13.5\u00b0",
+      "sha256": "37957f88d79beaa25c758ab62163bf87200396455e1e6b94b89a2463ee617118"
+    },
+    {
+      "frame": 43,
+      "text": "Lens tilt  +14.3\u00b0",
+      "sha256": "925957e38d0f8c9732d7a1e2700797b4ebdbdbc0f404eaf180200bf44d6f5e5f"
+    },
+    {
+      "frame": 44,
+      "text": "Lens tilt  +15.1\u00b0",
+      "sha256": "b22b6e6d6ecee4d86ccae9341531f94c5d318b5fd3dee364a19897d7630c0aa8"
+    },
+    {
+      "frame": 45,
+      "text": "Lens tilt  +15.9\u00b0",
+      "sha256": "863b24abf5ae47285bb8abed559b1f593c45e684f5f5e11d380c07ec39f04011"
+    },
+    {
+      "frame": 46,
+      "text": "Lens tilt  +16.7\u00b0",
+      "sha256": "f2e4b6acddaf8b76a5f8e4820bf5b481daf09b6a348d7be332a61f8f5601737e"
+    },
+    {
+      "frame": 47,
+      "text": "Lens tilt  +17.6\u00b0",
+      "sha256": "62cd8c729250a917c9068a5c367c8e8fe0aa7756cdcb2b4905b1b670ce9d2dc7"
+    },
+    {
+      "frame": 48,
+      "text": "Lens tilt  +18.4\u00b0",
+      "sha256": "45a2b3a364de1c6faa6146314420d1d51db3ca87ed52e435ddc1b275ee175772"
+    },
+    {
+      "frame": 49,
+      "text": "Lens tilt  +19.2\u00b0",
+      "sha256": "e636dbcf3e24a6da993cb1350d2f4bfe7201e472908ffb5c74cc497e9a69ed57"
+    },
+    {
+      "frame": 50,
+      "text": "Lens tilt  +20.0\u00b0",
+      "sha256": "32a67c1dbcd00af6cde5018c57f74066dc4b63213bca23cdcbbc5544b324b3bd"
+    }
+  ],
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-hide_banner",
+    "-loglevel",
+    "warning",
+    "-y",
+    "-framerate",
+    "5",
+    "-start_number",
+    "1",
+    "-i",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/tilt/labeled/frame-%04d.png",
+    "-frames:v",
+    "50",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "18",
+    "-pix_fmt",
+    "yuv420p",
+    "-r",
+    "5",
+    "-movflags",
+    "+faststart",
+    "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-animations/960x540/tilt/tilt.encoding.mp4"
+  ],
+  "ffmpeg_version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "5/1",
+        "duration": "10.000000",
+        "nb_read_frames": "50",
+        "side_data_list": [
+          {}
+        ]
+      }
+    ]
+  },
+  "image_operation": "RGB display conversion and corner label only; raw renders preserved"
+}

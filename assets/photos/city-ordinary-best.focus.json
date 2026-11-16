@@ -1,0 +1,76 @@
+{
+  "case": "city-ordinary-best",
+  "source": {
+    "blend_sha256": "7d20a6457696328621d1d688d445e65f29b54b8652ae5fd42aedbd8a4dd06218",
+    "image_sha256": "cb1c61a499250a37541a30df6cc2451e3ff839da0d2bc5fbadc3c8d3da43fd80",
+    "manifest_sha256": "919ee73fecc35e22eb5470130c83c86a38b536a2113a9245762758883ab13be4",
+    "helper_sha256": "118ef8494a459a0aa8ba4f82c6050f93a9159d3268d1a11a7eaf7d65900e37ff"
+  },
+  "resolution": [
+    3840,
+    2160
+  ],
+  "mask_file": "city-ordinary-best.focus.png",
+  "mask_sha256": "76779500e386b5fc1cccfba9120bc855925157f328156ed27d0e35531017d067",
+  "surface_file": "city-ordinary-best.focus-surface.f32.z",
+  "surface_sha256": "1455a8a114e268f9d2914c3d2a18667a52f83617849b4eeac85644b525d76b69",
+  "surface_format": "zlib compressed row-major interleaved little-endian float32 [camera-forward depth m, signed plane distance m]; top-left first; NaN means no visible mesh hit",
+  "sensor_distance_m": 0.05078305816650391,
+  "chief_ray_bounds": [
+    -0.35444892426548447,
+    0.35444892426548447,
+    -0.19937751989933503,
+    0.19937751989933503
+  ],
+  "optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "camera_matrix_world": [
+    [
+      0.7926239371299744,
+      -0.4147292375564575,
+      0.4469306170940399,
+      102.5
+    ],
+    [
+      0.6097108721733093,
+      0.5391477942466736,
+      -0.5810097455978394,
+      -132.0
+    ],
+    [
+      6.749631609181961e-08,
+      0.7330206632614136,
+      0.6802063584327698,
+      150.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "plane_normal_camera": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "plane_constant_m": 219.48797607421875,
+  "evaluated_guide_max_plane_error_m": null,
+  "sample_grid": [
+    960,
+    540
+  ],
+  "sample_count": 518400,
+  "marked_sample_count": 6679,
+  "bright_centre_sample_count": 881,
+  "plane_visual_half_width_m": 0.65,
+  "signed_distance_range_m": [
+    -40.087249755859375,
+    60.2086181640625
+  ],
+  "max_reprojection_error_uv": 5.710721013851838e-07
+}

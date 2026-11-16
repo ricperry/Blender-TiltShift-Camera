@@ -1,0 +1,3142 @@
+{
+  "case": "city-native-object",
+  "family": "city",
+  "kind": "native",
+  "options": {
+    "object_focus": true
+  },
+  "generator": "examples/create_demo_comparisons.py",
+  "source_sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20",
+  "provenance": {
+    "generator_sha256": "2ff72280435e367585b83ddb0e0a88ba20b4ee8f87deff82d178d9f810900e20",
+    "blender_binary_path": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/install-blender-m4/blender",
+    "blender_binary_sha256": "901f89e45d72e21b547c9eedac199e4e29a04e40f01f91f65994a88db4bec892",
+    "cumulative_patch_path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+    "cumulative_patch_sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+    "city_source_path": "examples/full-scale-city/full-scale-city.blend",
+    "city_source_sha256": "947c0d3baf979798ab1216b845ff9bdf0a2b01aa2dcaf4383e18b8035d22a19e",
+    "source_revision": {
+      "license": "GPL-3.0-or-later",
+      "blender": {
+        "url": "https://projects.blender.org/blender/blender.git",
+        "release_branch": "blender-v5.3-release",
+        "tag": "v5.3.0",
+        "commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "checkout": "work/blender",
+        "history": "Original upstream history retained; detached release tag"
+      },
+      "linux_x64_libraries": {
+        "url": "https://projects.blender.org/blender/lib-linux_x64.git",
+        "gitlink": "e92f1a54a92c774fbeb0cf51c4652bc510d9a50a",
+        "checkout": "work/blender/lib/linux_x64",
+        "lfs": "716 library LFS objects acquired; git lfs fsck passed during initialization"
+      },
+      "dependency_versions": {
+        "path": "build_files/build_environment/cmake/versions.cmake",
+        "blender_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "sha256": "dc57206aea3914e6c743d7467284b2deaa21792d501f697d809405347da84c86"
+      },
+      "developer_handbook": {
+        "url": "https://projects.blender.org/blender/blender-developer-docs.git",
+        "commit": "0074023d5f64eac025d88e79640c006516eca57c",
+        "checkout": "work/developer-docs"
+      },
+      "project": {
+        "url": "https://github.com/ricperry/Blender-TiltShift-Camera",
+        "initial_commit": "eb2303109632d6f11bc4ad6a0110c86883728fa4"
+      },
+      "source_lfs": "Required Linux runtime assets acquired; optional regression media deferred",
+      "native_feature_patch": null,
+      "native_feature_patch_note": "The null field above is the historical initialization state; current source modifications are recorded below.",
+      "current_native_feature_patch": {
+        "path": "patches/blender-v5.3.0-tilt-shift-m4.patch",
+        "sha256": "d9f955c428987fc4ce64625aa67b226ea8ac595e6f896885bec75f270d15d9f9",
+        "base_commit": "02f0899d78e374b63e7181d9061e1f7ab03419cc",
+        "cumulative": true,
+        "modified_upstream_files": 16,
+        "new_upstream_files": 1,
+        "application": "Apply M4 once to the exact clean pin; do not stack M2/M3/M4 patches."
+      }
+    }
+  },
+  "blend_sha256": "2fb984c0c2cb4b1602db2a8db070a9d21d3c8a8cdffdcbd75dc229314b8ddc65",
+  "blender": "5.3.0",
+  "blender_build_hash": "02f0899d78e3",
+  "scene": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/city-native-object.blend",
+  "image": "/home/ricperry1/Projects/Blender-TiltShift-Camera/work/demo-comparisons/4k/city-native-object.png",
+  "saved_device": "CPU",
+  "resolution": [
+    3840,
+    2160
+  ],
+  "samples": 256,
+  "seed": 71,
+  "denoising": false,
+  "adaptive_sampling": false,
+  "compositor": false,
+  "motion_blur": false,
+  "native_enabled": true,
+  "dof_enabled": true,
+  "camera": {
+    "position_m": [
+      102.5,
+      -132.0,
+      150.0
+    ],
+    "rotation_euler_xyz_rad": [
+      0.8227521777153015,
+      -6.749631609181961e-08,
+      0.6556957364082336
+    ],
+    "lens_mm": 50.0,
+    "sensor_width_mm": 36.0,
+    "focus_distance_m": 10.0,
+    "focus_object": "FOCUS / axial manual-object equivalence",
+    "fstop": 2.799999952316284,
+    "pupil_diameter_m": 0.017857143161248194,
+    "tilt_deg": 9.99999970909292,
+    "swing_deg": 0.0,
+    "axis_deg": 0.0,
+    "shift": [
+      0.0,
+      0.0
+    ],
+    "image_circle_mm": 0.0,
+    "blades": 0,
+    "aperture_rotation_deg": 0.0,
+    "aperture_ratio": 1.0
+  },
+  "native_reference": {
+    "lens_mm": 50.0,
+    "fstop": 2.799999952316284,
+    "sensor_distance_m": 0.050783053040504456,
+    "manual_conjugate_focus_m": 219.9700745007302,
+    "normal_cycles": [
+      0.0,
+      0.1736481785774231,
+      0.9848077297210693
+    ]
+  },
+  "ordinary_optimization": null,
+  "landmarks": [
+    {
+      "name": "Surface grid 00,00 / North\u2013south avenue",
+      "world_m": [
+        -14.312098503112793,
+        -81.48686218261719,
+        0.800000011920929
+      ],
+      "camera_depth_m": 183.04232788085938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005676818741020228,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,00 / Continuous city terrain",
+      "world_m": [
+        -9.602022171020508,
+        -77.62853240966797,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.34902954101562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005675764800196223,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,00 / Continuous city terrain",
+      "world_m": [
+        -4.696226119995117,
+        -73.8548355102539,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005674900134819782,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,00 / Continuous city terrain",
+      "world_m": [
+        0.20957887172698975,
+        -70.08113098144531,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005674124479073382,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,00 / Continuous city terrain",
+      "world_m": [
+        5.115384101867676,
+        -66.30744171142578,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005673479027490645,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,00 / Continuous city terrain",
+      "world_m": [
+        10.021188735961914,
+        -62.53376770019531,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 183.34901428222656,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005672911567818932,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,00 / North\u2013south avenue.001",
+      "world_m": [
+        15.073507308959961,
+        -58.882568359375,
+        0.79998779296875
+      ],
+      "camera_depth_m": 183.04232788085938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005672526258234407,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,00 / Continuous city terrain",
+      "world_m": [
+        19.83279037475586,
+        -54.986358642578125,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005672089761070739,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,00 / Continuous city terrain",
+      "world_m": [
+        24.73859405517578,
+        -51.212650299072266,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005671836461046917,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,00 / District connector road.002",
+      "world_m": [
+        29.76872444152832,
+        -47.58325958251953,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 183.0361785888672,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005671752883688504,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,00 / Continuous city terrain",
+      "world_m": [
+        34.55021286010742,
+        -43.6652717590332,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.34902954101562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005671620207345832,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,00 / Continuous city terrain",
+      "world_m": [
+        39.45600891113281,
+        -39.89155960083008,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005671678464900875,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,00 / Continuous city terrain",
+      "world_m": [
+        44.36181640625,
+        -36.11787033081055,
+        0.550000011920929
+      ],
+      "camera_depth_m": 183.34902954101562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005671831714564573,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,00 / Continuous city terrain",
+      "world_m": [
+        49.26762008666992,
+        -32.344173431396484,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000567209439605918,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,00 / Outer avenue.001",
+      "world_m": [
+        54.254268646240234,
+        -28.743499755859375,
+        0.800000011920929
+      ],
+      "camera_depth_m": 183.04232788085938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005672521623598838,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,00 / Canal / quiet turquoise water",
+      "world_m": [
+        59.137325286865234,
+        -24.940231323242188,
+        0.7499908208847046
+      ],
+      "camera_depth_m": 183.1036834716797,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005672958426377358,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,00 / Continuous city terrain",
+      "world_m": [
+        63.98502731323242,
+        -21.023082733154297,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005673464750188586,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,00 / Continuous city terrain",
+      "world_m": [
+        68.89083099365234,
+        -17.249378204345703,
+        0.550000011920929
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005674124729523552,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,00 / Continuous city terrain",
+      "world_m": [
+        73.79664611816406,
+        -13.475688934326172,
+        0.550000011920929
+      ],
+      "camera_depth_m": 183.34902954101562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005674895824191352,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,00 / East\u2013west avenue",
+      "world_m": [
+        78.7430419921875,
+        -9.910673141479492,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 183.0361785888672,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000567583853499965,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,00 / Continuous city terrain",
+      "world_m": [
+        83.60824584960938,
+        -5.928288459777832,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 183.3490447998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005676748214135917,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,01 / Continuous city terrain",
+      "world_m": [
+        -20.225536346435547,
+        -76.84879302978516,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 188.55003356933594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047432519275335684,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,01 / North\u2013south avenue",
+      "world_m": [
+        -14.983720779418945,
+        -73.06678009033203,
+        0.800000011920929
+      ],
+      "camera_depth_m": 188.23464965820312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004742472948778167,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,01 / Continuous city terrain",
+      "world_m": [
+        -10.135621070861816,
+        -69.08729553222656,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 188.55006408691406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047416952902093213,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,01 / Continuous city terrain",
+      "world_m": [
+        -5.090662956237793,
+        -65.20654296875,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 188.55007934570312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004741053762210565,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,01 / Continuous city terrain",
+      "world_m": [
+        -0.045686960220336914,
+        -61.3258056640625,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 188.55006408691406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004740506452169121,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,01 / Continuous city terrain",
+      "world_m": [
+        4.999279975891113,
+        -57.44506072998047,
+        0.550000011920929
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004740052953482837,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,01 / Continuous city terrain",
+      "world_m": [
+        10.044246673583984,
+        -53.5643196105957,
+        0.550000011920929
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739670457169601,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,01 / North\u2013south avenue.001",
+      "world_m": [
+        15.235442161560059,
+        -49.821266174316406,
+        0.79998779296875
+      ],
+      "camera_depth_m": 188.23464965820312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739448034324454,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,01 / District connector road.002",
+      "world_m": [
+        20.27471923828125,
+        -45.949920654296875,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 188.22833251953125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739232949393111,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,01 / Continuous city terrain",
+      "world_m": [
+        25.179147720336914,
+        -41.922080993652344,
+        0.550000011920929
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047390286587043986,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,01 / Continuous city terrain",
+      "world_m": [
+        30.224119186401367,
+        -38.04134750366211,
+        0.550000011920929
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004738981600880673,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,01 / Continuous city terrain",
+      "world_m": [
+        35.26907730102539,
+        -34.16059494018555,
+        0.550000011920929
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739028662191029,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,01 / Canal / limestone quay",
+      "world_m": [
+        40.83415985107422,
+        -31.130653381347656,
+        1.7999894618988037
+      ],
+      "camera_depth_m": 186.9730224609375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739545369417143,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,01 / Canal / quiet turquoise water",
+      "world_m": [
+        45.43547058105469,
+        -26.540430068969727,
+        0.75
+      ],
+      "camera_depth_m": 188.2977294921875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004739429369124592,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,01 / Canal / limestone quay.001",
+      "world_m": [
+        50.83970260620117,
+        -23.43409538269043,
+        1.8000106811523438
+      ],
+      "camera_depth_m": 186.97300720214844,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004740064151387121,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,01 / Continuous city terrain",
+      "world_m": [
+        55.44894027709961,
+        -18.637622833251953,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 188.55006408691406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047400438094607946,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,01 / Continuous city terrain",
+      "world_m": [
+        60.4939079284668,
+        -14.756875991821289,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 188.550048828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047405155780266063,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,01 / East\u2013west avenue",
+      "world_m": [
+        65.60192108154297,
+        -11.08279800415039,
+        0.8049756288528442
+      ],
+      "camera_depth_m": 188.22836303710938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00047411518512500804,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,01 / East\u2013west avenue",
+      "world_m": [
+        70.63829040527344,
+        -7.208664894104004,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 188.2283477783203,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004741793068040483,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,01 / Continuous city terrain",
+      "world_m": [
+        75.62879943847656,
+        -3.114621162414551,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 188.55007934570312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004742407748252774,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,01 / Surrounding block 22 / storefront awning",
+      "world_m": [
+        80.9877700805664,
+        -1.1439034938812256,
+        2.700000286102295
+      ],
+      "camera_depth_m": 185.83753967285156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004743923203061918,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,02 / Continuous city terrain",
+      "world_m": [
+        -26.277145385742188,
+        -72.02944946289062,
+        0.5499725341796875
+      ],
+      "camera_depth_m": 194.05479431152344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038047024750015106,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,02 / Continuous city terrain",
+      "world_m": [
+        -21.084863662719727,
+        -68.03541564941406,
+        0.550000011920929
+      ],
+      "camera_depth_m": 194.05474853515625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003804079173911062,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,02 / North\u2013south avenue",
+      "world_m": [
+        -15.694548606872559,
+        -64.1550521850586,
+        0.800000011920929
+      ],
+      "camera_depth_m": 193.73013305664062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003803573045839033,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,02 / Continuous city terrain",
+      "world_m": [
+        -10.700377464294434,
+        -60.04731750488281,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 194.05477905273438,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038029758986799227,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,02 / Continuous city terrain",
+      "world_m": [
+        -5.508121967315674,
+        -56.05328369140625,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 194.05477905273438,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003802540472369422,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,02 / Continuous city terrain",
+      "world_m": [
+        -0.31585693359375,
+        -52.05924987792969,
+        0.550000011920929
+      ],
+      "camera_depth_m": 194.0547637939453,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038021701134033966,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,02 / District connector road.002",
+      "world_m": [
+        5.042963981628418,
+        -48.20841598510742,
+        0.8049877882003784
+      ],
+      "camera_depth_m": 193.72366333007812,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801936915326771,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,02 / Continuous city terrain",
+      "world_m": [
+        10.068655014038086,
+        -44.071170806884766,
+        0.550000011920929
+      ],
+      "camera_depth_m": 194.05474853515625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801639385710289,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,02 / North\u2013south avenue.001",
+      "world_m": [
+        15.406848907470703,
+        -40.23088836669922,
+        0.800000011920929
+      ],
+      "camera_depth_m": 193.7301483154297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038015534682314385,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,02 / Continuous city terrain",
+      "world_m": [
+        20.453149795532227,
+        -36.08307647705078,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 194.05477905273438,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801370388951699,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,02 / Canal / limestone quay",
+      "world_m": [
+        25.673067092895508,
+        -32.125003814697266,
+        0.6037642955780029
+      ],
+      "camera_depth_m": 193.9849395751953,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801329667905912,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,02 / Canal / quiet turquoise water",
+      "world_m": [
+        30.933563232421875,
+        -28.234058380126953,
+        0.75
+      ],
+      "camera_depth_m": 193.79505920410156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801410205652249,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,02 / Canal / quiet turquoise water",
+      "world_m": [
+        36.11887741088867,
+        -24.24534797668457,
+        0.7500091791152954
+      ],
+      "camera_depth_m": 193.79505920410156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801514245052391,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,02 / Continuous city terrain",
+      "world_m": [
+        41.22217559814453,
+        -20.106914520263672,
+        0.550000011920929
+      ],
+      "camera_depth_m": 194.0547637939453,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038016299470315873,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,02 / Continuous city terrain",
+      "world_m": [
+        46.4144287109375,
+        -16.11286735534668,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 194.0547637939453,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003801862625957113,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,02 / Outer avenue.001",
+      "world_m": [
+        51.69182205200195,
+        -12.319358825683594,
+        0.79998779296875
+      ],
+      "camera_depth_m": 193.7301483154297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003802251033087426,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,02 / East\u2013west avenue",
+      "world_m": [
+        56.87690353393555,
+        -8.33614730834961,
+        0.8049877882003784
+      ],
+      "camera_depth_m": 193.72366333007812,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038026103573695025,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,02 / Continuous city terrain",
+      "world_m": [
+        61.99118423461914,
+        -4.130745887756348,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 194.0547637939453,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038029880586792816,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,02 / Surrounding block 21 / foundation",
+      "world_m": [
+        67.31421661376953,
+        -0.6250133514404297,
+        1.1034058332443237
+      ],
+      "camera_depth_m": 193.33616638183594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003803670430056967,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,02 / Surrounding block 22",
+      "world_m": [
+        73.34185791015625,
+        -0.4999866485595703,
+        5.343240261077881
+      ],
+      "camera_depth_m": 187.83090209960938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003805598775380421,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,02 / Surrounding block 22 / roof",
+      "world_m": [
+        78.93175506591797,
+        0.20143747329711914,
+        8.725000381469727
+      ],
+      "camera_depth_m": 183.43984985351562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003807367795861571,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,03 / Continuous city terrain",
+      "world_m": [
+        -32.69266891479492,
+        -66.92028045654297,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 199.8905487060547,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028611641805587914,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,03 / Continuous city terrain",
+      "world_m": [
+        -27.344270706176758,
+        -62.806121826171875,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 199.8905487060547,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028606734706632824,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,03 / Continuous city terrain",
+      "world_m": [
+        -21.995866775512695,
+        -58.69196701049805,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 199.8905487060547,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000286024980142012,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,03 / North\u2013south avenue",
+      "world_m": [
+        -16.448135375976562,
+        -54.70732879638672,
+        0.800000011920929
+      ],
+      "camera_depth_m": 199.55615234375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859939600433171,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,03 / Continuous city terrain",
+      "world_m": [
+        -11.299064636230469,
+        -50.46365737915039,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 199.8905487060547,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859547314789009,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,03 / District connector road.002",
+      "world_m": [
+        -5.765631675720215,
+        -46.49563980102539,
+        0.8049877882003784
+      ],
+      "camera_depth_m": 199.54949951171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859345404233814,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,03 / Continuous city terrain",
+      "world_m": [
+        -0.6022632122039795,
+        -42.2353401184082,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 199.89056396484375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859014574188845,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,03 / Continuous city terrain",
+      "world_m": [
+        4.746124267578125,
+        -38.12118148803711,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 199.89056396484375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028588324789625735,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,03 / Continuous city terrain",
+      "world_m": [
+        10.094529151916504,
+        -34.00704574584961,
+        0.550000011920929
+      ],
+      "camera_depth_m": 199.8905487060547,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002858721972531739,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,03 / North\u2013south avenue.001",
+      "world_m": [
+        15.588570594787598,
+        -30.063690185546875,
+        0.800000011920929
+      ],
+      "camera_depth_m": 199.55616760253906,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028587274404653023,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,03 / Canal / quiet turquoise water",
+      "world_m": [
+        20.900667190551758,
+        -25.920873641967773,
+        0.7499908208847046
+      ],
+      "camera_depth_m": 199.62306213378906,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028586764821315387,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,03 / Canal / limestone quay.001",
+      "world_m": [
+        26.778406143188477,
+        -22.587434768676758,
+        1.8000000715255737
+      ],
+      "camera_depth_m": 198.21865844726562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859018545768291,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,03 / Riverside Cycles",
+      "world_m": [
+        33.070045471191406,
+        -20.100000381469727,
+        3.8792500495910645
+      ],
+      "camera_depth_m": 195.43763732910156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859753611390794,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,03 / Riverside Cycles",
+      "world_m": [
+        38.5,
+        -16.439895629882812,
+        4.336060047149658
+      ],
+      "camera_depth_m": 194.82666015625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859999296059716,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,03 / East\u2013west avenue",
+      "world_m": [
+        42.287841796875,
+        -9.531420707702637,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 199.5494842529297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028591029929981817,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,03 / Continuous city terrain",
+      "world_m": [
+        47.5333251953125,
+        -5.207950592041016,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 199.89056396484375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028592381130400287,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,03 / Outer avenue.001",
+      "world_m": [
+        52.9647331237793,
+        -1.3127574920654297,
+        0.79998779296875
+      ],
+      "camera_depth_m": 199.5561981201172,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859600551314694,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,03 / Continuous city terrain",
+      "world_m": [
+        58.23012161254883,
+        3.020380735397339,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 199.8905792236328,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002859872216218867,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,03 / Surrounding block 21 / cornice",
+      "world_m": [
+        65.64895629882812,
+        -0.2667675018310547,
+        8.5
+      ],
+      "camera_depth_m": 189.25735473632812,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00028627568743325296,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,03 / Surrounding block 21 / east window.001",
+      "world_m": [
+        69.32999420166016,
+        9.528834342956543,
+        2.3442680835723877
+      ],
+      "camera_depth_m": 197.49069213867188,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002861223715919078,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,03 / Surrounding block 22 / rooftop service room",
+      "world_m": [
+        76.06946563720703,
+        5.995476245880127,
+        10.050000190734863
+      ],
+      "camera_depth_m": 187.18421936035156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002864180749415971,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,04 / Continuous city terrain",
+      "world_m": [
+        -39.50602340698242,
+        -61.49427795410156,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 206.08819580078125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019125568603778462,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,04 / Continuous city terrain",
+      "world_m": [
+        -33.99181365966797,
+        -57.25254440307617,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001912237977697258,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,04 / Continuous city terrain",
+      "world_m": [
+        -28.47759437561035,
+        -53.01083755493164,
+        0.550000011920929
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019119397959508304,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,04 / District connector road.002",
+      "world_m": [
+        -22.749263763427734,
+        -48.91115188598633,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 205.73655700683594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019117704663071397,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,04 / District connector road.002",
+      "world_m": [
+        -17.244449615478516,
+        -44.67667007446289,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 205.73655700683594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019115607605371324,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,04 / Continuous city terrain",
+      "world_m": [
+        -11.934908866882324,
+        -40.28567886352539,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 206.08824157714844,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019112844674351142,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,04 / Continuous city terrain",
+      "world_m": [
+        -6.420680999755859,
+        -36.043968200683594,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019111306877404275,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,04 / Canal / limestone quay",
+      "world_m": [
+        -0.573393702507019,
+        -32.12499237060547,
+        1.0313628911972046
+      ],
+      "camera_depth_m": 205.4244384765625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019111477161333447,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,04 / Canal / quiet turquoise water",
+      "world_m": [
+        4.738792896270752,
+        -27.70032501220703,
+        0.7500091791152954
+      ],
+      "camera_depth_m": 205.81240844726562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001910986534019659,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,04 / Canal / limestone quay.001",
+      "world_m": [
+        10.254737854003906,
+        -23.474998474121094,
+        0.764739990234375
+      ],
+      "camera_depth_m": 205.79209899902344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019109405613281438,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,04 / North\u2013south avenue.001",
+      "world_m": [
+        15.781549453735352,
+        -19.26601219177246,
+        0.79998779296875
+      ],
+      "camera_depth_m": 205.7434844970703,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019109332312184472,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,04 / Canal Corner / cornice",
+      "world_m": [
+        24.933534622192383,
+        -20.28399658203125,
+        7.5
+      ],
+      "camera_depth_m": 196.50433349609375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001912992082634357,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,04 / Canal Corner",
+      "world_m": [
+        29.0,
+        -14.332324028015137,
+        5.15223503112793
+      ],
+      "camera_depth_m": 199.74185180664062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019122998329841053,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,04 / Continuous city terrain",
+      "world_m": [
+        32.178924560546875,
+        -6.351958274841309,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019110149929933953,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,04 / Street tree canopy.036",
+      "world_m": [
+        39.56610870361328,
+        -5.864123344421387,
+        4.869182109832764
+      ],
+      "camera_depth_m": 200.13217163085938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019124208877430211,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,04 / Continuous city terrain",
+      "world_m": [
+        43.20737838745117,
+        2.131466865539551,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019112824216090688,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,04 / Continuous city terrain",
+      "world_m": [
+        48.72160720825195,
+        6.3731865882873535,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 206.08824157714844,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019114697098339303,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,04 / Outer avenue.001",
+      "world_m": [
+        54.31658172607422,
+        10.376323699951172,
+        0.800000011920929
+      ],
+      "camera_depth_m": 205.74346923828125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019117588052072754,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,04 / Surrounding block 21 / roof",
+      "world_m": [
+        62.0885124206543,
+        6.823461055755615,
+        8.725000381469727
+      ],
+      "camera_depth_m": 194.81507873535156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019144559611933244,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,04 / Surrounding block 21 / roof",
+      "world_m": [
+        67.30110931396484,
+        10.833168983459473,
+        8.725000381469727
+      ],
+      "camera_depth_m": 194.81507873535156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019147381700397505,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,04 / Continuous city terrain",
+      "world_m": [
+        70.77852630615234,
+        23.340051651000977,
+        0.550000011920929
+      ],
+      "camera_depth_m": 206.08822631835938,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019125417120290292,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,05 / Continuous city terrain",
+      "world_m": [
+        -46.75541687011719,
+        -55.721038818359375,
+        0.550018310546875
+      ],
+      "camera_depth_m": 212.68247985839844,
+      "native_reference_rms_sensor_blur_diameter_m": 9.588508597618453e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,05 / Continuous city terrain",
+      "world_m": [
+        -41.064762115478516,
+        -51.34358596801758,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 212.68251037597656,
+      "native_reference_rms_sensor_blur_diameter_m": 9.586954346430103e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,05 / District connector road.002",
+      "world_m": [
+        -35.13884353637695,
+        -47.11123275756836,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 212.31961059570312,
+      "native_reference_rms_sensor_blur_diameter_m": 9.586061684334174e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,05 / Continuous city terrain",
+      "world_m": [
+        -29.683435440063477,
+        -42.588706970214844,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 212.68251037597656,
+      "native_reference_rms_sensor_blur_diameter_m": 9.584218424145179e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,05 / Continuous city terrain",
+      "world_m": [
+        -23.992780685424805,
+        -38.21125030517578,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 212.6825408935547,
+      "native_reference_rms_sensor_blur_diameter_m": 9.583079658161066e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,05 / North\u2013south avenue",
+      "world_m": [
+        -18.10000228881836,
+        -33.998046875,
+        0.800000011920929
+      ],
+      "camera_depth_m": 212.32672119140625,
+      "native_reference_rms_sensor_blur_diameter_m": 9.582901326808774e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,05 / Canal / quiet turquoise water",
+      "world_m": [
+        -12.457367897033691,
+        -29.59362030029297,
+        0.7500091791152954
+      ],
+      "camera_depth_m": 212.3978729248047,
+      "native_reference_rms_sensor_blur_diameter_m": 9.582074083053787e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,05 / Canal / quiet turquoise water",
+      "world_m": [
+        -6.7743120193481445,
+        -25.222042083740234,
+        0.75
+      ],
+      "camera_depth_m": 212.3978729248047,
+      "native_reference_rms_sensor_blur_diameter_m": 9.581438780158028e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,05 / Promenade",
+      "world_m": [
+        -0.7615947723388672,
+        -21.20419692993164,
+        1.225000023841858
+      ],
+      "camera_depth_m": 211.721923828125,
+      "native_reference_rms_sensor_blur_diameter_m": 9.582229616982976e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,05 / The Glasshouse",
+      "world_m": [
+        7.660812854766846,
+        -20.100000381469727,
+        5.428368091583252
+      ],
+      "camera_depth_m": 205.74008178710938,
+      "native_reference_rms_sensor_blur_diameter_m": 9.594458756531037e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,05 / Signal / pole.005",
+      "world_m": [
+        10.844643592834473,
+        -12.848037719726562,
+        1.6720993518829346
+      ],
+      "camera_depth_m": 211.08563232421875,
+      "native_reference_rms_sensor_blur_diameter_m": 9.583219559578863e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,05 / East\u2013west avenue",
+      "world_m": [
+        15.989774703979492,
+        -7.781500816345215,
+        0.8049877882003784
+      ],
+      "camera_depth_m": 212.3196258544922,
+      "native_reference_rms_sensor_blur_diameter_m": 9.580976179378759e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,05 / The Lantern / corner cafe / storefront awning",
+      "world_m": [
+        22.697399139404297,
+        -5.044795036315918,
+        2.700000047683716
+      ],
+      "camera_depth_m": 209.6228485107422,
+      "native_reference_rms_sensor_blur_diameter_m": 9.586444746164863e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,05 / The Lantern / corner cafe",
+      "world_m": [
+        29.250003814697266,
+        -2.400193691253662,
+        4.573759078979492
+      ],
+      "camera_depth_m": 206.95628356933594,
+      "native_reference_rms_sensor_blur_diameter_m": 9.592476473897844e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,05 / Bluebird House",
+      "world_m": [
+        38.054927825927734,
+        -4.599999904632568,
+        11.591312408447266
+      ],
+      "camera_depth_m": 196.96958923339844,
+      "native_reference_rms_sensor_blur_diameter_m": 9.615050779532595e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,05 / Continuous city terrain",
+      "world_m": [
+        38.60459899902344,
+        9.94055461883545,
+        0.550000011920929
+      ],
+      "camera_depth_m": 212.68251037597656,
+      "native_reference_rms_sensor_blur_diameter_m": 9.58229677853219e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,05 / East\u2013west avenue.001",
+      "world_m": [
+        44.394569396972656,
+        14.068380355834961,
+        0.8049756288528442
+      ],
+      "camera_depth_m": 212.3196563720703,
+      "native_reference_rms_sensor_blur_diameter_m": 9.583941561448861e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,05 / Outer avenue.001",
+      "world_m": [
+        50.07377624511719,
+        18.44338035583496,
+        0.800000011920929
+      ],
+      "camera_depth_m": 212.32675170898438,
+      "native_reference_rms_sensor_blur_diameter_m": 9.584963006132495e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,05 / Continuous city terrain",
+      "world_m": [
+        55.67660140991211,
+        23.072917938232422,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 212.6825408935547,
+      "native_reference_rms_sensor_blur_diameter_m": 9.585457103731812e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,05 / Continuous city terrain",
+      "world_m": [
+        61.36727523803711,
+        27.450328826904297,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 212.68251037597656,
+      "native_reference_rms_sensor_blur_diameter_m": 9.586954346430103e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,05 / Continuous city terrain",
+      "world_m": [
+        67.05794525146484,
+        31.827781677246094,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 212.68251037597656,
+      "native_reference_rms_sensor_blur_diameter_m": 9.588460661750592e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,06 / Outer avenue",
+      "world_m": [
+        -54.221500396728516,
+        -49.70398712158203,
+        0.800000011920929
+      ],
+      "camera_depth_m": 219.34521484375,
+      "native_reference_rms_sensor_blur_diameter_m": 1.1253213485325288e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,06 / District connector road.002",
+      "world_m": [
+        -48.347496032714844,
+        -45.19233703613281,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 219.3378448486328,
+      "native_reference_rms_sensor_blur_diameter_m": 1.123392775823811e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,06 / Continuous city terrain",
+      "world_m": [
+        -42.7265625,
+        -40.52182388305664,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 219.7127685546875,
+      "native_reference_rms_sensor_blur_diameter_m": 4.21674230049244e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,06 / Continuous city terrain",
+      "world_m": [
+        -36.84779357910156,
+        -35.99968719482422,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 219.7127685546875,
+      "native_reference_rms_sensor_blur_diameter_m": 3.725290298461914e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,06 / Canal / limestone quay",
+      "world_m": [
+        -30.10939598083496,
+        -32.12498474121094,
+        1.5125274658203125
+      ],
+      "camera_depth_m": 218.2976837158203,
+      "native_reference_rms_sensor_blur_diameter_m": 3.027156547297725e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,06 / Canal / quiet turquoise water",
+      "world_m": [
+        -24.919466018676758,
+        -27.096010208129883,
+        0.75
+      ],
+      "camera_depth_m": 219.41871643066406,
+      "native_reference_rms_sensor_blur_diameter_m": 1.0720327899997437e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,06 / Canal / limestone quay.001",
+      "world_m": [
+        -18.193458557128906,
+        -23.349716186523438,
+        1.8000000715255737
+      ],
+      "camera_depth_m": 217.87506103515625,
+      "native_reference_rms_sensor_blur_diameter_m": 3.9121091327831565e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,06 / Street tree canopy.014",
+      "world_m": [
+        -10.595207214355469,
+        -20.6074275970459,
+        4.081942081451416
+      ],
+      "camera_depth_m": 214.52027893066406,
+      "native_reference_rms_sensor_blur_diameter_m": 1.04316443405642e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,06 / Coral Workshop / roof",
+      "world_m": [
+        -2.359002113342285,
+        -18.885053634643555,
+        7.474999904632568
+      ],
+      "camera_depth_m": 209.53199768066406,
+      "native_reference_rms_sensor_blur_diameter_m": 2.0350543728563753e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,06 / The Glasshouse / roof garden",
+      "world_m": [
+        5.023133277893066,
+        -16.673402786254883,
+        10.024999618530273
+      ],
+      "camera_depth_m": 205.78317260742188,
+      "native_reference_rms_sensor_blur_diameter_m": 2.829031727900476e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,06 / Meridian Square / pale stone plaza",
+      "world_m": [
+        4.730733871459961,
+        -4.899950981140137,
+        1.2000000476837158
+      ],
+      "camera_depth_m": 218.7571563720703,
+      "native_reference_rms_sensor_blur_diameter_m": 2.189103378642939e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,06 / Meridian Square / pale stone plaza",
+      "world_m": [
+        10.25,
+        0.08060383796691895,
+        0.6594269275665283
+      ],
+      "camera_depth_m": 219.5518798828125,
+      "native_reference_rms_sensor_blur_diameter_m": 8.381903171539307e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,06 / The Lantern / corner cafe",
+      "world_m": [
+        21.94153594970703,
+        -4.5999884605407715,
+        10.716913223266602
+      ],
+      "camera_depth_m": 204.7659454345703,
+      "native_reference_rms_sensor_blur_diameter_m": 3.027028055170405e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,06 / The Lantern / corner cafe / roof",
+      "world_m": [
+        28.772350311279297,
+        -2.755497455596924,
+        13.225010871887207
+      ],
+      "camera_depth_m": 201.0786895751953,
+      "native_reference_rms_sensor_blur_diameter_m": 3.837427621093669e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,06 / Bluebird House / roof",
+      "world_m": [
+        35.901512145996094,
+        -2.030080795288086,
+        16.72498893737793
+      ],
+      "camera_depth_m": 195.93321228027344,
+      "native_reference_rms_sensor_blur_diameter_m": 5.020719531714145e-07,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,06 / Pocket park / lawn",
+      "world_m": [
+        34.01978302001953,
+        17.562110900878906,
+        1.25
+      ],
+      "camera_depth_m": 218.68365478515625,
+      "native_reference_rms_sensor_blur_diameter_m": 2.5171566292158474e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,06 / Continuous city terrain",
+      "world_m": [
+        39.5762939453125,
+        22.788082122802734,
+        0.550000011920929
+      ],
+      "camera_depth_m": 219.7127685546875,
+      "native_reference_rms_sensor_blur_diameter_m": 3.725290298461914e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,06 / Continuous city terrain",
+      "world_m": [
+        45.45507049560547,
+        27.310213088989258,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 219.7127685546875,
+      "native_reference_rms_sensor_blur_diameter_m": 4.748831981413797e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,06 / Outer avenue.001",
+      "world_m": [
+        51.419437408447266,
+        31.55829429626465,
+        0.79998779296875
+      ],
+      "camera_depth_m": 219.34523010253906,
+      "native_reference_rms_sensor_blur_diameter_m": 1.0720327899997437e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,06 / Continuous city terrain",
+      "world_m": [
+        57.21261215209961,
+        36.35448455810547,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 219.71278381347656,
+      "native_reference_rms_sensor_blur_diameter_m": 3.783050181640294e-09,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,06 / District connector road",
+      "world_m": [
+        63.15863800048828,
+        40.58164978027344,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 219.33787536621094,
+      "native_reference_rms_sensor_blur_diameter_m": 1.2650226901477318e-08,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,07 / Continuous city terrain",
+      "world_m": [
+        -62.741188049316406,
+        -42.99037551879883,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 227.22366333007812,
+      "native_reference_rms_sensor_blur_diameter_m": 9.638703311610325e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,07 / Outer avenue",
+      "world_m": [
+        -56.39517593383789,
+        -38.470367431640625,
+        0.79998779296875
+      ],
+      "camera_depth_m": 226.8435516357422,
+      "native_reference_rms_sensor_blur_diameter_m": 9.636557810381111e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,07 / Continuous city terrain",
+      "world_m": [
+        -50.58168029785156,
+        -33.63692855834961,
+        0.550000011920929
+      ],
+      "camera_depth_m": 227.22364807128906,
+      "native_reference_rms_sensor_blur_diameter_m": 9.635694740954136e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,07 / Canal / quiet turquoise water",
+      "world_m": [
+        -44.30520248413086,
+        -29.09809112548828,
+        0.7499908208847046
+      ],
+      "camera_depth_m": 226.91957092285156,
+      "native_reference_rms_sensor_blur_diameter_m": 9.63397656931893e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,07 / Canal / quiet turquoise water",
+      "world_m": [
+        -38.233585357666016,
+        -24.42764663696289,
+        0.7500091791152954
+      ],
+      "camera_depth_m": 226.91954040527344,
+      "native_reference_rms_sensor_blur_diameter_m": 9.63279501567705e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,07 / Canal Books / storefront awning",
+      "world_m": [
+        -30.460996627807617,
+        -21.17500114440918,
+        2.6352791786193848
+      ],
+      "camera_depth_m": 224.0531768798828,
+      "native_reference_rms_sensor_blur_diameter_m": 9.626939828119329e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,07 / The Bread Shop",
+      "world_m": [
+        -20.576366424560547,
+        -20.100013732910156,
+        7.149919509887695
+      ],
+      "camera_depth_m": 217.18911743164062,
+      "native_reference_rms_sensor_blur_diameter_m": 9.61335641627501e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,07 / East\u2013west avenue",
+      "world_m": [
+        -19.97365951538086,
+        -10.46102523803711,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 226.83595275878906,
+      "native_reference_rms_sensor_blur_diameter_m": 9.630585149639278e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,07 / North\u2013south avenue",
+      "world_m": [
+        -13.90818977355957,
+        -5.78803825378418,
+        0.800000011920929
+      ],
+      "camera_depth_m": 226.84356689453125,
+      "native_reference_rms_sensor_blur_diameter_m": 9.630166733625739e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,07 / Meridian Square / pale stone plaza",
+      "world_m": [
+        -7.542815685272217,
+        -1.470045804977417,
+        1.2000000476837158
+      ],
+      "camera_depth_m": 226.2353973388672,
+      "native_reference_rms_sensor_blur_diameter_m": 9.628798871696662e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,07 / Meridian Square / pale stone plaza",
+      "world_m": [
+        -1.4894921779632568,
+        3.1863491535186768,
+        1.2000213861465454
+      ],
+      "camera_depth_m": 226.23538208007812,
+      "native_reference_rms_sensor_blur_diameter_m": 9.628692219694429e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,07 / Market / stall counter.002",
+      "world_m": [
+        4.999993324279785,
+        7.219882011413574,
+        1.8627265691757202
+      ],
+      "camera_depth_m": 225.22776794433594,
+      "native_reference_rms_sensor_blur_diameter_m": 9.626959623739023e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,07 / Zebra crossing / vertical.045",
+      "world_m": [
+        10.384443283081055,
+        12.864999771118164,
+        0.8232189416885376
+      ],
+      "camera_depth_m": 226.80824279785156,
+      "native_reference_rms_sensor_blur_diameter_m": 9.630074043267178e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,07 / The Lantern / corner cafe / roof garden",
+      "world_m": [
+        23.77959442138672,
+        4.801068305969238,
+        13.524999618530273
+      ],
+      "camera_depth_m": 207.49649047851562,
+      "native_reference_rms_sensor_blur_diameter_m": 9.593468514157793e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,07 / Bluebird House / tank cap",
+      "world_m": [
+        33.42498016357422,
+        1.1793545484542847,
+        21.160219192504883
+      ],
+      "camera_depth_m": 195.8878936767578,
+      "native_reference_rms_sensor_blur_diameter_m": 9.56813402205308e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,07 / Pocket park / lawn",
+      "world_m": [
+        28.801759719848633,
+        26.415027618408203,
+        1.2499908208847046
+      ],
+      "camera_depth_m": 226.1593780517578,
+      "native_reference_rms_sensor_blur_diameter_m": 9.630594924198164e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,07 / Continuous city terrain",
+      "world_m": [
+        34.53468704223633,
+        31.837244033813477,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 227.22366333007812,
+      "native_reference_rms_sensor_blur_diameter_m": 9.633377263841245e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,07 / Continuous city terrain",
+      "world_m": [
+        40.61443328857422,
+        36.51396179199219,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 227.22366333007812,
+      "native_reference_rms_sensor_blur_diameter_m": 9.634488222975045e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,07 / District connector road",
+      "world_m": [
+        46.78938674926758,
+        40.895164489746094,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 226.8359375,
+      "native_reference_rms_sensor_blur_diameter_m": 9.635159645247113e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,07 / Outer avenue.001",
+      "world_m": [
+        52.857112884521484,
+        45.56984329223633,
+        0.8000244498252869
+      ],
+      "camera_depth_m": 226.84352111816406,
+      "native_reference_rms_sensor_blur_diameter_m": 9.636464720654011e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,07 / Continuous city terrain",
+      "world_m": [
+        58.85365295410156,
+        50.54416275024414,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 227.2236785888672,
+      "native_reference_rms_sensor_blur_diameter_m": 9.638936440917718e-05,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,08 / Continuous city terrain",
+      "world_m": [
+        -71.582763671875,
+        -35.94914245605469,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 235.26626586914062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019329398692623028,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,08 / Canal / limestone quay",
+      "world_m": [
+        -63.88444137573242,
+        -31.950782775878906,
+        1.8000000715255737
+      ],
+      "camera_depth_m": 233.2984619140625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019323067776947798,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,08 / Canal / quiet turquoise water",
+      "world_m": [
+        -58.77676773071289,
+        -26.406150817871094,
+        0.749981701374054
+      ],
+      "camera_depth_m": 234.95140075683594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019322981654047814,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,08 / Outer avenue",
+      "world_m": [
+        -52.43833541870117,
+        -21.607349395751953,
+        0.79998779296875
+      ],
+      "camera_depth_m": 234.87269592285156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019320385695098324,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,08 / Continuous city terrain",
+      "world_m": [
+        -46.40303039550781,
+        -16.580114364624023,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 235.26625061035156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019318801272904444,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,08 / Canal Books / roof garden",
+      "world_m": [
+        -33.83408737182617,
+        -17.02875328063965,
+        7.125
+      ],
+      "camera_depth_m": 224.91578674316406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001929936166218998,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,08 / The Bread Shop / cornice",
+      "world_m": [
+        -26.561973571777344,
+        -13.550545692443848,
+        8.499981880187988
+      ],
+      "camera_depth_m": 222.75125122070312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019293904031500683,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,08 / Seabird Apartments",
+      "world_m": [
+        -24.820091247558594,
+        -4.75,
+        3.651371955871582
+      ],
+      "camera_depth_m": 230.38401794433594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019306148926962494,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,08 / Seabird Apartments",
+      "world_m": [
+        -18.75,
+        0.09440994262695312,
+        3.537550926208496
+      ],
+      "camera_depth_m": 230.56317138671875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001930557163230109,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,08 / North\u2013south avenue",
+      "world_m": [
+        -14.73190689086914,
+        7.397582054138184,
+        0.800000011920929
+      ],
+      "camera_depth_m": 234.8726806640625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019312312217270212,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,08 / East\u2013west avenue.001",
+      "world_m": [
+        -8.44377326965332,
+        12.226895332336426,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 234.8647918701172,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019312215805494608,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,08 / Continuous city terrain",
+      "world_m": [
+        -2.338474988937378,
+        17.31566047668457,
+        0.550000011920929
+      ],
+      "camera_depth_m": 235.2662353515625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000193129638883766,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,08 / Mint Studios",
+      "world_m": [
+        7.093787670135498,
+        17.250011444091797,
+        5.308058738708496
+      ],
+      "camera_depth_m": 227.77606201171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019300961434382867,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,08 / Continuous city terrain",
+      "world_m": [
+        10.251394271850586,
+        27.000179290771484,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 235.26622009277344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019314182742389332,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,08 / North\u2013south avenue.001",
+      "world_m": [
+        16.599990844726562,
+        31.740163803100586,
+        0.643322765827179
+      ],
+      "camera_depth_m": 235.1193389892578,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001931537350104506,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,08 / Continuous city terrain",
+      "world_m": [
+        22.84125328063965,
+        36.68474197387695,
+        0.550000011920929
+      ],
+      "camera_depth_m": 235.26626586914062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019316897800013229,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,08 / District connector road",
+      "world_m": [
+        29.261371612548828,
+        41.23087692260742,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 234.86480712890625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000193181514406632,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,08 / Surrounding block 07 / south window.001",
+      "world_m": [
+        36.44607162475586,
+        43.67000198364258,
+        2.811607599258423
+      ],
+      "camera_depth_m": 231.70599365234375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001931514696708386,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,08 / Surrounding block 07 / foundation",
+      "world_m": [
+        42.125,
+        50.00883865356445,
+        1.5310425758361816
+      ],
+      "camera_depth_m": 233.7218780517578,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019320978510529237,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,08 / Continuous city terrain",
+      "world_m": [
+        48.020999908447266,
+        56.053749084472656,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 235.2662353515625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0001932630204005171,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,08 / Outer avenue.001",
+      "world_m": [
+        54.39653396606445,
+        60.57332992553711,
+        0.800000011920929
+      ],
+      "camera_depth_m": 234.87269592285156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00019328887726155448,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,09 / Canal / quiet turquoise water",
+      "world_m": [
+        -80.82754516601562,
+        -28.529836654663086,
+        0.75
+      ],
+      "camera_depth_m": 243.5726776123047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002907153394920564,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,09 / Canal / quiet turquoise water",
+      "world_m": [
+        -74.31037139892578,
+        -23.516611099243164,
+        0.75
+      ],
+      "camera_depth_m": 243.5726776123047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002906683898416018,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,09 / Continuous city terrain",
+      "world_m": [
+        -68.0213851928711,
+        -18.35130500793457,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 243.8990936279297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029062930440005663,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,09 / Continuous city terrain",
+      "world_m": [
+        -61.495445251464844,
+        -13.331363677978516,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 243.89907836914062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029059071285966536,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,09 / East\u2013west avenue",
+      "world_m": [
+        -54.700828552246094,
+        -8.522480964660645,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 243.48291015625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029055382822356436,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,09 / Continuous city terrain",
+      "world_m": [
+        -48.44361877441406,
+        -3.2914676666259766,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 243.8990936279297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029053176181463857,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,09 / Old Post Office",
+      "world_m": [
+        -34.92141342163086,
+        -4.750011444091797,
+        7.790058612823486
+      ],
+      "camera_depth_m": 232.08343505859375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000290320453784334,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,09 / Seabird Apartments",
+      "world_m": [
+        -23.96438217163086,
+        -4.75,
+        12.935229301452637
+      ],
+      "camera_depth_m": 223.68663024902344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000290155138225961,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,09 / Seabird Apartments",
+      "world_m": [
+        -18.75000762939453,
+        0.6974105834960938,
+        12.0584135055542
+      ],
+      "camera_depth_m": 225.11758422851562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029016898760632944,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,09 / Continuous city terrain",
+      "world_m": [
+        -22.33995819091797,
+        16.788293838500977,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 243.89910888671875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002904725762946182,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,09 / North\u2013south avenue",
+      "world_m": [
+        -15.616106033325195,
+        21.550928115844727,
+        0.7999756336212158
+      ],
+      "camera_depth_m": 243.49110412597656,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002904637878654058,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,09 / Meridian Hotel",
+      "world_m": [
+        -2.546703338623047,
+        17.249988555908203,
+        9.562606811523438
+      ],
+      "camera_depth_m": 229.19070434570312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029023274974274583,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,09 / Mint Studios",
+      "world_m": [
+        6.616176605224609,
+        17.25,
+        13.865277290344238
+      ],
+      "camera_depth_m": 222.16883850097656,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029011683605235873,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,09 / Mint Studios",
+      "world_m": [
+        9.250009536743164,
+        27.484882354736328,
+        8.854147911071777
+      ],
+      "camera_depth_m": 230.34686279296875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002902741294335831,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,09 / District connector road",
+      "world_m": [
+        10.447007179260254,
+        41.591224670410156,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 243.48287963867188,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002905037150759431,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,09 / Continuous city terrain",
+      "world_m": [
+        16.81557273864746,
+        46.907936096191406,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 243.89910888671875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029053316195324475,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,09 / Continuous city terrain",
+      "world_m": [
+        23.341495513916016,
+        51.9278678894043,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 243.89910888671875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029056015189227267,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,09 / Surrounding block 07 / roof",
+      "world_m": [
+        34.7859992980957,
+        44.15251922607422,
+        10.670547485351562
+      ],
+      "camera_depth_m": 227.38258361816406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002903226020916982,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,09 / Surrounding block 07 / roof",
+      "world_m": [
+        40.894073486328125,
+        48.76185989379883,
+        10.724989891052246
+      ],
+      "camera_depth_m": 227.29373168945312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00029035741138411925,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,09 / Continuous city terrain",
+      "world_m": [
+        42.919254302978516,
+        66.98768615722656,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 243.8990936279297,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000290671934579077,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,09 / District connector road.001",
+      "world_m": [
+        49.53569412231445,
+        71.65953826904297,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 243.48294067382812,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0002907132497632391,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,10 / Continuous city terrain",
+      "world_m": [
+        -91.28666687011719,
+        -20.2574462890625,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 253.18955993652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003886630396239835,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,10 / Continuous city terrain",
+      "world_m": [
+        -84.51216125488281,
+        -15.04627799987793,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 253.18955993652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003885991005253961,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,10 / East\u2013west avenue",
+      "world_m": [
+        -77.43011474609375,
+        -10.043577194213867,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 252.75755310058594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003885371403335726,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,10 / Continuous city terrain",
+      "world_m": [
+        -70.96318054199219,
+        -4.623945236206055,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 253.18959045410156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003884944090021595,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,10 / Surrounding block 20 / storefront awning",
+      "world_m": [
+        -61.79069519042969,
+        -1.3202377557754517,
+        2.700000047683716
+      ],
+      "camera_depth_m": 249.5471649169922,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038839815198360374,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,10 / Outer avenue",
+      "world_m": [
+        -57.14666748046875,
+        5.567838668823242,
+        0.800000011920929
+      ],
+      "camera_depth_m": 252.7660369873047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038840731041055247,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,10 / East\u2013west avenue.001",
+      "world_m": [
+        -50.37837600708008,
+        10.765496253967285,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 252.757568359375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003883781421773336,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,10 / Old Post Office / roof",
+      "world_m": [
+        -33.4105110168457,
+        5.63347053527832,
+        11.225000381469727
+      ],
+      "camera_depth_m": 235.10459899902344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038808411781729956,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,10 / Seabird Apartments / roof",
+      "world_m": [
+        -23.383785247802734,
+        6.365816116333008,
+        15.225000381469727
+      ],
+      "camera_depth_m": 228.32803344726562,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003879536811316413,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,10 / Terracotta House / south window.014",
+      "world_m": [
+        -22.448623657226562,
+        17.24554443359375,
+        9.402857780456543
+      ],
+      "camera_depth_m": 238.19155883789062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038810764593685864,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,10 / Terracotta House / east window.005",
+      "world_m": [
+        -18.670000076293945,
+        25.520957946777344,
+        6.326406002044678
+      ],
+      "camera_depth_m": 243.40350341796875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003881860567243103,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,10 / Meridian Hotel",
+      "world_m": [
+        -2.7884693145751953,
+        17.250011444091797,
+        18.066259384155273
+      ],
+      "camera_depth_m": 223.5145263671875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000387856192894492,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,10 / Mint Studios / roof garden",
+      "world_m": [
+        1.2791953086853027,
+        24.813831329345703,
+        15.52500057220459
+      ],
+      "camera_depth_m": 227.81979370117188,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003879443677693601,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,10 / Surrounding block 05",
+      "world_m": [
+        -1.0167112350463867,
+        43.75,
+        3.662095546722412
+      ],
+      "camera_depth_m": 247.917236328125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003882836671581993,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,10 / Surrounding block 06",
+      "world_m": [
+        8.350228309631348,
+        43.75,
+        7.790932655334473
+      ],
+      "camera_depth_m": 240.92239379882812,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038819837514798334,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,10 / Surrounding block 06",
+      "world_m": [
+        16.00000762939453,
+        46.22889709472656,
+        9.742379188537598
+      ],
+      "camera_depth_m": 237.61634826660156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003881781555124348,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,10 / Continuous city terrain",
+      "world_m": [
+        17.105358123779297,
+        63.12110137939453,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 253.18960571289062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003884503358990052,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,10 / District connector road.001",
+      "world_m": [
+        24.014005661010742,
+        67.99040985107422,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 252.757568359375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00038848693685749453,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,10 / Continuous city terrain",
+      "world_m": [
+        30.654367446899414,
+        73.54340362548828,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 253.18959045410156,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003885420666425271,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,10 / Surrounding block 16 / storefront awning",
+      "world_m": [
+        38.364994049072266,
+        75.72257995605469,
+        2.700000047683716
+      ],
+      "camera_depth_m": 249.54714965820312,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003885469365988032,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,10 / Continuous city terrain",
+      "world_m": [
+        44.203372955322266,
+        83.96570587158203,
+        0.550000011920929
+      ],
+      "camera_depth_m": 253.1895751953125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0003886648952137403,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,11 / East\u2013west avenue",
+      "world_m": [
+        -101.95952606201172,
+        -11.685160636901855,
+        0.8050122261047363
+      ],
+      "camera_depth_m": 262.7666931152344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048711970385760116,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,11 / Continuous city terrain",
+      "world_m": [
+        -95.26624298095703,
+        -6.061981201171875,
+        0.550000011920929
+      ],
+      "camera_depth_m": 263.2158508300781,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048704790988819365,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,11 / Continuous city terrain",
+      "world_m": [
+        -88.22348022460938,
+        -0.6444554328918457,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 263.21588134765625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004869775961702773,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,11 / Surrounding block 19",
+      "world_m": [
+        -74.09920501708984,
+        -0.5000133514404297,
+        6.311768054962158
+      ],
+      "camera_depth_m": 253.06802368164062,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048677557514542646,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,11 / Surrounding block 20 / roof",
+      "world_m": [
+        -64.47574615478516,
+        2.412654399871826,
+        8.725000381469727
+      ],
+      "camera_depth_m": 248.8177947998047,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004866605745137612,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,11 / Surrounding block 20 / roof",
+      "world_m": [
+        -57.81822204589844,
+        7.53383731842041,
+        8.725000381469727
+      ],
+      "camera_depth_m": 248.81781005859375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048661556256706084,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,11 / Continuous city terrain",
+      "world_m": [
+        -60.05241394042969,
+        21.025632858276367,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 263.2159118652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048677931666260793,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,11 / Outer avenue",
+      "world_m": [
+        -52.749507904052734,
+        26.178096771240234,
+        0.8000122308731079
+      ],
+      "camera_depth_m": 262.77557373046875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048674383279059585,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,11 / The Pearl / corner apartments / cornice",
+      "world_m": [
+        -32.85371398925781,
+        17.387849807739258,
+        13.750008583068848
+      ],
+      "camera_depth_m": 239.96763610839844,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004863927396478873,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,11 / Terracotta House / cornice",
+      "world_m": [
+        -22.41120719909668,
+        17.512985229492188,
+        18.0
+      ],
+      "camera_depth_m": 232.48239135742188,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048625832898551894,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,11 / Terracotta House / east window.013",
+      "world_m": [
+        -18.670000076293945,
+        25.520980834960938,
+        15.2427339553833
+      ],
+      "camera_depth_m": 237.33856201171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004863345212631464,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,11 / Hotel / cream cap",
+      "world_m": [
+        -6.263901710510254,
+        21.840423583984375,
+        22.350000381469727
+      ],
+      "camera_depth_m": 224.821044921875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004861230403050987,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,11 / Meridian Hotel / cornice",
+      "world_m": [
+        -1.799999713897705,
+        28.860618591308594,
+        20.422447204589844
+      ],
+      "camera_depth_m": 228.21592712402344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004861990104738725,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,11 / Surrounding block 05 / roof",
+      "world_m": [
+        -1.9775068759918213,
+        44.15250015258789,
+        12.130248069763184
+      ],
+      "camera_depth_m": 242.82040405273438,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048645788484641026,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,11 / Surrounding block 05",
+      "world_m": [
+        3.5,
+        51.03520584106445,
+        10.695615768432617
+      ],
+      "camera_depth_m": 245.34710693359375,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004865245417283703,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,11 / Surrounding block 06 / rooftop service room",
+      "world_m": [
+        13.255000114440918,
+        49.59333801269531,
+        15.503599166870117
+      ],
+      "camera_depth_m": 236.87913513183594,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004864311066821259,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,11 / Continuous city terrain",
+      "world_m": [
+        10.375303268432617,
+        75.20084381103516,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 263.2159118652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004868622869223229,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,11 / Continuous city terrain",
+      "world_m": [
+        17.41807746887207,
+        80.61835479736328,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 263.2159118652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048691558056315347,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,11 / Continuous city terrain",
+      "world_m": [
+        24.460861206054688,
+        86.0358657836914,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 263.2159118652344,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000486978318246877,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,11 / Surrounding block 16 / roof",
+      "world_m": [
+        35.62470245361328,
+        78.48272705078125,
+        9.22499942779541
+      ],
+      "camera_depth_m": 247.93719482421875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.00048683310992205463,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,11 / Surrounding block 16 / cornice",
+      "world_m": [
+        42.162384033203125,
+        83.93037414550781,
+        9.0
+      ],
+      "camera_depth_m": 248.33348083496094,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0004869183153811894,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 00,12 / Continuous city terrain",
+      "world_m": [
+        -114.24037170410156,
+        -1.977677345275879,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005861129160167842,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 01,12 / Continuous city terrain",
+      "world_m": [
+        -106.90718841552734,
+        3.66323184967041,
+        0.550000011920929
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000586018373971107,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 02,12 / Continuous city terrain",
+      "world_m": [
+        -99.57403564453125,
+        9.30411148071289,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005859347032146944,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 03,12 / East\u2013west avenue.001",
+      "world_m": [
+        -91.90857696533203,
+        14.69429874420166,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 273.6013488769531,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005858553224217638,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 04,12 / Surrounding block 19 / roof",
+      "world_m": [
+        -74.6563949584961,
+        12.239381790161133,
+        8.725000381469727
+      ],
+      "camera_depth_m": 259.0772705078125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856023258711649,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 05,12 / Continuous city terrain",
+      "world_m": [
+        -77.57456970214844,
+        26.226839065551758,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 274.06903076171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005857425961469584,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 06,12 / Continuous city terrain",
+      "world_m": [
+        -70.24137878417969,
+        31.867717742919922,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856982669341288,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 07,12 / Continuous city terrain",
+      "world_m": [
+        -62.908233642578125,
+        37.50864028930664,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 274.06903076171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856643066570903,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 08,12 / District connector road",
+      "world_m": [
+        -55.30534362792969,
+        42.85065841674805,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 273.60137939453125,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856348934296569,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 09,12 / Continuous city terrain",
+      "world_m": [
+        -48.24189758300781,
+        48.790401458740234,
+        0.550000011920929
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856223552669897,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 10,12 / Surrounding block 03",
+      "world_m": [
+        -34.5,
+        46.0999870300293,
+        7.228679656982422
+      ],
+      "camera_depth_m": 261.8212890625,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005854618590113253,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 11,12 / Surrounding block 04 / rooftop service room",
+      "world_m": [
+        -24.744983673095703,
+        47.60774612426758,
+        10.248494148254395
+      ],
+      "camera_depth_m": 256.2834167480469,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005853923102271204,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 12,12 / Continuous city terrain",
+      "world_m": [
+        -26.24241065979004,
+        65.7131576538086,
+        0.5499908328056335
+      ],
+      "camera_depth_m": 274.0690612792969,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856386047199852,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 13,12 / District connector road.001",
+      "world_m": [
+        -18.702077865600586,
+        71.00707244873047,
+        0.8050000071525574
+      ],
+      "camera_depth_m": 273.6014099121094,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856584831468482,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 14,12 / Continuous city terrain",
+      "world_m": [
+        -11.576074600219727,
+        76.99493408203125,
+        0.550000011920929
+      ],
+      "camera_depth_m": 274.06903076171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856987346501842,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 15,12 / Surrounding block 14",
+      "world_m": [
+        -1.067093849182129,
+        76.25,
+        4.99642276763916
+      ],
+      "camera_depth_m": 265.9149475097656,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856396409480784,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 16,12 / Surrounding block 15",
+      "world_m": [
+        8.517847061157227,
+        76.2500228881836,
+        8.70966625213623
+      ],
+      "camera_depth_m": 259.1053771972656,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856037292480918,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 17,12 / Surrounding block 15 / cornice",
+      "world_m": [
+        16.200000762939453,
+        79.74430847167969,
+        9.925992012023926
+      ],
+      "camera_depth_m": 256.8748474121094,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005856387134899792,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 18,12 / Continuous city terrain",
+      "world_m": [
+        17.75659942626953,
+        99.55855560302734,
+        0.5499817132949829
+      ],
+      "camera_depth_m": 274.0690612792969,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005859360882569384,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 19,12 / Continuous city terrain",
+      "world_m": [
+        25.089757919311523,
+        105.19943237304688,
+        0.550000011920929
+      ],
+      "camera_depth_m": 274.06903076171875,
+      "native_reference_rms_sensor_blur_diameter_m": 0.0005860188224983412,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    },
+    {
+      "name": "Surface grid 20,12 / Continuous city terrain",
+      "world_m": [
+        32.42293930053711,
+        110.8403091430664,
+        0.5500091910362244
+      ],
+      "camera_depth_m": 274.0690002441406,
+      "native_reference_rms_sensor_blur_diameter_m": 0.000586113783234459,
+      "ordinary_rms_sensor_blur_diameter_m": null
+    }
+  ],
+  "shift_optical_centre_camera_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "limitations": [
+    "Thin-lens geometric optics; no diffraction/exposure penalty at f/16",
+    "Blur-fit uses finite named landmarks and RMS diameter, not full image equivalence",
+    "Ordinary Cycles supports shift and aperture shape; these demonstrate parity controls"
+  ],
+  "render_backend": "HIP",
+  "render_devices": [
+    "AMD Radeon RX 6900 XT"
+  ],
+  "image_sha256": "489ad53b391c264e279fabd6136ef95f5ed4002dc41d2d5758e388ec732d2a85",
+  "elapsed_s": 50.938951481000004
+}
