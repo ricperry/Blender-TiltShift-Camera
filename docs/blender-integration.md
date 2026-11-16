@@ -35,7 +35,7 @@ schema/member guards appropriate to the fork; version numbers alone must not
 accidentally enable old cameras or reinterpret unset fields. Test old-file loads
 and round trips rather than assuming new-ID initialization covers deserialization.
 
-## Native controls (M2/M3)
+## Tilt-shift controls (M2/M3)
 
 This table records the M2/M3 interface. M2 implements the enable,
 three angle fields and image-circle diameter; M3 adds physical shift views,
@@ -52,7 +52,7 @@ than an arbitrary range chosen here.
 | Tilt/Swing Axis Rotation (degrees) | Fixed-Z rotation Rz of the movement/aperture frame; Rx first, then Ry, then Rz | 0° |
 | Horizontal Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shiftx`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
 | Vertical Shift (physical millimeters) | Sensor-relative framing movement; invertible RNA view of existing `Camera.shifty`, with sensor-fit-aware scale and tested sign | Derived from existing shift; no additional stored shift |
-| Image Circle Diameter (millimeters) | Twice the prescribed rear-focal-plane angular coverage radius from the [optical model](optical-model.md#aperture-blur-and-coverage) | Native 0 means unbounded; positive finite values specify diameter |
+| Image Circle Diameter (millimeters) | Twice the prescribed rear-focal-plane angular coverage radius from the [optical model](optical-model.md#aperture-blur-and-coverage) | A diameter of 0 means unbounded; positive finite values specify diameter |
 | Display Focus Plane | Viewport overlay derived from the actual sharp-focus plane, including the plane-at-infinity case | False |
 | Display Lens Plane | Viewport overlay derived from tilted lens centre, normal and aperture frame | False |
 | Display Image Circle | Viewport coverage overlay derived from the angular stop and sensor intersection | False |

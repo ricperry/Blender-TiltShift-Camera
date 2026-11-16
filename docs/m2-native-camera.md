@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-# M2 native CPU camera
+# M2 tilt-shift camera on CPU
 
 The reviewable patch is `patches/blender-v5.3.0-tilt-shift.patch`, against the
 [recorded Blender pin](source-revision.json). It adds native persisted camera RNA,

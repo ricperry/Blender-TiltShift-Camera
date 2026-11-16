@@ -1,13 +1,13 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # AMD HIP support and evidence
 
-The [M4 native camera](m4-hip-camera.md) now passes actual RX 6900 XT/gfx1030
+The [M4 tilt-shift camera](m4-hip-camera.md) now passes actual RX 6900 XT/gfx1030
 build/render acceptance with a fresh official kernel/install and 19 matching
 CPU/HIP float comparisons. See the [M4 ledger](m4-validation.json) for exact
 provenance, measured limits, disabled regressions, paired completed-render
 timings and remaining limits. Enabled execution permits CPU or one non-HIPRT HIP
 device; multi-device, HIPRT and other GPU backends remain rejected. The preserved
-M1 HIP fatbin must not be copied into a native-camera installation.
+M1 HIP fatbin must not be copied into a tilt-shift camera installation.
 
 The historical unmodified Blender baseline also rendered successfully on actual RDNA2 hardware.
 Initialization host inventory:

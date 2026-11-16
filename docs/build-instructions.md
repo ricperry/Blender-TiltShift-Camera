@@ -113,7 +113,7 @@ work/install-blender-m4/blender --factory-startup examples/full-scale-city/full-
 ```
 
 The file defaults to Cycles CPU. Select a perspective camera, open Camera Data
-and enable **Tilt-Shift**. In the example, the native tilted camera is already
+and enable **Tilt-Shift**. In the example, the tilt-shift camera is already
 active. Changing to HIP is optional and requires the next build step.
 
 ### Optional RDNA2 HIP kernel and host installation
@@ -286,7 +286,7 @@ changed, and enabled native GPU use is deliberately rejected until M4.
 `python3 scripts/dev.py patch` exports the tracked source diff plus the explicitly
 reviewed new `intern/cycles/kernel/camera/tilt_shift_math.h`, checks that its test
 mirror matches, and rejects other untracked source. It does not stage or commit
-upstream. See [native camera validation](m2-native-camera.md) for quantitative
+upstream. See [tilt-shift camera validation](m2-native-camera.md) for quantitative
 fixtures, old-file migration/roundtrip commands and current limitations. Continue
 using the immutable M1 generator on both binaries for disabled bitwise parity.
 

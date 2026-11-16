@@ -19,14 +19,14 @@ import create_city as city
 SCALE = 50.0
 ROOT = Path(__file__).resolve().parents[1]
 
-NOTES = '''FULL-SCALE MERIDIAN — native tilt versus ordinary perspective DOF
+NOTES = '''FULL-SCALE MERIDIAN — lens tilt versus standard perspective DOF
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Open in the project's patched Blender 5.3. F12 renders the selected camera.
 Choose Scene Properties > Camera, or select a camera and Ctrl Numpad 0:
-01 ORDINARY: upstream perspective camera, native movement disabled, DOF ON.
-02 NATIVE ZERO: native enabled, zero movements, DOF ON; a baseline comparison.
-03 NATIVE TILT: native enabled, +5 degrees tilt, DOF ON; active on opening.
+01 ORDINARY: upstream perspective camera, tilt-shift movement disabled, DOF ON.
+02 NATIVE ZERO: tilt-shift enabled, zero movements, DOF ON; a baseline comparison.
+03 NATIVE TILT: tilt-shift enabled, +5 degrees tilt, DOF ON; active on opening.
 All three share the same position, orientation, 50 mm lens, 36 mm sensor,
 f/2.8 aperture and off-axis focus object. Image circle 0 is unbounded.
 Ordinary DOF stays enabled on every camera: this compares optical lens tilt,
@@ -44,9 +44,9 @@ units metadata. Camera scale is 1; camera/focus positions are metres.
 Terrain and through streets continue into surrounding simple building blocks.
 No display plinth, nameplate or studio tabletop remains.
 
-Camera -Z points forward, +Y up. Native angles store radians, shown as degrees;
+Camera -Z points forward, +Y up. Tilt-shift angles store radians, shown as degrees;
 active lens-frame rotation order is Rz(axis) Ry(swing) Rx(tilt). Extreme poses
-may approach singular focus geometry and are rejected by the native camera.
+may approach singular focus geometry and are rejected by the tilt-shift camera.
 Original paint/surface separations become 15–50 mm; physics tolerances unchanged.
 
 CPU, two threads, 1600 x 1000, 128 samples, seed 71, frame 40. Motion blur and

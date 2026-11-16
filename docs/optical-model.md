@@ -2,7 +2,7 @@
 # Tilted thin-lens reference (M1)
 
 This is a standalone, double-precision, ideal Gaussian thin-lens reference for a
-future native Blender 5.3 / Cycles camera. It is neither a renderer nor a
+future tilt-shift camera in Blender 5.3 / Cycles. It is neither a renderer nor a
 postprocessing effect. Tests establish geometrical optics only; native CPU
 rendering, disabled-path parity, exposure, sampling PDFs, derivatives, ray
 footprints, and HIP remain separate integration requirements.
@@ -265,7 +265,7 @@ Required next evidence includes correct raster orientation and shift sign,
 physical finite-focus breathing when enabled, unchanged original Cycles when
 disabled, scene scale and clipping behavior, derivatives, PDFs and throughput,
 CPU deterministic renders, and an actual RDNA2 HIP build/render comparison.
-A standalone passing test is not acceptance of a native camera or HIP support.
+A standalone passing test is not acceptance of a tilt-shift camera or HIP support.
 
 ## Build and verify
 

@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Full-scale Meridian
 
-A low-detail city district for comparing native lens tilt with ordinary
+A low-detail city district for comparing tilt-shift lens tilt with ordinary
 perspective depth of field at real city distances. The geometry and animated
 travel from [Little Meridian](CITY.md) are enlarged **50× in world space**:
 the core district is 82 × 67 m, cars about 3.3 m long, standing people about 2 m
@@ -30,32 +30,32 @@ work/install-blender-m4/blender --background -noaudio --factory-startup --thread
 
 The command writes a separate, regenerated scene under ignored `work/`; it does
 not replace the packaged download. Open that generated file with the same binary
-and press **F12**. Both scenes use **03 NATIVE TILT** as their active camera. Instructions are also
+and press **F12**. Both scenes use **Tilt-shift, +5°** (`03 NATIVE TILT`, the legacy stored camera name) as their active camera. Instructions are also
 in the file's **START HERE · Full-scale Meridian** Text datablock. The generated `.json`
 inventory records world-space representative dimensions and matched camera
 positions/settings. The reused generator saves an intermediate
 `source-miniature.blend` and inventory in this same ignored output directory;
 it does not alter the original miniature scene or generator.
 
-| Camera | Native movement | Depth of Field enabled |
+| Camera (legacy stored name) | Tilt-shift movement | Depth of Field enabled |
 | --- | --- | --- |
-| 01 ORDINARY | Disabled | On |
-| 02 NATIVE ZERO | Enabled, zero angles | On |
-| 03 NATIVE TILT | Enabled, +5° tilt | On |
+| Standard perspective (`01 ORDINARY`) | Disabled | On |
+| Tilt-shift, zero angles (`02 NATIVE ZERO`) | Enabled, zero angles | On |
+| Tilt-shift, +5° (`03 NATIVE TILT`) | Enabled, +5° tilt | On |
 
 All three have identical position and orientation, scale 1, a 50 mm lens,
-36 mm horizontal sensor, f/2.8, seven aperture blades and the same native
+36 mm horizontal sensor, f/2.8, seven aperture blades and the same tilt-shift
 off-axis focus object at `(0.75, -6, 1.75)` m. The camera position is
 `(102.5, -132, 150)` m. Choose the camera in Scene Properties > Camera, or select
 it in the Outliner and press **Ctrl Numpad 0**. The ordinary camera's DOF remains
-enabled, so the comparison isolates native movement rather than switching blur
+enabled, so the comparison isolates tilt-shift movement rather than switching blur
 on and off. At this scale ordinary 50 mm DOF is broad; tilt changes the plane of
 focus at the same aperture. Physical breathing is accepted, so the frames need
 not align pixel for pixel. Use `--tilt-degrees` to generate another angle, or
 adjust it in Camera Data properties in small steps, initially about 0.25°.
 
 The world is right-handed, Z-up, with streets along X/Y. Camera −Z points
-forward and +Y up. Native angles store radians and display degrees; active
+forward and +Y up. Tilt-shift angles store radians and display degrees; active
 lens-frame order is `Rz(axis) Ry(swing) Rx(tilt)`, as specified in the
 [optical model](../docs/optical-model.md). Image-circle diameter zero means
 unbounded. Extreme movements can reach singular focus geometry and be rejected;
@@ -80,8 +80,8 @@ All three cameras were rendered on the Radeon RX 6900 XT using single-device
 HIP, frame 40, **2400 × 1500**, 256 samples and seed 71, with denoising,
 adaptive sampling and compositing disabled. The previews are
 [ordinary DOF](full-scale-city/ordinary-dof.png),
-[native zero tilt](full-scale-city/native-zero.png), and
-[native 5° tilt](full-scale-city/native-tilt.png).
+[tilt-shift zero tilt](full-scale-city/native-zero.png), and
+[tilt-shift 5° tilt](full-scale-city/native-tilt.png).
 The packaged copies and scene are identified in [manifest.json](full-scale-city/manifest.json).
 The original ignored `work/examples/full-scale-city/` output directory retains
 matching render JSON records and `inspection.json` with saved-scene and animation checks. Visual inspection shows broad

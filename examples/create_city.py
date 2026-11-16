@@ -521,21 +521,21 @@ def lighting():
     area('Camera / soft bounce', (.3,-1.8,.9), (0,0,.1), 28, 1.25, (1,.92,.79))
 
 
-README = '''LITTLE MERIDIAN — a small city for the native tilt-shift camera
+README = '''LITTLE MERIDIAN — a small city for the tilt-shift camera
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Open with this project's patched Blender 5.3 build. Press F12 to render.
 The file starts on frame 40 with the HERO camera and CPU rendering for portability.
 Render > Render Animation samples the animated city, frames 1–240 at 24 fps.
-Motion blur MUST remain disabled; native M4 does not support it or Vector passes.
+Motion blur MUST remain disabled; tilt-shift M4 does not support it or Vector passes.
 This is deterministic keyframed traffic, not a rigid-body/traffic-engine simulation.
 Traffic is stationary while the crossing pedestrians walk. Positional resets
 occur at the playback boundary between frames 240 and 1; this is a visible wrap.
 Signals: green 1–84 / 201–240, amber 85–92, red 93–200. Cars hold from 85 to 200.
 
 CAMERAS (select in Scene Properties > Camera; or select camera, Ctrl Numpad 0):
-01 HERO: native positive tilt 1.7 degrees, 50 mm, f/1.4, central crossing focus.
-02 COMPARE: same pose, lens, f-stop and focus target; native angles zero.
+01 HERO: tilt-shift positive tilt 1.7 degrees, 50 mm, f/1.4, central crossing focus.
+02 COMPARE: same pose, lens, f-stop and focus target; tilt-shift angles zero.
 03 SWING: same pose, swing -1.6 degrees, otherwise same settings.
 04 OVERVIEW: ordinary upstream camera with tilt disabled; f/8 for city inspection.
 05 ARCHITECTURE: level body, 60 mm, f/5.6, +4 mm vertical lens shift.
@@ -543,9 +543,9 @@ CAMERAS (select in Scene Properties > Camera; or select camera, Ctrl Numpad 0):
 Hero/comparison breathing is physical; this is not a pixel-aligned blur filter.
 
 Select HERO and open Camera Data > Tilt-Shift. Move the FOCUS empty to change the
-sharp plane; start with tiny movements, 0.25 degrees per step. All blur is native
-Cycles finite-aperture ray geometry. No compositor blur or external assets.
-Native Display guides require Viewport Overlays > Extras, enabled in this file.
+sharp plane; start with tiny movements, 0.25 degrees per step. All depth blur comes from
+Cycles finite-aperture camera rays. No compositor blur or external assets.
+Tilt-Shift display guides require Viewport Overlays > Extras, enabled in this file.
 For single-device HIP: choose the AMD device in Preferences > System, then GPU
 Compute in Render Properties. The saved file uses CPU so F12 needs no GPU setup.
 Do not enable motion blur, Vector passes, HIP RT or multiple enabled HIP devices.
@@ -554,7 +554,7 @@ UNITS / GEOMETRY: right-handed Z-up city; streets follow world X and Y; 1 BU = 1
 The display is a real miniature: plinth 1.64 x 1.34 m; buildings 0.10–0.39 m tall.
 Camera -Z looks forward, +Y is up. Lens controls store radians, displayed degrees.
 Optical active rotation is Rz(axis) Ry(swing) Rx(tilt) in the documented lens frame.
-Focus uses a native off-axis focus object. Image-circle 0 means unbounded. These
+Focus uses a tilt-shift off-axis focus object. Image-circle 0 means unbounded. These
 gentle poses avoid singular focus geometry; extreme angles may validly be rejected.
 Ground offsets 0.3–1 mm separate paint and surfaces to avoid coplanar flicker.
 

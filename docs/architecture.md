@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Architecture and accepted boundaries
 
-The target is a native Blender 5.3 / Cycles camera: raster samples generate rays
+The target is a tilt-shift camera implemented directly in Blender 5.3 / Cycles: raster samples generate rays
 through a physical tilted thin lens before scene intersection. No image-space
 blur, compositor substitute, or rotated ordinary focus plane satisfies this goal.
 M1 implements only the standalone optical reference; it changes no Blender code.

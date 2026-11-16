@@ -1,11 +1,18 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Blender Tilt-Shift Camera
 
-A native Blender 5.3 / Cycles camera with an ideal tilted thin lens, physical
-aperture sampling, camera shift and image-circle clipping. The camera generates
+A tilt-shift camera implemented directly in Blender 5.3 / Cycles, with an ideal
+tilted thin lens, physical aperture sampling, camera shift and image-circle clipping. The camera generates
 physical rays during rendering; depth blur comes from the lens and aperture.
 This repository publishes the source modifications, build tools, optical
 reference, validation evidence and an editable full-scale city example.
+
+<a href="work/demo-gallery/index.html"><img src="examples/full-scale-city/native-tilt.png" alt="Preview the tilt-shift camera photo and video gallery: a full-scale city with a selective band of focus" width="960"></a>
+
+**[Explore the photo & video gallery →](work/demo-gallery/index.html)**
+17 photographs · 11 comparisons · 8 camera-control videos. The linked gallery is
+generated locally under ignored `work/` and is not published.
+[Build or refresh it from existing artifacts](examples/DEMO_GALLERY.md).
 
 ## What tilt-shift photography does
 
@@ -40,11 +47,11 @@ Download [Full-scale Meridian (.blend)](examples/full-scale-city/full-scale-city
 and open it in the patched Blender built below. The scene uses metre-scale
 buildings, cars and people, with three matched 50 mm f/2.8 cameras. All three
 keep depth of field enabled. The saved file defaults to CPU rendering and the
-native tilted camera; press **F12** to render.
+tilt-shift camera; press **F12** to render.
 
-| Ordinary perspective + DOF | Native (tilt-shift) camera, zero angles | Native (tilt-shift) camera, +5° tilt |
+| Ordinary perspective + DOF | Tilt-shift camera, zero angles | Tilt-shift camera, +5° tilt |
 | --- | --- | --- |
-| [![Ordinary depth of field](examples/full-scale-city/ordinary-dof.png)](examples/full-scale-city/ordinary-dof.png) | [![Native zero angles](examples/full-scale-city/native-zero.png)](examples/full-scale-city/native-zero.png) | [![Native lens tilt](examples/full-scale-city/native-tilt.png)](examples/full-scale-city/native-tilt.png) |
+| [![Ordinary depth of field](examples/full-scale-city/ordinary-dof.png)](examples/full-scale-city/ordinary-dof.png) | [![Tilt-shift zero angles](examples/full-scale-city/native-zero.png)](examples/full-scale-city/native-zero.png) | [![Lens tilt](examples/full-scale-city/native-tilt.png)](examples/full-scale-city/native-tilt.png) |
 
 The previews show frame 40 at 2400 × 1500, 256 samples, seed 71 on a single
 RX 6900 XT HIP device, without denoising, adaptive sampling or compositing.
@@ -52,6 +59,20 @@ See [scene instructions, camera settings and regeneration](examples/FULL_SCALE_C
 and the [packaged artifact manifest](examples/full-scale-city/manifest.json).
 These examples illustrate appearance; the separate tests below establish the
 bounded numerical and rendering evidence.
+
+For a wider set of **17 photographic comparison images**, see the
+[demo suite and regeneration instructions](examples/DEMO_COMPARISONS.md).
+It includes a botanical tabletop with extended focus at −10° tilt, +10° city
+selective focus, optimized ordinary cameras, swing, movement-axis rotation,
+architectural shifts, and optional focus-plane intersections on scene surfaces. Generated 4K
+images and editable scenes are available through the
+[shared photo and video gallery](work/demo-gallery/index.html) after generation;
+these local artifacts have not been published.
+
+For eight **10-second tilt-shift camera animations**, see the
+[photographic controls in motion](examples/DEMO_ANIMATIONS.md) and generated
+[shared gallery](work/demo-gallery/index.html). Each clip changes
+one real camera setting and labels its current value in every frame.
 
 ## Build the camera
 
@@ -84,7 +105,7 @@ build rather than an add-on.
 ## Implemented scope and evidence
 
 Select a perspective camera in Cycles and enable **Tilt-Shift** in Camera Data.
-The native interface supplies tilt, swing, axis rotation, shifts in millimetres,
+The tilt-shift interface supplies tilt, swing, axis rotation, shifts in millimetres,
 focus, physical aperture and optional lens/focus/image-circle guides. Final Cycles
 renders and the Cycles Rendered viewport use physical framing; ordinary solid/
 Eevee camera framing is approximate. See the [interface guide](docs/m3-native-interface.md).
@@ -95,7 +116,7 @@ breathing. It intentionally differs from ordinary Cycles' fixed field of view.
 Disabling Tilt-Shift preserves the upstream camera path.
 
 The [M1 optical reference](docs/optical-model.md) has 14,120 numerical checks over
-1,620 deterministic rays. [M2](docs/m2-native-camera.md) validates native physical
+1,620 deterministic rays. [M2](docs/m2-native-camera.md) validates tilt-shift physical
 rays, off-axis focus, aperture blur, coverage, clipping and volumes on CPU;
 [M3](docs/m3-native-interface.md) adds bounded interface, persistence, animation
 and isolated GUI evidence. [M4](docs/m4-hip-camera.md) passes 19 declared CPU/HIP
@@ -111,7 +132,7 @@ adaptive dicing and unsupported camera geometry are guarded. The measured HIP
 result applies to the tested RDNA2 configuration; it does not establish other
 hardware, GNOME/Mutter, accessibility, human workflow or real-lens calibration.
 Coordinates, units, rotation order, singularities and tolerances are documented
-in the [native conventions](docs/m2-native-camera.md) and
+in the [tilt-shift conventions](docs/m2-native-camera.md) and
 [M4 numerical domain](docs/m4-hip-camera.md#physics-and-numerical-domain).
 
 ## Upstream files changed

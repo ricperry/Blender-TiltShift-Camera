@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-# M3 native camera interface
+# M3 tilt-shift camera interface
 
 The cumulative M3 source patch is
 `patches/blender-v5.3.0-tilt-shift-m3.patch`, against the recorded official 5.3.0
@@ -49,7 +49,7 @@ M3 does not modify the standard viewport projection matrices.
 
 Three persisted display toggles default false: lens plane, focus plane and image
 circle. They are independent of rendering and obey viewport Extras visibility.
-The real native camera overlay obtains its vertices from
+The real tilt-shift camera overlay obtains its vertices from
 `BKE_camera_tilt_shift_guides`; the RNA method
 `Camera.tilt_shift_guide_geometry(camera_object, view_roll=0, view_flip_x=False)`
 returns those same vertices for numerical verification and integrations.

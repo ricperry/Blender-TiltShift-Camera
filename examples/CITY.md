@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Little Meridian
 
-A self-contained miniature city for experimenting with the native Blender 5.3 /
+A self-contained miniature city for experimenting with the tilt-shift Blender 5.3 /
 Cycles camera: pastel apartments and shops, roof gardens, water towers, a clock
 square, striped market stalls, a park, a canal, bridges, traffic, cyclists and
 walking citizens. All geometry, materials and animation are generated locally;
@@ -17,7 +17,7 @@ work/install-blender-m4/blender --background -noaudio --factory-startup --thread
 
 Generation only saves the `.blend` and its `.json` inventory; it does not render.
 Open the saved file with that binary and press **F12**. The selected camera's
-native controls appear in Camera Data properties. The Text datablock
+tilt-shift controls appear in Camera Data properties. The Text datablock
 **START HERE · Little Meridian** contains instructions inside the file.
 
 From the project directory, open it with:
@@ -35,14 +35,14 @@ The saved file uses CPU rendering for portability, 1600 × 1000, 128 samples and
 seed 71. To render on the tested single AMD HIP device, select the device in
 Preferences > System and GPU Compute in Render Properties. Keep motion blur,
 Vector passes, HIP RT and multiple enabled HIP devices off: those are outside
-the native M4 camera's supported scope. Opening this scene is not HIP acceptance.
+the tilt-shift M4 camera's supported scope. Opening this scene is not HIP acceptance.
 
 | Camera | Experiment |
 | --- | --- |
-| 01 HERO | Native +1.7° tilt, 50 mm, f/1.4, central crossing focus |
-| 02 COMPARE | Same pose, lens, aperture and focus; native angles zero |
-| 03 SWING | Same pose and optics; native −1.6° swing |
-| 04 OVERVIEW | Ordinary upstream camera, native feature disabled, f/8 |
+| 01 HERO | Tilt-shift +1.7° tilt, 50 mm, f/1.4, central crossing focus |
+| 02 COMPARE | Same pose, lens, aperture and focus; tilt-shift angles zero |
+| 03 SWING | Same pose and optics; tilt-shift −1.6° swing |
+| 04 OVERVIEW | Ordinary upstream camera, tilt-shift feature disabled, f/8 |
 | 05 ARCHITECTURE | Level body, 60 mm, f/5.6, +4 mm vertical shift |
 | 06 STREETLIFE | Low view along the avenue, 35 mm, f/2.8, separate crossing focus |
 
@@ -51,7 +51,7 @@ press **Ctrl Numpad 0**. HERO and COMPARE isolate the lens movement; physical
 breathing can change framing slightly. OVERVIEW intentionally has a different
 aperture so the whole city is easy to inspect. All depth blur is computed by
 Cycles camera rays; no compositor or image-space blur is present.
-Native Display guides require Viewport Overlays > Extras, enabled in the saved file.
+Tilt-Shift display guides require Viewport Overlays > Extras, enabled in the saved file.
 
 The file opens on frame 40. The 1–240 range runs at 24 fps. Vehicles and pedestrians
 use deterministic keyframes, rather than a traffic or rigid-body simulation.
@@ -63,13 +63,13 @@ boundary. Motion blur remains disabled.
 
 The city is a physical miniature: **1 Blender unit = 1 metre**, with a 1.64 × 1.34 m
 display plinth and 0.10–0.39 m buildings. Z points up; streets follow world X/Y.
-Camera −Z points forward and +Y up. Native lens angles store radians, displayed
+Camera −Z points forward and +Y up. Tilt-shift lens angles store radians, displayed
 as degrees; their active lens-frame order is `Rz(axis) Ry(swing) Rx(tilt)` as
 defined in [the optical model](../docs/optical-model.md). The focus empty is an
-actual native off-axis focus object. Move it or adjust lens angles in small
+actual tilt-shift off-axis focus object. Move it or adjust lens angles in small
 increments, about 0.25° to start. Image-circle diameter zero is unbounded.
 Extreme movements can produce singular or invalid optical geometry and are
-rejected by the native camera. Surface offsets of 0.3–1 mm separate paint and
+rejected by the tilt-shift camera. Surface offsets of 0.3–1 mm separate paint and
 overlaid surfaces; no numerical physics tolerances are changed.
 
 Numbered collections organize the scene. Repeated geometry shares small primitive
@@ -89,4 +89,4 @@ rendered on a single AMD Radeon RX 6900 XT through HIP. The 1600 × 1000,
 145 and the other previews use frame 40. Each has a matching JSON render record.
 Animation checks confirmed stationary vehicles during the red hold, crossing
 pedestrian movement, and the green, amber and red signal phases. These checks
-exercise this example; they do not extend the native camera's physics acceptance.
+exercise this example; they do not extend the tilt-shift camera's physics acceptance.

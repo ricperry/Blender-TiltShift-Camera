@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-# M4 native camera on AMD HIP
+# M4 tilt-shift camera on AMD HIP
 
-M4 reuses the M2/M3 native physical camera and shared C++17/float kernel math.
+M4 reuses the M2/M3 tilt-shift camera and shared C++17/float kernel math.
 The cumulative patch is `patches/blender-v5.3.0-tilt-shift-m4.patch` against the
 recorded official 5.3.0 pin. Earlier patches, fixtures and preserved installs
 remain historical evidence. The only M4 native behavior change is a bounded

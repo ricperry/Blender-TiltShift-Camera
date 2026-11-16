@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-# Native depth-of-field visual comparison
+# Tilt-shift depth-of-field visual comparison
 
 `scripts/blender_visual_comparison.py` makes a large, reproducible comparison of
 one receding tabletop chart. All three images use the same geometry, rigid camera
@@ -9,7 +9,7 @@ is not expected to change a render.
 M3's lens/focus/image-circle guide checkboxes control viewport display only;
 they intentionally leave final pixels unchanged.
 
-| Case | Native physical camera | Lens tilt |
+| Case | Tilt-shift camera | Lens tilt |
 | --- | --- | --- |
 | `ordinary` | Disabled | 0° |
 | `physical-zero` | Enabled | 0° |
@@ -17,14 +17,14 @@ they intentionally leave final pixels unchanged.
 
 Compare the near and far checkerboards and fine line pairs, rather than only the
 middle row. The zero-tilt cases focus around one depth. The tilted case places the
-whole chart on the native camera's sharp plane. Enabling physical optics also
+whole chart on the tilt-shift camera's sharp plane. Enabling physical optics also
 changes close-focus framing through sensor extension; this is expected breathing,
 not a change to the camera transform.
 
 Geometry uses unscaled camera-local metres: X right, Y up, negative Z into the
 scene. The chart obeys `Z = -(d + slope*Y)`, where `d = 0.65 m` and
 `slope = -d*sin(-8°)/0.05`. This follows the independent manual-focus plane law
-`depth = d*(1 - sin(tilt)*Y/f)`. Native rotation order is
+`depth = d*(1 - sin(tilt)*Y/f)`. Lens rotation order is
 `Rz(axis) Ry(swing) Rx(tilt)`; swing and axis rotation remain zero. Printed layers
 are separated by at most 30 μm along camera Z. Image-circle diameter zero is
 unbounded. These finite, forward-facing settings are away from the native
@@ -46,7 +46,7 @@ binary/script/patch/image/scene hashes. Each case can also run separately with
 
 All patterns and text are real scene geometry with emission materials. There is
 no compositor, image-space blur, adaptive sampling or denoising. This comparison
-is visual CPU evidence for the native focus controls; it does not establish HIP,
+is visual CPU evidence for the tilt-shift focus controls; it does not establish HIP,
 GNOME/Wayland interaction or production-lens calibration.
 
 ## Observed result
@@ -55,7 +55,7 @@ All three native CPU renders completed successfully and were visually inspected
 at 1280×800. Ordinary and physical-zero images have a sharp middle row with
 pronounced blur in the near and far rows. At −8°, all five rows are visibly
 sharp, including their fine line pairs and depth labels, over target depths
-0.503–0.920 m. This is direct rendered evidence that the native tilt control
+0.503–0.920 m. This is direct rendered evidence that the lens tilt control
 rotates the focus plane while the rigid camera, aperture and focus distance stay
 fixed. It is a visual comparison, not a measured MTF result.
 

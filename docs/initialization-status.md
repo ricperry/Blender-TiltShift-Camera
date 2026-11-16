@@ -10,7 +10,7 @@ isolated Sway/software OpenGL session; M4 adds actual RX 6900 XT/gfx1030 build/r
 The snapshot below remains the historical unmodified M1 initialization record.
 
 Snapshot: 2026-11-14. This ledger distinguishes implemented geometry from future
-native camera and hardware acceptance. See [source-revision.json](source-revision.json)
+tilt-shift camera and hardware acceptance. See [source-revision.json](source-revision.json)
 for exact provenance and [baseline-validation.json](baseline-validation.json) for
 machine-readable metrics and artifact hashes. M1 foundation/build/runtime evidence
 is complete; the completed initialization commit/push is tracked separately.
@@ -78,7 +78,7 @@ The parent installed that exact artifact into the same completed host runtime at
 `work/install-blender-cpu/5.3/scripts/addons_core/cycles/lib/kernel_gfx1030.fatbin.zst`
 and verified the matching SHA-256. The baseline executable has HIP runtime enabled;
 the HIP tree supplied only this compiled kernel, not a second complete host build.
-Compilation alone establishes neither GPU rendering nor native camera support.
+Compilation alone establishes neither GPU rendering nor tilt-shift camera support.
 Subsequent actual HIP rendering is recorded below and establishes baseline
 operation only.
 
